@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="slick/slick.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/media.css" />
+    <title>Главная</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="wrapper__popup">
+        <div class="popup__item" id="subscribe">
+          <div class="popup__close js-close"></div>
+          <div class="popup__title">Почтовая рассылка</div>
+          <div class="popup__text">
+            Подпишитесь на обновления нашего <br />
+            блога. Без спама.
+          </div>
+          <div class="popup_form">
+            <form
+              data-form="subscribe"
+              class="popup_form__input-wrapper"
+              action=""
+            >
+              <input
+                class="popup__form__input"
+                type="text"
+                name="mail"
+                placeholder="Ваш e-mail"
+              />
+              <button class="popup__form__button">
+                подписаться
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="popup__item" id="success">
+          <div class="popup__close js-close"></div>
+          <div class="popup__block-img">
+            <img src="images/mail.png" alt="" />
+          </div>
+          <div class="popup__title">Спасибо за подписку!</div>
+          <div class="popup__text">
+            На указанную почту отправлено письмо <br />
+            для подтверждения вашего согласия. <br />
+            Перейдите по ссылке из письма.
+          </div>
+        </div>
+        <div class="popup__item" id="login">
+          <div class="popup__close js-close"></div>
+          <div class="popup__title">
+            <a class="popup__link" href="">Войдите</a> или <br />
+            <a class="popup__link" href="">зарегистрируйтесь</a>
+          </div>
+          <div class="popup__social">
+            <a href="" class="popup__soc-link"
+              ><img class="popup__img" src="images/vk-c.png" alt=""
+            /></a>
+            <a href="" class="popup__soc-link"
+              ><img class="popup__img" src="images/fb-c.png" alt=""
+            /></a>
+            <a href="" class="popup__soc-link"
+              ><img class="popup__img" src="images/inst-c.png" alt=""
+            /></a>
+            <a href="" class="popup__soc-link"
+              ><img class="popup__img" src="images/tw-c.png" alt=""
+            /></a>
+          </div>
+        </div>
+      </div>
+      <div class="wrapper_main">
+        <header>
+          <div class="burger" id="burger" data-has_target="y">
+            <div class="burger_wrapper">
+              <div class="burger_menu">
+                <div class="burger_menu_title">Рубрики</div>
+                <ul class="burger_menu_list">
+                  <li class="burger_menu_list_item">
+                    <a href="#"><i class="icon_avocado"></i> Питание</a>
+                  </li>
+                  <li class="burger_menu_list_item">
+                    <a href="#"
+                      ><i class="icon_call-me"></i> Ментальное здоровье</a
+                    >
+                  </li>
+                  <li class="burger_menu_list_item">
+                    <a href="#"><i class="icon_boll"></i> Спорт</a>
+                  </li>
+                  <li class="burger_menu_list_item">
+                    <a href="#"><i class="icon_dream"></i> Cон</a>
+                  </li>
+                  <li class="burger_menu_list_item">
+                    <a href="#"><i class="icon_phone"></i> Технологии</a>
+                  </li>
+                  <li class="burger_menu_list_item">
+                    <a href="#"
+                      ><i class="icon_sport"></i> Физическое здоровье</a
+                    >
+                  </li>
+                  <li class="burger_menu_list_item ">
+                    <a href="#"><i class="icon_medicine"></i> Профилактика</a>
+                  </li>
+                  <li class="burger_menu_list_item">
+                    <a href="#"><i class="icon_dream"></i> Cон</a>
+                  </li>
+                  <li class="burger_menu_list_item">
+                    <a href="#"><i class="icon_phone"></i> Технологии</a>
+                  </li>
+                  <li class="burger_menu_list_item">
+                    <a href="#"
+                      ><i class="icon_sport"></i> Физическое здоровье</a
+                    >
+                  </li>
+                  <li class="burger_menu_list_item ">
+                    <a href="#"><i class="icon_medicine"></i> Профилактика</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="burger_bottom">
+                <a data-target="burger_menu-tags" href="" class="burger_link">
+                  Теги
+                </a>
+                <a href="about.html" class="burger_link">
+                  О блоге
+                </a>
+                <a href="" class="burger_link js-popup" data-popup="subscribe">
+                  Подписаться
+                </a>
+                <form id="burger_search" class="burger_search">
+                  <button type="submit"></button
+                  ><input placeholder="Введите текст поиска" type="text" />
+                </form>
+              </div>
+              <div
+                class="burger_menu-tags"
+                id="burger_menu-tags"
+                data-has_target="y"
+              >
+                <div
+                  class="burger_menu-tags_close"
+                  data-close="burger_menu-tags"
+                ></div>
+                <div class="burger_menu-tags_title">Теги</div>
+                <ul class="burger_menu-tags_list">
+                  <li class="burger_menu-tags_list_item small">
+                    <a href="">#инструкции</a>
+                  </li>
+                  <li class="burger_menu-tags_list_item big">
+                    <a href="">#о здоровье</a>
+                  </li>
+                  <li class="burger_menu-tags_list_item small">
+                    <a href="">#faq</a>
+                  </li>
+                  <li class="burger_menu-tags_list_item">
+                    <a href="">#медитация</a>
+                  </li>
+                  <li class="burger_menu-tags_list_item small">
+                    <a href="">#вредно</a>
+                  </li>
+                  <li class="burger_menu-tags_list_item small">
+                    <a href="">#faq</a>
+                  </li>
+                  <li class="burger_menu-tags_list_item">
+                    <a href="">#медитация</a>
+                  </li>
+                  <li class="burger_menu-tags_list_item big">
+                    <a href="">#интересно</a>
+                  </li>
+                  <li class="burger_menu-tags_list_item">
+                    <a href="">#активность</a>
+                  </li>
+                  <li class="burger_menu-tags_list_item small">
+                    <a href="">#faq</a>
+                  </li>
+                  <li class="burger_menu-tags_list_item">
+                    <a href="">#медитация</a>
+                  </li>
+                  <li class="burger_menu-tags_list_item small">
+                    <a href="">#вредно</a>
+                  </li>
+                  <li class="burger_menu-tags_list_item small">
+                    <a href="">#faq</a>
+                  </li>
+                  <li class="burger_menu-tags_list_item">
+                    <a href="">#медитация</a>
+                  </li>
+                  <li class="burger_menu-tags_list_item big">
+                    <a href="">#интересно</a>
+                  </li>
+                  <li class="burger_menu-tags_list_item">
+                    <a href="">#активность</a>
+                  </li>
+                  <li class="burger_menu-tags_list_item small">
+                    <a href="">#faq</a>
+                  </li>
+                  <li class="burger_menu-tags_list_item">
+                    <a href="">#медитация</a>
+                  </li>
+                  <li class="burger_menu-tags_list_item small">
+                    <a href="">#вредно</a>
+                  </li>
+                  <li class="burger_menu-tags_list_item small">
+                    <a href="">#faq</a>
+                  </li>
+                  <li class="burger_menu-tags_list_item">
+                    <a href="">#медитация</a>
+                  </li>
+                  <li class="burger_menu-tags_list_item big">
+                    <a href="">#интересно</a>
+                  </li>
+                  <li class="burger_menu-tags_list_item">
+                    <a href="">#активность</a>
+                  </li>
+                  <li class="burger_menu-tags_list_item small">
+                    <a href="">#faq</a>
+                  </li>
+                  <li class="burger_menu-tags_list_item">
+                    <a href="">#медитация</a>
+                  </li>
+                  <li class="burger_menu-tags_list_item small">
+                    <a href="">#вредно</a>
+                  </li>
+                  <li class="burger_menu-tags_list_item small">
+                    <a href="">#faq</a>
+                  </li>
+                  <li class="burger_menu-tags_list_item">
+                    <a href="">#медитация</a>
+                  </li>
+                  <li class="burger_menu-tags_list_item big">
+                    <a href="">#интересно</a>
+                  </li>
+                  <li class="burger_menu-tags_list_item">
+                    <a href="">#активность</a>
+                  </li>
+                  <li class="burger_menu-tags_list_item small">
+                    <a href="">#faq</a>
+                  </li>
+                  <li class="burger_menu-tags_list_item">
+                    <a href="">#медитация</a>
+                  </li>
+                  <li class="burger_menu-tags_list_item small">
+                    <a href="">#вредно</a>
+                  </li>
+                  <li class="burger_menu-tags_list_item small">
+                    <a href="">#faq</a>
+                  </li>
+                  <li class="burger_menu-tags_list_item">
+                    <a href="">#медитация</a>
+                  </li>
+                  <li class="burger_menu-tags_list_item big">
+                    <a href="">#интересно</a>
+                  </li>
+                  <li class="burger_menu-tags_list_item">
+                    <a href="">#активность</a>
+                  </li>
+                  <li class="burger_menu-tags_list_item small">
+                    <a href="">#faq</a>
+                  </li>
+                  <li class="burger_menu-tags_list_item">
+                    <a href="">#медитация</a>
+                  </li>
+                  <li class="burger_menu-tags_list_item small">
+                    <a href="">#вредно</a>
+                  </li>
+                  <li class="burger_menu-tags_list_item small">
+                    <a href="">#faq</a>
+                  </li>
+                  <li class="burger_menu-tags_list_item">
+                    <a href="">#медитация</a>
+                  </li>
+                  <li class="burger_menu-tags_list_item big">
+                    <a href="">#интересно</a>
+                  </li>
+                  <li class="burger_menu-tags_list_item">
+                    <a href="">#активность</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="top">
+            <a
+              href=""
+              class="top_burger-open"
+              data-target="burger"
+              data-close="burger"
+              ><span></span
+            ></a>
+            <a href="#" class="logo"><img src="images/logo.png" alt=""/></a>
+            <a href="" class="top_sitebar-open" data-target="sitebar"></a>
+            <ul class="top_menu">
+              <li class="top_menu_item">
+                <a data-target="tags_menu" href="#">Теги</a>
+              </li>
+              <li class="top_menu_item"><a href="#">О блоге</a></li>
+              <div class="top_menu_tags" id="tags_menu" data-has_target="y">
+                <div class="top_menu_tags_close" data-close="tags_menu"></div>
+                <ul class="top_menu_tags_list">
+                  <li class="top_menu_tags_list_item small">
+                    <a href="">#инструкции</a>
+                  </li>
+                  <li class="top_menu_tags_list_item big">
+                    <a href="">#о здоровье</a>
+                  </li>
+                  <li class="top_menu_tags_list_item small">
+                    <a href="">#faq</a>
+                  </li>
+                  <li class="top_menu_tags_list_item">
+                    <a href="">#медитация</a>
+                  </li>
+                  <li class="top_menu_tags_list_item small">
+                    <a href="">#вредно</a>
+                  </li>
+                  <li class="top_menu_tags_list_item small">
+                    <a href="">#faq</a>
+                  </li>
+                  <li class="top_menu_tags_list_item">
+                    <a href="">#медитация</a>
+                  </li>
+                  <li class="top_menu_tags_list_item big">
+                    <a href="">#интересно</a>
+                  </li>
+                  <li class="top_menu_tags_list_item">
+                    <a href="">#активность</a>
+                  </li>
+                  <li class="top_menu_tags_list_item small">
+                    <a href="">#faq</a>
+                  </li>
+                  <li class="top_menu_tags_list_item">
+                    <a href="">#медитация</a>
+                  </li>
+                  <li class="top_menu_tags_list_item small">
+                    <a href="">#вредно</a>
+                  </li>
+                  <li class="top_menu_tags_list_item small">
+                    <a href="">#faq</a>
+                  </li>
+                  <li class="top_menu_tags_list_item">
+                    <a href="">#медитация</a>
+                  </li>
+                  <li class="top_menu_tags_list_item big">
+                    <a href="">#интересно</a>
+                  </li>
+                  <li class="top_menu_tags_list_item">
+                    <a href="">#активность</a>
+                  </li>
+                  <li class="top_menu_tags_list_item small">
+                    <a href="">#faq</a>
+                  </li>
+                  <li class="top_menu_tags_list_item">
+                    <a href="">#медитация</a>
+                  </li>
+                  <li class="top_menu_tags_list_item small">
+                    <a href="">#вредно</a>
+                  </li>
+                  <li class="top_menu_tags_list_item small">
+                    <a href="">#faq</a>
+                  </li>
+                  <li class="top_menu_tags_list_item">
+                    <a href="">#медитация</a>
+                  </li>
+                  <li class="top_menu_tags_list_item big">
+                    <a href="">#интересно</a>
+                  </li>
+                  <li class="top_menu_tags_list_item">
+                    <a href="">#активность</a>
+                  </li>
+                  <li class="top_menu_tags_list_item small">
+                    <a href="">#faq</a>
+                  </li>
+                  <li class="top_menu_tags_list_item">
+                    <a href="">#медитация</a>
+                  </li>
+                  <li class="top_menu_tags_list_item small">
+                    <a href="">#вредно</a>
+                  </li>
+                  <li class="top_menu_tags_list_item small">
+                    <a href="">#faq</a>
+                  </li>
+                  <li class="top_menu_tags_list_item">
+                    <a href="">#медитация</a>
+                  </li>
+                  <li class="top_menu_tags_list_item big">
+                    <a href="">#интересно</a>
+                  </li>
+                  <li class="top_menu_tags_list_item">
+                    <a href="">#активность</a>
+                  </li>
+                  <li class="top_menu_tags_list_item small">
+                    <a href="">#faq</a>
+                  </li>
+                  <li class="top_menu_tags_list_item">
+                    <a href="">#медитация</a>
+                  </li>
+                  <li class="top_menu_tags_list_item small">
+                    <a href="">#вредно</a>
+                  </li>
+                  <li class="top_menu_tags_list_item small">
+                    <a href="">#faq</a>
+                  </li>
+                  <li class="top_menu_tags_list_item">
+                    <a href="">#медитация</a>
+                  </li>
+                  <li class="top_menu_tags_list_item big">
+                    <a href="">#интересно</a>
+                  </li>
+                  <li class="top_menu_tags_list_item">
+                    <a href="">#активность</a>
+                  </li>
+                  <li class="top_menu_tags_list_item small">
+                    <a href="">#faq</a>
+                  </li>
+                  <li class="top_menu_tags_list_item">
+                    <a href="">#медитация</a>
+                  </li>
+                  <li class="top_menu_tags_list_item small">
+                    <a href="">#вредно</a>
+                  </li>
+                  <li class="top_menu_tags_list_item small">
+                    <a href="">#faq</a>
+                  </li>
+                  <li class="top_menu_tags_list_item">
+                    <a href="">#медитация</a>
+                  </li>
+                  <li class="top_menu_tags_list_item big">
+                    <a href="">#интересно</a>
+                  </li>
+                  <li class="top_menu_tags_list_item">
+                    <a href="">#активность</a>
+                  </li>
+                </ul>
+              </div>
+            </ul>
+            <form class="top_search">
+              <button type="submit"></button
+              ><input placeholder="Введите текст поиска" type="text" />
+            </form>
+            <a class="top_subscribe js-popup" data-popup="subscribe" href=""
+              >Подписаться</a
+            >
+          </div>
+          <div class="bottom">
+            <ul class="bottom_menu" id="header_bottom_menu">
+              <li class="bottom_menu_item">
+                <a href="#"><i class="icon_avocado"></i> Питание</a>
+              </li>
+              <li class="bottom_menu_item">
+                <a href="#"><i class="icon_call-me"></i> Ментальное здоровье</a>
+              </li>
+              <li class="bottom_menu_item">
+                <a href="#"><i class="icon_boll"></i> Спорт</a>
+              </li>
+              <li class="bottom_menu_item">
+                <a href="#"><i class="icon_dream"></i> Cон</a>
+              </li>
+              <li class="bottom_menu_item">
+                <a href="#"><i class="icon_phone"></i> Технологии</a>
+              </li>
+              <li class="bottom_menu_item">
+                <a href="#"><i class="icon_sport"></i> Физическое здоровье</a>
+              </li>
+              <li class="bottom_menu_item ">
+                <a href="#"><i class="icon_medicine"></i> Профилактика</a>
+              </li>
+              <li class="bottom_menu_item">
+                <a href="#"><i class="icon_dream"></i> Cон</a>
+              </li>
+              <li class="bottom_menu_item">
+                <a href="#"><i class="icon_phone"></i> Технологии</a>
+              </li>
+              <li class="bottom_menu_item">
+                <a href="#"><i class="icon_sport"></i> Физическое здоровье</a>
+              </li>
+              <li class="bottom_menu_item ">
+                <a href="#"><i class="icon_medicine"></i> Профилактика</a>
+              </li>
+            </ul>
+          </div>
+        </header>
+        
+        <footer>
+          <div class="left">
+            <a href="" class="left_logo"><img src="images/logo.png" alt=""/></a>
+            <ul class="left_links">
+              <li class="left_links_item"><a href="">О блоге</a></li>
+              <li class="left_links_item">
+                <a href="">Проект клиники <span>Скандинавия</span></a>
+              </li>
+            </ul>
+          </div>
+          <div class="menu">
+            <div class="menu_title">Рубрики</div>
+            <ul class="menu_list">
+              <li class="menu_list_item"><a href="">Вредные привычки</a></li>
+              <li class="menu_list_item"><a href="">Активность</a></li>
+              <li class="menu_list_item"><a href="">Профилактика</a></li>
+              <li class="menu_list_item"><a href="">Сон</a></li>
+              <li class="menu_list_item">
+                <a href="">Сексуальное здоровье</a>
+              </li>
+              <li class="menu_list_item"><a href="">Технологии</a></li>
+              <li class="menu_list_item"><a href="">Питание</a></li>
+              <li class="menu_list_item"><a href="">Психология</a></li>
+            </ul>
+          </div>
+          <div class="menu">
+            <div class="menu_title">клиника скандинавия</div>
+            <ul class="menu_list">
+              <li class="menu_list_item"><a href="">Врачи</a></li>
+              <li class="menu_list_item"><a href="">Услуги и цены</a></li>
+              <li class="menu_list_item"><a href="">Адреса клиник</a></li>
+              <li class="menu_list_item"><a href="">Отзывы</a></li>
+            </ul>
+          </div>
+          <div class="menu">
+            <div class="menu_title">Подписка</div>
+            <div class="menu_text">
+              Подпишитесь на обновления нашего блога. Без спама.
+            </div>
+            <form data-form="subscribe" class="menu_form">
+              <input
+                type="text"
+                placeholder="email"
+                name="mail"
+                class="menu_form_input"
+              />
+              <button type="submit" class="menu_form_button"></button>
+              <!-- сообщение успешной отправке -->
+              <!-- <div class="menu_form_succes">Спасибо! На указанную почту отправлено письмо для подтверждения действия.</div> -->
+            </form>
+            <div class="menu_social">
+              <div class="menu_social_item">
+                <a href=""><img src="images/vk.svg" alt=""/></a>
+              </div>
+              <div class="menu_social_item">
+                <a href=""><img src="images/yt.svg" alt=""/></a>
+              </div>
+              <div class="menu_social_item">
+                <a href=""><img src="images/fb.svg" alt=""/></a>
+              </div>
+              <div class="menu_social_item">
+                <a href=""><img src="images/inst.svg" alt=""/></a>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+      <div class="wrapper__sitebar" id="sitebar" data-has_target="y">
+          <div class="sitebar__close" data-close="sitebar"></div>
+          <div class="sitebar__title">Обсуждения</div>
+          <div class="sitebar__item">
+            <div class="sitebar__item__head">
+              <div class="sitebar__item__block-img">
+                <img class="sitebar__item__img" src="images/comment_sitebar.png" alt="" />
+              </div>
+              <div class="sitebar__item__inf">
+                <div class="sitebar__item__name">
+                  Елена Зубкова
+                </div>
+                <div class="sitebar__item__time">
+                  5 минут назад
+                </div>
+              </div>
+            </div>
+            <div class="sitebar__item__comment">
+              Спасибо! Действительно перечислены основные наиболее...
+            </div>
+            <a href="" class="sitebar__item__link"
+              >Как планировать семью вопреки “болезням”
+            </a>
+          </div>
+          <div class="sitebar__item">
+            <div class="sitebar__item__head">
+              <div class="sitebar__item__block-img">
+                <img class="sitebar__item__img" src="images/comment_mask.png" alt="" />
+              </div>
+              <div class="sitebar__item__inf">
+                <div class="sitebar__item__name">
+                  Кирилл Сафоновский
+                </div>
+                <div class="sitebar__item__time">
+                  5 минут назад
+                </div>
+              </div>
+            </div>
+            <div class="sitebar__item__comment">
+              Не согласна, полный бред!
+            </div>
+            <a href="" class="sitebar__item__link"
+              >Как планировать семью вопреки “болезням”
+            </a>
+          </div>
+          <div class="sitebar__item">
+            <div class="sitebar__item__head">
+              <div class="sitebar__item__block-img">
+                <img class="sitebar__item__img" src="images/comment_sitebar.png" alt="" />
+              </div>
+              <div class="sitebar__item__inf">
+                <div class="sitebar__item__name">
+                  Елена Зубкова
+                </div>
+                <div class="sitebar__item__time">
+                  5 минут назад
+                </div>
+              </div>
+            </div>
+            <div class="sitebar__item__comment">
+              Спасибо! Действительно перечислены основные наиболее...
+            </div>
+            <a href="" class="sitebar__item__link"
+              >Как планировать семью вопреки “болезням”
+            </a>
+          </div>
+          <div class="sitebar__item">
+            <div class="sitebar__item__head">
+              <div class="sitebar__item__block-img">
+                <img class="sitebar__item__img" src="images/comment_mask.png" alt="" />
+              </div>
+              <div class="sitebar__item__inf">
+                <div class="sitebar__item__name">
+                  Кирилл Сафоновский
+                </div>
+                <div class="sitebar__item__time">
+                  5 минут назад
+                </div>
+              </div>
+            </div>
+            <div class="sitebar__item__comment">
+              Не согласна, полный бред!
+            </div>
+            <a href="" class="sitebar__item__link"
+              >Как планировать семью вопреки “болезням”
+            </a>
+          </div>
+          <div class="sitebar__item">
+            <div class="sitebar__item__head">
+              <div class="sitebar__item__block-img">
+                <img src="images/comment_mask.png" alt="" />
+              </div>
+              <div class="sitebar__item__inf">
+                <div class="sitebar__item__name">
+                  Кирилл Сафоновский
+                </div>
+                <div class="sitebar__item__time">
+                  5 минут назад
+                </div>
+              </div>
+            </div>
+            <div class="sitebar__item__comment">
+              Не согласна, полный бред!
+            </div>
+            <a href="" class="sitebar__item__link"
+              >Как планировать семью вопреки “болезням”
+            </a>
+          </div>
+        </div>
+    </div>
+  </body>
+  <script src="js/jquery-3.3.1.js"></script>
+  <script src="slick/slick.js"></script>
+  <script src="js/main.js"></script>
+</html>
