@@ -11,7 +11,7 @@
   </head>
   <body>
     <div class="wrapper">
-        <div class="popup__wrapper">
+        <div class="popup__wrapper"> 
             <div class="popup__item" id="subscribe">
               <div class="popup__close js-close"></div>
               <div class="popup__title">Почтовая рассылка</div>
@@ -505,19 +505,19 @@
           <div class="header__bottom">
             <ul class="header__bottom__menu" id="header__bottom__menu">
               <li class="header__bottom__menu__item">
-                <a class="header__bottom__menu__item__link" href="#">
+                <a href="" class="header__bottom__menu__item__link" href="#">
                   <i class="icon_avocado header__bottom__menu__item__icon"></i>
                   Питание</a
                 >
               </li>
               <li class="header__bottom__menu__item">
-                <a class="header__bottom__menu__item__link" href="#">
+                <a href="" class="header__bottom__menu__item__link" href="#">
                   <i class="icon_call-me header__bottom__menu__item__icon"></i>
                   Ментальное здоровье</a
                 >
               </li>
               <li class="header__bottom__menu__item">
-                <a class="header__bottom__menu__item__link" href="#">
+                <a href="" class="header__bottom__menu__item__link" href="#">
                   <i class="icon_boll header__bottom__menu__item__icon"></i>
                   Спорт</a
                 >
@@ -813,14 +813,15 @@
                 <div class="subscribe__text">
                   Еженедельная рассылка лучших статей блога. Без спама.
                 </div>
-                <div class="subscribe__form">
+                <form class="subscribe__form">
                   <input
                     placeholder="email"
                     type="text"
+                    name="mail"
                     class="inpt__basic inpt_round-right subscribe_form_input"
                   />
                   <button class="btn__right subscribe_form_button"></button>
-                </div>
+                </form>
               </div>
               <div class="article__social">
                 <a href="" class="article__social__item">
@@ -847,7 +848,7 @@
                   </div>
                   <div class="article__social__item__count">0</div>
                 </a>
-                <a href="" class="article__social__item">
+                <a href="" class="article__social__item copy">
                   <div class="article__social__item__block-img">
                     <img class="article__social__item__img" src="images/copy.png" alt="" />
                   </div>

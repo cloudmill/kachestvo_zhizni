@@ -14,9 +14,20 @@
     width: calc(100% - 50px);
     margin: auto;
   }
+  .wrapper_main main .lenta {
+    overflow: hidden;
+  }
   .wrapper_main main .lenta_body {
     flex-direction: row;
     max-height: none;
+    height: auto;
+  }
+  .wrapper_main main .lenta_body.tablet_slider {
+    max-width: 600px;
+  }
+  .wrapper_main main .lenta_body.tablet_slider .slick-list {
+    overflow: visible;
+    width: 100%;
   }
   .wrapper_main main .lenta_body_b-item {
     margin-bottom: 25px;
@@ -130,6 +141,9 @@
     width: 100%;
     height: 48px;
   }
+  .page .article__social__item:last-child:hover {
+    background-color: #f3faeb;
+  }
   .page .article__social__item:last-child .article__social__item__block-img {
     display: none;
   }
@@ -146,6 +160,14 @@
     line-height: 17.52px;
     text-transform: uppercase;
   }
+  .page .article__social__item .info_copied {
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+  .page .article__social__item .info_copied:before {
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
   .header__top {
     display: flex;
     justify-content: space-between;
@@ -154,10 +176,32 @@
   .header__top__subsc {
     display: none;
   }
+  .header__bottom {
+    overflow: scroll;
+    width: 100%;
+    padding: 0 25px;
+    margin-left: -25px;
+  }
+  .header__bottom::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+  .header__bottom::-ms-scrollbar {
+    display: none;
+  }
   .header__bottom__menu {
     opacity: 1;
-    width: 10000px;
     flex-wrap: nowrap;
+    width: 10000px;
+  }
+  .header__bottom__menu a {
+    -webkit-user-drag: none;
+    -o-user-drag: none;
+    -ms-user-drag: none;
+  }
+  .header__bottom__menu__more {
+    display: none;
   }
   .header__search {
     display: none;
@@ -232,6 +276,9 @@
   .wrapper_main main .lenta_body {
     flex-direction: row;
     max-height: none;
+  }
+  .wrapper_main main .lenta_body.tablet_slider {
+    max-width: 420px;
   }
   .wrapper_main main .lenta_body_b-item {
     width: 100%;
@@ -407,6 +454,11 @@
     line-height: 28px;
   }
 }
+@media (max-width: 500px) {
+  .wrapper_main main .lenta_body.tablet_slider {
+    max-width: 100%;
+  }
+}
 @media (max-width: 400px) {
   .wrapper_main {
     width: calc(100% - 30px);
@@ -421,6 +473,11 @@
   .burger {
     width: calc(100% - 30px);
     padding: 0 15px;
+  }
+  .header__bottom {
+    width: 100%;
+    padding: 0 15px;
+    margin-left: -15px;
   }
   .popup__wrapper:before {
     opacity: 1;

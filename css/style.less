@@ -18,6 +18,8 @@
 }
 ///
 @anim: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+@color_link: #82c831;
+@color_text: #1d2f3c;
 ///
 body {
   margin: 0;
@@ -41,7 +43,7 @@ body {
     align-items: center;
     justify-content: center;
     color: rgba(255, 255, 255, 0.98);
-    font-family: Rubik;
+
     font-size: 13px;
     font-weight: 500;
     letter-spacing: 1.04px;
@@ -101,7 +103,7 @@ body {
       }
     }
   }
-  &__right{
+  &__right {
     width: 52px;
     height: 48px;
     background-color: #feaa59;
@@ -143,17 +145,21 @@ body {
     border-radius: 8px;
     border: 1px solid #d7dbde;
     background-color: #ffffff;
-    color: #1d2f3c;
-    font-family: Rubik;
+    color: @color_text;
+
     font-size: 14px;
     font-weight: 400;
     letter-spacing: 0.28px;
-    line-height: 18.87px;
+    line-height: 38.87px;
+    caret-color: @color_link;
+    -webkit-caret-color: @color_link;
+    -ms-caret-color: @color_link;
+    -o-caret-color: @color_link;
     &::placeholder {
       color: #6a747b;
     }
     &:focus-within {
-      border: 1px solid #82c831;
+      border: 1px solid @color_link;
     }
     &.error {
       border: 1px solid #d81615 !important;
@@ -163,15 +169,14 @@ body {
       color: #d7dbde !important;
       background-color: #f0f0f0 !important;
     }
-  
+
     &.round_right {
       &:focus-within {
         border: 1px solid #feaa59;
       }
     }
-    
   }
-  &__check{
+  &__check {
     &[type="checkbox"] {
       display: none;
       &:checked + label {
@@ -179,13 +184,12 @@ body {
         &:before {
           content: "";
           background-image: url(../images/checked.svg);
-          border-color: #82c831;
+          border-color: @color_link;
         }
       }
     }
-    
   }
-  &__radio{
+  &__radio {
     &[type="radio"] {
       display: none;
       &:checked + label {
@@ -193,16 +197,15 @@ body {
         &:before {
           content: "";
           background-image: url(../images/checked_radio.png);
-          border-color: #82c831;
+          border-color: @color_link;
         }
       }
     }
-    
   }
   &__label {
     display: flex;
-    color: #1d2f3c;
-    font-family: Rubik;
+    color: @color_text;
+
     cursor: pointer;
     font-size: 14px;
     font-weight: 400;
@@ -225,9 +228,9 @@ body {
       transition: @anim;
     }
   }
-  &__inf{
+  &__inf {
     color: #6a747b;
-    font-family: Rubik;
+
     font-size: 13px;
     font-weight: 400;
     letter-spacing: 0.26px;
@@ -236,14 +239,14 @@ body {
   }
   &__error {
     color: #d81615;
-    font-family: Rubik;
+
     font-size: 13px;
     font-weight: 400;
     letter-spacing: 0.26px;
     margin-bottom: 10px;
     margin-top: -5px;
   }
-  &_round-right{
+  &_round-right {
     border-radius: 8px 0 0 8px;
     height: 46px;
   }
@@ -252,7 +255,7 @@ body {
   display: flex;
   align-items: center;
   color: #7a858d;
-  font-family: Rubik;
+
   font-size: 14px;
   font-weight: 400;
   letter-spacing: 0.28px;
@@ -299,6 +302,9 @@ body {
 .wrapper {
   position: relative;
   overflow: hidden;
+  * {
+    font-family: Rubik;
+  }
   &_main {
     width: ~"calc(100vw - 350px)";
     min-height: ~"calc(100vh - 138px)";
@@ -312,14 +318,15 @@ body {
       max-width: 1004px;
       margin: auto;
       margin-top: 30px;
+      display: block;
       position: relative;
       z-index: 1;
       .lenta {
         margin-bottom: 30px;
         position: relative;
         &_title {
-          color: #1d2f3c;
-          font-family: Rubik;
+          color: @color_text;
+
           font-size: 21px;
           font-weight: 700;
           line-height: 28.3px;
@@ -337,11 +344,11 @@ body {
             margin-left: 8px;
             &_item {
               margin-right: 10px;
-              font-family: Rubik;
+
               font-size: 21px;
               font-weight: 700;
               line-height: 28.3px;
-              color: #82c831;
+              color: @color_link;
             }
           }
         }
@@ -351,14 +358,16 @@ body {
           align-items: flex-start;
           flex-wrap: wrap;
           max-height: 620px;
+          height: 620px;
           &.row {
             flex-direction: row;
+            height: auto;
           }
           &_b-item {
             .list-items .list_big-item;
             &:hover {
               .lenta_body_b-item_types_type a {
-                color: #82c831;
+                color: @color_link;
               }
             }
           }
@@ -366,7 +375,7 @@ body {
             .list-items .list_normal-item;
             &:hover {
               .lenta_body_item_title {
-                color: #82c831;
+                color: @color_link;
               }
             }
           }
@@ -378,7 +387,7 @@ body {
             }
             &:hover {
               .lenta_body_s-item_title {
-                color: #82c831;
+                color: @color_link;
               }
             }
           }
@@ -386,7 +395,7 @@ body {
             .list-items .list_small-item;
             &:hover {
               .lenta_body_sr-item_title {
-                color: #82c831;
+                color: @color_link;
               }
             }
           }
@@ -398,8 +407,8 @@ body {
           .list-items .list_between-item;
         }
         &_goto {
-          color: #82c831;
-          font-family: Rubik;
+          color: @color_link;
+
           font-size: 13px;
           font-weight: 500;
           letter-spacing: 1.04px;
@@ -428,9 +437,9 @@ body {
           width: 244px;
           height: 48px;
           border-radius: 24px;
-          color: #82c831;
+          color: @color_link;
           background-color: #f3faeb;
-          font-family: Rubik;
+
           font-size: 13px;
           font-weight: 500;
           letter-spacing: 1.04px;
@@ -472,14 +481,14 @@ body {
         margin-right: 25px;
         list-style: none;
         &__link {
-          color: #1d2f3c;
-          font-family: Rubik;
+          color: @color_text;
+
           font-size: 15px;
           font-weight: 400;
           line-height: 21.09px;
           transition: @anim;
           &:hover {
-            color: #82c831;
+            color: @color_link;
           }
         }
       }
@@ -489,8 +498,8 @@ body {
       right: 0;
       top: 50%;
       transform: translate(0, -50%);
-      color: #82c831;
-      font-family: Rubik;
+      color: @color_link;
+
       font-size: 15px;
       font-weight: 400;
       line-height: 21.09px;
@@ -533,8 +542,8 @@ body {
           background-color: #e9f6d7;
         }
         &__link {
-          color: #1d2f3c;
-          font-family: Rubik;
+          color: @color_text;
+
           align-items: center;
           display: flex;
           padding: 11px 0;
@@ -552,9 +561,9 @@ body {
         align-items: center;
         padding: 11px 9px;
         &__link {
-          color: #1d2f3c;
+          color: @color_text;
           line-height: 10px;
-          font-family: Rubik;
+
           font-size: 24px;
         }
       }
@@ -584,16 +593,20 @@ body {
     }
     &__input {
       border: none;
-      color: #1d2f3c;
-      font-family: Rubik;
+      color: @color_text;
+
       font-size: 15px;
       font-weight: 400;
       line-height: 21.09px;
       height: 21px;
-      font-family: Rubik;
+
       font-size: 15px;
       font-weight: 400;
       line-height: 21.09px;
+      caret-color: @color_link;
+      -webkit-caret-color: @color_link;
+      -ms-caret-color: @color_link;
+      -o-caret-color: @color_link;
       &::placeholder {
         color: transparent;
         transition: all @anim;
@@ -606,11 +619,11 @@ body {
     width: ~"calc(100% - 50px)";
     position: absolute;
     top: 100%;
-    left: 0;
+    left: 10px;
     opacity: 0;
     box-shadow: 0 4px 15px rgba(120, 160, 190, 0.3);
     background-color: #ffffff;
-    transition: @anim;
+    transition: opacity 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
     &.active {
       display: flex;
       &.open {
@@ -627,7 +640,7 @@ body {
     }
     &__item {
       .hover_bottom_border;
-      font-family: Rubik;
+
       font-size: 18px;
       font-weight: 400;
       line-height: 26.37px;
@@ -647,7 +660,7 @@ body {
         line-height: 21.09px;
       }
       &__link {
-        color: #82c831;
+        color: @color_link;
       }
     }
     &__close {
@@ -770,8 +783,8 @@ body {
     &__title {
       padding-top: 60px;
       text-align: center;
-      color: #1d2f3c;
-      font-family: Rubik;
+      color: @color_text;
+
       font-size: 12px;
       font-weight: 500;
       letter-spacing: 1.2px;
@@ -801,8 +814,8 @@ body {
         background-color: #e9f6d7;
       }
       &__link {
-        color: #1d2f3c;
-        font-family: Rubik;
+        color: @color_text;
+
         align-items: center;
         display: flex;
         padding: 11px 0;
@@ -820,11 +833,11 @@ body {
     bottom: 15px;
     left: 0;
     width: 100%;
-    justify-content: center;
+    justify-content: space-around;
     display: flex;
     &__link {
       color: #7a858d;
-      font-family: Rubik;
+
       font-size: 15px;
       font-weight: 400;
       line-height: 21.09px;
@@ -838,6 +851,7 @@ body {
     &.active {
       .burger__search__input {
         width: 100%;
+        opacity: 1;
         &::placeholder {
           color: #d7dbde;
         }
@@ -851,7 +865,7 @@ body {
     &__button {
       background-color: transparent;
       border: none;
-      width: 25px;
+      min-width: 25px;
       height: 24px;
       background-image: url(../images/search.png);
       background-repeat: no-repeat;
@@ -865,13 +879,14 @@ body {
       top: 0;
       width: 0;
       border: none;
-      color: #1d2f3c;
-      font-family: Rubik;
+      color: @color_text;
+
       font-size: 15px;
       font-weight: 400;
       line-height: 21.09px;
       height: 21px;
-      font-family: Rubik;
+
+      opacity: 0;
       font-size: 15px;
       font-weight: 400;
       line-height: 21.09px;
@@ -900,8 +915,8 @@ body {
       }
     }
     &__title {
-      color: #1d2f3c;
-      font-family: Rubik;
+      color: @color_text;
+
       font-size: 21px;
       font-weight: 700;
       letter-spacing: 1.2px;
@@ -922,7 +937,7 @@ body {
     }
     &__item {
       .hover_bottom_border;
-      font-family: Rubik;
+
       font-size: 18px;
       font-weight: 400;
       line-height: 26.37px;
@@ -942,7 +957,7 @@ body {
         line-height: 21.09px;
       }
       &__link {
-        color: #82c831;
+        color: @color_link;
       }
     }
     &__close {
@@ -990,7 +1005,7 @@ body {
       z-index: -1;
       width: 100vw;
       height: 100vh;
-      background-color: #1d2f3c;
+      background-color: @color_text;
       opacity: 0.75;
     }
   }
@@ -1032,8 +1047,8 @@ body {
     }
   }
   &__title {
-    color: #1d2f3c;
-    font-family: Rubik;
+    color: @color_text;
+
     font-size: 21px;
     font-weight: 700;
     line-height: 28.3px;
@@ -1048,9 +1063,9 @@ body {
     color: inherit;
   }
   &__text {
-    color: #1d2f3c;
+    color: @color_text;
     text-align: center;
-    font-family: Rubik;
+
     font-size: 15px;
     font-weight: 400;
     line-height: 21.09px;
@@ -1061,9 +1076,16 @@ body {
   }
   &__form {
     display: block;
+    .error__text {
+      color: red;
+
+      font-size: 12px;
+      position: relative;
+      top: -6px;
+    }
   }
   &_form {
-    &_input{
+    &_input {
       width: ~"calc(100% - 24px)";
       margin-bottom: 15px;
     }
@@ -1104,8 +1126,8 @@ body {
     margin-top: 40px;
     margin-bottom: 40px;
     &__title {
-      color: #1d2f3c;
-      font-family: Rubik;
+      color: @color_text;
+
       font-size: 21px;
       font-weight: 700;
       line-height: 28.3px;
@@ -1119,7 +1141,7 @@ body {
     }
     &__item {
       transition: @anim;
-      font-family: Rubik;
+
       font-size: 18px;
       font-weight: 400;
       line-height: 26.37px;
@@ -1128,14 +1150,14 @@ body {
       display: inline;
       box-shadow: inset 0px 1px transparent, inset 0px -1px transparent;
       &:hover {
-        color: #82c831;
-        box-shadow: inset 0px 1px transparent, inset 0px -1px #82c831;
+        color: @color_link;
+        box-shadow: inset 0px 1px transparent, inset 0px -1px @color_link;
       }
       &::before {
         content: none !important;
       }
       &__link {
-        color: #82c831;
+        color: @color_link;
       }
     }
     &_item {
@@ -1165,8 +1187,8 @@ body {
         padding-right: 40px;
         box-shadow: inset 1px 4px 4px rgba(120, 160, 190, 0.2);
         background-color: #f6f9fb;
-        color: #1d2f3c;
-        font-family: Rubik;
+        color: @color_text;
+
         font-size: 14px;
         font-weight: 400;
         letter-spacing: 0.28px;
@@ -1191,8 +1213,8 @@ body {
   }
   .about {
     &__title {
-      color: #1d2f3c;
-      font-family: Rubik;
+      color: @color_text;
+
       font-size: 48px;
       font-weight: 700;
       margin-bottom: 50px;
@@ -1220,8 +1242,8 @@ body {
       position: relative;
       z-index: 1;
       max-width: 697px;
-      color: #1d2f3c;
-      font-family: Rubik;
+      color: @color_text;
+
       font-size: 18px;
       font-weight: 400;
       line-height: 26.37px;
@@ -1253,16 +1275,16 @@ body {
       top: 0;
     }
     &__title {
-      color: #1d2f3c;
-      font-family: Rubik;
+      color: @color_text;
+
       font-size: 26px;
       font-weight: 700;
       line-height: 35.43px;
       margin-bottom: 10px;
     }
     &__text {
-      color: #1d2f3c;
-      font-family: Rubik;
+      color: @color_text;
+
       font-size: 15px;
       font-weight: 400;
       line-height: 21.09px;
@@ -1273,6 +1295,7 @@ body {
       align-items: center;
       margin-right: 80px;
       max-width: 560px;
+      position: relative;
       &__button {
         width: 52px;
         height: 48px;
@@ -1285,17 +1308,23 @@ body {
         background-position: 11px;
         cursor: pointer;
       }
+      .error__text {
+        position: absolute;
+        left: 0;
+        bottom: -18px;
+        color: red;
+
+        font-size: 12px;
+      }
     }
-    &_form{
-      &_input{
+    &_form {
+      &_input {
         width: ~"calc(100% - 52px)";
       }
-      &_button{
-
+      &_button {
       }
     }
     &__succes {
-      font-family: Rubik;
       font-style: normal;
       font-weight: normal;
       font-size: 15px;
@@ -1344,16 +1373,16 @@ body {
       background-size: contain;
     }
     &__title {
-      color: #1d2f3c;
-      font-family: Rubik;
+      color: @color_text;
+
       font-size: 21px;
       font-weight: 700;
       line-height: 28.3px;
       margin-bottom: 8px;
     }
     &__text {
-      color: #1d2f3c;
-      font-family: Rubik;
+      color: @color_text;
+
       font-size: 15px;
       font-weight: 400;
       line-height: 21.09px;
@@ -1364,13 +1393,12 @@ body {
       width: 100%;
       align-items: center;
     }
-    &_form{
-      &_input{
+    &_form {
+      &_input {
         width: ~"calc(100% - 62px)";
       }
     }
     &__succes {
-      font-family: Rubik;
       font-style: normal;
       font-weight: normal;
       font-size: 15px;
@@ -1426,8 +1454,8 @@ body {
       top: 0;
     }
     &__title {
-      color: #1d2f3c;
-      font-family: Rubik;
+      color: @color_text;
+
       font-size: 21px;
       font-weight: 700;
       line-height: 28.3px;
@@ -1463,23 +1491,23 @@ body {
         }
       }
       &__name {
-        color: #1d2f3c;
-        font-family: Rubik;
+        color: @color_text;
+
         font-size: 15px;
         font-weight: 500;
         line-height: 20.21px;
       }
       &__time {
         color: #7a858d;
-        font-family: Rubik;
+
         font-size: 13px;
         font-weight: 400;
         letter-spacing: 0.26px;
         line-height: 16.76px;
       }
       &__comment {
-        color: #1d2f3c;
-        font-family: Rubik;
+        color: @color_text;
+
         font-size: 15px;
         font-weight: 400;
         line-height: 21.09px;
@@ -1487,8 +1515,8 @@ body {
       }
       &__link {
         text-decoration: none;
-        color: #82c831;
-        font-family: Rubik;
+        color: @color_link;
+
         font-size: 13px;
         font-weight: 400;
         letter-spacing: 0.26px;
@@ -1500,8 +1528,8 @@ body {
     margin-bottom: 30px;
     margin-right: 100px;
     &__title {
-      color: #1d2f3c;
-      font-family: Rubik;
+      color: @color_text;
+
       font-size: 26px;
       font-weight: 700;
       line-height: 35.43px;
@@ -1520,7 +1548,7 @@ body {
       }
     }
     &_form {
-      &_input{
+      &_input {
         height: auto;
         width: ~"calc(100% - 24px)";
         padding: 14px 12px;
@@ -1602,7 +1630,6 @@ body {
           align-items: center;
           cursor: pointer;
           &__summ {
-            font-family: Rubik;
             font-size: 15px;
             font-weight: 500;
             line-height: 20.21px;
@@ -1612,12 +1639,12 @@ body {
               color: #d81615;
             }
             &.plus {
-              color: #82c831;
+              color: @color_link;
             }
           }
           &__answer {
-            color: #82c831;
-            font-family: Rubik;
+            color: @color_link;
+
             font-size: 13px;
             font-weight: 500;
             letter-spacing: 1.04px;
@@ -1656,8 +1683,8 @@ body {
         }
       }
       &__name {
-        color: #1d2f3c;
-        font-family: Rubik;
+        color: @color_text;
+
         font-size: 18px;
         font-weight: 500;
         line-height: 24.26px;
@@ -1665,23 +1692,23 @@ body {
       }
       &__time {
         color: #7a858d;
-        font-family: Rubik;
+
         font-size: 14px;
         font-weight: 400;
         letter-spacing: 0.28px;
         line-height: 18.87px;
       }
       &__text {
-        color: #1d2f3c;
-        font-family: Rubik;
+        color: @color_text;
+
         font-size: 15px;
         font-weight: 400;
         line-height: 21.09px;
       }
     }
     &__show-all {
-      color: #82c831;
-      font-family: Rubik;
+      color: @color_link;
+
       font-size: 13px;
       font-weight: 500;
       display: block;
@@ -1704,8 +1731,8 @@ body {
       transform: translate(-50%, 0);
     }
     &__type {
-      color: #82c831;
-      font-family: Rubik;
+      color: @color_link;
+
       font-size: 40px;
       font-weight: 700;
       letter-spacing: 0.8px;
@@ -1714,14 +1741,14 @@ body {
     &__img {
       width: 48px;
       height: auto;
-      font-family: Rubik;
+
       font-size: 48px;
       font-weight: 700;
       margin-bottom: 30px;
     }
     &__title {
-      color: #1d2f3c;
-      font-family: Rubik;
+      color: @color_text;
+
       font-size: 40px;
       font-weight: 700;
       letter-spacing: 0.8px;
@@ -1731,7 +1758,7 @@ body {
     &__text {
       max-width: 558px;
       color: #7a858d;
-      font-family: Rubik;
+
       font-size: 18px;
       font-weight: 400;
       line-height: 26.37px;
@@ -1740,7 +1767,7 @@ body {
     }
     &_button {
       color: rgba(255, 255, 255, 0.98);
-      font-family: Rubik;
+
       font-size: 13px;
       font-weight: 500;
       letter-spacing: 1.04px;
@@ -1757,7 +1784,7 @@ body {
         display: flex;
         align-items: center;
         color: #7a858d;
-        font-family: Rubik;
+
         font-size: 14px;
         font-weight: 400;
         letter-spacing: 0.28px;
@@ -1807,8 +1834,8 @@ body {
         &__link {
           display: flex;
           align-items: center;
-          color: #82c831;
-          font-family: Rubik;
+          color: @color_link;
+
           font-size: 12px;
           font-weight: 500;
           letter-spacing: 1.2px;
@@ -1837,8 +1864,54 @@ body {
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        transition: @anim;
         &:last-child {
           border-bottom: 0;
+          position: relative;
+        }
+        &:hover {
+          background: #f6f9fb;
+        }
+        .info_copied {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          transform: translate(0, 0);
+          background-color: #fff;
+          box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.2);
+          border-radius: 10px;
+          width: 186px;
+          height: 38px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          display: flex;
+          &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            left: 15px;
+            width: 14px;
+            height: 14px;
+            top: 0;
+            transform: translate(0, -50%) rotate(45deg);
+            background-color: #fff;
+            border: 1px solid #e5e5e5;
+            z-index: 3;
+            border-bottom: 0;
+            border-right: 0;
+          }
+          img {
+            margin-right: 5px;
+          }
+          span {
+            font-style: normal;
+            font-weight: normal;
+            font-size: 13px;
+            line-height: 18px;
+            letter-spacing: 0.02em;
+            color: @color_text;
+          }
         }
         &__block-img {
           max-width: 24px;
@@ -1851,7 +1924,7 @@ body {
         &__count {
           opacity: 0.8;
           color: #7a858d;
-          font-family: Rubik;
+
           font-size: 12px;
           font-weight: 500;
           letter-spacing: 1.2px;
@@ -1898,7 +1971,7 @@ body {
       }
       &__text {
         color: #7a858d;
-        font-family: Rubik;
+
         font-size: 13px;
         font-weight: 400;
         letter-spacing: 0.26px;
@@ -1941,7 +2014,7 @@ body {
       background-color: #ffffff;
       &__title {
         color: #7a858d;
-        font-family: Rubik;
+
         font-size: 12px;
         font-weight: 500;
         letter-spacing: 0.72px;
@@ -1974,8 +2047,8 @@ body {
           max-height: 100%;
         }
         &__title {
-          color: #1d2f3c;
-          font-family: Rubik;
+          color: @color_text;
+
           font-size: 18px;
           font-weight: 500;
           line-height: 24.26px;
@@ -1985,7 +2058,7 @@ body {
           display: flex;
           align-items: center;
           color: #7a858d;
-          font-family: Rubik;
+
           font-size: 14px;
           font-weight: 400;
           letter-spacing: 0.28px;
@@ -2037,8 +2110,8 @@ body {
         overflow: hidden;
       }
       &__name {
-        color: #1d2f3c;
-        font-family: Rubik;
+        color: @color_text;
+
         font-size: 13px;
         font-weight: 400;
         letter-spacing: 0.26px;
@@ -2047,7 +2120,7 @@ body {
       }
       &__inf {
         color: #7a858d;
-        font-family: Rubik;
+
         font-size: 13px;
         font-weight: 400;
         letter-spacing: 0.26px;
@@ -2062,8 +2135,8 @@ body {
         overflow: hidden;
       }
       &__text {
-        color: #1d2f3c;
-        font-family: Rubik;
+        color: @color_text;
+
         font-size: 14px;
         font-weight: 400;
         letter-spacing: 0.28px;
@@ -2078,8 +2151,8 @@ body {
         margin-bottom: 25px;
       }
       &__title {
-        color: #1d2f3c;
-        font-family: Rubik;
+        color: @color_text;
+
         font-size: 15px;
         font-weight: 500;
         line-height: 20.21px;
@@ -2092,7 +2165,7 @@ body {
       &__item {
         margin-right: 36px;
         &__link {
-          display: flex;
+          display: flex !important;
           align-items: center;
         }
         &__icon {
@@ -2109,16 +2182,16 @@ body {
       position: relative;
       overflow: hidden;
       &__title {
-        color: #1d2f3c;
-        font-family: Rubik;
+        color: @color_text;
+
         font-size: 26px;
         font-weight: 700;
         line-height: 35.43px;
       }
       &__text {
         margin-top: 16px;
-        color: #1d2f3c;
-        font-family: Rubik;
+        color: @color_text;
+
         font-size: 18px;
         font-weight: 400;
         line-height: 26.37px;
@@ -2146,7 +2219,7 @@ body {
     }
     &__checkbox {
       &__button {
-        color: #82c831;
+        color: @color_link;
         height: 48px;
         border-radius: 24px;
         margin-top: 30px;
@@ -2154,7 +2227,7 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
-        font-family: Rubik;
+
         font-size: 13px;
         font-weight: 500;
         letter-spacing: 1.04px;
@@ -2166,13 +2239,13 @@ body {
         cursor: pointer;
       }
     }
-    &_checkbox{
-      &_item{
+    &_checkbox {
+      &_item {
         padding-left: 80px;
         margin-bottom: 30px;
         position: relative;
       }
-      &_label{
+      &_label {
         font-size: 18px;
         line-height: 26.37px;
         display: block;
@@ -2181,7 +2254,7 @@ body {
           height: 48px;
           min-width: 48px;
           border-radius: 4px;
-          border: 1px solid #82c831;
+          border: 1px solid @color_link;
           position: absolute;
           left: 0;
           top: 10px;
@@ -2203,8 +2276,8 @@ body {
     margin-bottom: 30px;
     position: relative;
     &_title {
-      color: #1d2f3c;
-      font-family: Rubik;
+      color: @color_text;
+
       font-size: 21px;
       font-weight: 700;
       line-height: 28.3px;
@@ -2222,11 +2295,11 @@ body {
         margin-left: 8px;
         &_item {
           margin-right: 10px;
-          font-family: Rubik;
+
           font-size: 21px;
           font-weight: 700;
           line-height: 28.3px;
-          color: #82c831;
+          color: @color_link;
         }
       }
     }
@@ -2243,7 +2316,7 @@ body {
         .list-items .list_big-item;
         &:hover {
           .lenta_body_b-item_types_type a {
-            color: #82c831;
+            color: @color_link;
           }
         }
       }
@@ -2251,7 +2324,7 @@ body {
         .list-items .list_normal-item;
         &:hover {
           .lenta_body_item_title {
-            color: #82c831;
+            color: @color_link;
           }
         }
       }
@@ -2263,7 +2336,7 @@ body {
         }
         &:hover {
           .lenta_body_s-item_title {
-            color: #82c831;
+            color: @color_link;
           }
         }
       }
@@ -2271,7 +2344,7 @@ body {
         .list-items .list_small-item;
         &:hover {
           .lenta_body_sr-item_title {
-            color: #82c831;
+            color: @color_link;
           }
         }
       }
@@ -2283,8 +2356,8 @@ body {
       .list-items .list_between-item;
     }
     &_goto {
-      color: #82c831;
-      font-family: Rubik;
+      color: @color_link;
+
       font-size: 13px;
       font-weight: 500;
       letter-spacing: 1.04px;
@@ -2313,9 +2386,9 @@ body {
       width: 244px;
       height: 48px;
       border-radius: 24px;
-      color: #82c831;
+      color: @color_link;
       background-color: #f3faeb;
-      font-family: Rubik;
+
       font-size: 13px;
       font-weight: 500;
       letter-spacing: 1.04px;
@@ -2352,7 +2425,6 @@ body {
       padding: 0;
     }
     &__item {
-      font-family: Rubik;
       font-size: 15px;
       font-weight: 400;
       line-height: 21.09px;
@@ -2363,14 +2435,14 @@ body {
         color: #7a858d;
       }
       &_colored {
-        color: #82c831;
+        color: @color_link;
       }
     }
   }
   &__menu {
     &__title {
-      color: #1d2f3c;
-      font-family: Rubik;
+      color: @color_text;
+
       font-size: 12px;
       font-weight: 500;
       letter-spacing: 0.72px;
@@ -2386,16 +2458,16 @@ body {
     &__item {
       margin-bottom: 12px;
       &__link {
-        color: #1d2f3c;
-        font-family: Rubik;
+        color: @color_text;
+
         font-size: 15px;
         font-weight: 400;
         line-height: 21.09px;
       }
     }
     &__text {
-      color: #1d2f3c;
-      font-family: Rubik;
+      color: @color_text;
+
       font-size: 15px;
       font-weight: 400;
       line-height: 21.09px;
@@ -2407,8 +2479,8 @@ body {
     display: flex;
     align-items: center;
     margin-bottom: 25px;
+    position: relative;
     &__succes {
-      font-family: Rubik;
       font-style: normal;
       font-weight: normal;
       font-size: 15px;
@@ -2436,13 +2508,20 @@ body {
         background-position: center;
       }
     }
+    .error__text {
+      position: absolute;
+      left: 0;
+      bottom: -18px;
+      color: red;
+
+      font-size: 12px;
+    }
   }
-  &_form{
-    &_input{
+  &_form {
+    &_input {
       width: 221px;
     }
-    &_button{
-
+    &_button {
     }
   }
   &__social {
@@ -2464,7 +2543,8 @@ body {
     padding: 0 27px;
     box-shadow: -4px 4px 15px rgba(120, 160, 190, 0.3);
     background-color: #ffffff;
-    position: absolute;
+    position: fixed;
+    overflow: scroll;
     right: 0;
     top: 0;
     z-index: 4;
@@ -2517,8 +2597,8 @@ body {
     }
   }
   &__title {
-    color: #1d2f3c;
-    font-family: Rubik;
+    color: @color_text;
+
     font-size: 21px;
     font-weight: 700;
     line-height: 28.3px;
@@ -2542,23 +2622,23 @@ body {
       margin-bottom: 10px;
     }
     &__inf {
-      color: #1d2f3c;
-      font-family: Rubik;
+      color: @color_text;
+
       font-size: 15px;
       font-weight: 500;
       line-height: 20.21px;
     }
     &__time {
       color: #7a858d;
-      font-family: Rubik;
+
       font-size: 14px;
       font-weight: 400;
       letter-spacing: 0.28px;
       line-height: 18.87px;
     }
     &__name {
-      color: #1d2f3c;
-      font-family: Rubik;
+      color: @color_text;
+
       font-size: 15px;
       font-weight: 500;
       line-height: 20.21px;
@@ -2575,8 +2655,8 @@ body {
       max-height: 100%;
     }
     &__comment {
-      color: #1d2f3c;
-      font-family: Rubik;
+      color: @color_text;
+
       font-size: 15px;
       font-weight: 400;
       line-height: 21.09px;
@@ -2584,8 +2664,8 @@ body {
     }
     &__link {
       text-decoration: none;
-      color: #82c831;
-      font-family: Rubik;
+      color: @color_link;
+
       font-size: 13px;
       font-weight: 400;
       letter-spacing: 0.26px;
@@ -2595,8 +2675,8 @@ body {
 }
 //--|ПРИМЕСИ начало
 //--|-|цвета подложек начало
-.bg{
-  &{
+.bg {
+  & {
     @opacity: 1;
     &_blue {
       @color: rgba(241, 245, 248, 1);
@@ -2750,7 +2830,7 @@ body {
         }
         a {
           color: #7a858d;
-          font-family: Rubik;
+
           font-size: 12px;
           font-weight: 500;
           letter-spacing: 1.2px;
@@ -2761,16 +2841,16 @@ body {
       }
     }
     &_title {
-      color: #1d2f3c;
-      font-family: Rubik;
+      color: @color_text;
+
       font-size: 36px;
       font-weight: 700;
       letter-spacing: 0.72px;
       margin: 5px 0;
     }
     &_text {
-      color: #1d2f3c;
-      font-family: Rubik;
+      color: @color_text;
+
       margin: 15px 0;
       font-size: 15px;
       font-weight: 400;
@@ -2809,8 +2889,8 @@ body {
           content: none;
         }
         a {
-          color: #82c831;
-          font-family: Rubik;
+          color: @color_link;
+
           font-size: 12px;
           font-weight: 500;
           letter-spacing: 1.2px;
@@ -2820,16 +2900,16 @@ body {
       }
     }
     &_title {
-      color: #1d2f3c;
-      font-family: Rubik;
+      color: @color_text;
+
       font-size: 21px;
       font-weight: 700;
       line-height: 28.3px;
       transition: @anim;
     }
     &_text {
-      color: #1d2f3c;
-      font-family: Rubik;
+      color: @color_text;
+
       font-size: 15px;
       font-weight: 400;
       line-height: 21.09px;
@@ -2872,8 +2952,8 @@ body {
           content: none;
         }
         a {
-          color: #82c831;
-          font-family: Rubik;
+          color: @color_link;
+
           font-size: 11px;
           font-weight: 500;
           letter-spacing: 0.66px;
@@ -2883,9 +2963,9 @@ body {
       }
     }
     &_title {
-      color: #1d2f3c;
+      color: @color_text;
       transition: @anim;
-      font-family: Rubik;
+
       font-size: 15px;
       font-weight: 500;
       line-height: 20.21px;
@@ -2929,8 +3009,8 @@ body {
       }
     }
     &_title {
-      color: #1d2f3c;
-      font-family: Rubik;
+      color: @color_text;
+
       transition: @anim;
       font-size: 18px;
       font-weight: 500;
@@ -2997,7 +3077,7 @@ body {
         }
         a {
           color: #7a858d;
-          font-family: Rubik;
+
           font-size: 12px;
           font-weight: 500;
           letter-spacing: 1.2px;
@@ -3007,16 +3087,16 @@ body {
       }
     }
     &_title {
-      color: #1d2f3c;
-      font-family: Rubik;
+      color: @color_text;
+
       font-size: 36px;
       font-weight: 700;
       letter-spacing: 0.72px;
       margin: 5px 0;
     }
     &_text {
-      color: #1d2f3c;
-      font-family: Rubik;
+      color: @color_text;
+
       margin: 21px 0;
       font-size: 15px;
       font-weight: 400;
@@ -3048,8 +3128,8 @@ body {
       }
     }
     &_title {
-      color: #1d2f3c;
-      font-family: Rubik;
+      color: @color_text;
+
       font-size: 21px;
       font-weight: 700;
       line-height: 28.3px;
@@ -3059,11 +3139,11 @@ body {
       z-index: 1;
     }
     &_text {
-      color: #1d2f3c;
+      color: @color_text;
       position: relative;
       z-index: 1;
       max-width: 240px;
-      font-family: Rubik;
+
       font-size: 15px;
       font-weight: 400;
       line-height: 21.09px;
@@ -3080,8 +3160,8 @@ body {
   box-shadow: inset 0px 1px transparent, inset 0px -1px transparent;
   transition: @anim;
   &:hover {
-    color: #82c831;
-    box-shadow: inset 0px 1px transparent, inset 0px -1px #82c831;
+    color: @color_link;
+    box-shadow: inset 0px 1px transparent, inset 0px -1px @color_link;
   }
 }
 //--|ПРИМЕСИ конец
@@ -3093,8 +3173,8 @@ body {
   }
   main {
     a {
-      color: #82c831;
-      font-family: Rubik;
+      color: @color_link;
+
       font-size: 18px;
       font-weight: 400;
 
@@ -3144,8 +3224,8 @@ body {
           padding: 8px;
           border: 1px solid #f0f0f0;
           background-color: #ffffff;
-          color: #1d2f3c;
-          font-family: Rubik;
+          color: @color_text;
+
           font-size: 13px;
           font-weight: 400;
           letter-spacing: 0.26px;
@@ -3185,16 +3265,16 @@ body {
       }
     }
     h1 {
-      color: #1d2f3c;
-      font-family: Rubik;
+      color: @color_text;
+
       font-size: 48px;
       font-weight: 700;
       margin-top: 48px;
       margin-bottom: 40px;
     }
     h2 {
-      color: #1d2f3c;
-      font-family: Rubik;
+      color: @color_text;
+
       font-size: 36px;
       font-weight: 700;
       letter-spacing: 0.72px;
@@ -3202,8 +3282,8 @@ body {
       margin-bottom: 24px;
     }
     h3 {
-      color: #1d2f3c;
-      font-family: Rubik;
+      color: @color_text;
+
       font-size: 26px;
       font-weight: 700;
       line-height: 35.43px;
@@ -3211,8 +3291,8 @@ body {
       margin-top: 40px;
     }
     h4 {
-      color: #1d2f3c;
-      font-family: Rubik;
+      color: @color_text;
+
       font-size: 21px;
       font-weight: 700;
       line-height: 28.3px;
@@ -3220,22 +3300,22 @@ body {
       margin-top: 40px;
     }
     p {
-      color: #1d2f3c;
-      font-family: Rubik;
+      color: @color_text;
+
       font-size: 18px;
       font-weight: 400;
       line-height: 26.37px;
     }
     small {
-      color: #1d2f3c;
-      font-family: Rubik;
+      color: @color_text;
+
       font-size: 15px;
       font-weight: 400;
       line-height: 21.09px;
     }
     q {
-      color: #1d2f3c;
-      font-family: Rubik;
+      color: @color_text;
+
       font-size: 26px;
       font-weight: 400;
       line-height: 35.43px;
@@ -3259,7 +3339,7 @@ body {
       cite {
         display: block;
         color: #7a858d;
-        font-family: Rubik;
+
         font-size: 12px;
         font-weight: 500;
         letter-spacing: 0.72px;
@@ -3270,8 +3350,8 @@ body {
       }
     }
     .focus {
-      color: #1d2f3c;
-      font-family: Rubik;
+      color: @color_text;
+
       font-size: 18px;
       font-weight: 400;
       line-height: 26.37px;
@@ -3302,7 +3382,7 @@ body {
       list-style: none;
       li {
         color: #000000;
-        font-family: Rubik;
+
         font-size: 18px;
         font-weight: 400;
         line-height: 26.37px;
@@ -3319,7 +3399,7 @@ body {
           height: 2px;
           width: 16px;
           margin-bottom: 15px;
-          background-color: #82c831;
+          background-color: @color_link;
         }
         ul {
           margin-top: 15px;
@@ -3331,7 +3411,7 @@ body {
               width: 8px;
               height: 8px;
               border-radius: 50%;
-              background-color: #82c831;
+              background-color: @color_link;
             }
           }
         }
@@ -3347,7 +3427,7 @@ body {
       li {
         color: #000000;
         counter-increment: li;
-        font-family: Rubik;
+
         font-size: 18px;
         font-weight: 400;
         position: relative;
@@ -3355,8 +3435,8 @@ body {
         margin-bottom: 12px;
         &:before {
           content: counters(li, ".");
-          color: #82c831;
-          font-family: Rubik;
+          color: @color_link;
+
           position: absolute;
           top: 4px;
           right: 100%;
@@ -3399,15 +3479,15 @@ body {
           }
           &:hover {
             .doc_name {
-              color: #82c831;
-              box-shadow: inset 0px 1px transparent, inset 0px -1px #82c831;
+              color: @color_link;
+              box-shadow: inset 0px 1px transparent, inset 0px -1px @color_link;
             }
           }
         }
       }
       &__name {
-        color: #1d2f3c;
-        font-family: Rubik;
+        color: @color_text;
+
         font-size: 15px;
         font-weight: 400;
         line-height: 21.09px;
@@ -3418,13 +3498,13 @@ body {
         margin-bottom: 7px;
         transition: @anim;
         &:hover {
-          color: #82c831;
-          box-shadow: inset 0px 1px transparent, inset 0px -1px #82c831;
+          color: @color_link;
+          box-shadow: inset 0px 1px transparent, inset 0px -1px @color_link;
         }
       }
       &__inf {
         color: #7a858d;
-        font-family: Rubik;
+
         font-size: 13px;
         font-weight: 400;
         letter-spacing: 0.26px;

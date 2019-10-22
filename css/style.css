@@ -36,7 +36,6 @@ body.overflow {
   align-items: center;
   justify-content: center;
   color: rgba(255, 255, 255, 0.98);
-  font-family: Rubik;
   font-size: 13px;
   font-weight: 500;
   letter-spacing: 1.04px;
@@ -147,11 +146,14 @@ body.overflow {
   border: 1px solid #d7dbde;
   background-color: #ffffff;
   color: #1d2f3c;
-  font-family: Rubik;
   font-size: 14px;
   font-weight: 400;
   letter-spacing: 0.28px;
-  line-height: 18.87px;
+  line-height: 38.87px;
+  caret-color: #82c831;
+  -webkit-caret-color: #82c831;
+  -ms-caret-color: #82c831;
+  -o-caret-color: #82c831;
 }
 .inpt__basic::placeholder {
   color: #6a747b;
@@ -195,7 +197,6 @@ body.overflow {
 .inpt__label {
   display: flex;
   color: #1d2f3c;
-  font-family: Rubik;
   cursor: pointer;
   font-size: 14px;
   font-weight: 400;
@@ -220,7 +221,6 @@ body.overflow {
 }
 .inpt__inf {
   color: #6a747b;
-  font-family: Rubik;
   font-size: 13px;
   font-weight: 400;
   letter-spacing: 0.26px;
@@ -229,7 +229,6 @@ body.overflow {
 }
 .inpt__error {
   color: #d81615;
-  font-family: Rubik;
   font-size: 13px;
   font-weight: 400;
   letter-spacing: 0.26px;
@@ -244,7 +243,6 @@ body.overflow {
   display: flex;
   align-items: center;
   color: #7a858d;
-  font-family: Rubik;
   font-size: 14px;
   font-weight: 400;
   letter-spacing: 0.28px;
@@ -290,6 +288,9 @@ body.overflow {
   position: relative;
   overflow: hidden;
 }
+.wrapper * {
+  font-family: Rubik;
+}
 .wrapper_main {
   width: calc(100vw - 350px);
   min-height: calc(100vh - 138px);
@@ -304,6 +305,7 @@ body.overflow {
   max-width: 1004px;
   margin: auto;
   margin-top: 30px;
+  display: block;
   position: relative;
   z-index: 1;
 }
@@ -313,7 +315,6 @@ body.overflow {
 }
 .wrapper_main main .lenta_title {
   color: #1d2f3c;
-  font-family: Rubik;
   font-size: 21px;
   font-weight: 700;
   line-height: 28.3px;
@@ -333,7 +334,6 @@ body.overflow {
 }
 .wrapper_main main .lenta_title_tag-list_item {
   margin-right: 10px;
-  font-family: Rubik;
   font-size: 21px;
   font-weight: 700;
   line-height: 28.3px;
@@ -345,9 +345,11 @@ body.overflow {
   align-items: flex-start;
   flex-wrap: wrap;
   max-height: 620px;
+  height: 620px;
 }
 .wrapper_main main .lenta_body.row {
   flex-direction: row;
+  height: auto;
 }
 .wrapper_main main .lenta_body_b-item {
   width: calc((100% - 60px)/3*2 - 12px);
@@ -405,7 +407,6 @@ body.overflow {
 }
 .wrapper_main main .lenta_body_b-item_types_type a {
   color: #7a858d;
-  font-family: Rubik;
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 1.2px;
@@ -415,7 +416,6 @@ body.overflow {
 }
 .wrapper_main main .lenta_body_b-item_title {
   color: #1d2f3c;
-  font-family: Rubik;
   font-size: 36px;
   font-weight: 700;
   letter-spacing: 0.72px;
@@ -423,7 +423,6 @@ body.overflow {
 }
 .wrapper_main main .lenta_body_b-item_text {
   color: #1d2f3c;
-  font-family: Rubik;
   margin: 15px 0;
   font-size: 15px;
   font-weight: 400;
@@ -468,7 +467,6 @@ body.overflow {
 }
 .wrapper_main main .lenta_body_item_types_type a {
   color: #82c831;
-  font-family: Rubik;
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 1.2px;
@@ -477,7 +475,6 @@ body.overflow {
 }
 .wrapper_main main .lenta_body_item_title {
   color: #1d2f3c;
-  font-family: Rubik;
   font-size: 21px;
   font-weight: 700;
   line-height: 28.3px;
@@ -485,7 +482,6 @@ body.overflow {
 }
 .wrapper_main main .lenta_body_item_text {
   color: #1d2f3c;
-  font-family: Rubik;
   font-size: 15px;
   font-weight: 400;
   line-height: 21.09px;
@@ -534,7 +530,6 @@ body.overflow {
 }
 .wrapper_main main .lenta_body_s-item_title {
   color: #1d2f3c;
-  font-family: Rubik;
   transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   font-size: 18px;
   font-weight: 500;
@@ -590,7 +585,6 @@ body.overflow {
 }
 .wrapper_main main .lenta_body_sr-item_types_type a {
   color: #82c831;
-  font-family: Rubik;
   font-size: 11px;
   font-weight: 500;
   letter-spacing: 0.66px;
@@ -600,7 +594,6 @@ body.overflow {
 .wrapper_main main .lenta_body_sr-item_title {
   color: #1d2f3c;
   transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
-  font-family: Rubik;
   font-size: 15px;
   font-weight: 500;
   line-height: 20.21px;
@@ -635,7 +628,6 @@ body.overflow {
 }
 .wrapper_main main .lenta_body_spec-item_title {
   color: #1d2f3c;
-  font-family: Rubik;
   font-size: 21px;
   font-weight: 700;
   line-height: 28.3px;
@@ -649,7 +641,6 @@ body.overflow {
   position: relative;
   z-index: 1;
   max-width: 240px;
-  font-family: Rubik;
   font-size: 15px;
   font-weight: 400;
   line-height: 21.09px;
@@ -712,7 +703,6 @@ body.overflow {
 }
 .wrapper_main main .lenta_btw-item_types_type a {
   color: #7a858d;
-  font-family: Rubik;
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 1.2px;
@@ -721,7 +711,6 @@ body.overflow {
 }
 .wrapper_main main .lenta_btw-item_title {
   color: #1d2f3c;
-  font-family: Rubik;
   font-size: 36px;
   font-weight: 700;
   letter-spacing: 0.72px;
@@ -729,7 +718,6 @@ body.overflow {
 }
 .wrapper_main main .lenta_btw-item_text {
   color: #1d2f3c;
-  font-family: Rubik;
   margin: 21px 0;
   font-size: 15px;
   font-weight: 400;
@@ -737,7 +725,6 @@ body.overflow {
 }
 .wrapper_main main .lenta_goto {
   color: #82c831;
-  font-family: Rubik;
   font-size: 13px;
   font-weight: 500;
   letter-spacing: 1.04px;
@@ -768,7 +755,6 @@ body.overflow {
   border-radius: 24px;
   color: #82c831;
   background-color: #f3faeb;
-  font-family: Rubik;
   font-size: 13px;
   font-weight: 500;
   letter-spacing: 1.04px;
@@ -811,7 +797,6 @@ body.overflow {
 }
 .header__top__menu__item__link {
   color: #1d2f3c;
-  font-family: Rubik;
   font-size: 15px;
   font-weight: 400;
   line-height: 21.09px;
@@ -826,7 +811,6 @@ body.overflow {
   top: 50%;
   transform: translate(0, -50%);
   color: #82c831;
-  font-family: Rubik;
   font-size: 15px;
   font-weight: 400;
   line-height: 21.09px;
@@ -872,7 +856,6 @@ body.overflow {
 }
 .header__bottom__menu__item__link {
   color: #1d2f3c;
-  font-family: Rubik;
   align-items: center;
   display: flex;
   padding: 11px 0;
@@ -892,7 +875,6 @@ body.overflow {
 .header__bottom__menu__more__link {
   color: #1d2f3c;
   line-height: 10px;
-  font-family: Rubik;
   font-size: 24px;
 }
 .header__search {
@@ -918,10 +900,13 @@ body.overflow {
   border: none;
   color: #1d2f3c;
   height: 21px;
-  font-family: Rubik;
   font-size: 15px;
   font-weight: 400;
   line-height: 21.09px;
+  caret-color: #82c831;
+  -webkit-caret-color: #82c831;
+  -ms-caret-color: #82c831;
+  -o-caret-color: #82c831;
 }
 .header__search__input::placeholder {
   color: transparent;
@@ -933,11 +918,11 @@ body.overflow {
   width: calc(100% - 50px);
   position: absolute;
   top: 100%;
-  left: 0;
+  left: 10px;
   opacity: 0;
   box-shadow: 0 4px 15px rgba(120, 160, 190, 0.3);
   background-color: #ffffff;
-  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: opacity 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 .header__tags.active {
   display: flex;
@@ -957,7 +942,6 @@ body.overflow {
   display: inline;
   box-shadow: inset 0px 1px transparent, inset 0px -1px transparent;
   transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
-  font-family: Rubik;
   font-size: 18px;
   font-weight: 400;
   line-height: 26.37px;
@@ -1097,7 +1081,6 @@ body.overflow {
   padding-top: 60px;
   text-align: center;
   color: #1d2f3c;
-  font-family: Rubik;
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 1.2px;
@@ -1129,7 +1112,6 @@ body.overflow {
 }
 .burger__menu__item__link {
   color: #1d2f3c;
-  font-family: Rubik;
   align-items: center;
   display: flex;
   padding: 11px 0;
@@ -1145,12 +1127,11 @@ body.overflow {
   bottom: 15px;
   left: 0;
   width: 100%;
-  justify-content: center;
+  justify-content: space-around;
   display: flex;
 }
 .burger__bottom__link {
   color: #7a858d;
-  font-family: Rubik;
   font-size: 15px;
   font-weight: 400;
   line-height: 21.09px;
@@ -1163,6 +1144,7 @@ body.overflow {
 }
 .burger__search.active .burger__search__input {
   width: 100%;
+  opacity: 1;
 }
 .burger__search.active .burger__search__input::placeholder {
   color: #d7dbde;
@@ -1175,7 +1157,7 @@ body.overflow {
 .burger__search__button {
   background-color: transparent;
   border: none;
-  width: 25px;
+  min-width: 25px;
   height: 24px;
   background-image: url(../images/search.png);
   background-repeat: no-repeat;
@@ -1191,7 +1173,7 @@ body.overflow {
   border: none;
   color: #1d2f3c;
   height: 21px;
-  font-family: Rubik;
+  opacity: 0;
   font-size: 15px;
   font-weight: 400;
   line-height: 21.09px;
@@ -1221,7 +1203,6 @@ body.overflow {
 }
 .burger__tags__title {
   color: #1d2f3c;
-  font-family: Rubik;
   font-size: 21px;
   font-weight: 700;
   letter-spacing: 1.2px;
@@ -1244,7 +1225,6 @@ body.overflow {
   display: inline;
   box-shadow: inset 0px 1px transparent, inset 0px -1px transparent;
   transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
-  font-family: Rubik;
   font-size: 18px;
   font-weight: 400;
   line-height: 26.37px;
@@ -1356,7 +1336,6 @@ body.overflow {
 }
 .popup__title {
   color: #1d2f3c;
-  font-family: Rubik;
   font-size: 21px;
   font-weight: 700;
   line-height: 28.3px;
@@ -1373,7 +1352,6 @@ body.overflow {
 .popup__text {
   color: #1d2f3c;
   text-align: center;
-  font-family: Rubik;
   font-size: 15px;
   font-weight: 400;
   line-height: 21.09px;
@@ -1384,6 +1362,12 @@ body.overflow {
 }
 .popup__form {
   display: block;
+}
+.popup__form .error__text {
+  color: red;
+  font-size: 12px;
+  position: relative;
+  top: -6px;
 }
 .popup_form_input {
   width: calc(100% - 24px);
@@ -1427,7 +1411,6 @@ body.overflow {
 }
 .page .tags__title {
   color: #1d2f3c;
-  font-family: Rubik;
   font-size: 21px;
   font-weight: 700;
   line-height: 28.3px;
@@ -1441,7 +1424,6 @@ body.overflow {
 }
 .page .tags__item {
   transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
-  font-family: Rubik;
   font-size: 18px;
   font-weight: 400;
   line-height: 26.37px;
@@ -1487,7 +1469,6 @@ body.overflow {
   box-shadow: inset 1px 4px 4px rgba(120, 160, 190, 0.2);
   background-color: #f6f9fb;
   color: #1d2f3c;
-  font-family: Rubik;
   font-size: 14px;
   font-weight: 400;
   letter-spacing: 0.28px;
@@ -1510,7 +1491,6 @@ body.overflow {
 }
 .page .about__title {
   color: #1d2f3c;
-  font-family: Rubik;
   font-size: 48px;
   font-weight: 700;
   margin-bottom: 50px;
@@ -1537,7 +1517,6 @@ body.overflow {
   z-index: 1;
   max-width: 697px;
   color: #1d2f3c;
-  font-family: Rubik;
   font-size: 18px;
   font-weight: 400;
   line-height: 26.37px;
@@ -1570,7 +1549,6 @@ body.overflow {
 }
 .page .subscribe__title {
   color: #1d2f3c;
-  font-family: Rubik;
   font-size: 26px;
   font-weight: 700;
   line-height: 35.43px;
@@ -1578,7 +1556,6 @@ body.overflow {
 }
 .page .subscribe__text {
   color: #1d2f3c;
-  font-family: Rubik;
   font-size: 15px;
   font-weight: 400;
   line-height: 21.09px;
@@ -1589,6 +1566,7 @@ body.overflow {
   align-items: center;
   margin-right: 80px;
   max-width: 560px;
+  position: relative;
 }
 .page .subscribe__form__button {
   width: 52px;
@@ -1602,11 +1580,17 @@ body.overflow {
   background-position: 11px;
   cursor: pointer;
 }
+.page .subscribe__form .error__text {
+  position: absolute;
+  left: 0;
+  bottom: -18px;
+  color: red;
+  font-size: 12px;
+}
 .page .subscribe_form_input {
   width: calc(100% - 52px);
 }
 .page .subscribe__succes {
-  font-family: Rubik;
   font-style: normal;
   font-weight: normal;
   font-size: 15px;
@@ -1655,7 +1639,6 @@ body.overflow {
 }
 .page .mailing__title {
   color: #1d2f3c;
-  font-family: Rubik;
   font-size: 21px;
   font-weight: 700;
   line-height: 28.3px;
@@ -1663,7 +1646,6 @@ body.overflow {
 }
 .page .mailing__text {
   color: #1d2f3c;
-  font-family: Rubik;
   font-size: 15px;
   font-weight: 400;
   line-height: 21.09px;
@@ -1678,7 +1660,6 @@ body.overflow {
   width: calc(100% - 62px);
 }
 .page .mailing__succes {
-  font-family: Rubik;
   font-style: normal;
   font-weight: normal;
   font-size: 15px;
@@ -1734,7 +1715,6 @@ body.overflow {
 }
 .page .reviews-tablet__title {
   color: #1d2f3c;
-  font-family: Rubik;
   font-size: 21px;
   font-weight: 700;
   line-height: 28.3px;
@@ -1770,14 +1750,12 @@ body.overflow {
 }
 .page .reviews-tablet__item__name {
   color: #1d2f3c;
-  font-family: Rubik;
   font-size: 15px;
   font-weight: 500;
   line-height: 20.21px;
 }
 .page .reviews-tablet__item__time {
   color: #7a858d;
-  font-family: Rubik;
   font-size: 13px;
   font-weight: 400;
   letter-spacing: 0.26px;
@@ -1785,7 +1763,6 @@ body.overflow {
 }
 .page .reviews-tablet__item__comment {
   color: #1d2f3c;
-  font-family: Rubik;
   font-size: 15px;
   font-weight: 400;
   line-height: 21.09px;
@@ -1794,7 +1771,6 @@ body.overflow {
 .page .reviews-tablet__item__link {
   text-decoration: none;
   color: #82c831;
-  font-family: Rubik;
   font-size: 13px;
   font-weight: 400;
   letter-spacing: 0.26px;
@@ -1806,7 +1782,6 @@ body.overflow {
 }
 .page .comments__title {
   color: #1d2f3c;
-  font-family: Rubik;
   font-size: 26px;
   font-weight: 700;
   line-height: 35.43px;
@@ -1896,7 +1871,6 @@ body.overflow {
   cursor: pointer;
 }
 .page .comments__item__top__right__summ {
-  font-family: Rubik;
   font-size: 15px;
   font-weight: 500;
   line-height: 20.21px;
@@ -1911,7 +1885,6 @@ body.overflow {
 }
 .page .comments__item__top__right__answer {
   color: #82c831;
-  font-family: Rubik;
   font-size: 13px;
   font-weight: 500;
   letter-spacing: 1.04px;
@@ -1949,7 +1922,6 @@ body.overflow {
 }
 .page .comments__item__name {
   color: #1d2f3c;
-  font-family: Rubik;
   font-size: 18px;
   font-weight: 500;
   line-height: 24.26px;
@@ -1957,7 +1929,6 @@ body.overflow {
 }
 .page .comments__item__time {
   color: #7a858d;
-  font-family: Rubik;
   font-size: 14px;
   font-weight: 400;
   letter-spacing: 0.28px;
@@ -1965,14 +1936,12 @@ body.overflow {
 }
 .page .comments__item__text {
   color: #1d2f3c;
-  font-family: Rubik;
   font-size: 15px;
   font-weight: 400;
   line-height: 21.09px;
 }
 .page .comments__show-all {
   color: #82c831;
-  font-family: Rubik;
   font-size: 13px;
   font-weight: 500;
   display: block;
@@ -1996,7 +1965,6 @@ body.overflow {
 }
 .page .fullsect__type {
   color: #82c831;
-  font-family: Rubik;
   font-size: 40px;
   font-weight: 700;
   letter-spacing: 0.8px;
@@ -2005,14 +1973,12 @@ body.overflow {
 .page .fullsect__img {
   width: 48px;
   height: auto;
-  font-family: Rubik;
   font-size: 48px;
   font-weight: 700;
   margin-bottom: 30px;
 }
 .page .fullsect__title {
   color: #1d2f3c;
-  font-family: Rubik;
   font-size: 40px;
   font-weight: 700;
   letter-spacing: 0.8px;
@@ -2022,7 +1988,6 @@ body.overflow {
 .page .fullsect__text {
   max-width: 558px;
   color: #7a858d;
-  font-family: Rubik;
   font-size: 18px;
   font-weight: 400;
   line-height: 26.37px;
@@ -2031,7 +1996,6 @@ body.overflow {
 }
 .page .fullsect_button {
   color: rgba(255, 255, 255, 0.98);
-  font-family: Rubik;
   font-size: 13px;
   font-weight: 500;
   letter-spacing: 1.04px;
@@ -2047,7 +2011,6 @@ body.overflow {
   display: flex;
   align-items: center;
   color: #7a858d;
-  font-family: Rubik;
   font-size: 14px;
   font-weight: 400;
   letter-spacing: 0.28px;
@@ -2099,7 +2062,6 @@ body.overflow {
   display: flex;
   align-items: center;
   color: #82c831;
-  font-family: Rubik;
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 1.2px;
@@ -2127,9 +2089,54 @@ body.overflow {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 .page .article__social__item:last-child {
   border-bottom: 0;
+  position: relative;
+}
+.page .article__social__item:hover {
+  background: #f6f9fb;
+}
+.page .article__social__item .info_copied {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  transform: translate(0, 0);
+  background-color: #fff;
+  box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  width: 186px;
+  height: 38px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.page .article__social__item .info_copied:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 15px;
+  width: 14px;
+  height: 14px;
+  top: 0;
+  transform: translate(0, -50%) rotate(45deg);
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+  z-index: 3;
+  border-bottom: 0;
+  border-right: 0;
+}
+.page .article__social__item .info_copied img {
+  margin-right: 5px;
+}
+.page .article__social__item .info_copied span {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 18px;
+  letter-spacing: 0.02em;
+  color: #1d2f3c;
 }
 .page .article__social__item__block-img {
   max-width: 24px;
@@ -2142,7 +2149,6 @@ body.overflow {
 .page .article__social__item__count {
   opacity: 0.8;
   color: #7a858d;
-  font-family: Rubik;
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 1.2px;
@@ -2193,7 +2199,6 @@ body.overflow {
 }
 .page .article__block-img__text {
   color: #7a858d;
-  font-family: Rubik;
   font-size: 13px;
   font-weight: 400;
   letter-spacing: 0.26px;
@@ -2232,7 +2237,6 @@ body.overflow {
 }
 .page .article__see-also__title {
   color: #7a858d;
-  font-family: Rubik;
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.72px;
@@ -2267,7 +2271,6 @@ body.overflow {
 }
 .page .article__see-also__item__title {
   color: #1d2f3c;
-  font-family: Rubik;
   font-size: 18px;
   font-weight: 500;
   line-height: 24.26px;
@@ -2277,7 +2280,6 @@ body.overflow {
   display: flex;
   align-items: center;
   color: #7a858d;
-  font-family: Rubik;
   font-size: 14px;
   font-weight: 400;
   letter-spacing: 0.28px;
@@ -2327,7 +2329,6 @@ body.overflow {
 }
 .page .article__author__name {
   color: #1d2f3c;
-  font-family: Rubik;
   font-size: 13px;
   font-weight: 400;
   letter-spacing: 0.26px;
@@ -2336,7 +2337,6 @@ body.overflow {
 }
 .page .article__author__inf {
   color: #7a858d;
-  font-family: Rubik;
   font-size: 13px;
   font-weight: 400;
   letter-spacing: 0.26px;
@@ -2350,7 +2350,6 @@ body.overflow {
 }
 .page .article__min-inf__text {
   color: #1d2f3c;
-  font-family: Rubik;
   font-size: 14px;
   font-weight: 400;
   letter-spacing: 0.28px;
@@ -2366,7 +2365,6 @@ body.overflow {
 }
 .page .article__inf__title {
   color: #1d2f3c;
-  font-family: Rubik;
   font-size: 15px;
   font-weight: 500;
   line-height: 20.21px;
@@ -2380,7 +2378,7 @@ body.overflow {
   margin-right: 36px;
 }
 .page .article__inf__item__link {
-  display: flex;
+  display: flex !important;
   align-items: center;
 }
 .page .article__inf__item__icon {
@@ -2397,7 +2395,6 @@ body.overflow {
 }
 .page .article__card__title {
   color: #1d2f3c;
-  font-family: Rubik;
   font-size: 26px;
   font-weight: 700;
   line-height: 35.43px;
@@ -2405,7 +2402,6 @@ body.overflow {
 .page .article__card__text {
   margin-top: 16px;
   color: #1d2f3c;
-  font-family: Rubik;
   font-size: 18px;
   font-weight: 400;
   line-height: 26.37px;
@@ -2437,7 +2433,6 @@ body.overflow {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: Rubik;
   font-size: 13px;
   font-weight: 500;
   letter-spacing: 1.04px;
@@ -2481,7 +2476,6 @@ body.overflow {
 }
 .block .lenta_title {
   color: #1d2f3c;
-  font-family: Rubik;
   font-size: 21px;
   font-weight: 700;
   line-height: 28.3px;
@@ -2501,7 +2495,6 @@ body.overflow {
 }
 .block .lenta_title_tag-list_item {
   margin-right: 10px;
-  font-family: Rubik;
   font-size: 21px;
   font-weight: 700;
   line-height: 28.3px;
@@ -2573,7 +2566,6 @@ body.overflow {
 }
 .block .lenta_body_b-item_types_type a {
   color: #7a858d;
-  font-family: Rubik;
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 1.2px;
@@ -2583,7 +2575,6 @@ body.overflow {
 }
 .block .lenta_body_b-item_title {
   color: #1d2f3c;
-  font-family: Rubik;
   font-size: 36px;
   font-weight: 700;
   letter-spacing: 0.72px;
@@ -2591,7 +2582,6 @@ body.overflow {
 }
 .block .lenta_body_b-item_text {
   color: #1d2f3c;
-  font-family: Rubik;
   margin: 15px 0;
   font-size: 15px;
   font-weight: 400;
@@ -2636,7 +2626,6 @@ body.overflow {
 }
 .block .lenta_body_item_types_type a {
   color: #82c831;
-  font-family: Rubik;
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 1.2px;
@@ -2645,7 +2634,6 @@ body.overflow {
 }
 .block .lenta_body_item_title {
   color: #1d2f3c;
-  font-family: Rubik;
   font-size: 21px;
   font-weight: 700;
   line-height: 28.3px;
@@ -2653,7 +2641,6 @@ body.overflow {
 }
 .block .lenta_body_item_text {
   color: #1d2f3c;
-  font-family: Rubik;
   font-size: 15px;
   font-weight: 400;
   line-height: 21.09px;
@@ -2702,7 +2689,6 @@ body.overflow {
 }
 .block .lenta_body_s-item_title {
   color: #1d2f3c;
-  font-family: Rubik;
   transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   font-size: 18px;
   font-weight: 500;
@@ -2758,7 +2744,6 @@ body.overflow {
 }
 .block .lenta_body_sr-item_types_type a {
   color: #82c831;
-  font-family: Rubik;
   font-size: 11px;
   font-weight: 500;
   letter-spacing: 0.66px;
@@ -2768,7 +2753,6 @@ body.overflow {
 .block .lenta_body_sr-item_title {
   color: #1d2f3c;
   transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
-  font-family: Rubik;
   font-size: 15px;
   font-weight: 500;
   line-height: 20.21px;
@@ -2803,7 +2787,6 @@ body.overflow {
 }
 .block .lenta_body_spec-item_title {
   color: #1d2f3c;
-  font-family: Rubik;
   font-size: 21px;
   font-weight: 700;
   line-height: 28.3px;
@@ -2817,7 +2800,6 @@ body.overflow {
   position: relative;
   z-index: 1;
   max-width: 240px;
-  font-family: Rubik;
   font-size: 15px;
   font-weight: 400;
   line-height: 21.09px;
@@ -2880,7 +2862,6 @@ body.overflow {
 }
 .block .lenta_btw-item_types_type a {
   color: #7a858d;
-  font-family: Rubik;
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 1.2px;
@@ -2889,7 +2870,6 @@ body.overflow {
 }
 .block .lenta_btw-item_title {
   color: #1d2f3c;
-  font-family: Rubik;
   font-size: 36px;
   font-weight: 700;
   letter-spacing: 0.72px;
@@ -2897,7 +2877,6 @@ body.overflow {
 }
 .block .lenta_btw-item_text {
   color: #1d2f3c;
-  font-family: Rubik;
   margin: 21px 0;
   font-size: 15px;
   font-weight: 400;
@@ -2905,7 +2884,6 @@ body.overflow {
 }
 .block .lenta_goto {
   color: #82c831;
-  font-family: Rubik;
   font-size: 13px;
   font-weight: 500;
   letter-spacing: 1.04px;
@@ -2936,7 +2914,6 @@ body.overflow {
   border-radius: 24px;
   color: #82c831;
   background-color: #f3faeb;
-  font-family: Rubik;
   font-size: 13px;
   font-weight: 500;
   letter-spacing: 1.04px;
@@ -2973,7 +2950,6 @@ body.overflow {
   padding: 0;
 }
 .footer__left__item {
-  font-family: Rubik;
   font-size: 15px;
   font-weight: 400;
   line-height: 21.09px;
@@ -2989,7 +2965,6 @@ body.overflow {
 }
 .footer__menu__title {
   color: #1d2f3c;
-  font-family: Rubik;
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.72px;
@@ -3007,14 +2982,12 @@ body.overflow {
 }
 .footer__menu__item__link {
   color: #1d2f3c;
-  font-family: Rubik;
   font-size: 15px;
   font-weight: 400;
   line-height: 21.09px;
 }
 .footer__menu__text {
   color: #1d2f3c;
-  font-family: Rubik;
   font-size: 15px;
   font-weight: 400;
   line-height: 21.09px;
@@ -3025,9 +2998,9 @@ body.overflow {
   display: flex;
   align-items: center;
   margin-bottom: 25px;
+  position: relative;
 }
 .footer__form__succes {
-  font-family: Rubik;
   font-style: normal;
   font-weight: normal;
   font-size: 15px;
@@ -3054,6 +3027,13 @@ body.overflow {
   background-repeat: no-repeat;
   background-position: center;
 }
+.footer__form .error__text {
+  position: absolute;
+  left: 0;
+  bottom: -18px;
+  color: red;
+  font-size: 12px;
+}
 .footer_form_input {
   width: 221px;
 }
@@ -3070,7 +3050,8 @@ body.overflow {
   padding: 0 27px;
   box-shadow: -4px 4px 15px rgba(120, 160, 190, 0.3);
   background-color: #ffffff;
-  position: absolute;
+  position: fixed;
+  overflow: scroll;
   right: 0;
   top: 0;
   z-index: 4;
@@ -3122,7 +3103,6 @@ body.overflow {
 }
 .sitebar__title {
   color: #1d2f3c;
-  font-family: Rubik;
   font-size: 21px;
   font-weight: 700;
   line-height: 28.3px;
@@ -3148,14 +3128,12 @@ body.overflow {
 }
 .sitebar__item__inf {
   color: #1d2f3c;
-  font-family: Rubik;
   font-size: 15px;
   font-weight: 500;
   line-height: 20.21px;
 }
 .sitebar__item__time {
   color: #7a858d;
-  font-family: Rubik;
   font-size: 14px;
   font-weight: 400;
   letter-spacing: 0.28px;
@@ -3163,7 +3141,6 @@ body.overflow {
 }
 .sitebar__item__name {
   color: #1d2f3c;
-  font-family: Rubik;
   font-size: 15px;
   font-weight: 500;
   line-height: 20.21px;
@@ -3181,7 +3158,6 @@ body.overflow {
 }
 .sitebar__item__comment {
   color: #1d2f3c;
-  font-family: Rubik;
   font-size: 15px;
   font-weight: 400;
   line-height: 21.09px;
@@ -3190,7 +3166,6 @@ body.overflow {
 .sitebar__item__link {
   text-decoration: none;
   color: #82c831;
-  font-family: Rubik;
   font-size: 13px;
   font-weight: 400;
   letter-spacing: 0.26px;
@@ -3413,7 +3388,6 @@ body.overflow {
 }
 .list-items .list_big-item_types_type a {
   color: #7a858d;
-  font-family: Rubik;
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 1.2px;
@@ -3423,7 +3397,6 @@ body.overflow {
 }
 .list-items .list_big-item_title {
   color: #1d2f3c;
-  font-family: Rubik;
   font-size: 36px;
   font-weight: 700;
   letter-spacing: 0.72px;
@@ -3431,7 +3404,6 @@ body.overflow {
 }
 .list-items .list_big-item_text {
   color: #1d2f3c;
-  font-family: Rubik;
   margin: 15px 0;
   font-size: 15px;
   font-weight: 400;
@@ -3473,7 +3445,6 @@ body.overflow {
 }
 .list-items .list_normal-item_types_type a {
   color: #82c831;
-  font-family: Rubik;
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 1.2px;
@@ -3482,7 +3453,6 @@ body.overflow {
 }
 .list-items .list_normal-item_title {
   color: #1d2f3c;
-  font-family: Rubik;
   font-size: 21px;
   font-weight: 700;
   line-height: 28.3px;
@@ -3490,7 +3460,6 @@ body.overflow {
 }
 .list-items .list_normal-item_text {
   color: #1d2f3c;
-  font-family: Rubik;
   font-size: 15px;
   font-weight: 400;
   line-height: 21.09px;
@@ -3536,7 +3505,6 @@ body.overflow {
 }
 .list-items .list_small-item_types_type a {
   color: #82c831;
-  font-family: Rubik;
   font-size: 11px;
   font-weight: 500;
   letter-spacing: 0.66px;
@@ -3546,7 +3514,6 @@ body.overflow {
 .list-items .list_small-item_title {
   color: #1d2f3c;
   transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
-  font-family: Rubik;
   font-size: 15px;
   font-weight: 500;
   line-height: 20.21px;
@@ -3591,7 +3558,6 @@ body.overflow {
 }
 .list-items .list_emodzi-item_title {
   color: #1d2f3c;
-  font-family: Rubik;
   transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   font-size: 18px;
   font-weight: 500;
@@ -3658,7 +3624,6 @@ body.overflow {
 }
 .list-items .list_between-item_types_type a {
   color: #7a858d;
-  font-family: Rubik;
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 1.2px;
@@ -3667,7 +3632,6 @@ body.overflow {
 }
 .list-items .list_between-item_title {
   color: #1d2f3c;
-  font-family: Rubik;
   font-size: 36px;
   font-weight: 700;
   letter-spacing: 0.72px;
@@ -3675,7 +3639,6 @@ body.overflow {
 }
 .list-items .list_between-item_text {
   color: #1d2f3c;
-  font-family: Rubik;
   margin: 21px 0;
   font-size: 15px;
   font-weight: 400;
@@ -3708,7 +3671,6 @@ body.overflow {
 }
 .list-items .list_special-item_title {
   color: #1d2f3c;
-  font-family: Rubik;
   font-size: 21px;
   font-weight: 700;
   line-height: 28.3px;
@@ -3722,7 +3684,6 @@ body.overflow {
   position: relative;
   z-index: 1;
   max-width: 240px;
-  font-family: Rubik;
   font-size: 15px;
   font-weight: 400;
   line-height: 21.09px;
@@ -3741,7 +3702,6 @@ body.overflow {
 }
 .wrapper main a {
   color: #82c831;
-  font-family: Rubik;
   font-size: 18px;
   font-weight: 400;
 }
@@ -3791,7 +3751,6 @@ body.overflow {
   border: 1px solid #f0f0f0;
   background-color: #ffffff;
   color: #1d2f3c;
-  font-family: Rubik;
   font-size: 13px;
   font-weight: 400;
   letter-spacing: 0.26px;
@@ -3828,7 +3787,6 @@ body.overflow {
 }
 .wrapper main h1 {
   color: #1d2f3c;
-  font-family: Rubik;
   font-size: 48px;
   font-weight: 700;
   margin-top: 48px;
@@ -3836,7 +3794,6 @@ body.overflow {
 }
 .wrapper main h2 {
   color: #1d2f3c;
-  font-family: Rubik;
   font-size: 36px;
   font-weight: 700;
   letter-spacing: 0.72px;
@@ -3845,7 +3802,6 @@ body.overflow {
 }
 .wrapper main h3 {
   color: #1d2f3c;
-  font-family: Rubik;
   font-size: 26px;
   font-weight: 700;
   line-height: 35.43px;
@@ -3854,7 +3810,6 @@ body.overflow {
 }
 .wrapper main h4 {
   color: #1d2f3c;
-  font-family: Rubik;
   font-size: 21px;
   font-weight: 700;
   line-height: 28.3px;
@@ -3863,21 +3818,18 @@ body.overflow {
 }
 .wrapper main p {
   color: #1d2f3c;
-  font-family: Rubik;
   font-size: 18px;
   font-weight: 400;
   line-height: 26.37px;
 }
 .wrapper main small {
   color: #1d2f3c;
-  font-family: Rubik;
   font-size: 15px;
   font-weight: 400;
   line-height: 21.09px;
 }
 .wrapper main q {
   color: #1d2f3c;
-  font-family: Rubik;
   font-size: 26px;
   font-weight: 400;
   line-height: 35.43px;
@@ -3902,7 +3854,6 @@ body.overflow {
 .wrapper main q cite {
   display: block;
   color: #7a858d;
-  font-family: Rubik;
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.72px;
@@ -3913,7 +3864,6 @@ body.overflow {
 }
 .wrapper main .focus {
   color: #1d2f3c;
-  font-family: Rubik;
   font-size: 18px;
   font-weight: 400;
   line-height: 26.37px;
@@ -3945,7 +3895,6 @@ body.overflow {
 }
 .wrapper main ul li {
   color: #000000;
-  font-family: Rubik;
   font-size: 18px;
   font-weight: 400;
   line-height: 26.37px;
@@ -3988,7 +3937,6 @@ body.overflow {
 .wrapper main ol li {
   color: #000000;
   counter-increment: li;
-  font-family: Rubik;
   font-size: 18px;
   font-weight: 400;
   position: relative;
@@ -3998,7 +3946,6 @@ body.overflow {
 .wrapper main ol li:before {
   content: counters(li, ".");
   color: #82c831;
-  font-family: Rubik;
   position: absolute;
   top: 4px;
   right: 100%;
@@ -4044,7 +3991,6 @@ body.overflow {
 }
 .wrapper main .doc__name {
   color: #1d2f3c;
-  font-family: Rubik;
   font-size: 15px;
   font-weight: 400;
   line-height: 21.09px;
@@ -4061,7 +4007,6 @@ body.overflow {
 }
 .wrapper main .doc__inf {
   color: #7a858d;
-  font-family: Rubik;
   font-size: 13px;
   font-weight: 400;
   letter-spacing: 0.26px;
