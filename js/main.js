@@ -98,6 +98,7 @@ var custom = function () {
       $('#header__bottom__menu').append('<li id="monitor_load_complete" class="header__bottom__menu__item health"> <a class="header__bottom__menu__item__link" href="#"> Физическое здоровье</a> </li>')
 
       first_init = setInterval(function () {
+        console.log(parseInt($('#header__bottom__menu').find('#monitor_load_complete').width()))
         if (parseInt($('#header__bottom__menu').find('#monitor_load_complete').width()) == 158 ||
           parseInt($('#header__bottom__menu').find('#monitor_load_complete').width()) == 159) {
           go()
@@ -475,7 +476,10 @@ var custom = function () {
   open_menu()
   help_blocks();
   show_more_comments();
-  resize_textarea();
+  if($('.comments_form_input').length>0){
+    resize_textarea();
+  }
+  
   burger__search_open();
 
   if ($(window).width() > 1024) {
