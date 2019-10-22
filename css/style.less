@@ -32,6 +32,11 @@ body {
 * {
   outline: none;
 }
+input::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
 //примеси /
 .btn {
   &__basic {
@@ -326,7 +331,6 @@ body {
         position: relative;
         &_title {
           color: @color_text;
-
           font-size: 21px;
           font-weight: 700;
           line-height: 28.3px;
@@ -344,11 +348,13 @@ body {
             margin-left: 8px;
             &_item {
               margin-right: 10px;
-
               font-size: 21px;
               font-weight: 700;
               line-height: 28.3px;
               color: @color_link;
+              &:before{
+                display: none;
+              }
             }
           }
         }
@@ -2545,6 +2551,10 @@ body {
     background-color: #ffffff;
     position: fixed;
     overflow: scroll;
+    &::-webkit-scrollbar{
+      display: none;
+      width: 0;
+    }
     right: 0;
     top: 0;
     z-index: 4;
@@ -2598,7 +2608,6 @@ body {
   }
   &__title {
     color: @color_text;
-
     font-size: 21px;
     font-weight: 700;
     line-height: 28.3px;
@@ -3537,8 +3546,7 @@ i.icon {
     }
   }
   &_bake {
-    @bg: url(../images/bake.svg);
-    @pos: top;
+    @bg: url(../images/bake.png);
     .standart(@bg, @pos);
   }
   &_avocado {

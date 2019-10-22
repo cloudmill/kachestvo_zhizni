@@ -114,7 +114,11 @@
     top: 0;
   }
   .page .article__social {
-    position: unset;
+    position: unset !important;
+    top: auto;
+    left: auto;
+    bottom: auto;
+    right: auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;

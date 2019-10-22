@@ -27,6 +27,11 @@ body.overflow {
 * {
   outline: none;
 }
+input::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
 .btn__basic {
   height: 48px;
   padding: 0 25px;
@@ -338,6 +343,9 @@ body.overflow {
   font-weight: 700;
   line-height: 28.3px;
   color: #82c831;
+}
+.wrapper_main main .lenta_title_tag-list_item:before {
+  display: none;
 }
 .wrapper_main main .lenta_body {
   display: flex;
@@ -3056,6 +3064,10 @@ body.overflow {
   top: 0;
   z-index: 4;
 }
+.sitebar__wrapper::-webkit-scrollbar {
+  display: none;
+  width: 0;
+}
 .sitebar__close {
   display: none;
   position: relative;
@@ -4017,7 +4029,7 @@ i.icon_bake {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url(../images/bake.svg);
+  background-image: url(../images/bake.png);
   height: 28px;
   width: 20px;
 }
@@ -4026,8 +4038,7 @@ i.icon_bake_big {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  background-position: top;
-  background-image: url(../images/bake.svg);
+  background-image: url(../images/bake.png);
   height: 50px;
   width: 35px;
 }

@@ -415,7 +415,8 @@ var custom = function () {
           top__offset + $('.article__body').height() > $(document).scrollTop() + 50 + ($('.header').hasClass('hide') ? 0 : $('.header').height()) + item.height()) {
           item.css('position', 'fixed')
           item.css('top', '50px')
-          item.css('left', 27);
+
+          item.css('left', $('.article__body').offset().left-90);
           item.css('margin-top', ($('.header').hasClass('hide') ? 0 : $('.header').height()))
         } else if (top__offset + $('.article__body').height() <= $(document).scrollTop() + 50 + ($('.header').hasClass('hide') ? 0 : $('.header').height()) + item.height()) {
           item.attr('style', '');
@@ -478,7 +479,6 @@ var custom = function () {
   burger__search_open();
 
   if ($(window).width() > 1024) {
-
     show_more_in_menu()
   } else {
     swipe_in_menu()
