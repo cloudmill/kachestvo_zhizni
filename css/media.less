@@ -34,6 +34,9 @@
             flex-direction: row;
             max-height: none;
             height: auto;
+            &.popular{
+              max-height: none;
+            }
             &.tablet_slider {
               max-width: 600px;
               .slick-list {
@@ -122,9 +125,7 @@
         width: 100%;
       }
     }
-    .reviews-tablet {
-      display: none;
-    }
+    
     .tags {
       &__list {
         -ms-flex-wrap: wrap;
@@ -239,33 +240,8 @@
       }
     }
   }
-  .header {
-    &__top {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-      justify-content: space-between;
-      &__menu,
-      &__subsc {
-        display: none;
-      }
-    }
-    &__bottom {
-      overflow: scroll;
-      width: 100%;
-      padding: 0 25px;
-      margin-left: -25px;
-      &::-webkit-scrollbar {
-        display: none;
-        width: 0;
-        height: 0;
-      }
-      &::-ms-scrollbar {
-        display: none;
-      }
-
+  .header{
+    &__bottom{
       &__menu {
         opacity: 1;
         -ms-flex-wrap: nowrap;
@@ -280,20 +256,6 @@
           display: none;
         }
       }
-    }
-    &__search {
-      display: none;
-    }
-    &__logo {
-      margin-right: 0;
-      width: 200px;
-      &__img {
-        max-width: 100%;
-      }
-    }
-    &__burger-btn,
-    &__sitebar-btn {
-      display: block;
     }
   }
   .footer {
@@ -492,7 +454,54 @@
           &_show-more {
           }
         }
+        .reviews-tablet {
+          display: none;
+        }
       }
+    }
+  }
+  .header {
+    &__top {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      &__menu,
+      &__subsc {
+        display: none;
+      }
+    }
+    &__bottom {
+      overflow: scroll;
+      width: 100%;
+      padding: 0 25px;
+      margin-left: -25px;
+      &::-webkit-scrollbar {
+        display: none;
+        width: 0;
+        height: 0;
+      }
+      &::-ms-scrollbar {
+        display: none;
+      }
+
+      
+    }
+    &__search {
+      display: none;
+    }
+    &__logo {
+      margin-right: 0;
+      width: 200px;
+      &__img {
+        max-width: 100%;
+      }
+    }
+    &__burger-btn,
+    &__sitebar-btn {
+      display: block;
     }
   }
   .page {

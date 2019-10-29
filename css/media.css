@@ -25,6 +25,9 @@
     max-height: none;
     height: auto;
   }
+  .wrapper_main main .lenta_body.popular {
+    max-height: none;
+  }
   .wrapper_main main .lenta_body.tablet_slider {
     max-width: 600px;
   }
@@ -80,9 +83,6 @@
   }
   .page .about__block-img {
     width: 100%;
-  }
-  .page .reviews-tablet {
-    display: none;
   }
   .page .tags__list {
     -ms-flex-wrap: wrap;
@@ -187,32 +187,6 @@
     -webkit-transform: translate(-50%, -50%) rotate(45deg);
     transform: translate(-50%, -50%) rotate(45deg);
   }
-  .header__top {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-  }
-  .header__top__menu,
-  .header__top__subsc {
-    display: none;
-  }
-  .header__bottom {
-    overflow: scroll;
-    width: 100%;
-    padding: 0 25px;
-    margin-left: -25px;
-  }
-  .header__bottom::-webkit-scrollbar {
-    display: none;
-    width: 0;
-    height: 0;
-  }
-  .header__bottom::-ms-scrollbar {
-    display: none;
-  }
   .header__bottom__menu {
     opacity: 1;
     -ms-flex-wrap: nowrap;
@@ -226,20 +200,6 @@
   }
   .header__bottom__menu__more {
     display: none;
-  }
-  .header__search {
-    display: none;
-  }
-  .header__logo {
-    margin-right: 0;
-    width: 200px;
-  }
-  .header__logo__img {
-    max-width: 100%;
-  }
-  .header__burger-btn,
-  .header__sitebar-btn {
-    display: block;
   }
   .footer {
     -ms-flex-wrap: wrap;
@@ -405,6 +365,49 @@
   }
   .wrapper_main main .lenta_goto {
     display: none;
+  }
+  .wrapper_main main .reviews-tablet {
+    display: none;
+  }
+  .header__top {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+  .header__top__menu,
+  .header__top__subsc {
+    display: none;
+  }
+  .header__bottom {
+    overflow: scroll;
+    width: 100%;
+    padding: 0 25px;
+    margin-left: -25px;
+  }
+  .header__bottom::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+  .header__bottom::-ms-scrollbar {
+    display: none;
+  }
+  .header__search {
+    display: none;
+  }
+  .header__logo {
+    margin-right: 0;
+    width: 200px;
+  }
+  .header__logo__img {
+    max-width: 100%;
+  }
+  .header__burger-btn,
+  .header__sitebar-btn {
+    display: block;
   }
   .page .mailing {
     width: calc(100% - 40px);
