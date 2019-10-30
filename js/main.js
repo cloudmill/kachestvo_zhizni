@@ -7,7 +7,7 @@ $(document).ready(function() {
   additional_functions(base_time_animation);
   custom();
   forms();
-  sliders();
+  sliders(); 
 });
 
 var custom = function() {
@@ -36,6 +36,9 @@ var custom = function() {
         if (target == "burger") {
           $("body").addClass("overflow");
         }
+      }else if(target == 'header__tags'){
+        $(this).toggleClass("active");
+        animate_open_close($("#" + target));
       }
     });
     $("[data-close]").click(function(e) {
@@ -170,12 +173,15 @@ var custom = function() {
         .parent()
         .find(".header__bottom__menu__more")
         .remove();
-      //$('.wrapper_main').css('margin-top','58px')
+        setTimeout(function(){
+          $('.wrapper_main').css('margin-top',parseInt($('.header__bottom__menu').height())-58+"px")
+        },50)
+     
     });
     $(document).on("click", function(e) {
       if (!$("#header__bottom__menu:hover").length > 0) {
         hide_more_items();
-        // $('.wrapper_main').css('margin-top','0px')
+         $('.wrapper_main').css('margin-top','0px')
       }
     });
   };
