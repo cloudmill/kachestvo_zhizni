@@ -11,66 +11,62 @@
   </head>
   <body>
     <div class="wrapper">
-        <div class="popup__wrapper"> 
-            <div class="popup__item" id="subscribe">
-              <div class="popup__close js-close"></div>
-              <div class="popup__title">Почтовая рассылка</div>
-              <div class="popup__text">
-                Подпишитесь на обновления нашего <br />
-                блога. Без спама.
-              </div>
-              <div class="popup__form">
-                <form
-                  data-form="subscribe"
-                  class="inpt__wrapper"
-                  action=""
-                >
-                  <input
-                    class="inpt__basic popup_form_input"
-                    type="text"
-                    name="mail"
-                    placeholder="Ваш e-mail"
-                  />
-                  <button class="btn__basic popup_form_button">
-                    подписаться
-                  </button>
-                </form>
-              </div>
-            </div>
-            <div class="popup__item" id="success">
-              <div class="popup__close js-close"></div>
-              <div class="popup__block-img">
-                <img src="images/mail.png" alt="" />
-              </div>
-              <div class="popup__title">Спасибо за подписку!</div>
-              <div class="popup__text">
-                На указанную почту отправлено письмо <br />
-                для подтверждения вашего согласия. <br />
-                Перейдите по ссылке из письма.
-              </div>
-            </div>
-            <div class="popup__item" id="login">
-              <div class="popup__close js-close"></div>
-              <div class="popup__title">
-                <a class="popup__link" href="">Войдите</a> или <br />
-                <a class="popup__link" href="">зарегистрируйтесь</a>
-              </div>
-              <div class="popup__social">
-                <a href="" class="popup__soc-link"
-                  ><img class="popup__img" src="images/vk-c.png" alt=""
-                /></a>
-                <a href="" class="popup__soc-link"
-                  ><img class="popup__img" src="images/fb-c.png" alt=""
-                /></a>
-                <a href="" class="popup__soc-link"
-                  ><img class="popup__img" src="images/inst-c.png" alt=""
-                /></a>
-                <a href="" class="popup__soc-link"
-                  ><img class="popup__img" src="images/tw-c.png" alt=""
-                /></a>
-              </div>
-            </div>
+      <div class="popup__wrapper">
+        <div class="popup__item" id="subscribe">
+          <div class="popup__close js-close"></div>
+          <div class="popup__title">Почтовая рассылка</div>
+          <div class="popup__text">
+            Подпишитесь на обновления нашего <br />
+            блога. Без спама.
           </div>
+          <div class="popup__form">
+            <form data-form="subscribe" class="inpt__wrapper" action="">
+              <input
+                class="inpt__basic popup_form_input"
+                type="text"
+                name="mail"
+                placeholder="Ваш e-mail"
+              />
+              <button class="btn__basic popup_form_button">
+                подписаться
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="popup__item" id="success">
+          <div class="popup__close js-close"></div>
+          <div class="popup__block-img">
+            <img src="images/mail.png" alt="" />
+          </div>
+          <div class="popup__title">Спасибо за подписку!</div>
+          <div class="popup__text">
+            На указанную почту отправлено письмо <br />
+            для подтверждения вашего согласия. <br />
+            Перейдите по ссылке из письма.
+          </div>
+        </div>
+        <div class="popup__item" id="login">
+          <div class="popup__close js-close"></div>
+          <div class="popup__title">
+            <a class="popup__link" href="">Войдите</a> или <br />
+            <a class="popup__link" href="">зарегистрируйтесь</a>
+          </div>
+          <div class="popup__social">
+            <a href="" class="popup__soc-link"
+              ><img class="popup__img" src="images/vk-c.png" alt=""
+            /></a>
+            <a href="" class="popup__soc-link"
+              ><img class="popup__img" src="images/fb-c.png" alt=""
+            /></a>
+            <a href="" class="popup__soc-link"
+              ><img class="popup__img" src="images/inst-c.png" alt=""
+            /></a>
+            <a href="" class="popup__soc-link"
+              ><img class="popup__img" src="images/tw-c.png" alt=""
+            /></a>
+          </div>
+        </div>
+      </div>
       <div class="wrapper_main">
         <header class="header">
           <div class="burger__wrapper" id="burger" data-has_target="y">
@@ -329,9 +325,7 @@
             >
               <span> </span>
             </a>
-            <a href="#" class="header__logo">
-              
-            </a>
+            <a href="#" class="header__logo"> </a>
             <a href="" class="header__sitebar-btn" data-target="sitebar"></a>
             <ul class="header__top__menu">
               <li class="header__top__menu__item">
@@ -585,11 +579,14 @@
                 <div class="article__head__type">
                   <a class="article__head__type__link" href="">
                     <i class="icon_sport article__head__type__icon"></i>
-                    Активность</a>
+                    Активность</a
+                  >
                 </div>
                 <div class="article__head__type">
-                  <a class="article__head__type__link" href=""><i class="icon_avocado article__head__type__icon"></i>
-                    питание</a>
+                  <a class="article__head__type__link" href=""
+                    ><i class="icon_avocado article__head__type__icon"></i>
+                    питание</a
+                  >
                 </div>
               </div>
             </div>
@@ -597,14 +594,24 @@
               Здоровые люди регулярно посещают врача. И зря!
             </h1>
             <div class="article__body">
-              <div class="article__block-img article_block-img_head bg_green_light">
-                <img class="article__img article_img_head" src="images/about_img.png" alt="" />
+              <div
+                class="article__block-img article_block-img_head bg_green_light"
+              >
+                <img
+                  class="article__img article_img_head"
+                  src="images/about_img.png"
+                  alt=""
+                />
               </div>
               <div class="article__body__box">
                 <div class="article__right">
                   <div class="article__author">
                     <div class="article__author__block-img">
-                      <img class="article__img" src="images/article_author.png" alt="" />
+                      <img
+                        class="article__img"
+                        src="images/article_author.png"
+                        alt=""
+                      />
                     </div>
                     <div class="article__author__name">
                       Елизавета Бабицкая
@@ -642,7 +649,11 @@
                   дозы витаминов безопасны.
                 </p>
                 <div class="article__block-img">
-                  <img class="article__img" src="images/article_img.png" alt="" />
+                  <img
+                    class="article__img"
+                    src="images/article_img.png"
+                    alt=""
+                  />
                   <p class="article__block-img__text">
                     Подпись к узкому изображению (необязательно)
                   </p>
@@ -664,7 +675,11 @@
                 <div class="article__right">
                   <div class="article__min-inf">
                     <div class="article__min-inf__block-img">
-                      <img class="article__img" src="images/min-inf.png" alt="" />
+                      <img
+                        class="article__img"
+                        src="images/min-inf.png"
+                        alt=""
+                      />
                     </div>
                     <div class="article__min-inf__text">
                       Все эти явления могут присутствовать как во всех клетках
@@ -754,7 +769,9 @@
                   <div class="article__see-also__title">читайте также</div>
                   <div class="article__see-also__item">
                     <div class="article__see-also__item__block-img">
-                      <i class="article__see-also__item__icon icon_bake_big"></i>
+                      <i
+                        class="article__see-also__item__icon icon_bake_big"
+                      ></i>
                     </div>
                     <a href="" class="article__see-also__item__title">
                       Почему нужно пить воду, а не лимонад?
@@ -788,7 +805,10 @@
                     <div class="article__inf__title">Рубрика</div>
                     <div class="article__inf__list">
                       <div class="article__inf__item">
-                        <a class="article__inf__item__link" href=""><i class="icon_sport article__inf__item__icon"></i>Активность</a>
+                        <a class="article__inf__item__link" href=""
+                          ><i class="icon_sport article__inf__item__icon"></i
+                          >Активность</a
+                        >
                       </div>
                     </div>
                   </div>
@@ -796,10 +816,14 @@
                     <div class="article__inf__title">Тэги</div>
                     <div class="article__inf__list">
                       <div class="article__inf__item">
-                        <a class="article__inf__item__link" href="">#инструкции</a>
+                        <a class="article__inf__item__link" href=""
+                          >#инструкции</a
+                        >
                       </div>
                       <div class="article__inf__item">
-                        <a class="article__inf__item__link" href="">#о здоровье</a>
+                        <a class="article__inf__item__link" href=""
+                          >#о здоровье</a
+                        >
                       </div>
                       <div class="article__inf__item">
                         <a class="article__inf__item__link" href="">#faq</a>
@@ -826,34 +850,56 @@
               <div class="article__social">
                 <a href="" class="article__social__item">
                   <div class="article__social__item__block-img">
-                    <img class="article__social__item__img" src="images/vk-c.png" alt="" />
+                    <img
+                      class="article__social__item__img"
+                      src="images/vk-c.png"
+                      alt=""
+                    />
                   </div>
                   <div class="article__social__item__count">22</div>
                 </a>
                 <a href="" class="article__social__item">
                   <div class="article__social__item__block-img">
-                    <img class="article__social__item__img" src="images/fb-c.png" alt="" />
+                    <img
+                      class="article__social__item__img"
+                      src="images/fb-c.png"
+                      alt=""
+                    />
                   </div>
                   <div class="article__social__item__count">20</div>
                 </a>
                 <a href="" class="article__social__item">
                   <div class="article__social__item__block-img">
-                    <img class="article__social__item__img" src="images/inst-c.png" alt="" />
+                    <img
+                      class="article__social__item__img"
+                      src="images/inst-c.png"
+                      alt=""
+                    />
                   </div>
                   <div class="article__social__item__count">22</div>
                 </a>
                 <a href="" class="article__social__item">
                   <div class="article__social__item__block-img">
-                    <img class="article__social__item__img" src="images/tw-c.png" alt="" />
+                    <img
+                      class="article__social__item__img"
+                      src="images/tw-c.png"
+                      alt=""
+                    />
                   </div>
                   <div class="article__social__item__count">0</div>
                 </a>
                 <a href="" class="article__social__item copy">
                   <div class="article__social__item__block-img">
-                    <img class="article__social__item__img" src="images/copy.png" alt="" />
+                    <img
+                      class="article__social__item__img"
+                      src="images/copy.png"
+                      alt=""
+                    />
                   </div>
                   <div class="article__social__item__count">23</div>
-                  <div class="article__social__item__text">Скопировать ссылку</div>
+                  <div class="article__social__item__text">
+                    Скопировать ссылку
+                  </div>
                 </a>
               </div>
               <div class="comments">
@@ -870,7 +916,9 @@
                     <!-- <div class="inpt__error">Текст ошибки</div> -->
                   </div>
 
-                  <button class="btn__basic comments_form_button">Отправить</button>
+                  <button class="btn__basic comments_form_button">
+                    Отправить
+                  </button>
                 </form>
                 <div class="comments__list-wrapper">
                   <div class="comments__list">
@@ -900,7 +948,10 @@
                             class="comments__item__top__right__dis-like"
                           ></a>
                           <div class="comments__item__top__right__summ">0</div>
-                          <a href="" class="comments__item__top__right__like"></a>
+                          <a
+                            href=""
+                            class="comments__item__top__right__like"
+                          ></a>
                         </div>
                       </div>
                       <div class="comments__item__text">
@@ -945,7 +996,10 @@
                             class="comments__item__top__right__dis-like"
                           ></a>
                           <div class="comments__item__top__right__summ">0</div>
-                          <a href="" class="comments__item__top__right__like"></a>
+                          <a
+                            href=""
+                            class="comments__item__top__right__like"
+                          ></a>
                         </div>
                       </div>
                       <div class="comments__item__text">
@@ -981,7 +1035,10 @@
                             class="comments__item__top__right__dis-like"
                           ></a>
                           <div class="comments__item__top__right__summ">0</div>
-                          <a href="" class="comments__item__top__right__like"></a>
+                          <a
+                            href=""
+                            class="comments__item__top__right__like"
+                          ></a>
                         </div>
                       </div>
                       <div class="comments__item__text">
@@ -1000,7 +1057,7 @@
           <div class="lenta">
             <div class="lenta_title big">Ещё по теме</div>
             <a href="" class="lenta_goto">ВСЁ из рубрики “активность”</a>
-            <div class="lenta_body row tablet_slider">
+            <div class="lenta_body tablet_slider">
               <div class="lenta_body_sr-item">
                 <div class="lenta_body_sr-item_img">
                   <img src="images/search_results1.png" alt="" />
@@ -1069,142 +1126,148 @@
             </div>
             <div class="lenta_title big">Новое</div>
             <div class="lenta_body">
-              <div class="lenta_body_item">
-                <div class="lenta_body_item_img">
-                  <img src="images/list-item-4.png" alt="" />
-                </div>
-                <ul class="lenta_body_item_types">
-                  <li class="lenta_body_item_types_type">
-                    <a href="">сон</a>
-                  </li>
-                  <li class="lenta_body_item_types_type">
-                    <a href="">питание</a>
-                  </li>
-                </ul>
-                <a href="" class="lenta_body_item_title">
-                  Что такое второе мнение, и зачем оно пациенту
-                </a>
-                <div class="lenta_body_item_text">
-                  Какие существуют альтернативные варианты лечения ветряной
-                  оспы?
-                </div>
-                <div class="data-bottom">
-                  <div class="data-bottom__comments">44</div>
-                  <div class="data-bottom__views">12</div>
-                </div>
-              </div>
-              <div class="lenta_body_s-item_wrapper">
-                <div class="lenta_body_s-item">
-                  <div class="lenta_body_s-item_img">
-                    <i class="icon_sport_big"></i>
+              <div class="lenta__col">
+                <div class="lenta_body_item">
+                  <div class="lenta_body_item_img">
+                    <img src="images/list-item-4.png" alt="" />
                   </div>
-                  <a href="" class="lenta_body_s-item_title">
-                    Как планировать семью вопреки “болезням”
+                  <ul class="lenta_body_item_types">
+                    <li class="lenta_body_item_types_type">
+                      <a href="">сон</a>
+                    </li>
+                    <li class="lenta_body_item_types_type">
+                      <a href="">питание</a>
+                    </li>
+                  </ul>
+                  <a href="" class="lenta_body_item_title">
+                    Что такое второе мнение, и зачем оно пациенту
                   </a>
-                  <div class="data-bottom lenta_body_s-item_inf">
+                  <div class="lenta_body_item_text">
+                    Какие существуют альтернативные варианты лечения ветряной
+                    оспы?
+                  </div>
+                  <div class="data-bottom">
                     <div class="data-bottom__comments">44</div>
                     <div class="data-bottom__views">12</div>
                   </div>
                 </div>
-                <div class="lenta_body_s-item">
-                  <div class="lenta_body_s-item_img">
-                    <i class="icon_bake_big"></i>
+                <div class="lenta_body_s-item_wrapper">
+                  <div class="lenta_body_s-item">
+                    <div class="lenta_body_s-item_img">
+                      <i class="icon_sport_big"></i>
+                    </div>
+                    <a href="" class="lenta_body_s-item_title">
+                      Как планировать семью вопреки “болезням”
+                    </a>
+                    <div class="data-bottom lenta_body_s-item_inf">
+                      <div class="data-bottom__comments">44</div>
+                      <div class="data-bottom__views">12</div>
+                    </div>
                   </div>
-                  <a href="" class="lenta_body_s-item_title">
-                    Понять и простить кота за кражи
-                  </a>
-                  <div class="data-bottom lenta_body_s-item_inf">
-                    <div class="data-bottom__comments">44</div>
-                    <div class="data-bottom__views">12</div>
+                  <div class="lenta_body_s-item">
+                    <div class="lenta_body_s-item_img">
+                      <i class="icon_bake_big"></i>
+                    </div>
+                    <a href="" class="lenta_body_s-item_title">
+                      Понять и простить кота за кражи
+                    </a>
+                    <div class="data-bottom lenta_body_s-item_inf">
+                      <div class="data-bottom__comments">44</div>
+                      <div class="data-bottom__views">12</div>
+                    </div>
                   </div>
                 </div>
               </div>
 
-              <div class="lenta_body_item">
-                <div class="lenta_body_item_img">
-                  <img src="images/list-item-5.png" alt="" />
-                </div>
-                <ul class="lenta_body_item_types">
-                  <li class="lenta_body_item_types_type">
-                    <a href="">питание</a>
-                  </li>
-                </ul>
-                <a href="" class="lenta_body_item_title">
-                  Опрос, нужен ли вам прямо сейчас детокс?
-                </a>
-                <div class="lenta_body_item_text">
-                  Что такое инвазивная пренатальная диагностика, зачем она
-                  нужна, о стационаре
-                </div>
-                <div class="data-bottom">
-                  <div class="data-bottom__comments">44</div>
-                  <div class="data-bottom__views">12</div>
-                </div>
-              </div>
-              <div class="lenta_body_s-item_wrapper">
-                <div class="lenta_body_s-item">
-                  <div class="lenta_body_s-item_img">
-                    <i class="icon_bake_big"></i>
+              <div class="lenta__col">
+                <div class="lenta_body_item">
+                  <div class="lenta_body_item_img">
+                    <img src="images/list-item-5.png" alt="" />
                   </div>
-                  <a href="" class="lenta_body_s-item_title">
-                    Понять и простить кота за кражи
+                  <ul class="lenta_body_item_types">
+                    <li class="lenta_body_item_types_type">
+                      <a href="">питание</a>
+                    </li>
+                  </ul>
+                  <a href="" class="lenta_body_item_title">
+                    Опрос, нужен ли вам прямо сейчас детокс?
                   </a>
-                  <div class="data-bottom lenta_body_s-item_inf">
+                  <div class="lenta_body_item_text">
+                    Что такое инвазивная пренатальная диагностика, зачем она
+                    нужна, о стационаре
+                  </div>
+                  <div class="data-bottom">
                     <div class="data-bottom__comments">44</div>
                     <div class="data-bottom__views">12</div>
                   </div>
                 </div>
-              </div>
-              <div class="lenta_body_item">
-                <div class="lenta_body_item_img">
-                  <img src="images/list-item-6.png" alt="" />
-                </div>
-                <ul class="lenta_body_item_types">
-                  <li class="lenta_body_item_types_type">
-                    <a href="">сон</a>
-                  </li>
-                  <li class="lenta_body_item_types_type">
-                    <a href="">активность</a>
-                  </li>
-                  <li class="lenta_body_item_types_type">
-                    <a href="">питание</a>
-                  </li>
-                </ul>
-                <a href="" class="lenta_body_item_title">
-                  7 признаков того, что пора чистить печень
-                </a>
-                <div class="lenta_body_item_text">
-                  Какие существуют альтернативные варианты лечения ветряной
-                  оспы?
-                </div>
-                <div class="data-bottom">
-                  <div class="data-bottom__comments">44</div>
-                  <div class="data-bottom__views">12</div>
-                </div>
-              </div>
-              <div class="lenta_body_s-item_wrapper">
-                <div class="lenta_body_s-item">
-                  <div class="lenta_body_s-item_img">
-                    <i class="icon_bake_big"></i>
+                <div class="lenta_body_s-item_wrapper">
+                  <div class="lenta_body_s-item">
+                    <div class="lenta_body_s-item_img">
+                      <i class="icon_bake_big"></i>
+                    </div>
+                    <a href="" class="lenta_body_s-item_title">
+                      Понять и простить кота за кражи
+                    </a>
+                    <div class="data-bottom lenta_body_s-item_inf">
+                      <div class="data-bottom__comments">44</div>
+                      <div class="data-bottom__views">12</div>
+                    </div>
                   </div>
-                  <a href="" class="lenta_body_s-item_title">
-                    Почему нужно пить воду, а не лимонад?
+                </div>
+              </div>
+              <div class="lenta__col">
+                <div class="lenta_body_item">
+                  <div class="lenta_body_item_img">
+                    <img src="images/list-item-6.png" alt="" />
+                  </div>
+                  <ul class="lenta_body_item_types">
+                    <li class="lenta_body_item_types_type">
+                      <a href="">сон</a>
+                    </li>
+                    <li class="lenta_body_item_types_type">
+                      <a href="">активность</a>
+                    </li>
+                    <li class="lenta_body_item_types_type">
+                      <a href="">питание</a>
+                    </li>
+                  </ul>
+                  <a href="" class="lenta_body_item_title">
+                    7 признаков того, что пора чистить печень
                   </a>
-                  <div class="data-bottom lenta_body_s-item_inf">
+                  <div class="lenta_body_item_text">
+                    Какие существуют альтернативные варианты лечения ветряной
+                    оспы?
+                  </div>
+                  <div class="data-bottom">
                     <div class="data-bottom__comments">44</div>
                     <div class="data-bottom__views">12</div>
                   </div>
                 </div>
-                <div class="lenta_body_s-item">
-                  <div class="lenta_body_s-item_img">
-                    <i class="icon_bake_big"></i>
+                <div class="lenta_body_s-item_wrapper">
+                  <div class="lenta_body_s-item">
+                    <div class="lenta_body_s-item_img">
+                      <i class="icon_bake_big"></i>
+                    </div>
+                    <a href="" class="lenta_body_s-item_title">
+                      Почему нужно пить воду, а не лимонад?
+                    </a>
+                    <div class="data-bottom lenta_body_s-item_inf">
+                      <div class="data-bottom__comments">44</div>
+                      <div class="data-bottom__views">12</div>
+                    </div>
                   </div>
-                  <a href="" class="lenta_body_s-item_title">
-                    Понять и простить кота за кражи
-                  </a>
-                  <div class="data-bottom lenta_body_s-item_inf">
-                    <div class="data-bottom__comments">44</div>
-                    <div class="data-bottom__views">12</div>
+                  <div class="lenta_body_s-item">
+                    <div class="lenta_body_s-item_img">
+                      <i class="icon_bake_big"></i>
+                    </div>
+                    <a href="" class="lenta_body_s-item_title">
+                      Понять и простить кота за кражи
+                    </a>
+                    <div class="data-bottom lenta_body_s-item_inf">
+                      <div class="data-bottom__comments">44</div>
+                      <div class="data-bottom__views">12</div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1288,7 +1351,10 @@
                 name="mail"
                 class="inpt__basic inpt_round-right footer_form_input"
               />
-              <button type="submit" class="btn__right footer_form_button"></button>
+              <button
+                type="submit"
+                class="btn__right footer_form_button"
+              ></button>
               <!-- сообщение успешной отправке -->
               <!-- <div class="footer__form__succes">Спасибо! На указанную почту отправлено письмо для подтверждения действия.</div> -->
             </form>
@@ -1326,7 +1392,6 @@
               </div>
             </div>
           </div>
-          
         </footer>
       </div>
       <div class="sitebar__wrapper" id="sitebar" data-has_target="y">
