@@ -3,7 +3,7 @@
   src: url("../fonts/Rubik-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
-}
+} 
 @font-face {
   font-family: "Rubik";
   src: url("../fonts/Rubik-Medium.ttf") format("truetype");
@@ -369,6 +369,9 @@ input::-ms-clear {
         &__col {
           width: ~"calc((100% - 60px)/3)";
           margin-right: 30px;
+          &:last-child{
+            margin-right: 0;
+          }
         }
         &_title {
           color: @color_text;
@@ -1811,7 +1814,6 @@ input::-ms-clear {
     margin-right: 100px;
     &__title {
       color: @color_text;
-
       font-size: 26px;
       font-weight: 700;
       line-height: 35.43px;
@@ -1832,12 +1834,18 @@ input::-ms-clear {
     &_form {
       &_input {
         height: auto;
-        width: ~"calc(100% - 24px)";
+        width: 100%;
         padding: 14px 12px;
         resize: none;
+        box-sizing: border-box;
         margin-bottom: 10px;
-      }
-      &_button {
+        height: 65px;
+        transition: @anim;
+        font-size: 15px;
+        line-height: 21px;
+        &:focus{
+          height: 90px;
+        }
       }
     }
     &__list {
@@ -3243,15 +3251,15 @@ input::-ms-clear {
 //--|-|типы эллементов начало
 .list-items {
   .list_big-item {
-    width: ~"calc((100% - 60px)/3*2 - 12px)";
-    max-width: 601px;
+    width: ~"calc((100% - 60px)/3*2 + 23px)";
     border-radius: 8px;
     height: 100%;
     padding: 35px 25px;
     padding-top: 0;
     position: relative;
-    margin-right: 42px;
+    margin-right: 37px;
     cursor: pointer;
+    box-sizing: border-box;
     &.has_photo {
       &:before {
         content: "";
@@ -3337,14 +3345,13 @@ input::-ms-clear {
     width: auto;
     width: 100%;
     max-width: 312px;
-    margin-bottom: 25px;
+    margin-bottom: 35px;
     cursor: pointer;
     &_img {
       border-radius: 8px;
       overflow: hidden;
       width: 100%;
       position: relative;
-      max-height: 269px;
       img {
         max-width: 100%;
         width: 100%;
@@ -3359,11 +3366,12 @@ input::-ms-clear {
       -webkit-box-align: center;
       -ms-flex-align: center;
       align-items: center;
-      margin: 15px 0;
-      margin-bottom: 10px;
+      margin-top: 5px;
+      margin-bottom: 0px;
       &_type {
         list-style: none;
         margin-right: 15px;
+        margin-bottom: 5px;
         &::before {
           content: none;
         }

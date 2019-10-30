@@ -365,6 +365,9 @@ input::-ms-clear {
   width: calc((100% - 60px)/3);
   margin-right: 30px;
 }
+.wrapper_main main .lenta__col:last-child {
+  margin-right: 0;
+}
 .wrapper_main main .lenta_title {
   color: #1d2f3c;
   font-size: 21px;
@@ -409,15 +412,15 @@ input::-ms-clear {
   align-items: flex-start;
 }
 .wrapper_main main .lenta_body_b-item {
-  width: calc((100% - 60px)/3*2 - 12px);
-  max-width: 601px;
+  width: calc((100% - 60px)/3*2 + 23px);
   border-radius: 8px;
   height: 100%;
   padding: 35px 25px;
   padding-top: 0;
   position: relative;
-  margin-right: 42px;
+  margin-right: 37px;
   cursor: pointer;
+  box-sizing: border-box;
 }
 .wrapper_main main .lenta_body_b-item.has_photo:before {
   content: "";
@@ -500,7 +503,7 @@ input::-ms-clear {
   width: auto;
   width: 100%;
   max-width: 312px;
-  margin-bottom: 25px;
+  margin-bottom: 35px;
   cursor: pointer;
 }
 .wrapper_main main .lenta_body_item_img {
@@ -508,7 +511,6 @@ input::-ms-clear {
   overflow: hidden;
   width: 100%;
   position: relative;
-  max-height: 269px;
 }
 .wrapper_main main .lenta_body_item_img img {
   max-width: 100%;
@@ -523,12 +525,13 @@ input::-ms-clear {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  margin: 15px 0;
-  margin-bottom: 10px;
+  margin-top: 5px;
+  margin-bottom: 0px;
 }
 .wrapper_main main .lenta_body_item_types_type {
   list-style: none;
   margin-right: 15px;
+  margin-bottom: 5px;
 }
 .wrapper_main main .lenta_body_item_types_type::before {
   content: none;
@@ -2140,10 +2143,18 @@ input::-ms-clear {
 }
 .page .comments_form_input {
   height: auto;
-  width: calc(100% - 24px);
+  width: 100%;
   padding: 14px 12px;
   resize: none;
+  box-sizing: border-box;
   margin-bottom: 10px;
+  height: 65px;
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  font-size: 15px;
+  line-height: 21px;
+}
+.page .comments_form_input:focus {
+  height: 90px;
 }
 .page .comments__list-wrapper {
   height: 300px;
@@ -2978,15 +2989,15 @@ input::-ms-clear {
   flex-direction: row;
 }
 .block .lenta_body_b-item {
-  width: calc((100% - 60px)/3*2 - 12px);
-  max-width: 601px;
+  width: calc((100% - 60px)/3*2 + 23px);
   border-radius: 8px;
   height: 100%;
   padding: 35px 25px;
   padding-top: 0;
   position: relative;
-  margin-right: 42px;
+  margin-right: 37px;
   cursor: pointer;
+  box-sizing: border-box;
 }
 .block .lenta_body_b-item.has_photo:before {
   content: "";
@@ -3069,7 +3080,7 @@ input::-ms-clear {
   width: auto;
   width: 100%;
   max-width: 312px;
-  margin-bottom: 25px;
+  margin-bottom: 35px;
   cursor: pointer;
 }
 .block .lenta_body_item_img {
@@ -3077,7 +3088,6 @@ input::-ms-clear {
   overflow: hidden;
   width: 100%;
   position: relative;
-  max-height: 269px;
 }
 .block .lenta_body_item_img img {
   max-width: 100%;
@@ -3092,12 +3102,13 @@ input::-ms-clear {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  margin: 15px 0;
-  margin-bottom: 10px;
+  margin-top: 5px;
+  margin-bottom: 0px;
 }
 .block .lenta_body_item_types_type {
   list-style: none;
   margin-right: 15px;
+  margin-bottom: 5px;
 }
 .block .lenta_body_item_types_type::before {
   content: none;
@@ -3936,15 +3947,15 @@ input::-ms-clear {
   background-image: linear-gradient(90deg, rgba(241, 245, 248, 0) 0%, 0.8);
 }
 .list-items .list_big-item {
-  width: calc((100% - 60px)/3*2 - 12px);
-  max-width: 601px;
+  width: calc((100% - 60px)/3*2 + 23px);
   border-radius: 8px;
   height: 100%;
   padding: 35px 25px;
   padding-top: 0;
   position: relative;
-  margin-right: 42px;
+  margin-right: 37px;
   cursor: pointer;
+  box-sizing: border-box;
 }
 .list-items .list_big-item.has_photo:before {
   content: "";
@@ -4024,7 +4035,7 @@ input::-ms-clear {
   width: auto;
   width: 100%;
   max-width: 312px;
-  margin-bottom: 25px;
+  margin-bottom: 35px;
   cursor: pointer;
 }
 .list-items .list_normal-item_img {
@@ -4032,7 +4043,6 @@ input::-ms-clear {
   overflow: hidden;
   width: 100%;
   position: relative;
-  max-height: 269px;
 }
 .list-items .list_normal-item_img img {
   max-width: 100%;
@@ -4047,12 +4057,13 @@ input::-ms-clear {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  margin: 15px 0;
-  margin-bottom: 10px;
+  margin-top: 5px;
+  margin-bottom: 0px;
 }
 .list-items .list_normal-item_types_type {
   list-style: none;
   margin-right: 15px;
+  margin-bottom: 5px;
 }
 .list-items .list_normal-item_types_type::before {
   content: none;

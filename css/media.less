@@ -29,13 +29,17 @@
         .lenta {
           &__col {
             width: ~"calc((100% - 30px)/2)";
-            margin-right: 15px;
+            margin-right: 30px;
             margin-bottom: 30px;
+            &:nth-child(2){
+              margin-right: 0;
+            }
             &:last-child {
               display: flex;
               width: 100%;
+              margin-bottom: 0;
               .lenta_body_item {
-                margin-right: 15px;
+                margin-right: 30px;
               }
               .lenta_body_item,
               .lenta_body_s-item_wrapper {
@@ -63,6 +67,7 @@
               width: ~"calc(100% - 50px)";
               max-width: none;
               margin-right: 0;
+              box-sizing: unset;
               &_title {
                 font-size: 21px;
                 line-height: 28.3px;
@@ -375,6 +380,7 @@
               margin-left: -50px;
               -webkit-transform: translate(25px, 0);
               transform: translate(25px, 0);
+              
               &_img {
                 height: auto;
                 img {
