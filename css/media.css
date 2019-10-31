@@ -17,6 +17,11 @@
     width: calc(100% - 50px);
     margin: auto;
   }
+  .page .about__block-img {
+    width: 100%;
+  }
+}
+@media (max-width: 950px) {
   .wrapper_main main .lenta__col {
     width: calc((100% - 30px)/2);
     margin-right: 30px;
@@ -99,9 +104,6 @@
   .wrapper_main main .lenta_body.row {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-  }
-  .page .about__block-img {
-    width: 100%;
   }
   .page .tags__list {
     -ms-flex-wrap: wrap;
@@ -205,6 +207,9 @@
     left: 50%;
     -webkit-transform: translate(-50%, -50%) rotate(45deg);
     transform: translate(-50%, -50%) rotate(45deg);
+  }
+  .header__bottom {
+    overflow: auto;
   }
   .header__bottom__menu {
     opacity: 1;
@@ -402,6 +407,9 @@
     margin-top: 8px;
   }
   .wrapper_main main .lenta_goto {
+    display: none;
+  }
+  .wrapper_main main .lenta_show-more {
     display: none;
   }
   .wrapper_main main .reviews-tablet {

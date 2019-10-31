@@ -20,11 +20,24 @@
     }
   }
 }
-@media (max-width: 1024px) {
+@media (max-width: 1024px){
   .wrapper {
     &_main {
       width: ~"calc(100% - 50px)";
       margin: auto;
+    }
+  }
+  .page{
+    .about {
+      &__block-img {
+        width: 100%;
+      }
+    }
+  }
+}
+@media (max-width: 950px) {
+  .wrapper {
+    &_main {
       main {
         .lenta {
           &__col {
@@ -139,12 +152,6 @@
     }
   }
   .page {
-    .about {
-      &__block-img {
-        width: 100%;
-      }
-    }
-
     .tags {
       &__list {
         -ms-flex-wrap: wrap;
@@ -261,6 +268,7 @@
   }
   .header {
     &__bottom {
+      overflow: auto;
       &__menu {
         opacity: 1;
         -ms-flex-wrap: nowrap;
@@ -489,6 +497,7 @@
             display: none;
           }
           &_show-more {
+            display: none;
           }
         }
         .reviews-tablet {
