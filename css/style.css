@@ -1073,7 +1073,7 @@ input::-ms-clear {
   border: none;
   width: 25px;
   height: 24px;
-  background-image: url(../images/search.png);
+  background-image: url(../images/search.svg);
   background-repeat: no-repeat;
   background-position: center;
   margin-right: 8px;
@@ -1184,7 +1184,7 @@ input::-ms-clear {
   cursor: pointer;
   top: 8px;
   right: 8px;
-  background-image: url(../images/cross.png);
+  background-image: url(../images/cross.svg);
   background-repeat: no-repeat;
   background-position: center;
   width: 24px;
@@ -1272,7 +1272,7 @@ input::-ms-clear {
 }
 .header__sitebar-btn {
   display: none;
-  background-image: url(../images/sitebar-open.png);
+  background-image: url(../images/sitebar-open.svg);
   background-size: contain;
   background-position: center;
   width: 21px;
@@ -1424,7 +1424,7 @@ input::-ms-clear {
   min-width: 25px;
   height: 24px;
   z-index: 3;
-  background-image: url(../images/search.png);
+  background-image: url(../images/search.svg);
   background-repeat: no-repeat;
   background-position: center;
   margin-right: 8px;
@@ -1550,7 +1550,7 @@ input::-ms-clear {
   cursor: pointer;
   top: 8px;
   right: 8px;
-  background-image: url(../images/cross.png);
+  background-image: url(../images/cross.svg);
   background-repeat: no-repeat;
   background-position: center;
   width: 24px;
@@ -1637,7 +1637,7 @@ input::-ms-clear {
   cursor: pointer;
   top: 8px;
   right: 8px;
-  background-image: url(../images/cross.png);
+  background-image: url(../images/cross.svg);
   background-repeat: no-repeat;
   background-position: center;
   width: 24px;
@@ -1822,7 +1822,7 @@ input::-ms-clear {
   cursor: pointer;
   width: 24px;
   height: 24px;
-  background-image: url(../images/search.png);
+  background-image: url(../images/search.svg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: auto;
