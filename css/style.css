@@ -4750,7 +4750,7 @@ i.icon_bake {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url(../images/bake.png);
+  background-image: url(../images/small/bicycle.png);
   height: 28px;
   width: 20px;
 }
@@ -4759,7 +4759,7 @@ i.icon_bake_big {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url(../images/bake.png);
+  background-image: url(../images/big/bicycle.png);
   height: 50px;
   width: 35px;
 }
@@ -4768,7 +4768,7 @@ i.icon_avocado {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url(../images/avocado.svg);
+  background-image: url(../images/small/avocado.png);
   height: 28px;
   width: 20px;
 }
@@ -4777,7 +4777,7 @@ i.icon_avocado_big {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url(../images/avocado.svg);
+  background-image: url(../images/big/avocado.png);
   height: 50px;
   width: 35px;
 }
@@ -4804,7 +4804,7 @@ i.icon_call-me {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url(../images/hand.svg);
+  background-image: url(../images/small/call_me.png);
   height: 28px;
   width: 20px;
 }
@@ -4813,7 +4813,7 @@ i.icon_call-me_big {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url(../images/hand.svg);
+  background-image: url(../images/big/call_me.png);
   height: 50px;
   width: 35px;
 }
@@ -4822,7 +4822,7 @@ i.icon_boll {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url(../images/boll.svg);
+  background-image: url(../images/small/ball.png);
   height: 28px;
   width: 20px;
 }
@@ -4831,7 +4831,7 @@ i.icon_boll_big {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url(../images/boll.svg);
+  background-image: url(../images/big/ball.png);
   height: 50px;
   width: 35px;
 }
@@ -4840,7 +4840,7 @@ i.icon_dream {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url(../images/sleep.svg);
+  background-image: url(../images/small/dream.png);
   height: 28px;
   width: 20px;
 }
@@ -4849,7 +4849,7 @@ i.icon_dream_big {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url(../images/sleep.svg);
+  background-image: url(../images/big/dream.png);
   height: 50px;
   width: 35px;
 }
@@ -4858,7 +4858,7 @@ i.icon_phone {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url(../images/techno.svg);
+  background-image: url(../images/small/phone.png);
   height: 28px;
   width: 20px;
 }
@@ -4867,7 +4867,7 @@ i.icon_phone_big {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url(../images/techno.svg);
+  background-image: url(../images/big/phone.png);
   height: 50px;
   width: 35px;
 }
@@ -4876,7 +4876,7 @@ i.icon_sport {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url(../images/sport.svg);
+  background-image: url(../images/small/sport.png);
   height: 28px;
   width: 20px;
 }
@@ -4885,7 +4885,7 @@ i.icon_sport_big {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url(../images/sport.svg);
+  background-image: url(../images/big/sport.png);
   height: 50px;
   width: 35px;
 }
@@ -4894,7 +4894,7 @@ i.icon_medicine {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url(../images/drag.svg);
+  background-image: url(../images/small/medicine.png);
   height: 28px;
   width: 20px;
 }
@@ -4903,7 +4903,25 @@ i.icon_medicine_big {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url(../images/drag.svg);
+  background-image: url(../images/big/medicine.png);
+  height: 50px;
+  width: 35px;
+}
+i.icon_sun {
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(../images/small/sun.png);
+  height: 28px;
+  width: 20px;
+}
+i.icon_sun_big {
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(../images/big/sun.png);
   height: 50px;
   width: 35px;
 }

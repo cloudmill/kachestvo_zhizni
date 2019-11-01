@@ -4107,7 +4107,7 @@ input::-ms-clear {
 //--|эмодзи начало
 i.icon {
   @pos: center;
-  .standart(@bg,@pos) {
+  .standart(@bg,@bg_big,@pos) {
     display: inline-block;
     background-size: contain;
     background-repeat: no-repeat;
@@ -4121,46 +4121,59 @@ i.icon {
       background-repeat: no-repeat;
       background-position: center;
       background-position: @pos;
-      background-image: @bg;
+      background-image: @bg_big;
       height: 50px;
       width: 35px;
     }
   }
   &_bake {
-    @bg: url(../images/bake.png);
-    .standart(@bg, @pos);
+    @bg: url(../images/small/bicycle.png);
+    @bg_big: url(../images/big/bicycle.png);
+    .standart(@bg, @bg_big, @pos);
   }
   &_avocado {
-    @bg: url(../images/avocado.svg);
-    .standart(@bg, @pos);
+    @bg: url(../images/small/avocado.png);
+    @bg_big: url(../images/big/avocado.png);
+    .standart(@bg, @bg_big, @pos);
   }
   &_gen {
     @bg: url(../images/genetic.svg);
-    .standart(@bg, @pos);
+    .standart(@bg, @bg, @pos);
   }
   &_call-me {
-    @bg: url(../images/hand.svg);
-    .standart(@bg, @pos);
+    @bg: url(../images/small/call_me.png);
+    @bg_big: url(../images/big/call_me.png);
+    .standart(@bg, @bg_big, @pos);
   }
   &_boll {
-    @bg: url(../images/boll.svg);
-    .standart(@bg, @pos);
+    @bg: url(../images/small/ball.png);
+    @bg_big: url(../images/big/ball.png);
+    .standart(@bg, @bg_big, @pos);
   }
   &_dream {
-    @bg: url(../images/sleep.svg);
-    .standart(@bg, @pos);
+    @bg: url(../images/small/dream.png);
+    @bg_big: url(../images/big/dream.png);
+    .standart(@bg, @bg_big, @pos);
   }
   &_phone {
-    @bg: url(../images/techno.svg);
-    .standart(@bg, @pos);
+    @bg: url(../images/small/phone.png);
+    @bg_big: url(../images/big/phone.png);
+    .standart(@bg, @bg_big, @pos);
   }
   &_sport {
-    @bg: url(../images/sport.svg);
-    .standart(@bg, @pos);
+    @bg: url(../images/small/sport.png);
+    @bg_big: url(../images/big/sport.png);
+    .standart(@bg, @bg_big, @pos);
   }
   &_medicine {
-    @bg: url(../images/drag.svg);
-    .standart(@bg, @pos);
+    @bg: url(../images/small/medicine.png);
+    @bg_big: url(../images/big/medicine.png);
+    .standart(@bg, @bg_big, @pos);
+  }
+  &_sun {
+    @bg: url(../images/small/sun.png);
+    @bg_big: url(../images/big/sun.png);
+    .standart(@bg, @bg_big, @pos);
   }
 }
 //--|эмодзи конец
