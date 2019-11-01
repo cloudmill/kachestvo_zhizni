@@ -36,6 +36,9 @@ var custom = function() {
         if (target == "burger") {
           $("body").addClass("overflow");
         }
+        if(target == "sitebar"){
+          $(".wrapper").addClass('sitebar_show')
+        }
       }else if(target == 'header__tags'){
         $(this).toggleClass("active");
         animate_open_close($("#" + target));
@@ -50,6 +53,10 @@ var custom = function() {
           $("body").removeClass("overflow");
         }
         animate_open_close($("#" + close), true);
+        if (close == "sitebar") {
+          $(".wrapper").removeClass('sitebar_show')
+        }
+       
       }
     });
     $(document).on("click", function(e) {
@@ -59,6 +66,7 @@ var custom = function() {
       ) {
         animate_open_close($("[data-has_target]"), true);
         $("body").removeClass("overflow");
+        $(".wrapper").removeClass('sitebar_show')
         $("[data-target]").removeClass("active");
       }
     });
@@ -179,6 +187,12 @@ var custom = function() {
      
     });
     $(document).on("click", function(e) {
+      if (!$("#header__bottom__menu:hover").length > 0) {
+        hide_more_items();
+         $('.wrapper_main').css('margin-top','0px')
+      }
+    });
+    $(document).on("scroll", function(e) {
       if (!$("#header__bottom__menu:hover").length > 0) {
         hide_more_items();
          $('.wrapper_main').css('margin-top','0px')
@@ -333,18 +347,24 @@ var custom = function() {
     });
     var old_scroll = 0;
     $(document).on("scroll", function() {
-      if ($(document).scrollTop() > 200) {
         if (old_scroll > $(document).scrollTop()) {
           $("header").removeClass("hide");
+          $("header").addClass("shadow");
+          $("header").css('margin-top',0)
         } else {
+          if($(document).scrollTop() <= 200){
+            $("header").css('transition',"top 0s")
+            $("header").removeClass("shadow");
+          }
           $("header").addClass("hide");
+          $("header").css('margin-top',200 - $(document).scrollTop()+"px")
+          if($(document).scrollTop() > 200){
+            $("header").css('transition',"top 0.3s cubic-bezier(0.215, 0.61, 0.355, 1)")
+            $("header").css('margin-top',0)
+            $("header").addClass("shadow");
+          }
         }
-      }
-      /* if($(document).scrollTop() <= 200){
-        $("header").css('margin-top',-$(document).scrollTop()+"px")
-      }else{
-        $("header").css('margin-top',0)
-      } */
+      
       old_scroll = $(document).scrollTop();
     });
   };
