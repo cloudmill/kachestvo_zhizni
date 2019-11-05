@@ -364,7 +364,9 @@ var custom = function() {
             $("header").addClass("shadow");
           }
         }
-      
+        if($(document).scrollTop() ==0){
+          $("header").removeClass("shadow");
+        }
       old_scroll = $(document).scrollTop();
     });
   };
