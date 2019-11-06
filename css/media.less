@@ -52,7 +52,7 @@
       top: 0;
       right: 0;
       background: rgba(29, 47, 60,0.75);
-      transition: all 0.3s;
+      transition: opacity 0.3s;
       opacity: 0;
       z-index: -2;
     }
@@ -215,6 +215,23 @@
           right: -250px;
           max-width: none;
           top: 0;
+        }
+      }
+      &__author{
+        position: relative !important;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        padding: 15px 0;
+        padding-left: 75px;
+        &__block-img{
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translate(0,-50%);
+        }
+        &__name{
         }
       }
       &__social {
@@ -455,7 +472,7 @@
               }
               &_types{
                 margin: 4px 0;
-                padding-top: 4px;
+                padding-top: 7px;
                 &_type a {
                   font-size: 11px;
                   line-height: 15px;
@@ -748,6 +765,18 @@
     }
   }
 }
+@media(max-width:650px){
+  .page {
+    .comments__item__top__right{
+      display: none;
+    }
+    .comments__item__top__left{
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
+  
+}
 @media (max-width: 500px) {
   .wrapper {
     &_main {
@@ -755,7 +784,7 @@
         .lenta {
           &_body {
             &.tablet_slider {
-              max-width: 100%;
+              max-width: 195px
             }
             &_sr-item {
               width: ~"calc(50% - 15px)";
@@ -774,6 +803,22 @@
       &__title{
         font-size: 26px;
         line-height: 35px;
+      }
+      
+    }
+    .article{
+      &_block-img {
+        &_head {
+          margin-bottom: 10px;
+        }
+      }
+      &__head{
+        &__inf{
+          margin-bottom: 0;
+        }
+        &__types{
+          display: none;
+        }
       }
     }
   }
@@ -807,6 +852,27 @@
       &__card {
         padding: 30px 15px;
         width: ~"calc(100% - 30px)";
+      }
+      &__inf{
+        
+        &__list{
+          justify-content: space-between;
+        }
+        &__item{
+          width: ~"calc(50% - 10px)";
+          margin-right: 0;
+        }
+      }
+      &__social{
+        width: 100%;
+        max-width: none;
+        &__item{
+          flex-basis: ~"calc(25% - 2px)";
+          &:last-child{
+            flex-basis: 100%;
+            max-width: none;
+          }
+        }
       }
     }
   }

@@ -35,7 +35,7 @@
     top: 0;
     right: 0;
     background: rgba(29, 47, 60, 0.75);
-    transition: all 0.3s;
+    transition: opacity 0.3s;
     opacity: 0;
     z-index: -2;
   }
@@ -158,6 +158,21 @@
     right: -250px;
     max-width: none;
     top: 0;
+  }
+  .page .article__author {
+    position: relative !important;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 15px 0;
+    padding-left: 75px;
+  }
+  .page .article__author__block-img {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(0, -50%);
   }
   .page .article__social {
     position: unset !important;
@@ -377,7 +392,7 @@
   }
   .wrapper_main main .lenta_body_item_types {
     margin: 4px 0;
-    padding-top: 4px;
+    padding-top: 7px;
   }
   .wrapper_main main .lenta_body_item_types_type a {
     font-size: 11px;
@@ -621,9 +636,18 @@
     line-height: 28px;
   }
 }
+@media (max-width: 650px) {
+  .page .comments__item__top__right {
+    display: none;
+  }
+  .page .comments__item__top__left {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
 @media (max-width: 500px) {
   .wrapper_main main .lenta_body.tablet_slider {
-    max-width: 100%;
+    max-width: 195px;
   }
   .wrapper_main main .lenta_body_sr-item {
     width: calc(50% - 15px);
@@ -635,6 +659,15 @@
   .page .about__title {
     font-size: 26px;
     line-height: 35px;
+  }
+  .page .article_block-img_head {
+    margin-bottom: 10px;
+  }
+  .page .article__head__inf {
+    margin-bottom: 0;
+  }
+  .page .article__head__types {
+    display: none;
   }
 }
 @media (max-width: 400px) {
@@ -654,6 +687,24 @@
   .page .article__card {
     padding: 30px 15px;
     width: calc(100% - 30px);
+  }
+  .page .article__inf__list {
+    justify-content: space-between;
+  }
+  .page .article__inf__item {
+    width: calc(50% - 10px);
+    margin-right: 0;
+  }
+  .page .article__social {
+    width: 100%;
+    max-width: none;
+  }
+  .page .article__social__item {
+    flex-basis: calc(25% - 2px);
+  }
+  .page .article__social__item:last-child {
+    flex-basis: 100%;
+    max-width: none;
   }
   .burger {
     width: calc(100% - 30px);
