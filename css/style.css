@@ -861,7 +861,7 @@ input::-ms-clear {
   box-shadow: inset 0px 1px transparent, inset 0px -1px transparent;
 }
 .wrapper_main main .lenta_btw-item .lenta_btw-item_types_type:hover {
-  color: #7A858D;
+  color: #7a858d;
   -webkit-box-shadow: inset 0px 1px transparent, inset 0px -1px rgba(122, 133, 141, 0.4);
   box-shadow: inset 0px 1px transparent, inset 0px -1px rgba(122, 133, 141, 0.4);
 }
@@ -904,12 +904,47 @@ input::-ms-clear {
   height: 48px;
   border-radius: 24px;
   color: #82c831;
-  background-color: #f3faeb;
   font-size: 13px;
   font-weight: 500;
   letter-spacing: 1.04px;
   line-height: 17.52px;
   text-transform: uppercase;
+  overflow: hidden;
+  position: relative;
+}
+.wrapper_main main .lenta_show-more:after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background-color: #f3faeb;
+  z-index: -1;
+  position: absolute;
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.wrapper_main main .lenta_show-more::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background-color: #f3faeb;
+  position: absolute;
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  left: 50%;
+  top: 50%;
+  z-index: -2;
+  transform: translate(-50%, -50%);
+}
+.wrapper_main main .lenta_show-more:hover:after {
+  background: rgba(130, 200, 49, 0.3);
+}
+.wrapper_main main .lenta_show-more:active:after {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
 }
 .header {
   max-width: 1010px;
@@ -3030,8 +3065,44 @@ input::-ms-clear {
   line-height: 17.52px;
   text-transform: uppercase;
   border: none;
-  background-color: #f3faea;
-  cursor: default;
+  z-index: 2;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+.page .article__checkbox__button:after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background-color: #f3faeb;
+  z-index: -1;
+  position: absolute;
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.page .article__checkbox__button::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background-color: #f3faeb;
+  position: absolute;
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  left: 50%;
+  top: 50%;
+  z-index: -2;
+  transform: translate(-50%, -50%);
+}
+.page .article__checkbox__button:hover:after {
+  background: rgba(130, 200, 49, 0.3);
+}
+.page .article__checkbox__button:active:after {
+  width: 30%;
+  height: 96px;
+  border-radius: 50%;
 }
 .page .article__checkbox__list {
   margin-top: 30px;
