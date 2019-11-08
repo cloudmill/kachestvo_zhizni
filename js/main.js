@@ -54,6 +54,7 @@ var custom = function () {
         if (target == "burger__tags") {
           $("body").addClass("overflow");
           $(".header").addClass("white_pole");
+          $('.burger__wrapper').scrollTop(0);
         }
         if (target == "sitebar") {
           $(".wrapper").addClass('sitebar_show')
@@ -171,19 +172,13 @@ var custom = function () {
         hide_more_items();
         $("#header__bottom__menu").css("opacity", 1);
         $("#header__bottom__menu").css("max-height", "none");
+        
       };
       $("#header__bottom__menu").append(
         '<li id="monitor_load_complete" class="header__bottom__menu__item health"> <a class="header__bottom__menu__item__link" href="#"> Физическое здоровье</a> </li>'
       );
 
       first_init = setInterval(function () {
-        console.log(
-          parseInt(
-            $("#header__bottom__menu")
-              .find("#monitor_load_complete")
-              .width()
-          )
-        );
         if (
           parseInt(
             $("#header__bottom__menu")
@@ -201,7 +196,7 @@ var custom = function () {
       }, 1);
     };
     start();
-
+    $(window).resize(start)
     $(document).on("click", ".header__bottom__menu__more", function () {
       var list = $(this)
         .parent()
@@ -368,6 +363,7 @@ var custom = function () {
     $("#burger__search button").click(function (e) {
       if (!$("#burger__search").hasClass("active")) {
         e.preventDefault();
+        $(".burger__search__input").focus();
         $("#burger__search").toggleClass("active");
       }
     });

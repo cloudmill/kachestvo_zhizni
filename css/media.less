@@ -45,7 +45,7 @@
     }
     &:before {
       content: "";
-      position: absolute;
+      position: fixed;
       z-index: -1;
       width: 100vw;
       height: 100vh;
@@ -416,6 +416,7 @@
         .lenta {
           &__col {
             width: 100%;
+            margin-right: 0 !important;
             &:last-child {
               display: block;
               .lenta_body_item {
@@ -909,6 +910,8 @@
       -ms-flex-pack: center;
       justify-content: center;
       padding: 0 25px;
+      box-sizing: border-box;
+      box-shadow: none;
       &.active {
         display: -webkit-box;
         display: -ms-flexbox;

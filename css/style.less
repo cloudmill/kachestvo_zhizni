@@ -432,6 +432,21 @@ input {
               .lenta_body_item_title {
                 color: @color_link;
               }
+              .lenta_body_item_types_type {
+                -webkit-transition: @anim;
+                transition: @anim;
+                -webkit-box-shadow: inset 0px 1px transparent,
+                  inset 0px -1px transparent;
+                box-shadow: inset 0px 1px transparent,
+                  inset 0px -1px transparent;
+                &:hover {
+                  color: @color_link;
+                  -webkit-box-shadow: inset 0px 1px transparent,
+                    inset 0px -1px @color_link;
+                  box-shadow: inset 0px 1px transparent,
+                    inset 0px -1px @color_link;
+                }
+              }
             }
           }
           &_s-item {
@@ -465,6 +480,19 @@ input {
         }
         &_btw-item {
           .list-items .list_between-item;
+          .lenta_btw-item_types_type {
+            -webkit-transition: @anim;
+            transition: @anim;
+            -webkit-box-shadow: inset 0px 1px transparent,
+              inset 0px -1px transparent;
+            box-shadow: inset 0px 1px transparent, inset 0px -1px transparent;
+            &:hover {
+              color: #7A858D;
+              -webkit-box-shadow: inset 0px 1px transparent,
+                inset 0px -1px rgba(122, 133, 141, 0.4);
+              box-shadow: inset 0px 1px transparent, inset 0px -1px rgba(122, 133, 141, 0.4);
+            }
+          }
         }
         &_goto {
           color: @color_link;
@@ -593,7 +621,6 @@ input {
         list-style: none;
         &__link {
           color: @color_text;
-
           font-size: 15px;
           font-weight: 400;
           line-height: 21.09px;
@@ -612,7 +639,6 @@ input {
       -webkit-transform: translate(0, -50%);
       transform: translate(0, -50%);
       color: @color_link;
-
       font-size: 15px;
       font-weight: 400;
       line-height: 21.09px;
@@ -622,6 +648,7 @@ input {
       -webkit-box-align: center;
       -ms-flex-align: center;
       align-items: center;
+      margin-top: 3px;
       &:before {
         content: "";
         margin-right: 8px;
@@ -629,9 +656,23 @@ input {
         background-size: contain;
         background-position: center;
         display: block;
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+        left: -32px;
         width: 24px;
         height: 24px;
         background-image: url(../images/subscribe.svg);
+      }
+      -webkit-transition: @anim;
+      transition: @anim;
+      -webkit-box-shadow: inset 0px 1px transparent, inset 0px -1px transparent;
+      box-shadow: inset 0px 1px transparent, inset 0px -1px transparent;
+      &:hover {
+        color: @color_link;
+        -webkit-box-shadow: inset 0px 1px transparent,
+          inset 0px -1px @color_link;
+        box-shadow: inset 0px 1px transparent, inset 0px -1px @color_link;
       }
     }
   }
@@ -975,7 +1016,7 @@ input {
   }
   &__menu {
     &__title {
-      padding-top: 60px;
+      padding-top: 40px;
       text-align: center;
       color: @color_text;
 
@@ -1148,6 +1189,8 @@ input {
     position: absolute;
     top: -55px;
     height: 100vh;
+    min-height: ~"Calc(100% + 55px)";
+    z-index: 3;
     left: 0;
     opacity: 0;
     background-color: #ffffff;
@@ -1161,12 +1204,10 @@ input {
     }
     &__title {
       color: @color_text;
-
       font-size: 21px;
       font-weight: 700;
       letter-spacing: 1.2px;
       line-height: 16.35px;
-      text-transform: uppercase;
       text-align: center;
       margin-bottom: 35px;
       padding-top: 60px;
@@ -2953,6 +2994,13 @@ input {
       max-width: 140px;
       &__link {
         color: #7a858d;
+        -webkit-transition: @anim;
+        transition: @anim;
+        display: block;
+        margin-bottom: 5px;
+        &:hover {
+          color: @color_link;
+        }
       }
       &_colored {
         color: @color_link;
@@ -2982,6 +3030,11 @@ input {
         font-size: 15px;
         font-weight: 400;
         line-height: 21.09px;
+        -webkit-transition: @anim;
+        transition: @anim;
+        &:hover {
+          color: @color_link;
+        }
       }
     }
     &__text {
@@ -3048,8 +3101,6 @@ input {
     &_input {
       width: 221px;
     }
-    &_button {
-    }
   }
   &__social {
     display: -webkit-box;
@@ -3060,6 +3111,25 @@ input {
     align-items: center;
     &__item {
       margin-right: 27px;
+      filter: grayscale(1);
+      transition: @anim;
+      &:hover {
+        filter: none !important;
+        opacity: 1 !important;
+      }
+      &:nth-child(4) {
+        opacity: 0.7;
+        filter: contrast(0) grayscale(1);
+      }
+      &:nth-child(3) {
+        opacity: 0.7;
+      }
+      &:nth-child(2) {
+        opacity: 0.4;
+      }
+      &:nth-child(1) {
+        opacity: 0.9;
+      }
     }
     &__link {
     }

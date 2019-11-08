@@ -28,7 +28,7 @@
   }
   .wrapper:before {
     content: "";
-    position: absolute;
+    position: fixed;
     z-index: -1;
     width: 100vw;
     height: 100vh;
@@ -335,6 +335,7 @@
   }
   .wrapper_main main .lenta__col {
     width: 100%;
+    margin-right: 0 !important;
   }
   .wrapper_main main .lenta__col:last-child {
     display: block;
@@ -734,6 +735,8 @@
     -ms-flex-pack: center;
     justify-content: center;
     padding: 0 25px;
+    box-sizing: border-box;
+    box-shadow: none;
   }
   .popup__item.active {
     display: -webkit-box;
