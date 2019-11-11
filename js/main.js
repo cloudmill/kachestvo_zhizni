@@ -26,7 +26,7 @@ var custom = function() {
       ) {
         $(this)
           .find(".help_text")
-          .addClass("right_mode");//сместить окно вправо
+          .addClass("right_mode"); //сместить окно вправо
         if (
           $(window).width() -
             ($(this)
@@ -40,7 +40,7 @@ var custom = function() {
           $(this)
             .find(".help_text")
             .removeClass("right_mode")
-            .addClass("center_mode");//сместить окно в центр
+            .addClass("center_mode"); //сместить окно в центр
         }
       }
       if (
@@ -74,15 +74,15 @@ var custom = function() {
         $(this).toggleClass("active");
         animate_open_close($("#" + target));
         if (target == "burger") {
-          $("body").addClass("overflow");///убираем скролл
+          $("body").addClass("overflow"); ///убираем скролл
         }
         if (target == "burger__tags") {
-          $("body").addClass("overflow");///убираем скролл
-          $(".header").addClass("white_pole");///скрываем хедер
-          $(".burger__wrapper").scrollTop(0);///скроллим вверх
+          $("body").addClass("overflow"); ///убираем скролл
+          $(".header").addClass("white_pole"); ///скрываем хедер
+          $(".burger__wrapper").scrollTop(0); ///скроллим вверх
         }
         if (target == "sitebar") {
-          $(".wrapper").addClass("sitebar_show");///добавляем темный фон
+          $(".wrapper").addClass("sitebar_show"); ///добавляем темный фон
           $("body").addClass("overflow");
         }
       } else if (target == "header__tags") {
@@ -142,7 +142,7 @@ var custom = function() {
     var menu = $("#header__bottom__menu");
     var first_init;
     var animate = false;
-    
+
     //скрываем все эллементы кроме первый строки
     hide_more_items = function() {
       max_width = $("header").width();
@@ -162,7 +162,7 @@ var custom = function() {
                 parseFloat(
                   window.getComputedStyle(this).marginRight.replace("px", "")
                 );
-                //добавляем эллементы в строку пока они помещаются
+              //добавляем эллементы в строку пока они помещаются
             } else {
               this.setAttribute("data-hide", "y");
               if (
@@ -202,10 +202,8 @@ var custom = function() {
 
     //инизиализация
     var start = function() {
-
-      
       var go = function() {
-         //начало отбора для скрытия в меню
+        //начало отбора для скрытия в меню
         clearInterval(first_init);
         $("#header__bottom__menu")
           .find("#monitor_load_complete")
@@ -344,8 +342,8 @@ var custom = function() {
         }
       });
     };
-    var down = false;//если кнопка нажата
-    var tolink = true;//переходить по ссылке
+    var down = false; //если кнопка нажата
+    var tolink = true; //переходить по ссылке
     var setup = function() {
       $(document).on("mousedown", ".header__bottom__menu", function() {
         down = true;
@@ -399,53 +397,64 @@ var custom = function() {
       }
     });
   };
-  var header_hide_scroll = function() {
 
-    //расчет положения и размера хедера начало
-    $("header")
-      .css("left", $("main").offset().left)
-      .addClass("fade");
-    $("header").css("width", $("main").width());
-    $(window).on("resize", function() {
-      $("header").css("left", $("main").offset().left);
-      $("header").css("width", $("main").width());
-    });
-    //расчет положения и размера хедера конец
 
-    //реализация появления и скрывание хедера при скролле начало
-    var old_scroll = 0;
-    $(document).on("scroll", function() {
-      if (old_scroll > $(document).scrollTop()) {
-        $("header").removeClass("hide");
-        $("header").addClass("shadow");
-        $("header").css("margin-top", 0);
+  //фикс хедер
+  var headerHiding = {
+    header: $("header"),
+    oldScroll: 0,
+
+    //расчет положения и размера хедера
+    _currentPosSize: function() {
+      this.header.css("left", $("main").offset().left);
+      this.header.css("width", $("main").width());
+      this.header.addClass("fade");
+    },
+
+    //реализация появления и скрывание хедера при скролле
+    _headerMove: function(scrollTop) {
+      if (this.old_scroll < scrollTop) {
+        this.header.addClass("hide");
+        if (scrollTop <= 200) {
+        } else {
+          this.header.removeClass("shadow");
+          this.header.removeClass("fixed");
+          $(".wrapper_main").removeClass("header__fixed");
+        }
       } else {
-        if ($(document).scrollTop() <= 200) {
-          $("header").css("transition", "top 0s");
-          $("header").removeClass("shadow");
-        }
-        $("header").addClass("hide");
-        $("header").css("margin-top", 200 - $(document).scrollTop() + "px");
-        if ($(document).scrollTop() > 200) {
-          $("header").css(
-            "transition",
-            "top 0.3s cubic-bezier(0.215, 0.61, 0.355, 1)"
-          );
-          $("header").css("margin-top", 0);
-          $("header").addClass("shadow");
+        if (scrollTop > 200) {
+          this.header.removeClass("hide");
+          this.header.addClass("shadow");
+          this.header.addClass("fixed");
+          $(".wrapper_main").addClass("header__fixed");
+        } else {
         }
       }
-      if ($(document).scrollTop() == 0) {
-        $("header").removeClass("shadow");
+      if (scrollTop == 0) {
+        this.header.removeClass("shadow");
+        this.header.removeClass("fixed");
+        $(".wrapper_main").removeClass("header__fixed");
       }
-      old_scroll = $(document).scrollTop();
-    });
-    //реализация появления и скрывание хедера при скролле конец
+      this.old_scroll = scrollTop;
+    },
+    currentPosSize: function() {
+      this._currentPosSize();
+      var item = this;
+      $(window).on("resize", function() {
+        item._currentPosSize();
+      });
+    },
+    headerMove: function() {
+      this._headerMove($(document).scrollTop());
+      var item = this;
+      $(document).on("scroll", function() {
+        item._headerMove($(document).scrollTop());
+      });
+    }
   };
 
   ///обработка попапов
   var popup_open = function() {
-
     //фунция создания сообщения success
     success_popup = function() {
       var way = 2;
@@ -600,7 +609,6 @@ var custom = function() {
   popup_open();
   if ($(".article__social").length > 0) social_links_move();
   calc_size();
-  header_hide_scroll();
   open_menu();
   help_blocks();
   show_more_comments();
@@ -613,6 +621,9 @@ var custom = function() {
   } else {
     swipe_in_menu();
   }
+
+  headerHiding.currentPosSize();
+  headerHiding.headerMove();
 };
 ///////обработка форм начало
 var forms = function() {
