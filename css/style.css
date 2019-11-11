@@ -1292,6 +1292,8 @@ input::-ms-clear {
 .header__logo {
   margin-right: 37px;
   background-image: url(../images/logo.svg);
+  -webkit-print-color-adjust: exact !important;
+  color-adjust: exact !important;
   background-repeat: no-repeat;
   background-size: contain;
   width: 242px;

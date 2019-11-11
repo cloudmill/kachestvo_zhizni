@@ -939,6 +939,8 @@ input {
   &__logo {
     margin-right: 37px;
     background-image: url(../images/logo.svg);
+    -webkit-print-color-adjust: exact !important;
+    color-adjust: exact !important;      
     background-repeat: no-repeat;
     background-size: contain;
     width: 242px;
@@ -2159,7 +2161,6 @@ input {
     }
     &__show-all {
       color: @color_link;
-
       font-size: 13px;
       font-weight: 500;
       display: block;
