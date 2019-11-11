@@ -1,0 +1,32 @@
+@media (max-width: 1439px) {
+  .sitebar {
+    &__wrapper {
+      display: none;
+    }
+  }
+}
+@media (max-width: 950px) {
+  .sitebar {
+    &__wrapper {
+      opacity: 0;
+      width: 270px;
+      padding-left: 15px;
+      max-width: 100%;
+      padding-right: 15px;
+      -webkit-transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+      transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+      right: -296px;
+
+      &.active {
+        display: block;
+      }
+      &.open {
+        opacity: 1;
+        right: 0;
+      }
+    }
+    &__close {
+      display: block;
+    }
+  }
+}

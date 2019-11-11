@@ -1,0 +1,73 @@
+@font-face {
+  font-family: "Rubik";
+  src: url("../fonts/Rubik-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Rubik";
+  src: url("../fonts/Rubik-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Rubik";
+  src: url("../fonts/Rubik-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+.page .tags {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.page .tags__title {
+  color: #1d2f3c;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 28.3px;
+  margin-bottom: 15px;
+}
+.page .tags__list {
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.page .tags__item {
+  -webkit-transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 26.37px;
+  margin-right: 10px;
+  list-style: none;
+  display: inline;
+  -webkit-box-shadow: inset 0px 1px transparent, inset 0px -1px transparent;
+  box-shadow: inset 0px 1px transparent, inset 0px -1px transparent;
+}
+.page .tags__item:hover {
+  color: #82c831;
+  -webkit-box-shadow: inset 0px 1px transparent, inset 0px -1px #82c831;
+  box-shadow: inset 0px 1px transparent, inset 0px -1px #82c831;
+}
+.page .tags__item::before {
+  content: none !important;
+}
+.page .tags__item__link {
+  color: #82c831;
+  font-size: inherit;
+}
+.page .tags_item_big {
+  font-size: 21px;
+  line-height: 28.62px;
+}
+.page .tags_item_small {
+  font-size: 15px;
+  line-height: 21.09px;
+}

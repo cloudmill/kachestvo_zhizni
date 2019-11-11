@@ -1,0 +1,6 @@
+@media (max-width: 400px) {
+  .burger {
+    width: calc(100% - 30px);
+    padding: 0 15px;
+  }
+}

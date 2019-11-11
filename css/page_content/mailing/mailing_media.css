@@ -1,0 +1,16 @@
+@media (max-width: 768px) {
+  .page .mailing {
+    width: calc(100% - 40px);
+    padding-left: 15px;
+    padding-right: 25px;
+    padding-top: 30px;
+  }
+  .page .mailing__title {
+    padding-left: 55px;
+    margin-bottom: 15px;
+  }
+  .page .mailing:before {
+    left: 15px;
+    top: 35px;
+  }
+}

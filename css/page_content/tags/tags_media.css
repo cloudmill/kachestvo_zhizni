@@ -1,0 +1,6 @@
+@media (max-width: 950px) {
+  .page .tags__list {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+}

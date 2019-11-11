@@ -1,0 +1,10 @@
+@media (max-width: 1439px) {
+  .page .reviews-tablet {
+    display: block;
+  }
+}
+@media (max-width: 768px) {
+  .page .reviews-tablet {
+    display: none;
+  }
+}

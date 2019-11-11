@@ -1,0 +1,110 @@
+@anim: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+@color_link: #82c831;
+@color_text: #1d2f3c;
+///
+
+.page {
+  .reviews-tablet {
+    padding: 25px 0;
+    background-color: #f6fbfe;
+    margin: 30px 0;
+    margin-top: 40px;
+    position: relative;
+    display: none;
+    &:before {
+      content: "";
+      display: block;
+      background-color: #f6fbfe;
+      width: 1000px;
+      height: 100%;
+      position: absolute;
+      right: 100%;
+      top: 0;
+    }
+    &:after {
+      content: "";
+      display: block;
+      background-color: #f6fbfe;
+      width: 1000px;
+      height: 100%;
+      position: absolute;
+      left: 100%;
+      top: 0;
+    }
+    &__col {
+      width: ~"calc((100% - 100px)/3)";
+      margin-right: 50px;
+      &:nth-child(3n) {
+        margin-right: 0;
+      }
+    }
+    &__title {
+      color: @color_text;
+      font-size: 21px;
+      font-weight: 700;
+      line-height: 28.3px;
+      margin-bottom: 30px;
+    }
+    &__list {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+    }
+    &__item {
+      margin-bottom: 30px;
+      width: 100%;
+      &__head {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        margin-bottom: 10px;
+        &__block-img {
+          width: 48px;
+          height: 48px;
+          margin-right: 10px;
+          border-radius: 50%;
+          overflow: hidden;
+          &__img {
+            max-width: 100%;
+            max-height: 100%;
+          }
+        }
+        &__inf {
+        }
+      }
+      &__name {
+        color: @color_text;
+        font-size: 15px;
+        font-weight: 500;
+        line-height: 20.21px;
+      }
+      &__time {
+        color: #7a858d;
+        font-size: 13px;
+        font-weight: 400;
+        letter-spacing: 0.26px;
+        line-height: 16.76px;
+      }
+      &__comment {
+        color: @color_text;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 21.09px;
+        margin-bottom: 6px;
+      }
+      &__link {
+        text-decoration: none;
+        color: @color_link;
+        font-size: 13px;
+        font-weight: 400;
+        letter-spacing: 0.26px;
+        line-height: 16.76px;
+      }
+    }
+  }
+}
