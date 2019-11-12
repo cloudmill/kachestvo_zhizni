@@ -21,9 +21,11 @@
       position: relative;
       z-index: 5;
       &.answer {
-        padding-left: 68px;
         margin-top: 23px;
         width: ~"calc(100% - 70px)";
+        .comments_form_button{
+          display: flex;
+        }
       }
     }
     &_form {
@@ -52,9 +54,10 @@
           display: flex;
         }
       }
+      
     }
     &__list {
-      &-wrapper {
+      &__wrapper {
         width: 100%;
         position: relative;
         overflow: hidden;

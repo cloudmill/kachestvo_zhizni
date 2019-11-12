@@ -53,6 +53,20 @@
   .footer__menu:nth-child(3) {
     display: none;
   }
+  .footer__menu__list {
+    position: relative;
+  }
+  .footer__menu__list:before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 200vw;
+    height: 1px;
+    background: #F0F0F0;
+    bottom: -18px;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
   .footer__menu .bl-mobile {
     display: block;
   }

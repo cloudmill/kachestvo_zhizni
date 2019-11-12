@@ -18,23 +18,31 @@
 }
 @media (max-width: 650px) {
   .page {
-    .comments__item__top__right {
-      display: none;
-    }
-    .comments__item__top__left {
-      width: 100%;
-      justify-content: space-between;
-    }
-  }
-}
-@media (max-width: 400px) {
-  .page {
-    .comments {
-      &__item {
-        &__top {
-          &__right {
-            display: none;
+    .comments__item{
+      &__wrapper{
+        margin-bottom: 30px;
+      }
+      position: relative;
+      padding-bottom: 30px;
+      margin-bottom: 15px;
+      &__top{
+        &__right {
+          position: absolute;
+          left: 0;
+          width: 100%;
+          bottom: 0;
+          justify-content: flex-end;
+          *{
+            opacity: 1 !important;
           }
+          &__answer{
+            position: absolute;
+            left: 0;
+          }
+        }
+        &__left {
+          width: 100%;
+          justify-content: space-between;
         }
       }
     }

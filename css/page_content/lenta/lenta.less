@@ -144,6 +144,16 @@
           line-height: 33px;
           letter-spacing: 0.02em;
           margin: 5px 0;
+          -webkit-transition: @anim;
+          transition: @anim;
+          -webkit-box-shadow: inset 0px 1px transparent,
+            inset 0px -1px transparent;
+          box-shadow: inset 0px 1px transparent, inset 0px -1px transparent;
+          &:hover {
+            -webkit-box-shadow: inset 0px 1px transparent,
+              inset 0px -1px @color_link;
+            box-shadow: inset 0px 1px transparent, inset 0px -1px #7a858d;
+          }
         }
         &_text {
           color: @color_text;
@@ -351,6 +361,17 @@
             list-style: none;
             margin-right: 15px;
             margin-bottom: 4px;
+            -webkit-transition: @anim;
+            transition: @anim;
+            -webkit-box-shadow: inset 0px 1px transparent,
+              inset 0px -1px transparent;
+            box-shadow: inset 0px 1px transparent, inset 0px -1px transparent;
+            &:hover {
+              color: @color_link;
+              -webkit-box-shadow: inset 0px 1px transparent,
+                inset 0px -1px @color_link;
+              box-shadow: inset 0px 1px transparent, inset 0px -1px @color_link;
+            }
             &::before {
               content: none;
             }
@@ -505,6 +526,16 @@
         font-weight: 700;
         letter-spacing: 0.72px;
         margin: 5px 0;
+        -webkit-transition: @anim;
+        transition: @anim;
+        -webkit-box-shadow: inset 0px 1px transparent,
+          inset 0px -1px transparent;
+        box-shadow: inset 0px 1px transparent, inset 0px -1px transparent;
+        &:hover {
+          -webkit-box-shadow: inset 0px 1px transparent,
+            inset 0px -1px @color_link;
+          box-shadow: inset 0px 1px transparent, inset 0px -1px #7a858d;
+        }
       }
       &_text {
         color: @color_text;
@@ -513,6 +544,7 @@
         font-weight: 400;
         line-height: 21.09px;
       }
+
       .lenta_btw-item_types_type {
         -webkit-transition: @anim;
         transition: @anim;
@@ -541,6 +573,16 @@
       display: -ms-flexbox;
       display: flex;
       top: 0;
+      -webkit-transition: @anim;
+      transition: @anim;
+      -webkit-box-shadow: inset 0px 1px transparent, inset 0px -1px transparent;
+      box-shadow: inset 0px 1px transparent, inset 0px -1px transparent;
+      &:hover {
+        color: @color_link;
+        -webkit-box-shadow: inset 0px 1px transparent,
+          inset 0px -1px @color_link;
+        box-shadow: inset 0px 1px transparent, inset 0px -1px @color_link;
+      }
       &:after {
         content: "";
         display: block;

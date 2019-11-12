@@ -57,6 +57,20 @@
       &:nth-child(3) {
         display: none;
       }
+      &__list{
+        position: relative;
+        &:before{
+          content: '';
+          display: block;
+          position: absolute;
+          width: 200vw;
+          height: 1px;
+          background: #F0F0F0;
+          bottom: -18px;
+          left: 50%;
+          transform: translate(-50%,0);
+        }
+      }
       .bl-mobile {
         display: block;
       }

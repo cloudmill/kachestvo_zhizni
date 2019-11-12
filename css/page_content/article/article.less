@@ -89,9 +89,25 @@
           letter-spacing: 1.2px;
           line-height: 16.35px;
           text-transform: uppercase;
+          margin-left: 30px;
+          position: relative;
+          -webkit-transition: @anim;
+          transition: @anim;
+          -webkit-box-shadow: inset 0px 1px transparent,
+            inset 0px -1px transparent;
+          box-shadow: inset 0px 1px transparent, inset 0px -1px transparent;
+          &:hover {
+            color: @color_link;
+            -webkit-box-shadow: inset 0px 1px transparent,
+              inset 0px -1px @color_link;
+            box-shadow: inset 0px 1px transparent, inset 0px -1px @color_link;
+          }
         }
         &__icon {
-          margin-right: 5px;
+          position: absolute;
+          top: 50%;
+          left: -5px;
+          transform: translate(-100%, -50%);
         }
       }
       &__data {
@@ -278,6 +294,8 @@
     }
     &__img {
       max-width: 100%;
+      border-radius: 8px;
+      overflow: hidden;
     }
     &_img {
       &_photo {
@@ -459,11 +477,18 @@
     }
     &__inf {
       margin-top: 55px;
+      
       &__wrapper {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
         margin-bottom: 25px;
+        &:first-child{
+          .article__inf__item__link{
+            margin-left: 30px;
+          }
+          
+        }
       }
       &__title {
         color: @color_text;
@@ -498,9 +523,25 @@
           align-items: center;
           letter-spacing: 0.1em;
           text-transform: uppercase;
+          
+          position: relative;
+          -webkit-transition: @anim;
+          transition: @anim;
+          -webkit-box-shadow: inset 0px 1px transparent,
+            inset 0px -1px transparent;
+          box-shadow: inset 0px 1px transparent, inset 0px -1px transparent;
+          &:hover {
+            color: @color_link;
+            -webkit-box-shadow: inset 0px 1px transparent,
+              inset 0px -1px @color_link;
+            box-shadow: inset 0px 1px transparent, inset 0px -1px @color_link;
+          }
         }
         &__icon {
-          margin-right: 5px;
+          position: absolute;
+          top: 50%;
+          left: -5px;
+          transform: translate(-100%, -50%);
         }
       }
     }

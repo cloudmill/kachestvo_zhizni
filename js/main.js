@@ -1,9 +1,9 @@
 var animate_open_close,
-  success_popup,
+  popup,
   mail_right,
   base_time_animation = 300;
 
-$(document).ready(function() {
+$(document).ready(function () {
   ///инициализация всех функций
   custom();
   additional_functions(300);
@@ -11,10 +11,10 @@ $(document).ready(function() {
   sliders();
 });
 
-var custom = function() {
-  var help_blocks = function() {
+var custom = function () {
+  var help_blocks = function () {
     //инициализация появления блока при клике на help-ссылку
-    $(".help").click(function(e) {
+    $(".help").click(function (e) {
       e.preventDefault();
       $(this)
         .find(".help_text")
@@ -29,12 +29,12 @@ var custom = function() {
           .addClass("right_mode"); //сместить окно вправо
         if (
           $(window).width() -
-            ($(this)
+          ($(this)
+            .find(".help_text")
+            .offset().left +
+            $(this)
               .find(".help_text")
-              .offset().left +
-              $(this)
-                .find(".help_text")
-                .width()) <
+              .width()) <
           30
         ) {
           $(this)
@@ -54,7 +54,7 @@ var custom = function() {
           .removeClass("right_mode");
       }
     });
-    $(document).on("click", function(e) {
+    $(document).on("click", function (e) {
       if (!$(".help_text:hover").length > 0 && !$(".help:hover").length > 0) {
         $(this)
           .find(".help_text")
@@ -64,9 +64,9 @@ var custom = function() {
       }
     });
   };
-  var open_menu = function() {
+  var open_menu = function () {
     ///Открытие и закрытие окон меню, сайтбара, тегов
-    $("[data-target]").click(function(e) {
+    $("[data-target]").click(function (e) {
       e.preventDefault();
       var target = $(this).data("target");
       if (!$("#" + target).hasClass("open")) {
@@ -102,12 +102,12 @@ var custom = function() {
         }
       }
     });
-    $("[data-close]").click(function(e) {
+    $("[data-close]").click(function (e) {
       e.preventDefault();
       var close = $(this).data("close");
       if ($("#" + close).hasClass("open")) {
         $("[data-target=" + close + "]").toggleClass("active");
-        animate_open_close($("#" + close), true, function() {
+        animate_open_close($("#" + close), true, function () {
           if (
             !$("#burger,#burger_tags,#sitebar,.popup__wrapper").hasClass(
               "active"
@@ -124,7 +124,7 @@ var custom = function() {
         }
       }
     });
-    $(document).on("click", function(e) {
+    $(document).on("click", function (e) {
       if (
         !$("[data-target]:hover").length > 0 &&
         !$("[data-has_target]:hover").length > 0
@@ -137,14 +137,14 @@ var custom = function() {
       }
     });
   };
-  var show_more_in_menu = function() {
+  var show_more_in_menu = function () {
     var max_width = $("header").width();
     var menu = $("#header__bottom__menu");
     var first_init;
     var animate = false;
 
     //скрываем все эллементы кроме первый строки
-    hide_more_items = function() {
+    hide_more_items = function () {
       max_width = $("header").width();
       for (i = 0; i < menu.length; i++) {
         var width = 36;
@@ -155,7 +155,7 @@ var custom = function() {
         menu
           .eq(i)
           .find("li")
-          .each(function() {
+          .each(function () {
             if (width <= max_width) {
               width +=
                 parseFloat(this.offsetWidth + 1) +
@@ -168,11 +168,11 @@ var custom = function() {
               if (
                 !(
                   width -
-                    parseFloat(
-                      window
-                        .getComputedStyle(_item)
-                        .marginRight.replace("px", "")
-                    ) <=
+                  parseFloat(
+                    window
+                      .getComputedStyle(_item)
+                      .marginRight.replace("px", "")
+                  ) <=
                   max_width
                 )
               ) {
@@ -201,8 +201,8 @@ var custom = function() {
     };
 
     //инизиализация
-    var start = function() {
-      var go = function() {
+    var start = function () {
+      var go = function () {
         //начало отбора для скрытия в меню
         clearInterval(first_init);
         $("#header__bottom__menu")
@@ -219,7 +219,7 @@ var custom = function() {
       );
 
       //триггер отрисовки
-      first_init = setInterval(function() {
+      first_init = setInterval(function () {
         if (
           parseInt(
             $("#header__bottom__menu")
@@ -240,7 +240,7 @@ var custom = function() {
     $(window).resize(start);
 
     // показать больше в меню, клик на кнопку больше
-    $(document).on("click", ".header__bottom__menu__more", function() {
+    $(document).on("click", ".header__bottom__menu__more", function () {
       var list = $(this)
         .parent()
         .find("li[data-hide]");
@@ -254,16 +254,10 @@ var custom = function() {
         .parent()
         .find(".header__bottom__menu__more")
         .remove();
-      setTimeout(function() {
-        $(".wrapper_main").css(
-          "margin-top",
-          parseInt($(".header__bottom__menu").height()) - 58 + "px"
-        );
-      }, 50);
     });
 
     //скрыть эллементы при клике вне блока
-    $(document).on("click", function(e) {
+    $(document).on("click", function (e) {
       if (!$("#header__bottom__menu:hover").length > 0) {
         hide_more_items();
         $(".wrapper_main").css("margin-top", "0px");
@@ -271,21 +265,21 @@ var custom = function() {
     });
 
     //скрыть эллементы при скролле
-    $(document).on("scroll", function(e) {
+    $(document).on("scroll", function (e) {
       if (!$("#header__bottom__menu:hover").length > 0) {
         hide_more_items();
         $(".wrapper_main").css("margin-top", "0px");
       }
     });
   };
-  var swipe_in_menu = function() {
+  var swipe_in_menu = function () {
     ////реализация свайпа меню на мобиках
     var menu = $("#header__bottom__menu");
     var width = 0;
 
     ////инициализация и расчет ширини блока с эллементами
-    var start = function() {
-      var go = function() {
+    var start = function () {
+      var go = function () {
         clearInterval(first_init);
         $("#header__bottom__menu")
           .find("#monitor_load_complete")
@@ -297,7 +291,7 @@ var custom = function() {
           menu
             .eq(i)
             .find("li")
-            .each(function() {
+            .each(function () {
               width +=
                 parseFloat(this.offsetWidth + 1) +
                 parseFloat(
@@ -313,7 +307,7 @@ var custom = function() {
       );
 
       ///триггер полной отрисовки эллментов меню
-      first_init = setInterval(function() {
+      first_init = setInterval(function () {
         if (
           parseInt(
             $("#header__bottom__menu")
@@ -329,10 +323,10 @@ var custom = function() {
     start();
 
     //инициализация кастомного свайпа
-    var start_move = function() {
+    var start_move = function () {
       var startpos = undefined;
       var start_scroll = $(".header__bottom").scrollLeft();
-      $(document).on("mousemove", function(e) {
+      $(document).on("mousemove", function (e) {
         if (down) {
           if (startpos == undefined) {
             startpos = e.pageX;
@@ -344,85 +338,117 @@ var custom = function() {
     };
     var down = false; //если кнопка нажата
     var tolink = true; //переходить по ссылке
-    var setup = function() {
-      $(document).on("mousedown", ".header__bottom__menu", function() {
+    var setup = function () {
+      $(document).on("mousedown", ".header__bottom__menu", function () {
         down = true;
         tolink = true;
-        setTimeout(function() {
+        setTimeout(function () {
           tolink = false;
         }, 300);
         start_move();
       });
-      $(document).on("click", ".header__bottom__menu a", function(e) {
+      $(document).on("click", ".header__bottom__menu a", function (e) {
         if (!tolink) {
           e.preventDefault();
         }
       });
-      $(document).on("mouseup", function() {
+      $(document).on("mouseup", function () {
         down = false;
       });
     };
     setup();
   };
-  var show_more_comments = function() {
-    $(document).on("click", ".comments__show-all", function(e) {
-      e.preventDefault();
-      $(".comments__list-wrapper").addClass("active");
-      $(this).hide();
-    });
-    //// тут будет ajax подргузка комментариев
-  };
-  var but_comment = function() {
-    ///показ кнопки при первом фокусе поля коментария
-    $(".comments_form_input").focus(function() {
-      $(this)
-        .parent()
-        .parent()
-        .find(".inpt__wrapper + .comments_form_button")
-        .addClass("active");
-    });
-  };
-  var burger__search_open = function() {
+  var burger__search_open = function () {
     ///бургер меню открытие и заерытие
-    $("#burger__search button").click(function(e) {
+    $("#burger__search button").click(function (e) {
       if (!$("#burger__search").hasClass("active")) {
         e.preventDefault();
         $(".burger__search__input").focus();
         $("#burger__search").toggleClass("active");
       }
     });
-    $(document).on("click", function(e) {
+    $(document).on("click", function (e) {
       if (!$("#burger__search:hover").length > 0) {
         $("#burger__search").removeClass("active");
       }
     });
   };
 
+  //логика комментариев
+  var comments = {
+    form_answer: "<form class='comments__form answer'>" +
+      "<textarea type='text'class='inpt__basic comments_form_input'placeholder='Написать ответ'></textarea>" +
+      "<button class='btn__basic comments_form_button'>Ответить</button>" +
+      "<input type='hidden' name='comment_id' value='value_replace'/>" +
+      "</form>",
+    textArea: $(".comments_form_input"),
+    list_wrapper: $(".comments__list__wrapper"),
+    list: $(".comments__list"),
 
-  //фикс хедер
-  var headerHiding = {
+    //форма ответа
+    _answer: function () {
+      var item = this;
+      $(document).on('click', '.comments__item__top__right__answer', function (e) {
+        e.preventDefault();
+        item.list.find('.comments__form.answer').remove();
+        var comment_for_answer = $(this).parent().parent().parent().parent()
+        var form = item.form_answer.replace('value_replace', 0/* comment_for_answer.getAttribute('id') */);
+        comment_for_answer.append(form);
+      })
+    },
+
+    ///показ кнопки при первом фокусе поля коментария
+    _firstFocusTextArea: function () {
+      this.textArea.focus(function () {
+        $(this)
+          .parent()
+          .parent()
+          .find(".inpt__wrapper + .comments_form_button")
+          .addClass("active");
+      });
+    },
+
+    //раскрытие списка комментариев
+    _showMore: function () {
+      var item = this;
+      $(document).on("click", ".comments__show-all", function (e) {
+        e.preventDefault();
+        item.list_wrapper.addClass("active");
+        $(this).hide();
+      });
+      //// тут будет ajax подргузка комментариев
+    },
+    init: function () {
+      this._firstFocusTextArea();
+      this._showMore();
+      this._answer();
+    }
+  }
+
+  //Скрипты для хедера
+  var headerMake = {
     header: $("header"),
     oldScroll: 0,
 
     //расчет положения и размера хедера
-    _currentPosSize: function() {
+    _currentPosSize: function () {
       this.header.css("left", $("main").offset().left);
       this.header.css("width", $("main").width());
       this.header.addClass("fade");
     },
 
     //реализация появления и скрывание хедера при скролле
-    _headerMove: function(scrollTop) {
+    _headerMove: function (scrollTop) {
       if (this.old_scroll < scrollTop) {
         this.header.addClass("hide");
-        if (scrollTop <= 200) {
+        if (scrollTop <= this.header.height()) {
         } else {
           this.header.removeClass("shadow");
           this.header.removeClass("fixed");
           $(".wrapper_main").removeClass("header__fixed");
         }
       } else {
-        if (scrollTop > 200) {
+        if (scrollTop > this.header.height()) {
           this.header.removeClass("hide");
           this.header.addClass("shadow");
           this.header.addClass("fixed");
@@ -437,100 +463,132 @@ var custom = function() {
       }
       this.old_scroll = scrollTop;
     },
-    currentPosSize: function() {
+
+    //фокус при клике кнопки поиска
+    _search_but: function () {
+      $(".header__search button").click(function (e) {
+        if (!$(".header__search .header__search__input:focus").length > 0 && !$(".header__search .header__search__input:hover").length > 0) {
+          e.preventDefault();
+          $(".header__search .header__search__input").focus();
+        }
+      });
+    },
+
+    //расчет размера и положения окна с тегами
+    _calcSizeTagBlock: function () {
+
+      var tagBlock = $(".header__tags");
+      var item = this;
+      setTimeout(function () {
+        if ($(window).width() >= 1024) {
+          tagBlock.width(parseInt($(".wrapper_main").width()) - 70);
+          tagBlock.css("left", - item.header.offset().left + 10);
+        } else {
+          tagBlock.attr("style", "");
+        }
+      }, 100);
+      $(window).on("resize", function () {
+        if ($(window).width() >= 1024) {
+          tagBlock.width(parseInt($(".wrapper_main").width()) - 70);
+          tagBlock.css("left", - item.header.offset().left + 10);
+        } else {
+          tagBlock.attr("style", "");
+        }
+      });
+    },
+    _currentPosSize_init: function () {
       this._currentPosSize();
       var item = this;
-      $(window).on("resize", function() {
+      $(window).on("resize", function () {
         item._currentPosSize();
       });
     },
-    headerMove: function() {
+    _headerMove_init: function () {
       this._headerMove($(document).scrollTop());
       var item = this;
-      $(document).on("scroll", function() {
+      $(document).on("scroll", function () {
         item._headerMove($(document).scrollTop());
       });
+    },
+    init: function () {
+      this._headerMove_init();
+      this._currentPosSize_init();
+      this._search_but();
+      this._calcSizeTagBlock();
     }
   };
 
   ///обработка попапов
-  var popup_open = function() {
+  popup = {
+    wrapper: $(".popup__wrapper"),
+    popups: $(".popup__item"),
+    triggers: {
+      open: $(".js-popup"),
+      close: $(".js-close"),
+    },
+    successWindow: $("#success"),
+
     //фунция создания сообщения success
-    success_popup = function() {
+    success: function () {
       var way = 2;
-      if (!$(".popup__wrapper").hasClass("active")) way = 1;
-      setTimeout(function() {
+      var item = this;
+      if (!this.wrapper.hasClass("active")) way = 1;
+      setTimeout(function () {
         if (way == 1) {
-          animate_open_close($(".popup__wrapper"));
+          animate_open_close(item.wrapper);
           animate_open_close($("#success"));
         } else {
-          animate_open_close($(".popup__item.active"), true, function() {
-            animate_open_close($("#success"));
+          animate_open_close($(".popup__item.active"), true, function () {
+            animate_open_close(item.successWindow);
           });
         }
       }, 300);
-    };
-    //////
+    },
+    init: function () {
+      var item = this;
+      this.triggers.open.click(function (e) {
+        e.preventDefault();
+        animate_open_close(item.wrapper);
+        animate_open_close($("#" + $(this).attr("data-popup")));
+      });
+      this.triggers.close.click(function (e) {
+        e.preventDefault();
+        animate_open_close(item.wrapper, true);
+        animate_open_close($(this).parent(), true);
+      });
 
-    $(".js-popup").click(function(e) {
-      e.preventDefault();
-      animate_open_close($(".popup__wrapper"));
-      animate_open_close($("#" + $(".js-popup").attr("data-popup")));
-    });
-    $(".js-close").click(function(e) {
-      e.preventDefault();
-      animate_open_close($(".popup__wrapper"), true);
-      animate_open_close($(".js-close").parent(), true);
-    });
+      ///////клик не по попапу закрывает его
+      $(document).on("click", function (e) {
+        if (
+          !$(".popup__item:hover").length > 0 &&
+          !$(".js-popup:hover").length > 0
+        ) {
+          animate_open_close(item.wrapper, true);
+          animate_open_close(item.popups, true);
+        }
+      });
+    },
 
-    ///////клик не по попапу закрывает его
-    $(document).on("click", function(e) {
-      if (
-        !$(".popup__item:hover").length > 0 &&
-        !$(".js-popup:hover").length > 0
-      ) {
-        animate_open_close($(".popup__wrapper"), true);
-        animate_open_close($(".popup__item"), true);
-      }
-    });
-  };
+  }
 
-  //расчет размера и положения окна с тегами
-  var calc_size = function() {
-    setTimeout(function() {
-      if ($(window).width() >= 1024) {
-        $(".header__tags").width(parseInt($(".wrapper_main").width()) - 70);
-        $(".header__tags").css("left", -$(".header").offset().left + 10);
-      } else {
-        $(".header__tags").attr("style", "");
-      }
-    }, 100);
-    $(window).on("resize", function() {
-      if ($(window).width() >= 1024) {
-        $(".header__tags").width(parseInt($(".wrapper_main").width()) - 70);
-        $(".header__tags").css("left", -$(".header").offset().left + 10);
-      } else {
-        $(".header__tags").attr("style", "");
-      }
-    });
-  };
+
 
   ///фикс. социальные иконки на странице статьи
-  var social_links_move = function() {
+  var social_links_move = function () {
     var item = $(".article__social");
     var top__offset = $(".article__body").offset().top;
-    $(document).on("scroll", function() {
+    $(document).on("scroll", function () {
       if ($(window).width() >= 950) {
         if (
           top__offset <
-            $(document).scrollTop() +
-              50 +
-              ($(".header").hasClass("hide") ? 0 : $(".header").height()) &&
+          $(document).scrollTop() +
+          50 +
+          ($(".header").hasClass("hide") ? 0 : $(".header").height()) &&
           top__offset + $(".article__body").height() >
-            $(document).scrollTop() +
-              50 +
-              ($(".header").hasClass("hide") ? 0 : $(".header").height()) +
-              item.height()
+          $(document).scrollTop() +
+          50 +
+          ($(".header").hasClass("hide") ? 0 : $(".header").height()) +
+          item.height()
         ) {
           item.css("position", "fixed");
           item.css("top", "50px");
@@ -543,9 +601,9 @@ var custom = function() {
         } else if (
           top__offset + $(".article__body").height() <=
           $(document).scrollTop() +
-            50 +
-            ($(".header").hasClass("hide") ? 0 : $(".header").height()) +
-            item.height()
+          50 +
+          ($(".header").hasClass("hide") ? 0 : $(".header").height()) +
+          item.height()
         ) {
           item.attr("style", "");
           item.css("top", "calc(100% - " + item.height() + "px)");
@@ -557,9 +615,9 @@ var custom = function() {
   };
 
   ///кнопка копировать на странице статьи
-  var copy_link = function() {
+  var copy_link = function () {
     var copied = false;
-    var copy = function() {
+    var copy = function () {
       var ta = document.getElementById("copy_target");
       var range = document.createRange();
       range.selectNode(ta);
@@ -576,24 +634,24 @@ var custom = function() {
         return false;
       }
     };
-    $(".article__social__item.copy").click(function(e) {
+    $(".article__social__item.copy").click(function (e) {
       e.preventDefault();
 
       if (!copied) {
         $(this).append(
           '<span style="display:none;position: fixed" id="copy_target">' +
-            document.location +
-            "</span>"
+          document.location +
+          "</span>"
         );
         if (copy()) {
           $(this).append(
             '<div class="info_copied"><img src="images/check_f.svg" /> <span>Ссылка скопирована</span></div>'
           );
-          setTimeout(function() {
+          setTimeout(function () {
             $(document)
               .find(".info_copied")
               .fadeOut(300);
-            setTimeout(function() {
+            setTimeout(function () {
               $(document)
                 .find(".info_copied")
                 .remove();
@@ -605,14 +663,13 @@ var custom = function() {
       }
     });
   };
+
+
+
   copy_link();
-  popup_open();
   if ($(".article__social").length > 0) social_links_move();
-  calc_size();
   open_menu();
   help_blocks();
-  show_more_comments();
-  but_comment();
   burger__search_open();
 
   //////способ отображение категорий в меню
@@ -622,13 +679,14 @@ var custom = function() {
     swipe_in_menu();
   }
 
-  headerHiding.currentPosSize();
-  headerHiding.headerMove();
+  comments.init();
+  headerMake.init();
+  popup.init();
 };
 ///////обработка форм начало
-var forms = function() {
-  var submits = function() {
-    $(document).on("submit", ".footer .footer__form", function(e) {
+var forms = function () {
+  var submits = function () {
+    $(document).on("submit", ".footer .footer__form", function (e) {
       e.preventDefault();
       var error = 0;
       var mail = $(this).find('[name="mail"]');
@@ -651,10 +709,10 @@ var forms = function() {
         $(this)
           .find("*")
           .val("");
-        success_popup();
+        popup.success()
       }
     });
-    $(document).on("submit", ".subscribe .subscribe__form", function(e) {
+    $(document).on("submit", ".subscribe .subscribe__form", function (e) {
       e.preventDefault();
       var error = 0;
       var mail = $(this).find('[name="mail"]');
@@ -677,10 +735,10 @@ var forms = function() {
         $(this)
           .find("*")
           .val("");
-        success_popup();
+        popup.success();
       }
     });
-    $(document).on("submit", "#subscribe .popup__form", function(e) {
+    $(document).on("submit", "#subscribe .popup__form", function (e) {
       e.preventDefault();
       var error = 0;
       var mail = $(this).find('[name="mail"]');
@@ -703,7 +761,7 @@ var forms = function() {
         $(this)
           .find("*")
           .val("");
-        success_popup();
+        popup.success();
       }
     });
   };
@@ -712,12 +770,12 @@ var forms = function() {
 ///////обработка форм конец
 
 //////Инициализация слайдера начало
-var sliders = function() {
+var sliders = function () {
   if ($(".lenta_body.tablet_slider").length > 0) {
     $(".lenta_body.tablet_slider").slick({
       slidesToShow: 5,
       slidesToScroll: 1,
-      speed: 1000,
+      speed: 600,
       infinite: false,
       dots: false,
       arrows: false,
@@ -747,29 +805,29 @@ var sliders = function() {
 //////Инициализация слайдера конец
 
 //////Обьявление фунций для анимации и проверки почты начало
-var additional_functions = function(time_a) {
-  animate_open_close = function(item, close, callback) {
+var additional_functions = function (time_a) {
+  animate_open_close = function (item, close, callback) {
     var time = time_a; //время анимации
     //----------------------
     if (close || item.hasClass("active")) {
       item.removeClass("open");
-      setTimeout(function() {
+      setTimeout(function () {
         item.removeClass("active");
       }, time);
     } else {
       item.addClass("active");
-      setTimeout(function() {
+      setTimeout(function () {
         item.addClass("open");
       }, 0);
     }
     //----------------------
     if (callback) {
-      setTimeout(function() {
+      setTimeout(function () {
         callback();
       }, time);
     }
   };
-  mail_right = function(email) {
+  mail_right = function (email) {
     var pattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return pattern.test(String(email).toLowerCase());
   };

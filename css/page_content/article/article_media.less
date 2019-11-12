@@ -100,45 +100,52 @@
           &.copy {
             z-index: 2;
             background: none;
-            overflow: hidden;
             cursor: pointer;
-            position: relative;
-            &:after {
-              content: "";
+            .article__social__item__text {
               width: 100%;
               height: 100%;
-              border-radius: inherit;
-              background-color: #f3faeb;
-              z-index: -1;
-              position: absolute;
-              transition: all 0.3s;
-              left: 50%;
-              top: 50%;
-              transform: translate(-50%, -50%);
-            }
-            &::before {
-              content: "";
-              width: 100%;
-              height: 100%;
-              border-radius: inherit;
-              background-color: #f3faeb;
-              position: absolute;
-              transition: all 0.3s;
-              left: 50%;
-              top: 50%;
-              z-index: -2;
-              transform: translate(-50%, -50%);
-            }
-            &:hover {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              position: relative;
+              overflow: hidden;
               &:after {
-                background: rgba(130, 200, 49, 0.3);
+                content: "";
+                width: 100%;
+                height: 100%;
+                border-radius: inherit;
+                background-color: #f3faeb;
+                z-index: -1;
+                position: absolute;
+                transition: all 0.3s;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
               }
-            }
-            &:active {
-              &:after {
-                width: 30%;
-                height: 96px;
-                border-radius: 50%;
+              &::before {
+                content: "";
+                width: 100%;
+                height: 100%;
+                border-radius: inherit;
+                background-color: #f3faeb;
+                position: absolute;
+                transition: all 0.3s;
+                left: 50%;
+                top: 50%;
+                z-index: -2;
+                transform: translate(-50%, -50%);
+              }
+              &:hover {
+                &:after {
+                  background: rgba(130, 200, 49, 0.3);
+                }
+              }
+              &:active {
+                &:after {
+                  width: 30%;
+                  height: 90px;
+                  border-radius: 45px;
+                }
               }
             }
           }
@@ -273,10 +280,6 @@
       &__inf {
         &__list {
           justify-content: space-between;
-        }
-        &__item {
-          width: ~"calc(50% - 10px)";
-          margin-right: 0;
         }
       }
       &__social {

@@ -199,19 +199,15 @@
   -ms-flex-align: center;
   align-items: center;
 }
-.header__search:hover .header__search__input::-webkit-input-placeholder,
 .header__search:focus-within .header__search__input::-webkit-input-placeholder {
   color: #d7dbde;
 }
-.header__search:hover .header__search__input:-ms-input-placeholder,
 .header__search:focus-within .header__search__input:-ms-input-placeholder {
   color: #d7dbde;
 }
-.header__search:hover .header__search__input::-ms-input-placeholder,
 .header__search:focus-within .header__search__input::-ms-input-placeholder {
   color: #d7dbde;
 }
-.header__search:hover .header__search__input::placeholder,
 .header__search:focus-within .header__search__input::placeholder {
   color: #d7dbde;
 }

@@ -15,16 +15,30 @@
   }
 }
 @media (max-width: 650px) {
+  .page .comments__item {
+    position: relative;
+    padding-bottom: 30px;
+    margin-bottom: 15px;
+  }
+  .page .comments__item__wrapper {
+    margin-bottom: 30px;
+  }
   .page .comments__item__top__right {
-    display: none;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    bottom: 0;
+    justify-content: flex-end;
+  }
+  .page .comments__item__top__right * {
+    opacity: 1 !important;
+  }
+  .page .comments__item__top__right__answer {
+    position: absolute;
+    left: 0;
   }
   .page .comments__item__top__left {
     width: 100%;
     justify-content: space-between;
-  }
-}
-@media (max-width: 400px) {
-  .page .comments__item__top__right {
-    display: none;
   }
 }
