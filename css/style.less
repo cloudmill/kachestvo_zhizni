@@ -57,9 +57,6 @@ body {
   * {
     font-family: Rubik;
   }
-  a {
-    text-decoration: none;
-  }
   &_main {
     width: ~"calc(100vw - 350px)";
     min-height: ~"calc(100vh - 138px)";
@@ -80,7 +77,9 @@ body {
       z-index: 1;
     }
   }
-
+  a {
+    text-decoration: none;
+  }
   main {
     a {
       color: @color_link;
@@ -96,9 +95,6 @@ body {
         display: inline-block;
         &_bg_opacity {
           background-color: transparent;
-        }
-        &_color_inherit {
-          color: inherit;
         }
         &.icon {
           &:before {
@@ -447,6 +443,10 @@ body {
     }
   }
 }
+.container {
+  max-width: 1004px;
+  margin: auto;
+}
 .page {
   max-width: 1004px;
   margin: auto;
@@ -454,7 +454,6 @@ body {
   position: relative;
   z-index: 1;
 }
-
 input {
   -moz-appearance: none;
   -webkit-appearance: none;

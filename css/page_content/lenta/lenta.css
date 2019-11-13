@@ -64,9 +64,6 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-.page .lenta_body_b-item:hover .lenta_body_b-item_types_type a {
-  color: #82c831;
-}
 .page .lenta_body_b-item.has_photo:before {
   content: "";
   display: block;
@@ -128,6 +125,9 @@
   -webkit-transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
+.page .lenta_body_b-item_types_type a:hover {
+  color: #82c831;
+}
 .page .lenta_body_b-item_title {
   color: #1d2f3c;
   font-weight: 700;
@@ -158,20 +158,6 @@
   margin-bottom: 35px;
   cursor: pointer;
 }
-.page .lenta_body_item:hover .lenta_body_item_title {
-  color: #82c831;
-}
-.page .lenta_body_item:hover .lenta_body_item_types_type {
-  -webkit-transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
-  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
-  -webkit-box-shadow: inset 0px 1px transparent, inset 0px -1px transparent;
-  box-shadow: inset 0px 1px transparent, inset 0px -1px transparent;
-}
-.page .lenta_body_item:hover .lenta_body_item_types_type:hover {
-  color: #82c831;
-  -webkit-box-shadow: inset 0px 1px transparent, inset 0px -1px #82c831;
-  box-shadow: inset 0px 1px transparent, inset 0px -1px #82c831;
-}
 .page .lenta_body_item_img {
   border-radius: 8px;
   overflow: hidden;
@@ -200,6 +186,15 @@
   list-style: none;
   margin-right: 15px;
   margin-bottom: 5px;
+  -webkit-transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  -webkit-box-shadow: inset 0px 1px transparent, inset 0px -1px transparent;
+  box-shadow: inset 0px 1px transparent, inset 0px -1px transparent;
+}
+.page .lenta_body_item_types_type:hover {
+  color: #82c831;
+  -webkit-box-shadow: inset 0px 1px transparent, inset 0px -1px #82c831;
+  box-shadow: inset 0px 1px transparent, inset 0px -1px #82c831;
 }
 .page .lenta_body_item_types_type::before {
   content: none;
@@ -219,6 +214,10 @@
   line-height: 28.3px;
   -webkit-transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  display: block;
+}
+.page .lenta_body_item_title:hover {
+  color: #82c831;
 }
 .page .lenta_body_item_text {
   color: #1d2f3c;
@@ -308,9 +307,6 @@
   margin-bottom: 40px;
   cursor: pointer;
 }
-.page .lenta_body_sr-item:hover .lenta_body_sr-item_title {
-  color: #82c831;
-}
 .page .lenta_body_sr-item:last-child {
   margin-right: 0;
 }
@@ -320,6 +316,11 @@
   overflow: hidden;
   border-radius: 8px;
   position: relative;
+  -webkit-transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.page .lenta_body_sr-item_img:hover {
+  opacity: 0.8;
 }
 .page .lenta_body_sr-item_img img {
   width: 100%;
@@ -370,6 +371,10 @@
   font-size: 15px;
   font-weight: 500;
   line-height: 20.21px;
+  display: block;
+}
+.page .lenta_body_sr-item_title:hover {
+  color: #82c831;
 }
 .page .lenta_body_spec-item {
   max-width: 265px;

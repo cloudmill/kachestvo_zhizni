@@ -12,7 +12,7 @@
 @import 'page_content/about/about_media.less';
 
 @import "sitebar/sitebar_media.less";
-@import 'footer/footer_media.less';  
+@import 'footer/footer_media.less';
 
 .bl {
   &-mobile {
@@ -29,6 +29,10 @@
 @media (max-width: 1024px) {
   .wrapper {
     &_main {
+      width: ~"calc(100% - 50px)";
+      margin: auto;
+    }
+    .container {
       width: ~"calc(100% - 50px)";
       margin: auto;
     }

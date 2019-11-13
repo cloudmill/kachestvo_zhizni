@@ -1,3 +1,20 @@
+@media (max-width: 1439px) {
+  .header.fixed {
+    width: 100%;
+  }
+}
+@media (max-width: 1024px) {
+  .header {
+    .container {
+      width: 100% !important;
+    }
+    &.fixed {
+      .container {
+        width: ~"calc(100% - 50px)" !important;
+      }
+    }
+  }
+}
 @media (max-width: 950px) {
   .header {
     &__bottom {
@@ -74,11 +91,11 @@
   }
 }
 @media (max-width: 400px) {
-    .header {
-        &__bottom {
-          width: 100%;
-          padding: 0 15px;
-          margin-left: -15px;
-        }
-      }
+  .header {
+    &__bottom {
+      width: 100%;
+      padding: 0 15px;
+      margin-left: -15px;
+    }
+  }
 }

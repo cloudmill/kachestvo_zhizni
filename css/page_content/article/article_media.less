@@ -64,7 +64,7 @@
           border-bottom: none;
           border: 1px solid #f0f0f0;
           border-right: 0;
-          width: 66px;
+          width: ~"calc(25% - 2px)";
           &:nth-child(4) {
             border-right: 1px solid #f0f0f0;
           }
@@ -72,7 +72,6 @@
             border: 0;
             border-radius: 8px;
             background-color: #f3faeb;
-            max-width: 287px;
             margin: auto;
             margin-top: 20px;
             width: 100%;
@@ -109,6 +108,7 @@
               justify-content: center;
               position: relative;
               overflow: hidden;
+              border-radius: 10px;
               &:after {
                 content: "";
                 width: 100%;
@@ -212,8 +212,8 @@
       &_block-img {
         &_head {
           width: ~"calc(100% + 50px)";
-          -webkit-transform: translate(-25px);
-          transform: translate(-25px);
+          -webkit-transform: translate(-25px,0);
+          transform: translate(-25px,0);
         }
       }
       &__card {

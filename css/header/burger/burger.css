@@ -1,31 +1,12 @@
-@font-face {
-  font-family: "Rubik";
-  src: url("../fonts/Rubik-Regular.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Rubik";
-  src: url("../fonts/Rubik-Medium.ttf") format("truetype");
-  font-weight: 500;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Rubik";
-  src: url("../fonts/Rubik-Bold.ttf") format("truetype");
-  font-weight: 700;
-  font-style: normal;
-}
 .burger {
-  padding-bottom: 70px !important;
-  min-height: calc(100vh - 130px);
+  min-height: calc(100vh - 60px);
   position: relative;
 }
 .burger__wrapper {
   opacity: 0;
   display: none;
   position: fixed;
-  z-index: 2;
+  z-index: 12;
   top: 62px;
   left: 0;
   padding: 0 25px;
@@ -46,6 +27,9 @@
 }
 .burger__wrapper.open {
   opacity: 1;
+}
+.burger__menu {
+  padding-bottom: 70px ;
 }
 .burger__menu__title {
   padding-top: 40px;

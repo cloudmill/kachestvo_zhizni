@@ -1,18 +1,13 @@
 .header {
-  max-width: 1010px;
   width: 100%;
   margin: auto;
   z-index: 3;
   left: 0;
+  position: relative;
   top: 0;
   background-color: #fff;
   -webkit-transition: top 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: top 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
-  opacity: 0;
-}
-.header.shadow:before {
-  -webkit-box-shadow: 1px 2px 8px rgba(120, 160, 190, 0.08);
-  box-shadow: 1px 2px 8px rgba(120, 160, 190, 0.08);
 }
 .header.white_pole .header__top::after {
   width: 100%;
@@ -40,9 +35,9 @@
 }
 .header.fixed {
   position: fixed;
-}
-.header.fade {
-  opacity: 1;
+  width: calc(100vw - 350px);
+  -webkit-box-shadow: 1px 2px 8px rgba(120, 160, 190, 0.08);
+  box-shadow: 1px 2px 8px rgba(120, 160, 190, 0.08);
 }
 .header.hide {
   top: -200px;
@@ -55,7 +50,6 @@
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  position: relative;
 }
 .header__top__menu {
   display: -webkit-box;
@@ -83,11 +77,13 @@
   color: #82c831;
 }
 .header__top__subsc {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  -webkit-transform: translate(0, -50%);
-  transform: translate(0, -50%);
+  /* position: absolute;
+      right: 0;
+      top: 50%;
+      -webkit-transform: translate(0, -50%);
+      transform: translate(0, -50%); */
+  position: relative;
+  margin-left: auto;
   color: #82c831;
   font-size: 15px;
   font-weight: 400;
@@ -139,7 +135,6 @@
   max-height: 56px;
   margin: 0;
   padding: 0;
-  opacity: 0;
 }
 .header__bottom__menu__item {
   border-radius: 8px;
@@ -257,10 +252,12 @@
 .header__tags {
   display: none;
   padding: 17px 25px;
-  width: calc(100% - 50px);
+  width: 100%;
   position: absolute;
+  box-sizing: border-box;
   top: 100%;
-  left: 10px;
+  z-index: 5;
+  left: 0;
   opacity: 0;
   -webkit-box-shadow: 0 4px 15px rgba(120, 160, 190, 0.3);
   box-shadow: 0 4px 15px rgba(120, 160, 190, 0.3);
@@ -341,11 +338,6 @@
 }
 .header__logo {
   margin-right: 37px;
-  background-image: url(../images/logo.svg);
-  -webkit-print-color-adjust: exact !important;
-  color-adjust: exact !important;
-  background-repeat: no-repeat;
-  background-size: contain;
   width: 242px;
   height: 48px;
 }

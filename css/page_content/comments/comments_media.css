@@ -14,7 +14,11 @@
     height: 40px;
   }
 }
-@media (max-width: 650px) {
+@media (max-width: 960px) {
+  .page .comments__form.answer {
+    width: 100%;
+    margin-left: 0;
+  }
   .page .comments__item {
     position: relative;
     padding-bottom: 30px;

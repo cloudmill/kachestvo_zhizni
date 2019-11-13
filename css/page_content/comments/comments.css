@@ -19,6 +19,7 @@
 .page .comments__form.answer {
   margin-top: 23px;
   width: calc(100% - 70px);
+  margin-left: 70px;
 }
 .page .comments__form.answer .comments_form_button {
   display: flex;
