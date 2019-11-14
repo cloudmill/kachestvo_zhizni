@@ -454,6 +454,7 @@
   -webkit-transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 .burger__wrapper::-webkit-scrollbar {
   display: none;
@@ -736,6 +737,8 @@
   -ms-flex-pack: center;
   justify-content: center;
   width: 100%;
+  box-sizing: border-box;
+  padding: 0 32px;
   height: 100vh;
   opacity: 0;
   -webkit-transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
@@ -763,7 +766,7 @@
   opacity: 0.75;
 }
 .popup__item {
-  padding: 20px 48px;
+  padding: 20px 16px;
   position: relative;
   -webkit-box-shadow: 0 3px 15px rgba(0, 0, 0, 0.25);
   box-shadow: 0 3px 15px rgba(0, 0, 0, 0.25);

@@ -448,12 +448,29 @@ var custom = function () {
     });
   };
 
-
+  var scrollIphoneBurger = function(){
+    var scrollinb = false;
+    $('.burger__wrapper').on('scroll',function(){
+      if($('.burger__wrapper').scrollTop() > 20){
+        if(!scrollinb){
+          console.log($(document).scrollTop())
+          var temp = $(document).scrollTop() - 7;
+          $(document).scrollTop(temp);
+          console.log($(document).scrollTop())
+          scrollinb = true;
+        }
+      }
+      if($('.burger__wrapper').scrollTop() == 0){
+        scrollinb = false;
+      }
+    })
+  }
   copy_link();
   if ($(".article__social").length > 0) social_links_move();
   open_menu();
   help_blocks();
   burger__search_open();
+  scrollIphoneBurger();
 
   //////способ отображение категорий в меню
 
