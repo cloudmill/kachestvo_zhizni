@@ -1,8 +1,8 @@
 @media (max-width: 950px) {
   .page .lenta__col {
-    width: calc((100% - 30px)/2);
-    margin-right: 30px;
-    margin-bottom: 30px;
+    width: calc((100% - 32px)/2);
+    margin-right: 32px;
+    margin-bottom: 32px;
   }
   .page .lenta__col:nth-child(2) {
     margin-right: 0;
@@ -13,11 +13,11 @@
     margin-bottom: 0;
   }
   .page .lenta__col:last-child .lenta_body_item {
-    margin-right: 30px;
+    margin-right: 32px;
   }
   .page .lenta__col:last-child .lenta_body_item,
   .page .lenta__col:last-child .lenta_body_s-item_wrapper {
-    width: calc((100% - 30px)/2);
+    width: calc((100% - 32px)/2);
   }
   .page .lenta_body {
     -webkit-box-orient: horizontal;
@@ -36,11 +36,10 @@
     width: 100%;
   }
   .page .lenta_body_b-item {
-    margin-bottom: 25px;
-    width: calc(100% - 50px);
+    margin-bottom: 24px;
+    width: 100%;
     max-width: none;
     margin-right: 0;
-    box-sizing: unset;
   }
   .page .lenta_body_b-item_title {
     font-size: 21px;
@@ -92,7 +91,7 @@
     display: block;
   }
   .page .lenta__col:last-child .lenta_body_item {
-    margin-right: 0px;
+    margin-right: 0;
   }
   .page .lenta__col:last-child .lenta_body_item,
   .page .lenta__col:last-child .lenta_body_s-item_wrapper {
@@ -107,12 +106,6 @@
   }
   .page .lenta_body.tablet_slider {
     max-width: 420px;
-  }
-  .page .lenta_body_b-item {
-    width: 100%;
-    margin-left: -50px;
-    -webkit-transform: translate(25px, 0);
-    transform: translate(25px, 0);
   }
   .page .lenta_body_b-item_img {
     height: auto;
@@ -147,8 +140,8 @@
     width: 100%;
   }
   .page .lenta_body_item_types {
-    margin: 7px 0;
-    padding-top: 7px;
+    margin: 8px 0;
+    padding-top: 8px;
   }
   .page .lenta_body_item_types_type a {
     font-size: 11px;
@@ -168,19 +161,15 @@
     width: 25%;
   }
   .page .lenta_body_sr-item:nth-child(5n) {
-    margin-right: 25px;
+    margin-right: 24px;
   }
   .page .lenta_body_spec-item {
     width: 100%;
     margin-right: 0;
   }
   .page .lenta_btw-item {
-    padding-left: 25px;
-    padding-right: 25px;
-    width: 100%;
-    margin-left: -50px;
-    -webkit-transform: translate(25px, 0);
-    transform: translate(25px, 0);
+    padding-left: 24px;
+    padding-right: 24px;
   }
   .page .lenta_btw-item_img {
     position: unset;
@@ -223,11 +212,11 @@
     max-width: 195px;
   }
   .page .lenta_body_sr-item {
-    width: calc(50% - 15px);
-    margin-right: 15px;
+    width: calc(50% - 16px);
+    margin-right: 16px;
   }
   .page .lenta_body_sr-item:nth-child(5n) {
-    margin-right: 15px;
+    margin-right: 16px;
   }
 }
 @media (max-width: 400px) {

@@ -131,171 +131,6 @@ var custom = function () {
       }
     });
   };
-  var show_more_in_menu = function () {
-    /*  $(window).load('images/logo.svg', function (e) {
- 
-     }); */
-    var opened = true;
-    let initS = function () {
-      var max_width = $("header .container").width();
-      var menu = $("#header__bottom__menu");
-
-      //скрываем все эллементы кроме первый строки
-      hide_more_items = function () {
-        opened = false;
-        max_width = $("header .container").width();
-        menu = $("#header__bottom__menu");
-        $('.header__bottom__menu__more__link').remove()
-        var width = 36;
-        var _item;
-        var count = 0;
-        //считаем кто попадет в 1ю строку
-        menu.find("li").attr('data-hide', null).show()
-        menu.find("li").each(function () {
-
-          if (width <= max_width) {
-            width += parseFloat(this.offsetWidth + 1) + parseFloat(window.getComputedStyle(this).marginRight.replace("px", ""));
-            //добавляем эллементы в строку пока они помещаются
-          } else {
-            this.setAttribute("data-hide", "y");
-            if (!(width - parseFloat(window.getComputedStyle(_item).marginRight.replace("px", "")) <= max_width)) {
-              _item.setAttribute("data-hide", "y");
-              //добавляем метку на скрытие
-            }
-            count++;
-          }
-          _item = this;
-        });
-        // скрываем не поместившееся
-        menu.find("[data-hide]").hide();
-        if (count > 0) {
-          // добавляем кнопку раскрытия если есть скрытые
-          menu
-            .append(
-              '<li class="header__bottom__menu__more"><a class="header__bottom__menu__more__link" href="#" >...</a></li>'
-            );
-        }
-      };
-
-      let start = function () {
-        if(opened){
-          hide_more_items();
-        }
-        $("#header__bottom__menu").css("max-height", "none");
-      };
-      start();
-      $(window).resize(start);
-
-      // показать больше в меню, клик на кнопку больше
-      $(document).on("click", ".header__bottom__menu__more", function () {
-        opened = true;
-        let list = $(this).parent()
-          .find("li[data-hide]");
-        for (let j = 0; j < list.length; j++) {
-          list
-            .eq(j)
-            .delay((base_time_animation / 6) * j)
-            .fadeIn(base_time_animation);
-        }
-        $(this)
-          .parent()
-          .find(".header__bottom__menu__more")
-          .remove();
-      });
-
-      //скрыть эллементы при клике вне блока
-      $(document).on("click", function (e) {
-        if (!$("#header__bottom__menu:hover").length > 0) {
-
-          start();
-          $(".wrapper_main").css("margin-top", "0px");
-        }
-      });
-
-      //скрыть эллементы при скролле
-      $(document).on("scroll", function (e) {
-        if (!$("#header__bottom__menu:hover").length > 0) {
-          start();
-          $(".wrapper_main").css("margin-top", "0px");
-        }
-      });
-    }
-    initS();
-  };
-  var moveMenuOnPress = function () {
-    ////реализация свайпа меню на мобиках
-    var menu = $("#header__bottom__menu");
-    var width = 0;
-
-    ////инициализация и расчет ширини блока с эллементами
-    var start = function () {
-      var go = function () {
-        clearInterval(first_init);
-        $("#header__bottom__menu")
-          .find("#monitor_load_complete")
-          .remove();
-        for (let i = 0; i < menu.length; i++) {
-          menu.eq(i).find("li").each(function () {
-            width +=
-              parseFloat(this.offsetWidth + 1) +
-              parseFloat(
-                window.getComputedStyle(this).marginRight.replace("px", "")
-              );
-          });
-        }
-        $(".header__bottom__menu").css("width", width);
-      };
-      ///создаем эллемент для тригера отрисовки меню
-      $("#header__bottom__menu").append(
-        '<li id="monitor_load_complete" class="header__bottom__menu__item health"> <a class="header__bottom__menu__item__link" href="#"> Физическое здоровье</a> </li>'
-      );
-
-      ///триггер полной отрисовки эллментов меню
-      first_init = setInterval(function () {
-        if (parseInt($("#header__bottom__menu").find("#monitor_load_complete").width()) == 158) {
-          //высчитываем ширину и очищаем setinterval
-          go();
-        }
-      }, 1);
-    };
-    start();
-
-    //инициализация кастомного свайпа
-    var start_move = function () {
-      var startpos = undefined;
-      var start_scroll = $(".header__bottom").scrollLeft();
-      $(document).on("mousemove", function (e) {
-        if (down) {
-          if (startpos == undefined) {
-            startpos = e.pageX;
-          }
-          step = startpos - e.pageX + start_scroll;
-          $(".header__bottom").scrollLeft(step);
-        }
-      });
-    };
-    var down = false; //если кнопка нажата
-    var tolink = true; //переходить по ссылке
-    var setup = function () {
-      $(document).on("mousedown", ".header__bottom__menu", function () {
-        down = true;
-        tolink = true;
-        setTimeout(function () {
-          tolink = false;
-        }, 300);
-        start_move();
-      });
-      $(document).on("click", ".header__bottom__menu a", function (e) {
-        if (!tolink) {
-          e.preventDefault();
-        }
-      });
-      $(document).on("mouseup", function () {
-        down = false;
-      });
-    };
-    setup();
-  };
   var burger__search_open = function () {
     ///бургер меню открытие и заерытие
     $("#burger__search button").click(function (e) {
@@ -369,6 +204,69 @@ var custom = function () {
     oldScroll: 0,
     deltaScroll: 8,
 
+    //скрытие и логика раскрытия эллементов в header__bottom__menu
+    _hideElementsBottomMenuLogic: function () {
+      $(document).on("click", ".header__bottom__menu__more", function (e) {
+        e.preventDefault();
+        $(".header__bottom__menu").addClass('active');
+        $(".header__bottom__menu").height($(".header__bottom__menu__list").height())
+      });
+
+      //скрыть эллементы при клике вне блока
+      $(document).on("click", function (e) {
+        if (!$("#header__bottom__menu:hover").length > 0) {
+          $(".header__bottom__menu").removeClass('active');
+          $(".header__bottom__menu").height(58)
+        }
+      });
+
+      //скрыть эллементы при скролле
+      $(document).on("scroll", function (e) {
+        if (!$("#header__bottom__menu:hover").length > 0) {
+          $(".header__bottom__menu").removeClass('active');
+          $(".header__bottom__menu").height(58)
+        }
+      });
+    },
+    _scrollOnMouseDown: {
+      down: false, //если кнопка нажата
+      tolink: true, //переходить по ссылке
+
+      //инициализация PressOnMove
+      _start_move: function () {
+        let _this = this;
+        let startpos = undefined;
+        let start_scroll = $(".header__bottom__menu").scrollLeft();
+        $(document).on("mousemove", function (e) {
+          if (_this.down) {
+            if (startpos == undefined) {
+              startpos = e.pageX;
+            }
+            step = startpos - e.pageX + start_scroll;
+            $(".header__bottom__menu").scrollLeft(step);
+          }
+        });
+      },
+      setup: function () {
+        let _this = this;
+        $(document).on("mousedown", ".header__bottom__menu__list", function () {
+          _this.down = true;
+          _this.tolink = true;
+          setTimeout(function () {
+            _this.tolink = false;
+          }, 300);
+          _this._start_move();
+        });
+        $(document).on("click", ".header__bottom__menu a", function (e) {
+          if (!_this.tolink) {
+            e.preventDefault();
+          }
+        });
+        $(document).on("mouseup", function () {
+          _this.down = false;
+        });
+      }
+    },
     //реализация появления и скрывание хедера при скролле
     _headerMove: function (scrollTop) {
       if (this.deltaScroll < Math.abs(scrollTop - this.oldScroll)) {
@@ -388,6 +286,10 @@ var custom = function () {
           $(".wrapper_main").removeClass("header__fixed");
         }
         this.oldScroll = scrollTop;
+      }
+      if (scrollTop == 0) {
+        this.header.removeClass("fixed");
+        $(".wrapper_main").removeClass("header__fixed");
       }
     },
 
@@ -410,6 +312,12 @@ var custom = function () {
     init: function () {
       this._headerMove_init();
       this._search_but();
+
+      if ($(window).width() <= 950) {
+        this._scrollOnMouseDown.setup();
+      } else {
+        this._hideElementsBottomMenuLogic();
+      }
     }
   };
 
@@ -548,11 +456,6 @@ var custom = function () {
   burger__search_open();
 
   //////способ отображение категорий в меню
-  if ($(window).width() > 950) {
-    show_more_in_menu();
-  } else {
-    moveMenuOnPress();
-  }
 
   comments.init();
   headerMake.init();

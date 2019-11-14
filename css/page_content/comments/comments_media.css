@@ -21,11 +21,11 @@
   }
   .page .comments__item {
     position: relative;
-    padding-bottom: 30px;
-    margin-bottom: 15px;
+    padding-bottom: 32px;
+    margin-bottom: 16px;
   }
   .page .comments__item__wrapper {
-    margin-bottom: 30px;
+    margin-bottom: 32px;
   }
   .page .comments__item__top__right {
     position: absolute;

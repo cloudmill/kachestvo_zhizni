@@ -62,7 +62,7 @@
   padding: 0;
 }
 .header__top__menu__item {
-  margin-right: 25px;
+  margin-right: 24px;
   list-style: none;
 }
 .header__top__menu__item__link {
@@ -121,9 +121,21 @@
   box-shadow: inset 0px 1px transparent, inset 0px -1px #82c831;
 }
 .header__bottom {
-  margin-top: 18px;
+  margin-top: 16px;
 }
 .header__bottom__menu {
+  overflow: hidden;
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  height: 58px;
+  margin: 0;
+  position: relative;
+  padding: 0;
+  padding-right: 18px;
+}
+.header__bottom__menu.active .header__bottom__menu__more {
+  display: none;
+}
+.header__bottom__menu__list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -132,21 +144,19 @@
   align-items: flex-start;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  max-height: 56px;
-  margin: 0;
-  padding: 0;
+  width: 100%;
 }
 .header__bottom__menu__item {
   border-radius: 8px;
   background-color: #f3faea;
-  padding: 0 7px;
+  padding: 0 8px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  margin-right: 7px;
+  margin-right: 8px;
   margin-bottom: 8px;
   list-style: none;
   -webkit-transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
@@ -162,6 +172,7 @@
   align-items: center;
   display: -webkit-box;
   display: -ms-flexbox;
+  white-space: nowrap;
   display: flex;
   padding: 11px 0;
   font-size: 15px;
@@ -179,7 +190,11 @@
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  padding: 11px 9px;
+  padding: 11px 8px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding-right: 0;
 }
 .header__bottom__menu__more__link {
   color: #1d2f3c;
@@ -251,7 +266,7 @@
 }
 .header__tags {
   display: none;
-  padding: 17px 25px;
+  padding: 16px 24px;
   width: 100%;
   position: absolute;
   box-sizing: border-box;
@@ -292,8 +307,8 @@
   line-height: 26.37px;
   margin-right: 10px;
   list-style: none;
-  margin-bottom: 15px;
-  margin-right: 15px;
+  margin-bottom: 16px;
+  margin-right: 16px;
   display: inline;
   -webkit-box-shadow: inset 0px 1px transparent, inset 0px -1px transparent;
   box-shadow: inset 0px 1px transparent, inset 0px -1px transparent;
@@ -337,9 +352,14 @@
   transform: rotate(90deg);
 }
 .header__logo {
-  margin-right: 37px;
+  margin-right: 40px;
   width: 242px;
   height: 48px;
+  display: flex;
+  align-items: center;
+}
+.header__logo img {
+  max-width: 100%;
 }
 .header__burger-btn {
   display: none;
