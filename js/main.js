@@ -449,21 +449,12 @@ var custom = function () {
   };
 
   var scrollIphoneBurger = function(){
-    var scrollinb = false;
-    $('.burger__wrapper').on('scroll',function(){
-      if($('.burger__wrapper').scrollTop() > 20){
-        if(!scrollinb){
-          console.log($(document).scrollTop())
-          var temp = $(document).scrollTop() - 7;
-          $(document).scrollTop(temp);
-          console.log($(document).scrollTop())
-          scrollinb = true;
-        }
-      }
-      if($('.burger__wrapper').scrollTop() == 0){
-        scrollinb = false;
-      }
-    })
+    var iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
+    if(iOS){
+      $('.burger__menu').css('padding-bottom','130px');
+      $('.burger__bottom').css('bottom','85px')
+    }
+    
   }
   copy_link();
   if ($(".article__social").length > 0) social_links_move();

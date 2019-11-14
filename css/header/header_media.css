@@ -92,4 +92,7 @@
     padding: 0 16px;
     margin-left: -16px;
   }
+  .header.fixed .container {
+    width: calc(100% - 32px) !important;
+  }
 }
