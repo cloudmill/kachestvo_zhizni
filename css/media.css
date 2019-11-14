@@ -826,6 +826,9 @@
   }
 }
 @media (max-width: 950px) {
+  .wrapper {
+    width: 100vw;
+  }
   .wrapper.sitebar_show:before {
     opacity: 1;
     z-index: 4;
