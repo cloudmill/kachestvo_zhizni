@@ -626,6 +626,17 @@
     line-height: 28.3px;
   }
 }
+@media (max-width: 1061px) {
+  .page .comments__item__top__right__answer {
+    opacity: 1;
+  }
+  .page .comments__item__top__right__dis-like {
+    opacity: 1;
+  }
+  .page .comments__item__top__right__like {
+    opacity: 1;
+  }
+}
 @media (max-width: 950px) {
   .page .comments {
     margin-right: 0;

@@ -141,8 +141,8 @@
   box-shadow: inset 0px 1px transparent, inset 0px -1px transparent;
 }
 .page .lenta_body_b-item_title:hover {
-  -webkit-box-shadow: inset 0px 1px transparent, inset 0px -1px #82c831;
-  box-shadow: inset 0px 1px transparent, inset 0px -1px #7a858d;
+  -webkit-box-shadow: inset 0px 1px transparent, inset 0px -1px rgba(122, 133, 141, 0.4);
+  box-shadow: inset 0px 1px transparent, inset 0px -1px rgba(122, 133, 141, 0.4);
 }
 .page .lenta_body_b-item_text {
   color: #1d2f3c;

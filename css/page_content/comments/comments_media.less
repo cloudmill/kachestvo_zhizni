@@ -1,3 +1,20 @@
+@media (max-width: 1061px) {
+  .page {
+    .comments {
+      &__item__top__right {
+        &__answer {
+          opacity: 1;
+        }
+        &__dis-like {
+          opacity: 1;
+        }
+        &__like {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
 @media (max-width: 950px) {
   .page {
     .comments {
@@ -18,31 +35,31 @@
 }
 @media (max-width: 960px) {
   .page {
-    .comments{
-      &__form{
-        &.answer{
+    .comments {
+      &__form {
+        &.answer {
           width: 100%;
           margin-left: 0;
         }
       }
-      &__item{
-        &__wrapper{
+      &__item {
+        &__wrapper {
           margin-bottom: 32px;
         }
         position: relative;
         padding-bottom: 32px;
         margin-bottom: 16px;
-        &__top{
+        &__top {
           &__right {
             position: absolute;
             left: 0;
             width: 100%;
             bottom: 0;
             justify-content: flex-end;
-            *{
+            * {
               opacity: 1 !important;
             }
-            &__answer{
+            &__answer {
               position: absolute;
               left: 0;
             }
