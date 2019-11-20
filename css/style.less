@@ -853,74 +853,13 @@ input {
     }
   }
 }
-i.icon {
-  @pos: center;
-  .standart(@bg,@bg_big,@pos) {
+.icon {
+  max-height: 28px;
+  max-width: 20px;
+  display: inline-block;
+  &_big {
+    max-height: 50px;
+    max-width: 35px;
     display: inline-block;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-image: @bg;
-    height: 28px;
-    width: 20px;
-    &_big {
-      display: inline-block;
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-      background-position: @pos;
-      background-image: @bg_big;
-      height: 50px;
-      width: 35px;
-    }
-  }
-  &_bake {
-    @bg: url(../images/small/bicycle.png);
-    @bg_big: url(../images/big/bicycle.png);
-    .standart(@bg, @bg_big, @pos);
-  }
-  &_avocado {
-    @bg: url(../images/small/avocado.png);
-    @bg_big: url(../images/big/avocado.png);
-    .standart(@bg, @bg_big, @pos);
-  }
-  &_gen {
-    @bg: url(../images/genetic.svg);
-    .standart(@bg, @bg, @pos);
-  }
-  &_call-me {
-    @bg: url(../images/small/call_me.png);
-    @bg_big: url(../images/big/call_me.png);
-    .standart(@bg, @bg_big, @pos);
-  }
-  &_boll {
-    @bg: url(../images/small/ball.png);
-    @bg_big: url(../images/big/ball.png);
-    .standart(@bg, @bg_big, @pos);
-  }
-  &_dream {
-    @bg: url(../images/small/dream.png);
-    @bg_big: url(../images/big/dream.png);
-    .standart(@bg, @bg_big, @pos);
-  }
-  &_phone {
-    @bg: url(../images/small/phone.png);
-    @bg_big: url(../images/big/phone.png);
-    .standart(@bg, @bg_big, @pos);
-  }
-  &_sport {
-    @bg: url(../images/small/sport.png);
-    @bg_big: url(../images/big/sport.png);
-    .standart(@bg, @bg_big, @pos);
-  }
-  &_medicine {
-    @bg: url(../images/small/medicine.png);
-    @bg_big: url(../images/big/medicine.png);
-    .standart(@bg, @bg_big, @pos);
-  }
-  &_sun {
-    @bg: url(../images/small/sun.png);
-    @bg_big: url(../images/big/sun.png);
-    .standart(@bg, @bg_big, @pos);
   }
 }

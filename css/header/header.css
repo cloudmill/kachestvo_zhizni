@@ -126,7 +126,7 @@
 .header__bottom__menu {
   overflow: hidden;
   transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
-  height: 58px;
+  height: 48px;
   margin: 0;
   position: relative;
   padding: 0;

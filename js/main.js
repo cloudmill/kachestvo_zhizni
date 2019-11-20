@@ -206,6 +206,10 @@ var custom = function () {
 
     //скрытие и логика раскрытия эллементов в header__bottom__menu
     _hideElementsBottomMenuLogic: function () {
+      $('.header__bottom__menu__more').hide();
+      if($(".header__bottom__menu").height()<$(".header__bottom__menu__list").height()){
+        $('.header__bottom__menu__more').show();
+      }
       $(document).on("click", ".header__bottom__menu__more", function (e) {
         e.preventDefault();
         $(".header__bottom__menu").addClass('active');
@@ -216,7 +220,7 @@ var custom = function () {
       $(document).on("click", function (e) {
         if (!$("#header__bottom__menu:hover").length > 0) {
           $(".header__bottom__menu").removeClass('active');
-          $(".header__bottom__menu").height(58)
+          $(".header__bottom__menu").height(48)
         }
       });
 
@@ -224,7 +228,7 @@ var custom = function () {
       $(document).on("scroll", function (e) {
         if (!$("#header__bottom__menu:hover").length > 0) {
           $(".header__bottom__menu").removeClass('active');
-          $(".header__bottom__menu").height(58)
+          $(".header__bottom__menu").height(48)
         }
       });
     },
