@@ -20,19 +20,6 @@
   left: 0;
   top: 0;
 }
-.header::before {
-  content: "";
-  display: block;
-  height: 100%;
-  width: 200vw;
-  left: 50%;
-  top: 0;
-  position: absolute;
-  z-index: -1;
-  -webkit-transform: translate(-50%, 0);
-  transform: translate(-50%, 0);
-  background-color: inherit;
-}
 .header.fixed {
   position: fixed;
   width: calc(100vw - 350px);
