@@ -2,7 +2,7 @@
   min-height: calc(100vh - 60px);
   position: relative;
 }
-.burger__wrapper {
+.burger_wrapper {
   opacity: 0;
   display: none;
   position: fixed;
@@ -19,20 +19,20 @@
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
 }
-.burger__wrapper::-webkit-scrollbar {
+.burger_wrapper::-webkit-scrollbar {
   display: none;
   width: 0;
 }
-.burger__wrapper.active {
+.burger_wrapper.active {
   display: block;
 }
-.burger__wrapper.open {
+.burger_wrapper.open {
   opacity: 1;
 }
-.burger__menu {
+.burger_menu {
   padding-bottom: 72px ;
 }
-.burger__menu__title {
+.burger_menu_title {
   padding-top: 40px;
   text-align: center;
   color: #1d2f3c;
@@ -43,7 +43,7 @@
   line-height: 16.35px;
   text-transform: uppercase;
 }
-.burger__menu__list {
+.burger_menu_list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -58,7 +58,7 @@
   justify-content: center;
   padding: 0;
 }
-.burger__menu__item {
+.burger_menu_item {
   border-radius: 8px;
   background-color: #f3faea;
   padding: 0 8px;
@@ -74,10 +74,10 @@
   -webkit-transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
-.burger__menu__item:hover {
+.burger_menu_item:hover {
   background-color: #e9f6d7;
 }
-.burger__menu__item__link {
+.burger_menu_item_link {
   color: #1d2f3c;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -90,10 +90,10 @@
   font-weight: 400;
   line-height: 21.09px;
 }
-.burger__menu__item__link_icon {
+.burger_menu_item_link_icon {
   margin-right: 5px;
 }
-.burger__bottom {
+.burger_bottom {
   position: absolute;
   bottom: 15px;
   left: 0;
@@ -104,14 +104,14 @@
   display: -ms-flexbox;
   display: flex;
 }
-.burger__bottom__link {
+.burger_bottom_link {
   color: #7a858d;
   font-size: 15px;
   font-weight: 400;
   line-height: 21.09px;
   margin-right: 16px;
 }
-.burger__search {
+.burger_search {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -120,29 +120,29 @@
   align-items: center;
   width: 25px;
 }
-.burger__search.active .burger__search__input {
+.burger_search.active .burger_search_input {
   width: 100%;
   z-index: 2;
   opacity: 1;
 }
-.burger__search.active .burger__search__input::-webkit-input-placeholder {
+.burger_search.active .burger_search_input::-webkit-input-placeholder {
   color: #d7dbde;
 }
-.burger__search.active .burger__search__input:-ms-input-placeholder {
+.burger_search.active .burger_search_input:-ms-input-placeholder {
   color: #d7dbde;
 }
-.burger__search.active .burger__search__input::-ms-input-placeholder {
+.burger_search.active .burger_search_input::-ms-input-placeholder {
   color: #d7dbde;
 }
-.burger__search.active .burger__search__input::placeholder {
+.burger_search.active .burger_search_input::placeholder {
   color: #d7dbde;
 }
-.burger__search.active .burger__search__button {
+.burger_search.active .burger_search_button {
   position: absolute;
   left: 15px;
   top: 0;
 }
-.burger__search__button {
+.burger_search_button {
   background-color: transparent;
   border: none;
   min-width: 25px;
@@ -154,7 +154,7 @@
   margin-right: 8px;
   cursor: pointer;
 }
-.burger__search__input {
+.burger_search_input {
   position: absolute;
   left: 0px;
   padding-left: 40px;
@@ -171,27 +171,27 @@
   -webkit-transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
-.burger__search__input::-webkit-input-placeholder {
+.burger_search_input::-webkit-input-placeholder {
   color: transparent;
   -webkit-transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
-.burger__search__input:-ms-input-placeholder {
+.burger_search_input:-ms-input-placeholder {
   color: transparent;
   -webkit-transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
-.burger__search__input::-ms-input-placeholder {
+.burger_search_input::-ms-input-placeholder {
   color: transparent;
   -webkit-transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
-.burger__search__input::placeholder {
+.burger_search_input::placeholder {
   color: transparent;
   -webkit-transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
-.burger__tags {
+.burger_tags {
   display: none;
   padding: 0 20px;
   width: calc(100% - 40px);
@@ -206,13 +206,13 @@
   -webkit-transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
-.burger__tags.active {
+.burger_tags.active {
   display: block;
 }
-.burger__tags.active.open {
+.burger_tags.active.open {
   opacity: 1;
 }
-.burger__tags__title {
+.burger_tags_title {
   color: #1d2f3c;
   font-size: 21px;
   font-weight: 700;
@@ -222,7 +222,7 @@
   margin-bottom: 32px;
   padding-top: 56px;
 }
-.burger__tags__list {
+.burger_tags_list {
   margin: 0;
   padding: 0;
   display: -webkit-box;
@@ -238,7 +238,7 @@
   justify-content: center;
   width: 100%;
 }
-.burger__tags__item {
+.burger_tags_item {
   font-size: 18px;
   font-weight: 400;
   line-height: 26.37px;
@@ -252,26 +252,26 @@
   -webkit-transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
-.burger__tags__item:hover {
+.burger_tags_item:hover {
   color: #82c831;
   -webkit-box-shadow: inset 0px 1px transparent, inset 0px -1px #82c831;
   box-shadow: inset 0px 1px transparent, inset 0px -1px #82c831;
 }
-.burger__tags__item::before {
+.burger_tags_item::before {
   content: none;
 }
-.burger__tags__item.big {
+.burger_tags_item.big {
   font-size: 21px;
   line-height: 28.62px;
 }
-.burger__tags__item.small {
+.burger_tags_item.small {
   font-size: 15px;
   line-height: 21.09px;
 }
-.burger__tags__item__link {
+.burger_tags_item_link {
   color: #82c831;
 }
-.burger__tags__close {
+.burger_tags_close {
   position: absolute;
   cursor: pointer;
   top: 60px;
@@ -284,7 +284,7 @@
   -webkit-transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
-.burger__tags__close:hover {
+.burger_tags_close:hover {
   -webkit-transform: rotate(90deg);
   transform: rotate(90deg);
 }

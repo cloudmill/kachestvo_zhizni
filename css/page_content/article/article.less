@@ -5,14 +5,14 @@
 
 .page {
   .article {
-    &__head {
+    &_head {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
       -webkit-box-align: center;
       -ms-flex-align: center;
       align-items: center;
-      &__inf {
+      &_inf {
         margin-right: 37px;
         display: -webkit-box;
         display: -ms-flexbox;
@@ -26,7 +26,7 @@
         letter-spacing: 0.28px;
         line-height: 18.87px;
       }
-      &__comments {
+      &_comments {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -46,7 +46,7 @@
           background-size: contain;
         }
       }
-      &__views {
+      &_views {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -66,17 +66,17 @@
           background-size: contain;
         }
       }
-      &__time {
+      &_time {
         margin-left: 16px;
       }
-      &__types {
+      &_types {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
       }
-      &__type {
+      &_type {
         margin-right: 32px;
-        &__link {
+        &_link {
           display: -webkit-box;
           display: -ms-flexbox;
           display: flex;
@@ -103,27 +103,27 @@
             box-shadow: inset 0px 1px transparent, inset 0px -1px @color_link;
           }
         }
-        &__icon {
+        &_icon {
           position: absolute;
           top: 50%;
           left: -5px;
           transform: translate(-100%, -50%);
         }
       }
-      &__data {
+      &_data {
         margin-left: 16px;
       }
     }
-    &__title {
+    &_title {
       margin-top: 16px;
     }
-    &__social {
+    &_social {
       position: absolute;
       left: -90px;
       top: 0;
       border: 1px solid #f0f0f0;
       background: #fff;
-      &__item {
+      &_item {
         width: 62px;
         height: 71px;
         cursor: pointer;
@@ -200,15 +200,15 @@
             color: @color_text;
           }
         }
-        &__block-img {
+        &_block-img {
           max-width: 24px;
           max-height: 28px;
         }
-        &__img {
+        &_img {
           max-width: 100%;
           max-height: 30px;
         }
-        &__count {
+        &_count {
           opacity: 0.8;
           color: #7a858d;
           font-size: 12px;
@@ -218,16 +218,16 @@
           text-transform: uppercase;
           margin-top: 8px;
         }
-        &__text {
+        &_text {
           display: none;
         }
       }
     }
-    &__body {
+    &_body {
       position: relative;
       margin-left: 88px;
       margin-bottom: 56px;
-      &__box {
+      &_box {
         margin-right: 250px;
         position: relative;
         a {
@@ -247,7 +247,7 @@
       }
     }
     ///Эллементы статьи
-    &__right {
+    &_right {
       width: 100%;
       position: relative;
       & > * {
@@ -258,7 +258,7 @@
         top: 0;
       }
     }
-    &__block-img {
+    &_block-img {
       width: 100%;
       overflow: hidden;
       border-radius: 8px;
@@ -266,7 +266,7 @@
       &.big {
         width: ~"calc(100% + 250px)";
       }
-      &__text {
+      &_text {
         color: #7a858d;
         font-size: 13px;
         font-weight: 400;
@@ -292,7 +292,7 @@
         border-radius: 8px;
       }
     }
-    &__img {
+    &_img {
       max-width: 100%;
       border-radius: 8px;
       overflow: hidden;
@@ -310,7 +310,7 @@
         max-width: ~"calc(100% - 50px)";
       }
     }
-    &__see-also {
+    &_see-also {
       padding: 16px;
       padding-left: 16px;
       padding-bottom: 24px;
@@ -319,7 +319,7 @@
       box-shadow: 0 4px 15px rgba(120, 160, 190, 0.3);
       border-radius: 10px;
       background-color: #ffffff;
-      &__title {
+      &_title {
         color: #7a858d;
         font-size: 12px;
         font-weight: 500;
@@ -340,10 +340,10 @@
           background-color: #f0f0f0;
         }
       }
-      &__item {
+      &_item {
         padding-left: 64px;
         position: relative;
-        &__block-img {
+        &_block-img {
           width: 52px;
           height: 52px;
           border-radius: 44px;
@@ -362,22 +362,22 @@
           -ms-flex-pack: center;
           justify-content: center;
         }
-        &__icon {
+        &_icon {
           max-width: 100%;
           max-height: 100%;
         }
-        &__img {
+        &_img {
           max-width: 100%;
           max-height: 100%;
         }
-        &__title {
+        &_title {
           color: @color_text;
           font-size: 18px;
           font-weight: 500;
           line-height: 24.26px;
           margin-bottom: 20px;
         }
-        &__inf {
+        &_inf {
           display: -webkit-box;
           display: -ms-flexbox;
           display: flex;
@@ -391,7 +391,7 @@
           letter-spacing: 0.28px;
           line-height: 18.87px;
         }
-        &__comments {
+        &_comments {
           display: -webkit-box;
           display: -ms-flexbox;
           display: flex;
@@ -411,7 +411,7 @@
             background-size: contain;
           }
         }
-        &__views {
+        &_views {
           display: -webkit-box;
           display: -ms-flexbox;
           display: flex;
@@ -431,19 +431,19 @@
             background-size: contain;
           }
         }
-        &__time {
+        &_time {
           margin-left: 16px;
         }
       }
     }
-    &__author {
-      &__block-img {
+    &_author {
+      &_block-img {
         width: 64px;
         height: 64px;
         border-radius: 50%;
         overflow: hidden;
       }
-      &__name {
+      &_name {
         color: @color_text;
         font-size: 13px;
         font-weight: 400;
@@ -451,7 +451,7 @@
         line-height: 16.76px;
         margin: 5px 0;
       }
-      &__inf {
+      &_inf {
         color: #7a858d;
         font-size: 13px;
         font-weight: 400;
@@ -459,14 +459,14 @@
         line-height: 16.76px;
       }
     }
-    &__min-inf {
+    &_min-inf {
       &_block-img {
         width: 150px;
         height: 121px;
         border-radius: 8px;
         overflow: hidden;
       }
-      &__text {
+      &_text {
         color: @color_text;
         font-size: 14px;
         font-weight: 400;
@@ -475,36 +475,36 @@
         margin-top: 13px;
       }
     }
-    &__inf {
+    &_inf {
       margin-top: 56px;
-      &__wrapper {
+      &_wrapper {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
         margin-bottom: 24px;
         &:first-child{
-          .article__inf__item__link{
+          .article_inf_item_link{
             margin-left: 32px;
           }
         }
       }
-      &__title {
+      &_title {
         color: @color_text;
         font-size: 15px;
         font-weight: 500;
         line-height: 20.21px;
         margin-right: 32px;
       }
-      &__list {
+      &_list {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
         -ms-flex-wrap: wrap;
         flex-wrap: wrap;
       }
-      &__item {
+      &_item {
         margin-right: 32px;
-        &__link {
+        &_link {
           display: -webkit-box !important;
           display: -ms-flexbox !important;
           display: flex !important;
@@ -535,7 +535,7 @@
             box-shadow: inset 0px 1px transparent, inset 0px -1px @color_link;
           }
         }
-        &__icon {
+        &_icon {
           position: absolute;
           top: 50%;
           left: -5px;
@@ -543,7 +543,7 @@
         }
       }
     }
-    &__card {
+    &_card {
       padding: 30px 32px 20px 32px;
       border-radius: 10px;
       //background-color: #f1f5f8;
@@ -551,30 +551,30 @@
       margin-right: 100px;
       position: relative;
       overflow: hidden;
-      &__title {
+      &_title {
         color: @color_text;
         font-size: 26px;
         font-weight: 700;
         line-height: 35.43px;
       }
-      &__text {
+      &_text {
         margin-top: 16px;
         color: @color_text;
         font-size: 18px;
         font-weight: 400;
         line-height: 26.37px;
       }
-      &__emoji {
+      &_emoji {
         position: absolute;
         width: 35px;
         height: 35px;
         top: 32px;
         left: 32px;
-        &__icon {
+        &_icon {
           width: 30px;
         }
       }
-      &__img {
+      &_img {
         -webkit-transform: translate(-32px, -30px);
         transform: translate(-32px, -30px);
         width: ~"calc(100% + 64px)";
@@ -582,12 +582,12 @@
       }
     }
     &_card {
-      &_emoji {
+      &-emoji {
         padding-left: 80px;
       }
     }
-    &__checkbox {
-      &__button {
+    &_checkbox {
+      &_button {
         color: @color_link;
         height: 48px;
         border-radius: 24px;
@@ -651,7 +651,7 @@
           }
         }
       }
-      &__list {
+      &_list {
         margin-top: 32px;
       }
     }

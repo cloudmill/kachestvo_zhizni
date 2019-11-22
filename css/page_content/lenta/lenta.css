@@ -2,11 +2,11 @@
   margin-bottom: 32px;
   position: relative;
 }
-.page .lenta__col {
+.page .lenta_col {
   width: calc((100% - 64px)/3);
   margin-right: 32px;
 }
-.page .lenta__col:last-child {
+.page .lenta_col:last-child {
   margin-right: 0;
 }
 .page .lenta_title {

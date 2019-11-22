@@ -59,11 +59,11 @@ var custom = function () {
         if (target == "burger") {
           $("body").addClass("overflow"); ///убираем скролл
         }
-        if (target == "burger__tags") {
+        if (target == "burger_tags") {
           $("body").addClass("overflow"); ///убираем скролл
           $(".header").addClass("white_pole"); ///скрываем хедер
-          $(".burger__menu").hide();
-          $(".burger__wrapper").scrollTop(0); ///скроллим вверх
+          $(".burger_menu").hide();
+          $(".burger_wrapper").scrollTop(0); ///скроллим вверх
         }
         if (target == "sitebar") {
           $(".wrapper").addClass("sitebar_show"); ///добавляем темный фон
@@ -71,26 +71,26 @@ var custom = function () {
         }
       } else {
         ///Закрытие окон
-        $(".burger__menu").show();
+        $(".burger_menu").show();
         if (target == "burger") {
           $("[data-target=" + target + "]").toggleClass("active");
           animate_open_close($("#" + target), true, function () {
-            if (!$("#burger,#burger__tags,#sitebar,.popup__wrapper").hasClass("active")) {
+            if (!$("#burger,#burger_tags,#sitebar,.popup_wrapper").hasClass("active")) {
               $("body").removeClass("overflow");
             }
-            if (!$("#burger__tags").hasClass("active")) {
+            if (!$("#burger_tags").hasClass("active")) {
               $(".header").removeClass("white_pole");
             }
           });
         }
-        if (!$("#burger,#burger__tags,#sitebar,.popup__wrapper").hasClass("active")) {
+        if (!$("#burger,#burger_tags,#sitebar,.popup_wrapper").hasClass("active")) {
           $("body").removeClass("overflow");
         }
-        if (target == "burger__tags") {
+        if (target == "burger_tags") {
           $("body").addClass("overflow");
           $(".header").removeClass("white_pole");
         }
-        if (target == "header__tags") {
+        if (target == "header_tags") {
           $(this).toggleClass("active");
           animate_open_close($("#" + target));
         }
@@ -100,14 +100,14 @@ var custom = function () {
       e.preventDefault();
       let close = $(this).data("close");
       if (close == 'burger') return false;
-      $(".burger__menu").show();
+      $(".burger_menu").show();
       if ($("#" + close).hasClass("open")) {
         $("[data-target=" + close + "]").toggleClass("active");
         animate_open_close($("#" + close), true, function () {
-          if (!$("#burger,#burger__tags,#sitebar,.popup__wrapper").hasClass("active")) {
+          if (!$("#burger,#burger_tags,#sitebar,.popup_wrapper").hasClass("active")) {
             $("body").removeClass("overflow");
           }
-          if (!$("#burger__tags").hasClass("active")) {
+          if (!$("#burger_tags").hasClass("active")) {
             $(".header").removeClass("white_pole");
           }
         });
@@ -119,52 +119,52 @@ var custom = function () {
     $(document).on("click", function (e) {
       if (!$("[data-target]:hover").length > 0 && !$("[data-has_target]:hover").length > 0) {
         animate_open_close($("[data-has_target]"), true);
-        $(".burger__menu").show();
+        $(".burger_menu").show();
         $(".wrapper").removeClass("sitebar_show");
         $("[data-target]").removeClass("active");
         $(".header").removeClass("white_pole");
 
-        if (!$(".popup__item:hover").length > 0 && !$(".popup__item:hover").length > 0 &&
+        if (!$(".popup_item:hover").length > 0 && !$(".popup_item:hover").length > 0 &&
           !$(".js-popup:hover").length > 0) {
           $("body").removeClass("overflow");
         }
       }
     });
   };
-  var burger__search_open = function () {
+  var burger_search_open = function () {
     ///бургер меню открытие и заерытие
-    $("#burger__search button").click(function (e) {
-      if (!$("#burger__search").hasClass("active")) {
+    $("#burger_search button").click(function (e) {
+      if (!$("#burger_search").hasClass("active")) {
         e.preventDefault();
-        $(".burger__search__input").focus();
-        $("#burger__search").toggleClass("active");
+        $(".burger_search_input").focus();
+        $("#burger_search").toggleClass("active");
       }
     });
     $(document).on("click", function (e) {
-      if (!$("#burger__search:hover").length > 0) {
-        $("#burger__search").removeClass("active");
+      if (!$("#burger_search:hover").length > 0) {
+        $("#burger_search").removeClass("active");
       }
     });
   };
 
   //логика комментариев
   var comments = {
-    form_answer: "<form class='comments__form answer'>" +
-      "<textarea type='text'class='inpt__basic comments_form_input'placeholder='Написать ответ'></textarea>" +
-      "<button class='btn__basic comments_form_button'>Ответить</button>" +
+    form_answer: "<form class='comments_form answer'>" +
+      "<textarea type='text'class='inpt_basic comments_form_input'placeholder='Написать ответ'></textarea>" +
+      "<button class='btn_basic comments_form_button'>Ответить</button>" +
       "<input type='hidden' name='comment_id' value='value_replace'/>" +
       "</form>",
     textArea: $(".comments_form_input"),
-    list_wrapper: $(".comments__list__wrapper"),
-    list: $(".comments__list"),
+    list_wrapper: $(".comments_list_wrapper"),
+    list: $(".comments_list"),
 
     //форма ответа
     _answer: function () {
       var item = this;
-      $(document).on('click', '.comments__item__top__right__answer', function (e) {
+      $(document).on('click', '.comments_item_top_right_answer', function (e) {
         e.preventDefault();
-        item.list.find('.comments__form.answer').remove();
-        let comment_for_answer = $(this).closest('.comments__item__wrapper')
+        item.list.find('.comments_form.answer').remove();
+        let comment_for_answer = $(this).closest('.comments_item_wrapper')
         let form = item.form_answer.replace('value_replace', 0 /* comment_for_answer.getAttribute('id') */);
         comment_for_answer.append(form);
       })
@@ -176,7 +176,7 @@ var custom = function () {
         $(this)
           .parent()
           .parent()
-          .find(".inpt__wrapper + .comments_form_button")
+          .find(".inpt_wrapper + .comments_form_button")
           .addClass("active");
       });
     },
@@ -184,7 +184,7 @@ var custom = function () {
     //раскрытие списка комментариев
     _showMore: function () {
       var item = this;
-      $(document).on("click", ".comments__show-all", function (e) {
+      $(document).on("click", ".comments_show-all", function (e) {
         e.preventDefault();
         item.list_wrapper.addClass("active");
         $(this).hide();
@@ -204,31 +204,31 @@ var custom = function () {
     oldScroll: 0,
     deltaScroll: 8,
 
-    //скрытие и логика раскрытия эллементов в header__bottom__menu
+    //скрытие и логика раскрытия эллементов в header_bottom_menu
     _hideElementsBottomMenuLogic: function () {
-      $('.header__bottom__menu__more').hide();
-      if($(".header__bottom__menu").height()<$(".header__bottom__menu__list").height()){
-        $('.header__bottom__menu__more').show();
+      $('.header_bottom_menu_more').hide();
+      if($(".header_bottom_menu").height()<$(".header_bottom_menu_list").height()){
+        $('.header_bottom_menu_more').show();
       }
-      $(document).on("click", ".header__bottom__menu__more", function (e) {
+      $(document).on("click", ".header_bottom_menu_more", function (e) {
         e.preventDefault();
-        $(".header__bottom__menu").addClass('active');
-        $(".header__bottom__menu").height($(".header__bottom__menu__list").height())
+        $(".header_bottom_menu").addClass('active');
+        $(".header_bottom_menu").height($(".header_bottom_menu_list").height())
       });
 
       //скрыть эллементы при клике вне блока
       $(document).on("click", function (e) {
-        if (!$("#header__bottom__menu:hover").length > 0) {
-          $(".header__bottom__menu").removeClass('active');
-          $(".header__bottom__menu").height(48)
+        if (!$("#header_bottom_menu:hover").length > 0) {
+          $(".header_bottom_menu").removeClass('active');
+          $(".header_bottom_menu").height(48)
         }
       });
 
       //скрыть эллементы при скролле
       $(document).on("scroll", function (e) {
-        if (!$("#header__bottom__menu:hover").length > 0) {
-          $(".header__bottom__menu").removeClass('active');
-          $(".header__bottom__menu").height(48)
+        if (!$("#header_bottom_menu:hover").length > 0) {
+          $(".header_bottom_menu").removeClass('active');
+          $(".header_bottom_menu").height(48)
         }
       });
     },
@@ -240,20 +240,20 @@ var custom = function () {
       _start_move: function () {
         let _this = this;
         let startpos = undefined;
-        let start_scroll = $(".header__bottom__menu").scrollLeft();
+        let start_scroll = $(".header_bottom_menu").scrollLeft();
         $(document).on("mousemove", function (e) {
           if (_this.down) {
             if (startpos == undefined) {
               startpos = e.pageX;
             }
             step = startpos - e.pageX + start_scroll;
-            $(".header__bottom__menu").scrollLeft(step);
+            $(".header_bottom_menu").scrollLeft(step);
           }
         });
       },
       setup: function () {
         let _this = this;
-        $(document).on("mousedown", ".header__bottom__menu__list", function () {
+        $(document).on("mousedown", ".header_bottom_menu_list", function () {
           _this.down = true;
           _this.tolink = true;
           setTimeout(function () {
@@ -261,7 +261,7 @@ var custom = function () {
           }, 300);
           _this._start_move();
         });
-        $(document).on("click", ".header__bottom__menu a", function (e) {
+        $(document).on("click", ".header_bottom_menu a", function (e) {
           if (!_this.tolink) {
             e.preventDefault();
           }
@@ -282,27 +282,27 @@ var custom = function () {
           if (scrollTop > this.header.height()) {
             this.header.removeClass("hide");
             this.header.addClass("fixed");
-            $(".wrapper_main").addClass("header__fixed");
+            $(".wrapper_main").addClass("header_fixed");
           }
         }
         if (scrollTop == 0) {
           this.header.removeClass("fixed");
-          $(".wrapper_main").removeClass("header__fixed");
+          $(".wrapper_main").removeClass("header_fixed");
         }
         this.oldScroll = scrollTop;
       }
       if (scrollTop == 0) {
         this.header.removeClass("fixed");
-        $(".wrapper_main").removeClass("header__fixed");
+        $(".wrapper_main").removeClass("header_fixed");
       }
     },
 
     //фокус при клике кнопки поиска
     _search_but: function () {
-      $(".header__search button").click(function (e) {
-        if (!$(".header__search .header__search__input:focus").length > 0 && !$(".header__search .header__search__input:hover").length > 0) {
+      $(".header_search button").click(function (e) {
+        if (!$(".header_search .header_search_input:focus").length > 0 && !$(".header_search .header_search_input:hover").length > 0) {
           e.preventDefault();
-          $(".header__search .header__search__input").focus();
+          $(".header_search .header_search_input").focus();
         }
       });
     },
@@ -327,8 +327,8 @@ var custom = function () {
 
   ///обработка попапов
   popup = {
-    wrapper: $(".popup__wrapper"),
-    popups: $(".popup__item"),
+    wrapper: $(".popup_wrapper"),
+    popups: $(".popup_item"),
     triggers: {
       open: $(".js-popup"),
       close: $(".js-close"),
@@ -345,7 +345,7 @@ var custom = function () {
           animate_open_close(item.wrapper);
           animate_open_close($("#success"));
         } else {
-          animate_open_close($(".popup__item.active"), true, function () {
+          animate_open_close($(".popup_item.active"), true, function () {
             animate_open_close(item.successWindow);
           });
         }
@@ -368,7 +368,7 @@ var custom = function () {
 
       ///////клик не по попапу закрывает его
       $(document).on("click", function (e) {
-        if (!$(".popup__item:hover").length > 0 && !$(".js-popup:hover").length > 0) {
+        if (!$(".popup_item:hover").length > 0 && !$(".js-popup:hover").length > 0) {
           animate_open_close(item.wrapper, true);
           animate_open_close(item.popups, true);
         }
@@ -380,22 +380,22 @@ var custom = function () {
 
   ///фикс. социальные иконки на странице статьи
   var social_links_move = function () {
-    var item = $(".article__social");
-    var top__offset = $(".article__body").offset().top;
+    var item = $(".article_social");
+    var top_offset = $(".article_body").offset().top;
     $(document).on("scroll", function () {
       if ($(window).width() >= 950) {
-        if (top__offset < $(document).scrollTop() + 50 + ($(".header").hasClass("hide") ? 0 : $(".header").height())
-          && top__offset + $(".article__body").height() > $(document).scrollTop() + 50 + ($(".header").hasClass("hide") ? 0 : $(".header").height()) + item.height()) {
+        if (top_offset < $(document).scrollTop() + 50 + ($(".header").hasClass("hide") ? 0 : $(".header").height())
+          && top_offset + $(".article_body").height() > $(document).scrollTop() + 50 + ($(".header").hasClass("hide") ? 0 : $(".header").height()) + item.height()) {
 
           item.css("position", "fixed");
           item.css("top", "50px");
 
-          item.css("left", $(".article__body").offset().left - 90);
+          item.css("left", $(".article_body").offset().left - 90);
           item.css(
             "margin-top",
             $(".header").hasClass("hide") ? 0 : $(".header").height()
           );
-        } else if (top__offset + $(".article__body").height() <= $(document).scrollTop() + 50 + ($(".header").hasClass("hide") ? 0 : $(".header").height()) + item.height()) {
+        } else if (top_offset + $(".article_body").height() <= $(document).scrollTop() + 50 + ($(".header").hasClass("hide") ? 0 : $(".header").height()) + item.height()) {
 
           item.attr("style", "");
           item.css("top", "calc(100% - " + item.height() + "px)");
@@ -429,7 +429,7 @@ var custom = function () {
         return false;
       }
     };
-    $(".article__social__item.copy").click(function (e) {
+    $(".article_social_item.copy").click(function (e) {
       e.preventDefault();
       if (!copied) {
         $(this).append(
@@ -455,16 +455,16 @@ var custom = function () {
   var scrollIphoneBurger = function(){
     var iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
     if(iOS){
-      $('.burger__menu').css('padding-bottom','130px');
-      $('.burger__bottom').css('bottom','85px')
+      $('.burger_menu').css('padding-bottom','130px');
+      $('.burger_bottom').css('bottom','85px')
     }
     
   }
   copy_link();
-  if ($(".article__social").length > 0) social_links_move();
+  if ($(".article_social").length > 0) social_links_move();
   open_menu();
   help_blocks();
-  burger__search_open();
+  burger_search_open();
   scrollIphoneBurger();
 
   //////способ отображение категорий в меню
@@ -490,18 +490,18 @@ var forms = function () {
   var validate = function (fields, form) {
     var error = 0;
     form.find("*").removeClass("error");
-    form.find(".error__text").remove();
+    form.find(".error_text").remove();
     /////////////
     fields.forEach(function (item) {
       if (item.attr('name') == "mail") {
         if (item.val() == "" || !mail_right(item.val())) {
           error++;
           item.addClass("error");
-          let text__error = "Неверный Email";
-          if (item.val() == "") text__error = "Введите Email";
+          let text_error = "Неверный Email";
+          if (item.val() == "") text_error = "Введите Email";
 
           item[0].outerHTML +=
-            "<span class='error__text'>" + text__error + "</span>";
+            "<span class='error_text'>" + text_error + "</span>";
         }
       }
     })

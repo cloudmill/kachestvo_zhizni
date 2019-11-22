@@ -7,7 +7,7 @@
   .comments {
     margin-bottom: 32px;
     margin-right: 100px;
-    &__title {
+    &_title {
       color: @color_text;
       font-size: 26px;
       font-weight: 700;
@@ -15,7 +15,7 @@
       margin-bottom: 16px;
       margin-top: 40px;
     }
-    &__form {
+    &_form {
       width: 100%;
       margin-bottom: 32px;
       position: relative;
@@ -57,8 +57,8 @@
       }
       
     }
-    &__list {
-      &__wrapper {
+    &_list {
+      &_wrapper {
         width: 100%;
         position: relative;
         overflow: hidden;
@@ -92,24 +92,24 @@
         }
       }
     }
-    &__item {
+    &_item {
       padding-left: 70px;
       position: relative;
       margin-bottom: 32px;
       &:hover {
-        .comments__item__top__right {
-          &__dis-like {
+        .comments_item_top_right {
+          &_dis-like {
             opacity: 1;
           }
-          &__like {
+          &_like {
             opacity: 1;
           }
-          &__answer {
+          &_answer {
             opacity: 1;
           }
         }
       }
-      &__block-img {
+      &_block-img {
         width: 56px;
         height: 56px;
         position: absolute;
@@ -117,12 +117,12 @@
         left: 0;
         border-radius: 50%;
         overflow: hidden;
-        &__img {
+        &_img {
           max-width: 100%;
           max-height: 100%;
         }
       }
-      &__top {
+      &_top {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -130,7 +130,7 @@
         -ms-flex-pack: justify;
         justify-content: space-between;
         margin-bottom: 5px;
-        &__left {
+        &_left {
           display: -webkit-box;
           display: -ms-flexbox;
           display: flex;
@@ -138,7 +138,7 @@
           -ms-flex-align: baseline;
           align-items: baseline;
         }
-        &__right {
+        &_right {
           display: -webkit-box;
           display: -ms-flexbox;
           display: flex;
@@ -146,7 +146,7 @@
           -ms-flex-align: center;
           align-items: center;
           cursor: pointer;
-          &__summ {
+          &_summ {
             font-size: 15px;
             font-weight: 500;
             line-height: 20.21px;
@@ -159,7 +159,7 @@
               color: @color_link;
             }
           }
-          &__answer {
+          &_answer {
             color: @color_link;
             font-size: 13px;
             font-weight: 500;
@@ -171,7 +171,7 @@
             transition: @anim;
             opacity: 0;
           }
-          &__dis-like {
+          &_dis-like {
             width: 15px;
             height: 13px;
             background-image: url(../images/dis_like.svg);
@@ -185,7 +185,7 @@
               opacity: 1;
             }
           }
-          &__like {
+          &_like {
             width: 16px;
             height: 13px;
             background-image: url(../images/like.svg);
@@ -201,28 +201,28 @@
           }
         }
       }
-      &__name {
+      &_name {
         color: @color_text;
         font-size: 18px;
         font-weight: 500;
         line-height: 24.26px;
         margin-right: 10px;
       }
-      &__time {
+      &_time {
         color: #7a858d;
         font-size: 14px;
         font-weight: 400;
         letter-spacing: 0.28px;
         line-height: 18.87px;
       }
-      &__text {
+      &_text {
         color: @color_text;
         font-size: 15px;
         font-weight: 400;
         line-height: 21.09px;
       }
     }
-    &__show-all {
+    &_show-all {
       color: @color_link;
       font-size: 13px;
       font-weight: 500;

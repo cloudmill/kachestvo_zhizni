@@ -1,13 +1,13 @@
 @media (max-width: 950px) {
   .page {
     .article {
-      &__body {
+      &_body {
         margin-left: 0;
-        &__box {
+        &_box {
           margin-right: 0;
         }
       }
-      &__block-img {
+      &_block-img {
         &.big {
           width: 100%;
         }
@@ -17,7 +17,7 @@
           margin-top: 48px;
         }
       }
-      &__right {
+      &_right {
         & > * {
           position: unset !important;
           margin-top: 0 !important;
@@ -26,7 +26,7 @@
           top: 0;
         }
       }
-      &__author {
+      &_author {
         position: relative !important;
         left: 0;
         right: 0;
@@ -34,16 +34,16 @@
         bottom: 0;
         padding: 16px 0;
         padding-left: 72px;
-        &__block-img {
+        &_block-img {
           position: absolute;
           left: 0;
           top: 50%;
           transform: translate(0, -50%);
         }
-        &__name {
+        &_name {
         }
       }
-      &__social {
+      &_social {
         position: unset !important;
         top: auto;
         left: auto;
@@ -60,7 +60,7 @@
         max-width: 300px;
         margin: auto;
         border: 0;
-        &__item {
+        &_item {
           border-bottom: none;
           border: 1px solid #f0f0f0;
           border-right: 0;
@@ -79,13 +79,13 @@
             &:hover {
               background-color: #f3faeb;
             }
-            .article__social__item__block-img {
+            .article_social_item_block-img {
               display: none;
             }
-            .article__social__item__count {
+            .article_social_item_count {
               display: none;
             }
-            .article__social__item__text {
+            .article_social_item_text {
               display: block;
               color: #82c831;
               font-family: Rubik;
@@ -100,7 +100,7 @@
             z-index: 2;
             background: none;
             cursor: pointer;
-            .article__social__item__text {
+            .article_social_item_text {
               width: 100%;
               height: 100%;
               display: flex;
@@ -167,8 +167,8 @@
 @media (min-width: 769px) {
   .page {
     .article {
-      &__body {
-        &__box {
+      &_body {
+        &_box {
           background-color: transparent;
           &:hover {
             background-color: transparent;
@@ -181,8 +181,8 @@
 @media (max-width: 768px) {
   .page {
     .article {
-      &__body {
-        &__box {
+      &_body {
+        &_box {
           &:before {
             content: "";
             position: absolute;
@@ -197,7 +197,7 @@
           }
         }
       }
-      &__head {
+      &_head {
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -205,18 +205,18 @@
         -webkit-box-align: start;
         -ms-flex-align: start;
         align-items: flex-start;
-        &__inf {
+        &_inf {
           margin-bottom: 12px;
         }
       }
-      &__card {
+      &_card {
         margin-right: 0;
-        &__emoji {
+        &_emoji {
           position: unset;
         }
       }
-      &__checkbox {
-        &__button {
+      &_checkbox {
+        &_button {
           display: none;
         }
       }
@@ -252,11 +252,11 @@
           margin-bottom: 10px;
         }
       }
-      &__head {
-        &__inf {
+      &_head {
+        &_inf {
           margin-bottom: 0;
         }
-        &__types {
+        &_types {
           display: none;
         }
       }
@@ -266,19 +266,19 @@
 @media (max-width: 400px) {
   .page {
     .article {
-      &__card {
+      &_card {
         padding: 32px 16px;
         width: ~"calc(100% - 32px)";
       }
-      &__inf {
-        &__list {
+      &_inf {
+        &_list {
           justify-content: space-between;
         }
       }
-      &__social {
+      &_social {
         width: 100%;
         max-width: none;
-        &__item {
+        &_item {
           flex-basis: ~"calc(25% - 2px)";
           &:last-child {
             flex-basis: 100%;

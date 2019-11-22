@@ -1,4 +1,4 @@
-.sitebar__wrapper {
+.sitebar_wrapper {
   width: 296px;
   height: 100%;
   padding: 0 24px;
@@ -13,11 +13,11 @@
   top: 0;
   z-index: 4;
 }
-.sitebar__wrapper::-webkit-scrollbar {
+.sitebar_wrapper::-webkit-scrollbar {
   display: none;
   width: 0;
 }
-.sitebar__close {
+.sitebar_close {
   display: none;
   position: relative;
   cursor: pointer;
@@ -28,7 +28,7 @@
   width: 18px;
   padding: 5px 0;
 }
-.sitebar__close:before {
+.sitebar_close:before {
   content: "";
   display: block;
   position: absolute;
@@ -45,7 +45,7 @@
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-.sitebar__close:after {
+.sitebar_close:after {
   content: "";
   display: block;
   position: absolute;
@@ -62,15 +62,15 @@
   -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
-.sitebar__close:hover:before {
+.sitebar_close:hover:before {
   -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
-.sitebar__close:hover:after {
+.sitebar_close:hover:after {
   -webkit-transform: rotate(-135deg);
   transform: rotate(-135deg);
 }
-.sitebar__title {
+.sitebar_title {
   color: #1d2f3c;
   font-size: 21px;
   font-weight: 700;
@@ -84,7 +84,7 @@
   align-items: center;
   margin-bottom: 32px;
 }
-.sitebar__title:after {
+.sitebar_title:after {
   content: "";
   margin-left: 22px;
   display: block;
@@ -123,14 +123,14 @@
     box-shadow: 0 0 0 0 rgba(130, 200, 49, 0);
   }
 }
-.sitebar__item {
+.sitebar_item {
   margin-bottom: 32px;
   cursor: pointer;
 }
-.sitebar__item:hover .sitebar__item__link {
+.sitebar_item:hover .sitebar_item_link {
   text-decoration: underline;
 }
-.sitebar__item__head {
+.sitebar_item_head {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -139,44 +139,44 @@
   align-items: center;
   margin-bottom: 10px;
 }
-.sitebar__item__inf {
+.sitebar_item_inf {
   color: #1d2f3c;
   font-size: 15px;
   font-weight: 500;
   line-height: 20.21px;
 }
-.sitebar__item__time {
+.sitebar_item_time {
   color: #7a858d;
   font-size: 14px;
   font-weight: 400;
   letter-spacing: 0.28px;
   line-height: 18.87px;
 }
-.sitebar__item__name {
+.sitebar_item_name {
   color: #1d2f3c;
   font-size: 15px;
   font-weight: 500;
   line-height: 20.21px;
 }
-.sitebar__item__block-img {
+.sitebar_item_block-img {
   width: 48px;
   height: 48px;
   margin-right: 10px;
   border-radius: 50%;
   overflow: hidden;
 }
-.sitebar__item__img {
+.sitebar_item_img {
   max-width: 100%;
   max-height: 100%;
 }
-.sitebar__item__comment {
+.sitebar_item_comment {
   color: #1d2f3c;
   font-size: 15px;
   font-weight: 400;
   line-height: 21.09px;
   margin-bottom: 6px;
 }
-.sitebar__item__link {
+.sitebar_item_link {
   text-decoration: none;
   color: #82c831;
   -webkit-transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);

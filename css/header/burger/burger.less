@@ -7,7 +7,7 @@
  
   min-height: ~"calc(100vh - 60px)";
   position: relative;
-  &__wrapper {
+  &_wrapper {
     opacity: 0;
     display: none;
     position: fixed;
@@ -34,9 +34,9 @@
       opacity: 1;
     }
   }
-  &__menu {
+  &_menu {
     padding-bottom: 72px ;
-    &__title {
+    &_title {
       padding-top: 40px;
       text-align: center;
       color: @color_text;
@@ -47,7 +47,7 @@
       line-height: 16.35px;
       text-transform: uppercase;
     }
-    &__list {
+    &_list {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -62,7 +62,7 @@
       justify-content: center;
       padding: 0;
     }
-    &__item {
+    &_item {
       border-radius: 8px;
       background-color: #f3faea;
       padding: 0 8px;
@@ -80,7 +80,7 @@
       &:hover {
         background-color: #e9f6d7;
       }
-      &__link {
+      &_link {
         color: @color_text;
         -webkit-box-align: center;
         -ms-flex-align: center;
@@ -98,7 +98,7 @@
       }
     }
   }
-  &__bottom {
+  &_bottom {
     position: absolute;
     bottom: 15px;
     left: 0;
@@ -108,7 +108,7 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    &__link {
+    &_link {
       color: #7a858d;
       font-size: 15px;
       font-weight: 400;
@@ -116,7 +116,7 @@
       margin-right: 16px;
     }
   }
-  &__search {
+  &_search {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -125,7 +125,7 @@
     align-items: center;
     width: 25px;
     &.active {
-      .burger__search__input {
+      .burger_search_input {
         width: 100%;
         z-index: 2;
         opacity: 1;
@@ -142,13 +142,13 @@
           color: #d7dbde;
         }
       }
-      .burger__search__button {
+      .burger_search_button {
         position: absolute;
         left: 15px;
         top: 0;
       }
     }
-    &__button {
+    &_button {
       background-color: transparent;
       border: none;
       min-width: 25px;
@@ -160,7 +160,7 @@
       margin-right: 8px;
       cursor: pointer;
     }
-    &__input {
+    &_input {
       position: absolute;
       left: 0px;
       padding-left: 40px;
@@ -201,7 +201,7 @@
       }
     }
   }
-  &__tags {
+  &_tags {
     display: none;
     padding: 0 20px;
     width: ~"calc(100% - 40px)";
@@ -221,7 +221,7 @@
         opacity: 1;
       }
     }
-    &__title {
+    &_title {
       color: @color_text;
       font-size: 21px;
       font-weight: 700;
@@ -231,7 +231,7 @@
       margin-bottom: 32px;
       padding-top: 56px;
     }
-    &__list {
+    &_list {
       margin: 0;
       padding: 0;
       display: -webkit-box;
@@ -247,7 +247,7 @@
       justify-content: center;
       width: 100%;
     }
-    &__item {
+    &_item {
       font-size: 18px;
       font-weight: 400;
       line-height: 26.37px;
@@ -277,11 +277,11 @@
         font-size: 15px;
         line-height: 21.09px;
       }
-      &__link {
+      &_link {
         color: @color_link;
       }
     }
-    &__close {
+    &_close {
       position: absolute;
       cursor: pointer;
       top: 60px;

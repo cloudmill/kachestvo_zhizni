@@ -1,16 +1,16 @@
 @media (max-width: 1024px) {
-  .page .about__block-img {
+  .page .about_block-img {
     width: 100%;
   }
 }
 @media (max-width: 950px) {
-  .page .about__title {
+  .page .about_title {
     font-size: 35px;
     line-height: 45px;
   }
 }
 @media (max-width: 500px) {
-  .page .about__title {
+  .page .about_title {
     font-size: 26px;
     line-height: 35px;
   }

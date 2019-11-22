@@ -32,7 +32,7 @@
       width: ~"calc(100% - 48px)";
       margin: auto;
     }
-    .container {
+    .container { 
       width: ~"calc(100% - 48px)";
       margin: auto;
     }
@@ -40,7 +40,7 @@
 }
 @media (max-width: 950px) {
   .wrapper {
-    width: 100vw;
+    width: 100%;
     &.sitebar_show {
       &:before {
         opacity: 1;
@@ -129,7 +129,7 @@
 }
 @media print {
   .wrapper {
-    .burger__wrapper {
+    .burger_wrapper {
       display: none !important;
     }
     &_main {
@@ -139,27 +139,27 @@
       display: block !important;
       opacity: 1 !important;
       position: unset !important;
-      &__bottom {
+      &_bottom {
         display: none !important;
       }
-      &__top {
+      &_top {
         justify-content: center !important;
-        .header__burger-btn {
+        .header_burger-btn {
           display: none !important;
         }
-        .header__sitebar-btn {
+        .header_sitebar-btn {
           display: none !important;
         }
-        &__logo {
+        &_logo {
           content: url(../images/logo.svg);
         }
-        &__menu {
+        &_menu {
           display: none !important;
         }
-        &__search {
+        &_search {
           display: none !important;
         }
-        &__subsc {
+        &_subsc {
           display: none !important;
         }
       }
@@ -169,21 +169,21 @@
         p {
           display: none !important;
         }
-        &__head {
+        &_head {
           display: none !important;
         }
-        &__block-img {
+        &_block-img {
           display: none !important;
         }
-        &__checkbox {
-          &__list {
+        &_checkbox {
+          &_list {
             display: block !important;
-            .article__checkbox__button {
+            .article_checkbox_button {
               display: none !important;
             }
           }
         }
-        &__inf {
+        &_inf {
           display: none !important;
         }
         .subscribe {
@@ -192,7 +192,7 @@
         .comments {
           display: none !important;
         }
-        &__social {
+        &_social {
           display: none !important;
         }
       }

@@ -2,14 +2,14 @@
   margin-top: 40px;
   margin-bottom: 40px;
 }
-.page .tags__title {
+.page .tags_title {
   color: #1d2f3c;
   font-size: 21px;
   font-weight: 700;
   line-height: 28.3px;
   margin-bottom: 15px;
 }
-.page .tags__list {
+.page .tags_list {
   margin: 0;
   padding: 0;
   display: -webkit-box;
@@ -21,7 +21,7 @@
   -ms-flex-align: center;
   align-items: center;
 }
-.page .tags__item {
+.page .tags_item {
   -webkit-transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   font-size: 18px;
@@ -33,15 +33,15 @@
   -webkit-box-shadow: inset 0px 1px transparent, inset 0px -1px transparent;
   box-shadow: inset 0px 1px transparent, inset 0px -1px transparent;
 }
-.page .tags__item:hover {
+.page .tags_item:hover {
   color: #82c831;
   -webkit-box-shadow: inset 0px 1px transparent, inset 0px -1px #82c831;
   box-shadow: inset 0px 1px transparent, inset 0px -1px #82c831;
 }
-.page .tags__item::before {
+.page .tags_item::before {
   content: none !important;
 }
-.page .tags__item__link {
+.page .tags_item_link {
   color: #82c831;
   font-size: inherit;
 }

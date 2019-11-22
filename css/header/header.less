@@ -14,7 +14,7 @@
   -webkit-transition: top 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: top 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   &.white_pole {
-    .header__top {
+    .header_top {
       &::after {
         width: 100%;
         height: 100%;
@@ -37,7 +37,7 @@
   &.hide {
     top: -200px;
   }
-  &__top {
+  &_top {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -45,7 +45,7 @@
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    &__menu {
+    &_menu {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -54,10 +54,10 @@
       align-items: center;
       margin: 0;
       padding: 0;
-      &__item {
+      &_item {
         margin-right: 24px;
         list-style: none;
-        &__link {
+        &_link {
           color: @color_text;
           font-size: 15px;
           font-weight: 400;
@@ -70,7 +70,7 @@
         }
       }
     }
-    &__subsc {
+    &_subsc {
       /* position: absolute;
       right: 0;
       top: 50%;
@@ -116,9 +116,9 @@
       }
     }
   }
-  &__bottom {
+  &_bottom {
     margin-top: 16px;
-    &__menu {
+    &_menu {
       overflow: hidden;
       transition: @anim;
       height: 48px;
@@ -127,11 +127,11 @@
       padding: 0;
       padding-right: 18px;
       &.active {
-        .header__bottom__menu__more {
+        .header_bottom_menu_more {
           display: none;
         }
       }
-      &__list {
+      &_list {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -142,7 +142,7 @@
         flex-wrap: wrap;
         width: 100%;
       }
-      &__item {
+      &_item {
         border-radius: 8px;
         background-color: #f3faea;
         padding: 0 8px;
@@ -160,7 +160,7 @@
         &:hover {
           background-color: #e9f6d7;
         }
-        &__link {
+        &_link {
           color: @color_text;
           -webkit-box-align: center;
           -ms-flex-align: center;
@@ -174,11 +174,11 @@
           font-weight: 400;
           line-height: 21.09px;
         }
-        &__icon {
+        &_icon {
           margin-right: 5px;
         }
       }
-      &__more {
+      &_more {
         list-style: none;
         display: -webkit-box;
         display: -ms-flexbox;
@@ -191,7 +191,7 @@
         right: 0;
         top: 0;
         padding-right: 0;
-        &__link {
+        &_link {
           color: @color_text;
           line-height: 10px;
           font-size: 24px;
@@ -199,7 +199,7 @@
       }
     }
   }
-  &__search {
+  &_search {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -207,7 +207,7 @@
     -ms-flex-align: center;
     align-items: center;
     &:focus-within {
-      .header__search__input {
+      .header_search_input {
         &::-webkit-input-placeholder {
           color: #d7dbde;
         }
@@ -222,7 +222,7 @@
         }
       }
     }
-    &__button {
+    &_button {
       background-color: transparent;
       border: none;
       width: 25px;
@@ -233,7 +233,7 @@
       margin-right: 8px;
       cursor: pointer;
     }
-    &__input {
+    &_input {
       border: none;
       color: @color_text;
       font-size: 15px;
@@ -269,7 +269,7 @@
       }
     }
   }
-  &__tags {
+  &_tags {
     display: none;
     padding: 16px 24px;
     width: 100%;
@@ -292,7 +292,7 @@
         opacity: 1;
       }
     }
-    &__list {
+    &_list {
       margin: 0;
       padding: 0;
       display: -webkit-box;
@@ -305,7 +305,7 @@
       flex-wrap: wrap;
       width: 100%;
     }
-    &__item {
+    &_item {
       font-size: 18px;
       font-weight: 400;
       line-height: 26.37px;
@@ -335,11 +335,11 @@
         font-size: 15px;
         line-height: 21.09px;
       }
-      &__link {
+      &_link {
         color: @color_link;
       }
     }
-    &__close {
+    &_close {
       position: absolute;
       cursor: pointer;
       top: 8px;
@@ -357,7 +357,7 @@
       }
     }
   }
-  &__logo {
+  &_logo {
     margin-right: 40px;
     width: 242px;
     height: 48px;
@@ -367,7 +367,7 @@
       max-width: 100%;
     }
   }
-  &__burger-btn {
+  &_burger-btn {
     display: none;
     position: relative;
     height: 2px;
@@ -437,7 +437,7 @@
       }
     }
   }
-  &__sitebar-btn {
+  &_sitebar-btn {
     display: none;
     background-image: url(../images/sitebar-open.svg);
     background-size: contain;

@@ -1,12 +1,12 @@
 @media (max-width: 400px) {
-  .popup__wrapper {
+  .popup_wrapper {
     max-width: 100vw;
   }
-  .popup__wrapper:before {
+  .popup_wrapper:before {
     opacity: 1;
     background-color: #fff;
   }
-  .popup__item {
+  .popup_item {
     height: 100%;
     width: 100%;
     max-width: 95vw;
@@ -25,12 +25,12 @@
     box-sizing: border-box;
     box-shadow: none;
   }
-  .popup__item.active {
+  .popup_item.active {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
   }
-  .popup__form {
+  .popup_form {
     width: 100%;
   }
 }

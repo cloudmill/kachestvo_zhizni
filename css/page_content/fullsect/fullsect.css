@@ -14,28 +14,28 @@
   -ms-flex-direction: column;
   flex-direction: column;
 }
-.page .fullsect__logo {
+.page .fullsect_logo {
   position: fixed;
   top: 50px;
   left: 50%;
   -webkit-transform: translate(-50%, 0);
   transform: translate(-50%, 0);
 }
-.page .fullsect__type {
+.page .fullsect_type {
   color: #82c831;
   font-size: 40px;
   font-weight: 700;
   letter-spacing: 0.8px;
   margin-bottom: 16px;
 }
-.page .fullsect__img {
+.page .fullsect_img {
   width: 48px;
   height: auto;
   font-size: 48px;
   font-weight: 700;
   margin-bottom: 32px;
 }
-.page .fullsect__title {
+.page .fullsect_title {
   color: #1d2f3c;
   font-size: 40px;
   font-weight: 700;
@@ -43,7 +43,7 @@
   margin-bottom: 16px;
   text-align: center;
 }
-.page .fullsect__text {
+.page .fullsect_text {
   max-width: 558px;
   color: #7a858d;
   font-size: 18px;

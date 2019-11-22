@@ -3,12 +3,12 @@
   position: relative;
   margin-bottom: 32px;
 }
-.page .search__form {
+.page .search_form {
   display: block;
   width: 100%;
   -webkit-appearance: none;
 }
-.page .search__form__input {
+.page .search_form_input {
   height: 48px;
   width: calc(100% - 56px);
   border: 0;
@@ -26,7 +26,7 @@
   letter-spacing: 0.28px;
   line-height: 18.87px;
 }
-.page .search__form__button {
+.page .search_form_button {
   position: absolute;
   right: 16px;
   top: 50%;

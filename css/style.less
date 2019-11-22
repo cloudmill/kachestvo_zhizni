@@ -62,7 +62,7 @@ body {
     min-height: ~"calc(100vh - 138px)";
     background-color: #ffffff;
     position: relative;
-    &.header__fixed {
+    &.header_fixed {
       padding-top: 138px;
     }
     &.full {
@@ -372,7 +372,7 @@ body {
       }
     }
     .doc {
-      &__wrapper {
+      &_wrapper {
         padding-left: 32px;
         margin: 32px 0;
         position: relative;
@@ -408,7 +408,7 @@ body {
           }
         }
       }
-      &__name {
+      &_name {
         color: @color_text;
         font-size: 15px;
         font-weight: 400;
@@ -429,7 +429,7 @@ body {
           box-shadow: inset 0px 1px transparent, inset 0px -1px @color_link;
         }
       }
-      &__inf {
+      &_inf {
         color: #7a858d;
         font-size: 13px;
         margin-top: 3px;
@@ -464,7 +464,7 @@ input {
   }
 }
 .btn {
-  &__basic {
+  &_basic {
     height: 48px;
     padding: 0 24px;
     cursor: pointer;
@@ -541,7 +541,7 @@ input {
       }
     }
   }
-  &__right {
+  &_right {
     width: 52px;
     height: 48px;
     background-color: #feaa59;
@@ -555,7 +555,7 @@ input {
   }
 }
 .inpt {
-  &__wrapper {
+  &_wrapper {
     margin-bottom: 10px;
     &.disabled {
       label {
@@ -579,7 +579,7 @@ input {
       }
     }
   }
-  &__basic {
+  &_basic {
     height: 48px;
     padding: 0 12px;
     display: block;
@@ -624,7 +624,7 @@ input {
       }
     }
   }
-  &__check {
+  &_check {
     &[type="checkbox"] {
       display: none;
       &:checked + label {
@@ -637,7 +637,7 @@ input {
       }
     }
   }
-  &__radio {
+  &_radio {
     &[type="radio"] {
       display: none;
       &:checked + label {
@@ -650,7 +650,7 @@ input {
       }
     }
   }
-  &__label {
+  &_label {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -679,7 +679,7 @@ input {
       transition: @anim;
     }
   }
-  &__inf {
+  &_inf {
     color: #6a747b;
     font-size: 13px;
     font-weight: 400;
@@ -687,7 +687,7 @@ input {
     margin-bottom: 10px;
     margin-top: -5px;
   }
-  &__error {
+  &_error {
     color: #d81615;
     font-size: 13px;
     font-weight: 400;
@@ -712,7 +712,7 @@ input {
   font-weight: 400;
   letter-spacing: 0.28px;
   line-height: 18.87px;
-  &__comments {
+  &_comments {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -732,7 +732,7 @@ input {
       background-size: contain;
     }
   }
-  &__views {
+  &_views {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -752,7 +752,7 @@ input {
       background-size: contain;
     }
   }
-  &__time {
+  &_time {
     margin-left: 16px;
   }
 }

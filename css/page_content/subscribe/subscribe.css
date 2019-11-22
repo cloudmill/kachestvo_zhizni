@@ -24,21 +24,21 @@
   left: 100%;
   top: 0;
 }
-.page .subscribe__title {
+.page .subscribe_title {
   color: #1d2f3c;
   font-size: 26px;
   font-weight: 700;
   line-height: 35.43px;
   margin-bottom: 10px;
 }
-.page .subscribe__text {
+.page .subscribe_text {
   color: #1d2f3c;
   font-size: 15px;
   font-weight: 400;
   line-height: 21.09px;
   margin-bottom: 16px;
 }
-.page .subscribe__form {
+.page .subscribe_form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -49,7 +49,7 @@
   max-width: 560px;
   position: relative;
 }
-.page .subscribe__form__button {
+.page .subscribe_form_button {
   width: 52px;
   height: 48px;
   background-color: #feaa59;
@@ -61,7 +61,7 @@
   background-position: 11px;
   cursor: pointer;
 }
-.page .subscribe__form .error__text {
+.page .subscribe_form .error_text {
   position: absolute;
   left: 0;
   bottom: -18px;
@@ -71,7 +71,7 @@
 .page .subscribe_form_input {
   width: calc(100% - 52px);
 }
-.page .subscribe__succes {
+.page .subscribe_succes {
   font-style: normal;
   font-weight: normal;
   font-size: 15px;
@@ -87,7 +87,7 @@
   color: #7a858d;
   display: flex;
 }
-.page .subscribe__succes:before {
+.page .subscribe_succes:before {
   content: "";
   display: inline-block;
   position: absolute;

@@ -19,21 +19,21 @@
   background-position: 0 0;
   background-size: contain;
 }
-.page .mailing__title {
+.page .mailing_title {
   color: #1d2f3c;
   font-size: 21px;
   font-weight: 700;
   line-height: 28.3px;
   margin-bottom: 8px;
 }
-.page .mailing__text {
+.page .mailing_text {
   color: #1d2f3c;
   font-size: 15px;
   font-weight: 400;
   line-height: 21.09px;
   margin-bottom: 16px;
 }
-.page .mailing__form {
+.page .mailing_form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -45,7 +45,7 @@
 .page .mailing_form_input {
   width: calc(100% - 62px);
 }
-.page .mailing__succes {
+.page .mailing_succes {
   font-style: normal;
   font-weight: normal;
   font-size: 15px;
@@ -61,7 +61,7 @@
   color: #7a858d;
   display: flex;
 }
-.page .mailing__succes:before {
+.page .mailing_succes:before {
   content: "";
   display: inline-block;
   position: absolute;
