@@ -58,12 +58,13 @@ var custom = function () {
         animate_open_close($("#" + target));
         if (target == "burger") {
           $("body").addClass("overflow"); ///убираем скролл
+          $(".burger .menu").show();
         }
-        if (target == "burger_tags") {
+        if (target == "burgerTags") {
           $("body").addClass("overflow"); ///убираем скролл
           $(".header").addClass("white_pole"); ///скрываем хедер
-          $(".burger_menu").hide();
-          $(".burger_wrapper").scrollTop(0); ///скроллим вверх
+          $(".burger .menu").hide();
+          $(".burger").scrollTop(0); ///скроллим вверх
         }
         if (target == "sitebar") {
           $(".wrapper").addClass("sitebar_show"); ///добавляем темный фон
@@ -71,26 +72,26 @@ var custom = function () {
         }
       } else {
         ///Закрытие окон
-        $(".burger_menu").show();
+        $(".burger .menu").show();
         if (target == "burger") {
           $("[data-target=" + target + "]").toggleClass("active");
           animate_open_close($("#" + target), true, function () {
-            if (!$("#burger,#burger_tags,#sitebar,.popup_wrapper").hasClass("active")) {
+            if (!$(".burger,.burger .tags,#sitebar,.popup_wrapper").hasClass("active")) {
               $("body").removeClass("overflow");
             }
-            if (!$("#burger_tags").hasClass("active")) {
+            if (!$(".burger .tags").hasClass("active")) {
               $(".header").removeClass("white_pole");
             }
           });
         }
-        if (!$("#burger,#burger_tags,#sitebar,.popup_wrapper").hasClass("active")) {
+        if (!$(".burger,.burger .tags,#sitebar,.popup_wrapper").hasClass("active")) {
           $("body").removeClass("overflow");
         }
-        if (target == "burger_tags") {
+        if (target == "burgerTags") {
           $("body").addClass("overflow");
           $(".header").removeClass("white_pole");
         }
-        if (target == "header_tags") {
+        if (target == "headerTags") {
           $(this).toggleClass("active");
           animate_open_close($("#" + target));
         }
@@ -100,14 +101,14 @@ var custom = function () {
       e.preventDefault();
       let close = $(this).data("close");
       if (close == 'burger') return false;
-      $(".burger_menu").show();
+      $(".burger .menu").show();
       if ($("#" + close).hasClass("open")) {
         $("[data-target=" + close + "]").toggleClass("active");
         animate_open_close($("#" + close), true, function () {
-          if (!$("#burger,#burger_tags,#sitebar,.popup_wrapper").hasClass("active")) {
+          if (!$(".burger,.burger .tags,#sitebar,.popup_wrapper").hasClass("active")) {
             $("body").removeClass("overflow");
           }
-          if (!$("#burger_tags").hasClass("active")) {
+          if (!$(".burger .tags").hasClass("active")) {
             $(".header").removeClass("white_pole");
           }
         });
@@ -119,7 +120,7 @@ var custom = function () {
     $(document).on("click", function (e) {
       if (!$("[data-target]:hover").length > 0 && !$("[data-has_target]:hover").length > 0) {
         animate_open_close($("[data-has_target]"), true);
-        $(".burger_menu").show();
+        $(".burger .menu").show();
         $(".wrapper").removeClass("sitebar_show");
         $("[data-target]").removeClass("active");
         $(".header").removeClass("white_pole");
@@ -133,16 +134,16 @@ var custom = function () {
   };
   var burger_search_open = function () {
     ///бургер меню открытие и заерытие
-    $("#burger_search button").click(function (e) {
-      if (!$("#burger_search").hasClass("active")) {
+    $(".burger .searchB_button").click(function (e) {
+      if (!$(".burger .searchB").hasClass("active")) {
         e.preventDefault();
-        $(".burger_search_input").focus();
-        $("#burger_search").toggleClass("active");
+        $(".burger .searchB_input").focus();
+        $(".burger .searchB").toggleClass("active");
       }
     });
     $(document).on("click", function (e) {
-      if (!$("#burger_search:hover").length > 0) {
-        $("#burger_search").removeClass("active");
+      if (!$(".burger .searchB:hover").length > 0) {
+        $(".burger .searchB").removeClass("active");
       }
     });
   };
@@ -206,29 +207,29 @@ var custom = function () {
 
     //скрытие и логика раскрытия эллементов в header_bottom_menu
     _hideElementsBottomMenuLogic: function () {
-      $('.header_bottom_menu_more').hide();
-      if($(".header_bottom_menu").height()<$(".header_bottom_menu_list").height()){
-        $('.header_bottom_menu_more').show();
+      $('.header .rubrics_more').hide();
+      if($(".header .rubrics").height()<$(".header .rubrics_list").height()){
+        $('.header .rubrics_more').show();
       }
-      $(document).on("click", ".header_bottom_menu_more", function (e) {
+      $(document).on("click", ".header .rubrics_more", function (e) {
         e.preventDefault();
-        $(".header_bottom_menu").addClass('active');
-        $(".header_bottom_menu").height($(".header_bottom_menu_list").height())
+        $(".header .rubrics").addClass('active');
+        $(".header .rubrics").height($(".header .rubrics_list").height())
       });
 
       //скрыть эллементы при клике вне блока
       $(document).on("click", function (e) {
-        if (!$("#header_bottom_menu:hover").length > 0) {
-          $(".header_bottom_menu").removeClass('active');
-          $(".header_bottom_menu").height(48)
+        if (!$(".header .rubrics:hover").length > 0) {
+          $(".header .rubrics").removeClass('active');
+          $(".header .rubrics").height(48)
         }
       });
 
       //скрыть эллементы при скролле
       $(document).on("scroll", function (e) {
-        if (!$("#header_bottom_menu:hover").length > 0) {
-          $(".header_bottom_menu").removeClass('active');
-          $(".header_bottom_menu").height(48)
+        if (!$(".header .rubrics:hover").length > 0) {
+          $(".header .rubrics").removeClass('active');
+          $(".header .rubrics").height(48)
         }
       });
     },
@@ -240,20 +241,20 @@ var custom = function () {
       _start_move: function () {
         let _this = this;
         let startpos = undefined;
-        let start_scroll = $(".header_bottom_menu").scrollLeft();
+        let start_scroll = $(".header .rubrics").scrollLeft();
         $(document).on("mousemove", function (e) {
           if (_this.down) {
             if (startpos == undefined) {
               startpos = e.pageX;
             }
             step = startpos - e.pageX + start_scroll;
-            $(".header_bottom_menu").scrollLeft(step);
+            $(".header .rubrics").scrollLeft(step);
           }
         });
       },
       setup: function () {
         let _this = this;
-        $(document).on("mousedown", ".header_bottom_menu_list", function () {
+        $(document).on("mousedown", ".header .rubrics_list", function () {
           _this.down = true;
           _this.tolink = true;
           setTimeout(function () {
@@ -261,7 +262,7 @@ var custom = function () {
           }, 300);
           _this._start_move();
         });
-        $(document).on("click", ".header_bottom_menu a", function (e) {
+        $(document).on("click", ".header .rubrics a", function (e) {
           if (!_this.tolink) {
             e.preventDefault();
           }
@@ -299,10 +300,10 @@ var custom = function () {
 
     //фокус при клике кнопки поиска
     _search_but: function () {
-      $(".header_search button").click(function (e) {
-        if (!$(".header_search .header_search_input:focus").length > 0 && !$(".header_search .header_search_input:hover").length > 0) {
+      $(".header .search_button").click(function (e) {
+        if (!$(".header .search_input:focus").length > 0 && !$(".header .search_input:hover").length > 0) {
           e.preventDefault();
-          $(".header_search .header_search_input").focus();
+          $(".header .search_input").focus();
         }
       });
     },
@@ -455,8 +456,8 @@ var custom = function () {
   var scrollIphoneBurger = function(){
     var iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
     if(iOS){
-      $('.burger_menu').css('padding-bottom','130px');
-      $('.burger_bottom').css('bottom','85px')
+      $('.burger .menu').css('padding-bottom','130px');
+      $('.burger .bottom').css('bottom','85px')
     }
     
   }

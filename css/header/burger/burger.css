@@ -1,8 +1,4 @@
 .burger {
-  min-height: calc(100vh - 60px);
-  position: relative;
-}
-.burger_wrapper {
   opacity: 0;
   display: none;
   position: fixed;
@@ -19,20 +15,24 @@
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
 }
-.burger_wrapper::-webkit-scrollbar {
+.burger::-webkit-scrollbar {
   display: none;
   width: 0;
 }
-.burger_wrapper.active {
+.burger.active {
   display: block;
 }
-.burger_wrapper.open {
+.burger.open {
   opacity: 1;
 }
-.burger_menu {
-  padding-bottom: 72px ;
+.burger .box {
+  min-height: calc(100vh - 60px);
+  position: relative;
 }
-.burger_menu_title {
+.burger .menu {
+  padding-bottom: 72px;
+}
+.burger .menu_title {
   padding-top: 40px;
   text-align: center;
   color: #1d2f3c;
@@ -43,7 +43,7 @@
   line-height: 16.35px;
   text-transform: uppercase;
 }
-.burger_menu_list {
+.burger .menu_list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -58,7 +58,7 @@
   justify-content: center;
   padding: 0;
 }
-.burger_menu_item {
+.burger .menu_item {
   border-radius: 8px;
   background-color: #f3faea;
   padding: 0 8px;
@@ -74,10 +74,10 @@
   -webkit-transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
-.burger_menu_item:hover {
+.burger .menu_item:hover {
   background-color: #e9f6d7;
 }
-.burger_menu_item_link {
+.burger .menu_link {
   color: #1d2f3c;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -90,10 +90,10 @@
   font-weight: 400;
   line-height: 21.09px;
 }
-.burger_menu_item_link_icon {
+.burger .menu_icon {
   margin-right: 5px;
 }
-.burger_bottom {
+.burger .bottom {
   position: absolute;
   bottom: 15px;
   left: 0;
@@ -104,14 +104,14 @@
   display: -ms-flexbox;
   display: flex;
 }
-.burger_bottom_link {
+.burger .bottom_link {
   color: #7a858d;
   font-size: 15px;
   font-weight: 400;
   line-height: 21.09px;
   margin-right: 16px;
 }
-.burger_search {
+.burger .searchB {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -120,29 +120,29 @@
   align-items: center;
   width: 25px;
 }
-.burger_search.active .burger_search_input {
+.burger .searchB.active .searchB_input {
   width: 100%;
   z-index: 2;
   opacity: 1;
 }
-.burger_search.active .burger_search_input::-webkit-input-placeholder {
+.burger .searchB.active .searchB_input::-webkit-input-placeholder {
   color: #d7dbde;
 }
-.burger_search.active .burger_search_input:-ms-input-placeholder {
+.burger .searchB.active .searchB_input:-ms-input-placeholder {
   color: #d7dbde;
 }
-.burger_search.active .burger_search_input::-ms-input-placeholder {
+.burger .searchB.active .searchB_input::-ms-input-placeholder {
   color: #d7dbde;
 }
-.burger_search.active .burger_search_input::placeholder {
+.burger .searchB.active .searchB_input::placeholder {
   color: #d7dbde;
 }
-.burger_search.active .burger_search_button {
+.burger .searchB.active .searchB_button {
   position: absolute;
   left: 15px;
   top: 0;
 }
-.burger_search_button {
+.burger .searchB_button {
   background-color: transparent;
   border: none;
   min-width: 25px;
@@ -154,7 +154,7 @@
   margin-right: 8px;
   cursor: pointer;
 }
-.burger_search_input {
+.burger .searchB_input {
   position: absolute;
   left: 0px;
   padding-left: 40px;
@@ -171,27 +171,27 @@
   -webkit-transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
-.burger_search_input::-webkit-input-placeholder {
+.burger .searchB_input::-webkit-input-placeholder {
   color: transparent;
   -webkit-transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
-.burger_search_input:-ms-input-placeholder {
+.burger .searchB_input:-ms-input-placeholder {
   color: transparent;
   -webkit-transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
-.burger_search_input::-ms-input-placeholder {
+.burger .searchB_input::-ms-input-placeholder {
   color: transparent;
   -webkit-transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
-.burger_search_input::placeholder {
+.burger .searchB_input::placeholder {
   color: transparent;
   -webkit-transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
-.burger_tags {
+.burger .tags {
   display: none;
   padding: 0 20px;
   width: calc(100% - 40px);
@@ -206,13 +206,13 @@
   -webkit-transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
-.burger_tags.active {
+.burger .tags.active {
   display: block;
 }
-.burger_tags.active.open {
+.burger .tags.active.open {
   opacity: 1;
 }
-.burger_tags_title {
+.burger .tags_title {
   color: #1d2f3c;
   font-size: 21px;
   font-weight: 700;
@@ -222,7 +222,7 @@
   margin-bottom: 32px;
   padding-top: 56px;
 }
-.burger_tags_list {
+.burger .tags_list {
   margin: 0;
   padding: 0;
   display: -webkit-box;
@@ -238,11 +238,10 @@
   justify-content: center;
   width: 100%;
 }
-.burger_tags_item {
+.burger .tags_item {
   font-size: 18px;
   font-weight: 400;
   line-height: 26.37px;
-  margin-right: 10px;
   list-style: none;
   margin-bottom: 16px;
   margin-right: 16px;
@@ -252,26 +251,26 @@
   -webkit-transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
-.burger_tags_item:hover {
+.burger .tags_item:hover {
   color: #82c831;
   -webkit-box-shadow: inset 0px 1px transparent, inset 0px -1px #82c831;
   box-shadow: inset 0px 1px transparent, inset 0px -1px #82c831;
 }
-.burger_tags_item::before {
+.burger .tags_item::before {
   content: none;
 }
-.burger_tags_item.big {
+.burger .tags_item.tags_big {
   font-size: 21px;
   line-height: 28.62px;
 }
-.burger_tags_item.small {
+.burger .tags_item.tags_small {
   font-size: 15px;
   line-height: 21.09px;
 }
-.burger_tags_item_link {
+.burger .tags_link {
   color: #82c831;
 }
-.burger_tags_close {
+.burger .tags_close {
   position: absolute;
   cursor: pointer;
   top: 60px;
@@ -284,7 +283,7 @@
   -webkit-transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
-.burger_tags_close:hover {
+.burger .tags_close:hover {
   -webkit-transform: rotate(90deg);
   transform: rotate(90deg);
 }

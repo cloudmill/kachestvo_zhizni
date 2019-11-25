@@ -12,518 +12,607 @@
   <body>
     <div class="wrapper">
       <div class="wrapper_main">
-        <header class="header">
-          <div class="container">
-            <div class="burger_wrapper" id="burger" data-has_target="y">
-              <div class="burger">
-                <div class="burger_menu">
-                  <div class="burger_menu_title">Рубрики</div>
-                  <ul class="burger_menu_list">
-                    <li class="burger_menu_item">
-                      <a class="burger_menu_item_link" href="#">
-                        <img src="images/small/avocado.png" alt="" class="burger_menu_item_link_icon icon">
+          <header class="header">
+              <div class="container">
+                <div class="burger" id="burger" data-has_target="y">
+                  <div class="box">
+                    <div class="menu">
+                      <div class="menu_title">Рубрики</div>
+                      <ul class="menu_list">
+                        <li class="menu_item">
+                          <a class="menu_link" href="#">
+                            <img
+                              src="images/small/avocado.png"
+                              alt=""
+                              class="menu_icon icon"
+                            />
+                            Питание
+                          </a>
+                        </li>
+                        <li class="menu_item">
+                          <a class="menu_link" href="#">
+                            <img
+                              src="images/small/call-me.png"
+                              alt=""
+                              class="menu_icon icon"
+                            />
+                            Ментальное здоровье
+                          </a>
+                        </li>
+                        <li class="menu_item">
+                          <a class="menu_link" href="#">
+                            <img
+                              src="images/small/ball.png"
+                              alt=""
+                              class="menu_icon icon"
+                            />
+                            Спорт
+                          </a>
+                        </li>
+                        <li class="menu_item">
+                          <a class="menu_link" href="#">
+                            <img
+                              src="images/small/dream.png"
+                              alt=""
+                              class="menu_icon icon"
+                            />
+                            Cон
+                          </a>
+                        </li>
+                        <li class="menu_item">
+                          <a class="menu_link" href="#">
+                            <img
+                              src="images/small/phone.png"
+                              alt=""
+                              class="menu_icon icon"
+                            />
+                            Технологии
+                          </a>
+                        </li>
+                        <li class="menu_item">
+                          <a class="menu_link" href="#">
+                            <img
+                              src="images/small/sport.png"
+                              alt=""
+                              class="menu_icon icon"
+                            />
+                            Физическое здоровье
+                          </a>
+                        </li>
+                        <li class="menu_item">
+                          <a class="menu_link" href="#">
+                            <img
+                              src="images/small/medicine.png"
+                              alt=""
+                              class="menu_icon icon"
+                            />
+                            Профилактика
+                          </a>
+                        </li>
+                        <li class="menu_item">
+                          <a class="menu_link" href="#">
+                            <img
+                              src="images/small/call-me.png"
+                              alt=""
+                              class="menu_icon icon"
+                            />
+                            Ментальное здоровье
+                          </a>
+                        </li>
+                        <li class="menu_item">
+                          <a class="menu_link" href="#">
+                            <img
+                              src="images/small/ball.png"
+                              alt=""
+                              class="menu_icon icon"
+                            />
+                            Спорт
+                          </a>
+                        </li>
+                        <li class="menu_item">
+                          <a class="menu_link" href="#">
+                            <img
+                              src="images/small/dream.png"
+                              alt=""
+                              class="menu_icon icon"
+                            />
+                            Cон
+                          </a>
+                        </li>
+                        <li class="menu_item">
+                          <a class="menu_link" href="#">
+                            <img
+                              src="images/small/phone.png"
+                              alt=""
+                              class="menu_icon icon"
+                            />
+                            Технологии
+                          </a>
+                        </li>
+                        <li class="menu_item">
+                          <a class="menu_link" href="#">
+                            <img
+                              src="images/small/sport.png"
+                              alt=""
+                              class="menu_icon icon"
+                            />
+                            Физическое здоровье
+                          </a>
+                        </li>
+                        <li class="menu_item">
+                          <a class="menu_link" href="#">
+                            <img
+                              src="images/small/medicine.png"
+                              alt=""
+                              class="menu_icon icon"
+                            />
+                            Профилактика
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="bottom">
+                      <a data-target="burgerTags" href="" class="bottom_link">
+                        Теги
+                      </a>
+                      <a href="about.html" class="bottom_link">
+                        О блоге
+                      </a>
+                      <a
+                        href=""
+                        class="bottom_link js-popup"
+                        data-popup="subscribe"
+                      >
+                        Подписаться
+                      </a>
+                      <form id="searchB" class="searchB">
+                        <button class="searchB_button" type="submit"></button>
+                        <input
+                          class="searchB_input"
+                          placeholder="Введите текст поиска"
+                          type="text"
+                        />
+                      </form>
+                    </div>
+                    <div class="tags" id="burgerTags" data-has_target="y">
+                      <div class="tags_close" data-close="burgerTags"></div>
+                      <div class="tags_title">Теги</div>
+                      <ul class="tags_list">
+                        <li class="tags_item tags_small">
+                          <a class="tags_link" href="">
+                            #инструкции
+                          </a>
+                        </li>
+                        <li class="tags_item tags_big">
+                          <a class="tags_link" href="">
+                            #о здоровье
+                          </a>
+                        </li>
+                        <li class="tags_item tags_small">
+                          <a class="tags_link" href=""> #faq </a>
+                        </li>
+                        <li class="tags_item">
+                          <a class="tags_link" href="">
+                            #медитация
+                          </a>
+                        </li>
+                        <li class="tags_item tags_small">
+                          <a class="tags_link" href=""> #вредно </a>
+                        </li>
+                        <li class="tags_item tags_big">
+                          <a class="tags_link" href="">
+                            #интересно
+                          </a>
+                        </li>
+                        <li class="tags_item">
+                          <a class="tags_link" href="">
+                            #активность
+                          </a>
+                        </li>
+                        <li class="tags_item tags_small">
+                          <a class="tags_link" href="">
+                            #инструкции
+                          </a>
+                        </li>
+                        <li class="tags_item tags_big">
+                          <a class="tags_link" href="">
+                            #о здоровье
+                          </a>
+                        </li>
+                        <li class="tags_item tags_small">
+                          <a class="tags_link" href=""> #faq </a>
+                        </li>
+                        <li class="tags_item">
+                          <a class="tags_link" href="">
+                            #медитация
+                          </a>
+                        </li>
+                        <li class="tags_item tags_small">
+                          <a class="tags_link" href=""> #вредно </a>
+                        </li>
+                        <li class="tags_item tags_big">
+                          <a class="tags_link" href="">
+                            #интересно
+                          </a>
+                        </li>
+                        <li class="tags_item">
+                          <a class="tags_link" href="">
+                            #активность
+                          </a>
+                        </li>
+                        <li class="tags_item tags_small">
+                          <a class="tags_link" href="">
+                            #инструкции
+                          </a>
+                        </li>
+                        <li class="tags_item tags_big">
+                          <a class="tags_link" href="">
+                            #о здоровье
+                          </a>
+                        </li>
+                        <li class="tags_item tags_small">
+                          <a class="tags_link" href=""> #faq </a>
+                        </li>
+                        <li class="tags_item">
+                          <a class="tags_link" href="">
+                            #медитация
+                          </a>
+                        </li>
+                        <li class="tags_item tags_small">
+                          <a class="tags_link" href=""> #вредно </a>
+                        </li>
+                        <li class="tags_item tags_big">
+                          <a class="tags_link" href="">
+                            #интересно
+                          </a>
+                        </li>
+                        <li class="tags_item">
+                          <a class="tags_link" href="">
+                            #активность
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="top">
+                  <a
+                    href=""
+                    class="btn_burger"
+                    data-target="burger"
+                    data-close="burger"
+                  >
+                    <span> </span>
+                  </a>
+                  <a href="#" class="logo">
+                    <img src="images/logo.svg" alt="" />
+                  </a>
+                  <a href="" class="btn_sitebar" data-target="sitebar"> </a>
+                  <ul class="menu">
+                    <li class="menu_item">
+                      <a class="menu_link" data-target="headerTags" href="#">
+                        Теги
+                      </a>
+                    </li>
+                    <li class="menu_item">
+                      <a class="menu_link" href="#">
+                        О блоге
+                      </a>
+                    </li>
+                    <div class="tags" id="headerTags" data-has_target="y">
+                      <div class="tags_close" data-close="headerTags"></div>
+                      <ul class="tags_list">
+                        <li class="tags_item tags_small">
+                          <a class="tags_link" href="">
+                            #инструкции
+                          </a>
+                        </li>
+                        <li class="tags_item tags_big">
+                          <a class="tags_link" href="">
+                            #о здоровье
+                          </a>
+                        </li>
+                        <li class="tags_item tags_small">
+                          <a class="tags_link" href=""> #faq </a>
+                        </li>
+                        <li class="tags_item">
+                          <a class="tags_link" href="">
+                            #медитация
+                          </a>
+                        </li>
+                        <li class="tags_item tags_small">
+                          <a class="tags_link" href=""> #вредно </a>
+                        </li>
+                        <li class="tags_item tags_big">
+                          <a class="tags_link" href="">
+                            #интересно
+                          </a>
+                        </li>
+                        <li class="tags_item">
+                          <a class="tags_link" href="">
+                            #активность
+                          </a>
+                        </li>
+                        <li class="tags_item tags_small">
+                          <a class="tags_link" href="">
+                            #инструкции
+                          </a>
+                        </li>
+                        <li class="tags_item tags_big">
+                          <a class="tags_link" href="">
+                            #о здоровье
+                          </a>
+                        </li>
+                        <li class="tags_item tags_small">
+                          <a class="tags_link" href=""> #faq </a>
+                        </li>
+                        <li class="tags_item">
+                          <a class="tags_link" href="">
+                            #медитация
+                          </a>
+                        </li>
+                        <li class="tags_item tags_small">
+                          <a class="tags_link" href=""> #вредно </a>
+                        </li>
+                        <li class="tags_item tags_big">
+                          <a class="tags_link" href="">
+                            #интересно
+                          </a>
+                        </li>
+                        <li class="tags_item">
+                          <a class="tags_link" href="">
+                            #активность
+                          </a>
+                        </li>
+                        <li class="tags_item tags_small">
+                          <a class="tags_link" href="">
+                            #инструкции
+                          </a>
+                        </li>
+                        <li class="tags_item tags_big">
+                          <a class="tags_link" href="">
+                            #о здоровье
+                          </a>
+                        </li>
+                        <li class="tags_item tags_small">
+                          <a class="tags_link" href=""> #faq </a>
+                        </li>
+                        <li class="tags_item">
+                          <a class="tags_link" href="">
+                            #медитация
+                          </a>
+                        </li>
+                        <li class="tags_item tags_small">
+                          <a class="tags_link" href=""> #вредно </a>
+                        </li>
+                        <li class="tags_item tags_big">
+                          <a class="tags_link" href="">
+                            #интересно
+                          </a>
+                        </li>
+                        <li class="tags_item">
+                          <a class="tags_link" href="">
+                            #активность
+                          </a>
+                        </li>
+                        <li class="tags_item tags_small">
+                          <a class="tags_link" href="">
+                            #инструкции
+                          </a>
+                        </li>
+                        <li class="tags_item tags_big">
+                          <a class="tags_link" href="">
+                            #о здоровье
+                          </a>
+                        </li>
+                        <li class="tags_item tags_small">
+                          <a class="tags_link" href=""> #faq </a>
+                        </li>
+                        <li class="tags_item">
+                          <a class="tags_link" href="">
+                            #медитация
+                          </a>
+                        </li>
+                        <li class="tags_item tags_small">
+                          <a class="tags_link" href=""> #вредно </a>
+                        </li>
+                        <li class="tags_item tags_big">
+                          <a class="tags_link" href="">
+                            #интересно
+                          </a>
+                        </li>
+                        <li class="tags_item">
+                          <a class="tags_link" href="">
+                            #активность
+                          </a>
+                        </li>
+                        <li class="tags_item tags_small">
+                          <a class="tags_link" href="">
+                            #инструкции
+                          </a>
+                        </li>
+                        <li class="tags_item tags_big">
+                          <a class="tags_link" href="">
+                            #о здоровье
+                          </a>
+                        </li>
+                        <li class="tags_item tags_small">
+                          <a class="tags_link" href=""> #faq </a>
+                        </li>
+                        <li class="tags_item">
+                          <a class="tags_link" href="">
+                            #медитация
+                          </a>
+                        </li>
+                        <li class="tags_item tags_small">
+                          <a class="tags_link" href=""> #вредно </a>
+                        </li>
+                        <li class="tags_item tags_big">
+                          <a class="tags_link" href="">
+                            #интересно
+                          </a>
+                        </li>
+                        <li class="tags_item">
+                          <a class="tags_link" href="">
+                            #активность
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </ul>
+                  <form class="search">
+                    <button class="search_button" type="submit"></button>
+                    <input
+                      class="search_input"
+                      placeholder="Введите текст поиска"
+                      type="text"
+                    />
+                  </form>
+                  <a class="subsc js-popup" data-popup="subscribe" href="">
+                    Подписаться
+                  </a>
+                </div>
+                <ul class="rubrics" id="rubrics">
+                  <div class="rubrics_list">
+                    <li class="rubrics_item">
+                      <a class="rubrics_link" href="#">
+                        <img
+                          src="images/small/avocado.png"
+                          alt=""
+                          class="rubrics_icon icon"
+                        />
                         Питание
                       </a>
                     </li>
-                    <li class="burger_menu_item">
-                      <a class="burger_menu_item_link" href="#">
-                        <img src="images/small/call-me.png" alt="" class="burger_menu_item_link_icon icon">
+                    <li class="rubrics_item">
+                      <a class="rubrics_link" href="#">
+                        <img
+                          src="images/small/call-me.png"
+                          alt=""
+                          class="rubrics_icon icon"
+                        />
                         Ментальное здоровье
                       </a>
                     </li>
-                    <li class="burger_menu_item">
-                      <a class="burger_menu_item_link" href="#">
-                        <img src="images/small/ball.png" alt="" class="burger_menu_item_link_icon icon">
+                    <li class="rubrics_item">
+                      <a class="rubrics_link" href="#">
+                        <img
+                          src="images/small/ball.png"
+                          alt=""
+                          class="rubrics_icon icon"
+                        />
                         Спорт
                       </a>
                     </li>
-                    <li class="burger_menu_item">
-                      <a class="burger_menu_item_link" href="#">
-                        <img src="images/small/dream.png" alt="" class="burger_menu_item_link_icon icon">
+                    <li class="rubrics_item">
+                      <a class="rubrics_link" href="#">
+                        <img
+                          src="images/small/dream.png"
+                          alt=""
+                          class="rubrics_icon icon"
+                        />
                         Cон
                       </a>
                     </li>
-                    <li class="burger_menu_item">
-                      <a class="burger_menu_item_link" href="#">
-                        <img src="images/small/phone.png" alt="" class="burger_menu_item_link_icon icon">
+                    <li class="rubrics_item">
+                      <a class="rubrics_link" href="#">
+                        <img
+                          src="images/small/phone.png"
+                          alt=""
+                          class="rubrics_icon icon"
+                        />
                         Технологии
                       </a>
                     </li>
-                    <li class="burger_menu_item">
-                      <a class="burger_menu_item_link" href="#">
-                        <img src="images/small/sport.png" alt="" class="burger_menu_item_link_icon icon">
+                    <li class="rubrics_item">
+                      <a class="rubrics_link" href="#">
+                        <img
+                          src="images/small/sport.png"
+                          alt=""
+                          class="rubrics_icon icon"
+                        />
                         Физическое здоровье
                       </a>
                     </li>
-                    <li class="burger_menu_item">
-                      <a class="burger_menu_item_link" href="#">
-                        <img src="images/small/medicine.png" alt="" class="burger_menu_item_link_icon icon">
+                    <li class="rubrics_item">
+                      <a class="rubrics_link" href="#">
+                        <img
+                          src="images/small/medicine.png"
+                          alt=""
+                          class="rubrics_icon icon"
+                        />
                         Профилактика
                       </a>
                     </li>
-                    <li class="burger_menu_item">
-                      <a class="burger_menu_item_link" href="#">
-                        <img src="images/small/call-me.png" alt="" class="burger_menu_item_link_icon icon">
+                    <li class="rubrics_item">
+                      <a class="rubrics_link" href="#">
+                        <img
+                          src="images/small/call-me.png"
+                          alt=""
+                          class="rubrics_icon icon"
+                        />
                         Ментальное здоровье
                       </a>
                     </li>
-                    <li class="burger_menu_item">
-                      <a class="burger_menu_item_link" href="#">
-                        <img src="images/small/ball.png" alt="" class="burger_menu_item_link_icon icon">
+                    <li class="rubrics_item">
+                      <a class="rubrics_link" href="#">
+                        <img
+                          src="images/small/ball.png"
+                          alt=""
+                          class="rubrics_icon icon"
+                        />
                         Спорт
                       </a>
                     </li>
-                    <li class="burger_menu_item">
-                      <a class="burger_menu_item_link" href="#">
-                        <img src="images/small/dream.png" alt="" class="burger_menu_item_link_icon icon">
+                    <li class="rubrics_item">
+                      <a class="rubrics_link" href="#">
+                        <img
+                          src="images/small/dream.png"
+                          alt=""
+                          class="rubrics_icon icon"
+                        />
                         Cон
                       </a>
                     </li>
-                    <li class="burger_menu_item">
-                      <a class="burger_menu_item_link" href="#">
-                        <img src="images/small/phone.png" alt="" class="burger_menu_item_link_icon icon">
+                    <li class="rubrics_item">
+                      <a class="rubrics_link" href="#">
+                        <img
+                          src="images/small/phone.png"
+                          alt=""
+                          class="rubrics_icon icon"
+                        />
                         Технологии
                       </a>
                     </li>
-                    <li class="burger_menu_item">
-                      <a class="burger_menu_item_link" href="#">
-                        <img src="images/small/sport.png" alt="" class="burger_menu_item_link_icon icon">
+                    <li class="rubrics_item">
+                      <a class="rubrics_link" href="#">
+                        <img
+                          src="images/small/sport.png"
+                          alt=""
+                          class="rubrics_icon icon"
+                        />
                         Физическое здоровье
                       </a>
                     </li>
-                    <li class="burger_menu_item">
-                      <a class="burger_menu_item_link" href="#">
-                        <img src="images/small/medicine.png" alt="" class="burger_menu_item_link_icon icon">
+                    <li class="rubrics_item">
+                      <a class="rubrics_link" href="#">
+                        <img
+                          src="images/small/medicine.png"
+                          alt=""
+                          class="rubrics_icon icon"
+                        />
                         Профилактика
                       </a>
                     </li>
-                  </ul>
-                </div>
-                <div class="burger_bottom">
-                  <a
-                    data-target="burger_tags"
-                    href=""
-                    class="burger_bottom_link">
-                    Теги
-                  </a>
-                  <a href="about.html" class="burger_bottom_link">
-                    О блоге
-                  </a>
-                  <a
-                    href=""
-                    class="burger_bottom_link js-popup"
-                    data-popup="subscribe">
-                    Подписаться
-                  </a>
-                  <form id="burger_search" class="burger_search">
-                    <button
-                      class="burger_search_button"
-                      type="submit"></button>
-                    <input
-                      class="burger_search_input"
-                      placeholder="Введите текст поиска"
-                      type="text"
-                      />
-                  </form>
-                </div>
-                <div class="burger_tags" id="burger_tags" data-has_target="y">
-                  <div
-                    class="burger_tags_close"
-                    data-close="burger_tags"></div>
-                  <div class="burger_tags_title">Теги</div>
-                  <ul class="burger_tags_list">
-                    <li class="burger_tags_item small">
-                      <a class="burger_tags_item_link" href="">
-                        #инструкции
+                    <li class="rubrics_more">
+                      <a class="rubrics_moreLink" href="#">
+                        ...
                       </a>
                     </li>
-                    <li class="burger_tags_item big">
-                      <a class="burger_tags_item_link" href="">
-                        #о здоровье
-                      </a>
-                    </li>
-                    <li class="burger_tags_item small">
-                      <a class="burger_tags_item_link" href=""> #faq </a>
-                    </li>
-                    <li class="burger_tags_item">
-                      <a class="burger_tags_item_link" href="">
-                        #медитация
-                      </a>
-                    </li>
-                    <li class="burger_tags_item small">
-                      <a class="burger_tags_item_link" href=""> #вредно </a>
-                    </li>
-                    <li class="burger_tags_item big">
-                      <a class="burger_tags_item_link" href="">
-                        #интересно
-                      </a>
-                    </li>
-                    <li class="burger_tags_item">
-                      <a class="burger_tags_item_link" href="">
-                        #активность
-                      </a>
-                    </li>
-                    <li class="burger_tags_item small">
-                      <a class="burger_tags_item_link" href="">
-                        #инструкции
-                      </a>
-                    </li>
-                    <li class="burger_tags_item big">
-                      <a class="burger_tags_item_link" href="">
-                        #о здоровье
-                      </a>
-                    </li>
-                    <li class="burger_tags_item small">
-                      <a class="burger_tags_item_link" href=""> #faq </a>
-                    </li>
-                    <li class="burger_tags_item">
-                      <a class="burger_tags_item_link" href="">
-                        #медитация
-                      </a>
-                    </li>
-                    <li class="burger_tags_item small">
-                      <a class="burger_tags_item_link" href=""> #вредно </a>
-                    </li>
-                    <li class="burger_tags_item big">
-                      <a class="burger_tags_item_link" href="">
-                        #интересно
-                      </a>
-                    </li>
-                    <li class="burger_tags_item">
-                      <a class="burger_tags_item_link" href="">
-                        #активность
-                      </a>
-                    </li>
-                    <li class="burger_tags_item small">
-                      <a class="burger_tags_item_link" href="">
-                        #инструкции
-                      </a>
-                    </li>
-                    <li class="burger_tags_item big">
-                      <a class="burger_tags_item_link" href="">
-                        #о здоровье
-                      </a>
-                    </li>
-                    <li class="burger_tags_item small">
-                      <a class="burger_tags_item_link" href=""> #faq </a>
-                    </li>
-                    <li class="burger_tags_item">
-                      <a class="burger_tags_item_link" href="">
-                        #медитация
-                      </a>
-                    </li>
-                    <li class="burger_tags_item small">
-                      <a class="burger_tags_item_link" href=""> #вредно </a>
-                    </li>
-                    <li class="burger_tags_item big">
-                      <a class="burger_tags_item_link" href="">
-                        #интересно
-                      </a>
-                    </li>
-                    <li class="burger_tags_item">
-                      <a class="burger_tags_item_link" href="">
-                        #активность
-                      </a>
-                    </li>
-                  </ul>
-                </div>
+                  </div>
+                </ul>
               </div>
-            </div>
-            <div class="header_top">
-              <a
-                href=""
-                class="header_burger-btn"
-                data-target="burger"
-                data-close="burger">
-                <span> </span>
-              </a>
-              <a href="#" class="header_logo">
-                <img src="images/logo.svg" alt="" />
-              </a>
-              <a href="" class="header_sitebar-btn" data-target="sitebar"> </a>
-              <ul class="header_top_menu">
-                <li class="header_top_menu_item">
-                  <a
-                    class="header_top_menu_item_link"
-                    data-target="header_tags"
-                    href="#">
-                    Теги
-                  </a>
-                </li>
-                <li class="header_top_menu_item">
-                  <a class="header_top_menu_item_link" href="#">
-                    О блоге
-                  </a>
-                </li>
-                <div class="header_tags" id="header_tags" data-has_target="y">
-                  <div
-                    class="header_tags_close"
-                    data-close="header_tags"></div>
-                  <ul class="header_tags_list">
-                    <li class="header_tags_item small">
-                      <a class="header_tags_item_link" href="">
-                        #инструкции
-                      </a>
-                    </li>
-                    <li class="header_tags_item big">
-                      <a class="header_tags_item_link" href="">
-                        #о здоровье
-                      </a>
-                    </li>
-                    <li class="header_tags_item small">
-                      <a class="header_tags_item_link" href=""> #faq </a>
-                    </li>
-                    <li class="header_tags_item">
-                      <a class="header_tags_item_link" href="">
-                        #медитация
-                      </a>
-                    </li>
-                    <li class="header_tags_item small">
-                      <a class="header_tags_item_link" href=""> #вредно </a>
-                    </li>
-                    <li class="header_tags_item big">
-                      <a class="header_tags_item_link" href="">
-                        #интересно
-                      </a>
-                    </li>
-                    <li class="header_tags_item">
-                      <a class="header_tags_item_link" href="">
-                        #активность
-                      </a>
-                    </li>
-                    <li class="header_tags_item small">
-                      <a class="header_tags_item_link" href="">
-                        #инструкции
-                      </a>
-                    </li>
-                    <li class="header_tags_item big">
-                      <a class="header_tags_item_link" href="">
-                        #о здоровье
-                      </a>
-                    </li>
-                    <li class="header_tags_item small">
-                      <a class="header_tags_item_link" href=""> #faq </a>
-                    </li>
-                    <li class="header_tags_item">
-                      <a class="header_tags_item_link" href="">
-                        #медитация
-                      </a>
-                    </li>
-                    <li class="header_tags_item small">
-                      <a class="header_tags_item_link" href=""> #вредно </a>
-                    </li>
-                    <li class="header_tags_item big">
-                      <a class="header_tags_item_link" href="">
-                        #интересно
-                      </a>
-                    </li>
-                    <li class="header_tags_item">
-                      <a class="header_tags_item_link" href="">
-                        #активность
-                      </a>
-                    </li>
-                    <li class="header_tags_item small">
-                      <a class="header_tags_item_link" href="">
-                        #инструкции
-                      </a>
-                    </li>
-                    <li class="header_tags_item big">
-                      <a class="header_tags_item_link" href="">
-                        #о здоровье
-                      </a>
-                    </li>
-                    <li class="header_tags_item small">
-                      <a class="header_tags_item_link" href=""> #faq </a>
-                    </li>
-                    <li class="header_tags_item">
-                      <a class="header_tags_item_link" href="">
-                        #медитация
-                      </a>
-                    </li>
-                    <li class="header_tags_item small">
-                      <a class="header_tags_item_link" href=""> #вредно </a>
-                    </li>
-                    <li class="header_tags_item big">
-                      <a class="header_tags_item_link" href="">
-                        #интересно
-                      </a>
-                    </li>
-                    <li class="header_tags_item">
-                      <a class="header_tags_item_link" href="">
-                        #активность
-                      </a>
-                    </li>
-                    <li class="header_tags_item small">
-                      <a class="header_tags_item_link" href="">
-                        #инструкции
-                      </a>
-                    </li>
-                    <li class="header_tags_item big">
-                      <a class="header_tags_item_link" href="">
-                        #о здоровье
-                      </a>
-                    </li>
-                    <li class="header_tags_item small">
-                      <a class="header_tags_item_link" href=""> #faq </a>
-                    </li>
-                    <li class="header_tags_item">
-                      <a class="header_tags_item_link" href="">
-                        #медитация
-                      </a>
-                    </li>
-                    <li class="header_tags_item small">
-                      <a class="header_tags_item_link" href=""> #вредно </a>
-                    </li>
-                    <li class="header_tags_item big">
-                      <a class="header_tags_item_link" href="">
-                        #интересно
-                      </a>
-                    </li>
-                    <li class="header_tags_item">
-                      <a class="header_tags_item_link" href="">
-                        #активность
-                      </a>
-                    </li>
-                    <li class="header_tags_item small">
-                      <a class="header_tags_item_link" href="">
-                        #инструкции
-                      </a>
-                    </li>
-                    <li class="header_tags_item big">
-                      <a class="header_tags_item_link" href="">
-                        #о здоровье
-                      </a>
-                    </li>
-                    <li class="header_tags_item small">
-                      <a class="header_tags_item_link" href=""> #faq </a>
-                    </li>
-                    <li class="header_tags_item">
-                      <a class="header_tags_item_link" href="">
-                        #медитация
-                      </a>
-                    </li>
-                    <li class="header_tags_item small">
-                      <a class="header_tags_item_link" href=""> #вредно </a>
-                    </li>
-                    <li class="header_tags_item big">
-                      <a class="header_tags_item_link" href="">
-                        #интересно
-                      </a>
-                    </li>
-                    <li class="header_tags_item">
-                      <a class="header_tags_item_link" href="">
-                        #активность
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </ul>
-              <form class="header_search">
-                <button class="header_search_button" type="submit"></button>
-                <input
-                  class="header_search_input"
-                  placeholder="Введите текст поиска"
-                  type="text"
-                  />
-              </form>
-              <a
-                class="header_top_subsc js-popup"
-                data-popup="subscribe"
-                href="">
-                Подписаться
-              </a>
-            </div>
-            <div class="header_bottom">
-              <ul class="header_bottom_menu" id="header_bottom_menu">
-                <div class="header_bottom_menu_list">
-                  <li class="header_bottom_menu_item">
-                    <a class="header_bottom_menu_item_link" href="#">
-                      <img src="images/small/avocado.png" alt="" class="header_bottom_menu_item_icon icon">
-                      Питание
-                    </a>
-                  </li>
-                  <li class="header_bottom_menu_item">
-                    <a class="header_bottom_menu_item_link" href="#">
-                      <img src="images/small/call-me.png" alt="" class="header_bottom_menu_item_icon icon">
-                      Ментальное здоровье
-                    </a>
-                  </li>
-                  <li class="header_bottom_menu_item">
-                    <a class="header_bottom_menu_item_link" href="#">
-                      <img src="images/small/ball.png" alt="" class="header_bottom_menu_item_icon icon">
-                      Спорт
-                    </a>
-                  </li>
-                  <li class="header_bottom_menu_item">
-                    <a class="header_bottom_menu_item_link" href="#">
-                      <img src="images/small/dream.png" alt="" class="header_bottom_menu_item_icon icon">
-                      Cон
-                    </a>
-                  </li>
-                  <li class="header_bottom_menu_item">
-                    <a class="header_bottom_menu_item_link" href="#">
-                      <img src="images/small/phone.png" alt="" class="header_bottom_menu_item_icon icon">
-                      Технологии
-                    </a>
-                  </li>
-                  <li class="header_bottom_menu_item">
-                    <a class="header_bottom_menu_item_link" href="#">
-                      <img src="images/small/sport.png" alt="" class="header_bottom_menu_item_icon icon">
-                      Физическое здоровье
-                    </a>
-                  </li>
-                  <li class="header_bottom_menu_item">
-                    <a class="header_bottom_menu_item_link" href="#">
-                      <img src="images/small/medicine.png" alt="" class="header_bottom_menu_item_icon icon">
-                      Профилактика
-                    </a>
-                  </li>
-                  <li class="header_bottom_menu_item">
-                    <a class="header_bottom_menu_item_link" href="#">
-                      <img src="images/small/call-me.png" alt="" class="header_bottom_menu_item_icon icon">
-                      Ментальное здоровье
-                    </a>
-                  </li>
-                  <li class="header_bottom_menu_item">
-                    <a class="header_bottom_menu_item_link" href="#">
-                      <img src="images/small/ball.png" alt="" class="header_bottom_menu_item_icon icon">
-                      Спорт
-                    </a>
-                  </li>
-                  <li class="header_bottom_menu_item">
-                    <a class="header_bottom_menu_item_link" href="#">
-                      <img src="images/small/dream.png" alt="" class="header_bottom_menu_item_icon icon">
-                      Cон
-                    </a>
-                  </li>
-                  <li class="header_bottom_menu_item">
-                    <a class="header_bottom_menu_item_link" href="#">
-                      <img src="images/small/phone.png" alt="" class="header_bottom_menu_item_icon icon">
-                      Технологии
-                    </a>
-                  </li>
-                  <li class="header_bottom_menu_item">
-                    <a class="header_bottom_menu_item_link" href="#">
-                      <img src="images/small/sport.png" alt="" class="header_bottom_menu_item_icon icon">
-                      Физическое здоровье
-                    </a>
-                  </li>
-                  <li class="header_bottom_menu_item">
-                    <a class="header_bottom_menu_item_link" href="#">
-                      <img src="images/small/medicine.png" alt="" class="header_bottom_menu_item_icon icon">
-                      Профилактика
-                    </a>
-                  </li>
-                  <li class="header_bottom_menu_more">
-                    <a class="header_bottom_menu_more_link" href="#">
-                      ...
-                    </a>
-                  </li>
-                </div>
-              </ul>
-            </div>
-          </div>
-        </header>
+            </header>
         <main class="page">
           <div class="fullsect">
             <img src="images/zoom.png" alt="" class="fullsect_img" />

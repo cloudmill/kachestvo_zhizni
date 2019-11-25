@@ -12,13 +12,8 @@
   }
 }
 @media (max-width: 950px) {
-  .header_bottom {
+  .header .rubrics {
     position: relative;
-  }
-  .header_bottom::-ms-scrollbar {
-    display: none;
-  }
-  .header_bottom_menu {
     opacity: 1;
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
@@ -26,26 +21,29 @@
     overflow-y: visible;
     overflow-x: scroll;
   }
-  .header_bottom_menu::-webkit-scrollbar {
+  .header .rubrics::-ms-scrollbar {
+    display: none;
+  }
+  .header .rubrics::-webkit-scrollbar {
     display: none;
     width: 0;
     height: 0;
   }
-  .header_bottom_menu_list {
+  .header .rubrics_list {
     flex-wrap: nowrap;
     width: max-content;
   }
-  .header_bottom_menu a {
+  .header .rubrics a {
     -webkit-user-drag: none;
     -o-user-drag: none;
     -ms-user-drag: none;
   }
-  .header_bottom_menu_more {
+  .header .rubrics_more {
     display: none;
   }
 }
 @media (max-width: 768px) {
-  .header_top {
+  .header .top {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -53,41 +51,41 @@
     -ms-flex-pack: justify;
     justify-content: space-between;
   }
-  .header_top_menu,
-  .header_top_subsc {
+  .header .menu,
+  .header .subsc {
     display: none;
   }
-  .header_bottom {
+  .header .rubrics {
     overflow: scroll;
     width: 100%;
     padding: 0 24px;
     margin-left: -24px;
   }
-  .header_bottom::-webkit-scrollbar {
+  .header .rubrics::-webkit-scrollbar {
     display: none;
     width: 0;
     height: 0;
   }
-  .header_bottom::-ms-scrollbar {
+  .header .rubrics::-ms-scrollbar {
     display: none;
   }
-  .header_search {
+  .header .search {
     display: none;
   }
-  .header_logo {
+  .header .logo {
     margin-right: 0;
     width: 200px;
   }
-  .header_logo_img {
+  .header .logo_img {
     max-width: 100%;
   }
-  .header_burger-btn,
-  .header_sitebar-btn {
+  .header .btn_burger,
+  .header .btn_sitebar {
     display: block;
   }
 }
 @media (max-width: 400px) {
-  .header_bottom {
+  .header .rubrics {
     width: 100%;
     padding: 0 16px;
     margin-left: -16px;
@@ -97,7 +95,7 @@
   }
 }
 @media (max-width: 400px) {
-  .burger {
+  .burger .box {
     width: calc(100% - 32px);
     padding: 0 16px;
   }

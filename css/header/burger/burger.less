@@ -4,38 +4,37 @@
 ///
 
 .burger {
- 
-  min-height: ~"calc(100vh - 60px)";
-  position: relative;
-  &_wrapper {
-    opacity: 0;
+  opacity: 0;
+  display: none;
+  position: fixed;
+  z-index: 12;
+  top: 62px;
+  left: 0;
+  padding: 0 24px;
+  width: ~"calc(100% - 48px)";
+  background-color: #fff;
+  height: ~"calc(100vh - 62px)";
+  padding-bottom: 8px;
+  -webkit-transition: @anim;
+  transition: @anim;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  &::-webkit-scrollbar {
     display: none;
-    position: fixed;
-    z-index: 12;
-    top: 62px;
-    left: 0;
-    padding: 0 24px;
-    width: ~"calc(100% - 48px)";
-    background-color: #fff;
-    height: ~"calc(100vh - 62px)";
-    padding-bottom: 8px;
-    -webkit-transition: @anim;
-    transition: @anim;
-    overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
-    &::-webkit-scrollbar {
-      display: none;
-      width: 0;
-    }
-    &.active {
-      display: block;
-    }
-    &.open {
-      opacity: 1;
-    }
+    width: 0;
   }
-  &_menu {
-    padding-bottom: 72px ;
+  &.active {
+    display: block;
+  }
+  &.open {
+    opacity: 1;
+  }
+  .box {
+    min-height: ~"calc(100vh - 60px)";
+    position: relative;
+  }
+  .menu {
+    padding-bottom: 72px;
     &_title {
       padding-top: 40px;
       text-align: center;
@@ -80,25 +79,25 @@
       &:hover {
         background-color: #e9f6d7;
       }
-      &_link {
-        color: @color_text;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        padding: 11px 0;
-        font-size: 15px;
-        font-weight: 400;
-        line-height: 21.09px;
-        &_icon {
-          margin-right: 5px;
-        }
-      }
+    }
+    &_link {
+      color: @color_text;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      padding: 11px 0;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 21.09px;
+    }
+    &_icon {
+      margin-right: 5px;
     }
   }
-  &_bottom {
+  .bottom {
     position: absolute;
     bottom: 15px;
     left: 0;
@@ -116,7 +115,7 @@
       margin-right: 16px;
     }
   }
-  &_search {
+  .searchB {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -125,27 +124,29 @@
     align-items: center;
     width: 25px;
     &.active {
-      .burger_search_input {
-        width: 100%;
-        z-index: 2;
-        opacity: 1;
-        &::-webkit-input-placeholder {
-          color: #d7dbde;
+      .searchB {
+        &_input {
+          width: 100%;
+          z-index: 2;
+          opacity: 1;
+          &::-webkit-input-placeholder {
+            color: #d7dbde;
+          }
+          &:-ms-input-placeholder {
+            color: #d7dbde;
+          }
+          &::-ms-input-placeholder {
+            color: #d7dbde;
+          }
+          &::placeholder {
+            color: #d7dbde;
+          }
         }
-        &:-ms-input-placeholder {
-          color: #d7dbde;
+        &_button {
+          position: absolute;
+          left: 15px;
+          top: 0;
         }
-        &::-ms-input-placeholder {
-          color: #d7dbde;
-        }
-        &::placeholder {
-          color: #d7dbde;
-        }
-      }
-      .burger_search_button {
-        position: absolute;
-        left: 15px;
-        top: 0;
       }
     }
     &_button {
@@ -201,7 +202,7 @@
       }
     }
   }
-  &_tags {
+  .tags {
     display: none;
     padding: 0 20px;
     width: ~"calc(100% - 40px)";
@@ -251,7 +252,6 @@
       font-size: 18px;
       font-weight: 400;
       line-height: 26.37px;
-      margin-right: 10px;
       list-style: none;
       margin-bottom: 16px;
       margin-right: 16px;
@@ -269,17 +269,19 @@
       &::before {
         content: none;
       }
-      &.big {
-        font-size: 21px;
-        line-height: 28.62px;
+      &.tags {
+        &_big {
+          font-size: 21px;
+          line-height: 28.62px;
+        }
+        &_small {
+          font-size: 15px;
+          line-height: 21.09px;
+        }
       }
-      &.small {
-        font-size: 15px;
-        line-height: 21.09px;
-      }
-      &_link {
-        color: @color_link;
-      }
+    }
+    &_link {
+      color: @color_link;
     }
     &_close {
       position: absolute;

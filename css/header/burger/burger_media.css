@@ -1,5 +1,5 @@
 @media (max-width: 400px) {
-  .burger {
+  .burger .box {
     width: calc(100% - 32px);
     padding: 0 16px;
   }
