@@ -434,9 +434,9 @@
     border-bottom: none;
     border: 1px solid #f0f0f0;
     border-right: 0;
-    width: calc(25% - 2px);
+    width: calc(20% - 2px);
   }
-  .page .article_social_item:nth-child(4) {
+  .page .article_social_item:nth-last-child(2) {
     border-right: 1px solid #f0f0f0;
   }
   .page .article_social_item:last-child {
@@ -609,7 +609,7 @@
     max-width: none;
   }
   .page .article_social_item {
-    flex-basis: calc(25% - 2px);
+    flex-basis: calc(20% - 2px);
   }
   .page .article_social_item:last-child {
     flex-basis: 100%;
