@@ -1,11 +1,11 @@
 @media (max-width: 1061px) {
-  .page .comments_item_top_right_answer {
+  .page .comments_answer {
     opacity: 1;
   }
-  .page .comments_item_top_right_dis-like {
+  .page .comments_dis-like {
     opacity: 1;
   }
-  .page .comments_item_top_right_like {
+  .page .comments_like {
     opacity: 1;
   }
 }
@@ -16,11 +16,11 @@
   .page .comments_item {
     padding-left: 0;
   }
-  .page .comments_item_top {
+  .page .comments_top {
     padding-left: 50px;
     min-height: 50px;
   }
-  .page .comments_item_img {
+  .page .comments_img {
     width: 40px;
     height: 40px;
   }
@@ -35,25 +35,25 @@
     padding-bottom: 32px;
     margin-bottom: 16px;
   }
-  .page .comments_item_wrapper {
+  .page .comments_itemBlock {
     margin-bottom: 32px;
   }
-  .page .comments_item_top_right {
+  .page .comments_right {
     position: absolute;
     left: 0;
     width: 100%;
     bottom: 0;
     justify-content: flex-end;
   }
-  .page .comments_item_top_right * {
+  .page .comments_right * {
     opacity: 1 !important;
   }
-  .page .comments_item_top_right_answer {
-    position: absolute;
-    left: 0;
-  }
-  .page .comments_item_top_left {
+  .page .comments_left {
     width: 100%;
     justify-content: space-between;
+  }
+  .page .comments_answer {
+    position: absolute;
+    left: 0;
   }
 }

@@ -111,7 +111,7 @@
   line-height: 21.09px;
   margin-right: 16px;
 }
-.burger .searchB {
+.burger .burSearch {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -120,29 +120,29 @@
   align-items: center;
   width: 25px;
 }
-.burger .searchB.active .searchB_input {
+.burger .burSearch.active .burSearch_input {
   width: 100%;
   z-index: 2;
   opacity: 1;
 }
-.burger .searchB.active .searchB_input::-webkit-input-placeholder {
+.burger .burSearch.active .burSearch_input::-webkit-input-placeholder {
   color: #d7dbde;
 }
-.burger .searchB.active .searchB_input:-ms-input-placeholder {
+.burger .burSearch.active .burSearch_input:-ms-input-placeholder {
   color: #d7dbde;
 }
-.burger .searchB.active .searchB_input::-ms-input-placeholder {
+.burger .burSearch.active .burSearch_input::-ms-input-placeholder {
   color: #d7dbde;
 }
-.burger .searchB.active .searchB_input::placeholder {
+.burger .burSearch.active .burSearch_input::placeholder {
   color: #d7dbde;
 }
-.burger .searchB.active .searchB_button {
+.burger .burSearch.active .burSearch_button {
   position: absolute;
   left: 15px;
   top: 0;
 }
-.burger .searchB_button {
+.burger .burSearch_button {
   background-color: transparent;
   border: none;
   min-width: 25px;
@@ -154,7 +154,7 @@
   margin-right: 8px;
   cursor: pointer;
 }
-.burger .searchB_input {
+.burger .burSearch_input {
   position: absolute;
   left: 0px;
   padding-left: 40px;
@@ -171,27 +171,27 @@
   -webkit-transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
-.burger .searchB_input::-webkit-input-placeholder {
+.burger .burSearch_input::-webkit-input-placeholder {
   color: transparent;
   -webkit-transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
-.burger .searchB_input:-ms-input-placeholder {
+.burger .burSearch_input:-ms-input-placeholder {
   color: transparent;
   -webkit-transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
-.burger .searchB_input::-ms-input-placeholder {
+.burger .burSearch_input::-ms-input-placeholder {
   color: transparent;
   -webkit-transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
-.burger .searchB_input::placeholder {
+.burger .burSearch_input::placeholder {
   color: transparent;
   -webkit-transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
-.burger .tags {
+.burger .burTags {
   display: none;
   padding: 0 20px;
   width: calc(100% - 40px);
@@ -206,13 +206,13 @@
   -webkit-transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
-.burger .tags.active {
+.burger .burTags.active {
   display: block;
 }
-.burger .tags.active.open {
+.burger .burTags.active.open {
   opacity: 1;
 }
-.burger .tags_title {
+.burger .burTags_title {
   color: #1d2f3c;
   font-size: 21px;
   font-weight: 700;
@@ -222,7 +222,7 @@
   margin-bottom: 32px;
   padding-top: 56px;
 }
-.burger .tags_list {
+.burger .burTags_list {
   margin: 0;
   padding: 0;
   display: -webkit-box;
@@ -238,7 +238,7 @@
   justify-content: center;
   width: 100%;
 }
-.burger .tags_item {
+.burger .burTags_item {
   font-size: 18px;
   font-weight: 400;
   line-height: 26.37px;
@@ -251,26 +251,26 @@
   -webkit-transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
-.burger .tags_item:hover {
+.burger .burTags_item:hover {
   color: #82c831;
   -webkit-box-shadow: inset 0px 1px transparent, inset 0px -1px #82c831;
   box-shadow: inset 0px 1px transparent, inset 0px -1px #82c831;
 }
-.burger .tags_item::before {
+.burger .burTags_item::before {
   content: none;
 }
-.burger .tags_item.tags_big {
+.burger .burTags_item.tags_big {
   font-size: 21px;
   line-height: 28.62px;
 }
-.burger .tags_item.tags_small {
+.burger .burTags_item.tags_small {
   font-size: 15px;
   line-height: 21.09px;
 }
-.burger .tags_link {
+.burger .burTags_link {
   color: #82c831;
 }
-.burger .tags_close {
+.burger .burTags_close {
   position: absolute;
   cursor: pointer;
   top: 60px;
@@ -283,7 +283,7 @@
   -webkit-transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
-.burger .tags_close:hover {
+.burger .burTags_close:hover {
   -webkit-transform: rotate(90deg);
   transform: rotate(90deg);
 }

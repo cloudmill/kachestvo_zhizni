@@ -23,7 +23,7 @@
   font-size: 36px;
   letter-spacing: 0.72px;
 }
-.page .lenta_title_tag-list {
+.page .lenta_tagList {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -32,14 +32,14 @@
   margin: 0;
   margin-left: 8px;
 }
-.page .lenta_title_tag-list_item {
+.page .lenta_tagList_item {
   margin-right: 10px;
   font-size: 21px;
   font-weight: 700;
   line-height: 28.3px;
   color: #82c831;
 }
-.page .lenta_title_tag-list_item:before {
+.page .lenta_tagList_item:before {
   display: none;
 }
 .page .lenta_body {
@@ -52,7 +52,7 @@
   -ms-flex-align: start;
   align-items: flex-start;
 }
-.page .lenta_body_b-item {
+.page .lenta .bItem {
   width: calc((100% - 60px)/3*2 + 23px);
   border-radius: 8px;
   height: 100%;
@@ -64,7 +64,7 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-.page .lenta_body_b-item.has_photo:before {
+.page .lenta .bItem.has_photo:before {
   content: "";
   display: block;
   position: absolute;
@@ -74,17 +74,17 @@
   top: 0;
   z-index: 1;
 }
-.page .lenta_body_b-item.has_photo .lenta_body_b-item_img img {
+.page .lenta .bItem.has_photo .bItem_img img {
   width: 100%;
   max-height: 100%;
 }
-.page .lenta_body_b-item_img {
+.page .lenta .bItem_img {
   height: 220px;
   width: calc(100% + 50px);
   margin-left: -25px;
   position: relative;
 }
-.page .lenta_body_b-item_img img {
+.page .lenta .bItem_img img {
   border-radius: 8px;
   max-width: 100%;
   max-height: 120%;
@@ -95,7 +95,7 @@
   -webkit-transform: translate(-50%, 0);
   transform: translate(-50%, 0);
 }
-.page .lenta_body_b-item_types {
+.page .lenta .bItem_types {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -108,14 +108,14 @@
   padding: 0;
   margin-top: 16px;
 }
-.page .lenta_body_b-item_types_type {
+.page .lenta .bItem_type {
   list-style: none;
   margin-right: 16px;
 }
-.page .lenta_body_b-item_types_type::before {
+.page .lenta .bItem_type::before {
   content: none;
 }
-.page .lenta_body_b-item_types_type a {
+.page .lenta .bItem_type a {
   color: #7a858d;
   font-size: 12px;
   font-weight: 500;
@@ -125,10 +125,10 @@
   -webkit-transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
-.page .lenta_body_b-item_types_type a:hover {
+.page .lenta .bItem_type a:hover {
   color: #82c831;
 }
-.page .lenta_body_b-item_title {
+.page .lenta .bItem_title {
   color: #1d2f3c;
   font-weight: 700;
   font-size: 28px;
@@ -140,36 +140,36 @@
   -webkit-box-shadow: inset 0px 1px transparent, inset 0px -1px transparent;
   box-shadow: inset 0px 1px transparent, inset 0px -1px transparent;
 }
-.page .lenta_body_b-item_title:hover {
+.page .lenta .bItem_title:hover {
   -webkit-box-shadow: inset 0px 1px transparent, inset 0px -1px rgba(122, 133, 141, 0.4);
   box-shadow: inset 0px 1px transparent, inset 0px -1px rgba(122, 133, 141, 0.4);
 }
-.page .lenta_body_b-item_text {
+.page .lenta .bItem_text {
   color: #1d2f3c;
   margin: 16px 0;
   font-size: 15px;
   font-weight: 400;
   line-height: 21.09px;
 }
-.page .lenta_body_item {
+.page .lenta .item {
   width: auto;
   width: 100%;
   max-width: 312px;
   margin-bottom: 32px;
   cursor: pointer;
 }
-.page .lenta_body_item_img {
+.page .lenta .item_img {
   border-radius: 8px;
   overflow: hidden;
   width: 100%;
   position: relative;
 }
-.page .lenta_body_item_img img {
+.page .lenta .item_img img {
   max-width: 100%;
   width: 100%;
   height: auto;
 }
-.page .lenta_body_item_types {
+.page .lenta .item_types {
   padding: 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -182,7 +182,7 @@
   margin-top: 5px;
   margin-bottom: 0;
 }
-.page .lenta_body_item_types_type {
+.page .lenta .item_type {
   list-style: none;
   margin-right: 16px;
   margin-bottom: 5px;
@@ -191,15 +191,15 @@
   -webkit-box-shadow: inset 0px 1px transparent, inset 0px -1px transparent;
   box-shadow: inset 0px 1px transparent, inset 0px -1px transparent;
 }
-.page .lenta_body_item_types_type:hover {
+.page .lenta .item_type:hover {
   color: #82c831;
   -webkit-box-shadow: inset 0px 1px transparent, inset 0px -1px #82c831;
   box-shadow: inset 0px 1px transparent, inset 0px -1px #82c831;
 }
-.page .lenta_body_item_types_type::before {
+.page .lenta .item_type::before {
   content: none;
 }
-.page .lenta_body_item_types_type a {
+.page .lenta .item_type a {
   color: #82c831;
   font-size: 12px;
   font-weight: 500;
@@ -207,7 +207,7 @@
   line-height: 16.35px;
   text-transform: uppercase;
 }
-.page .lenta_body_item_title {
+.page .lenta .item_title {
   color: #1d2f3c;
   font-size: 21px;
   font-weight: 700;
@@ -216,17 +216,17 @@
   transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   display: block;
 }
-.page .lenta_body_item_title:hover {
+.page .lenta .item_title:hover {
   color: #82c831;
 }
-.page .lenta_body_item_text {
+.page .lenta .item_text {
   color: #1d2f3c;
   font-size: 15px;
   font-weight: 400;
   line-height: 21.09px;
   margin: 8px 0;
 }
-.page .lenta_body_s-item {
+.page .lenta .sItem {
   padding-left: 64px;
   margin-bottom: 20px;
   width: calc(100% - 64px);
@@ -234,7 +234,7 @@
   margin-right: 32px;
   cursor: pointer;
 }
-.page .lenta_body_s-item_wrapper {
+.page .lenta .sItem_wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -243,13 +243,13 @@
   -ms-flex-direction: column;
   flex-direction: column;
 }
-.page .lenta_body_s-item:hover .lenta_body_s-item_title {
+.page .lenta .sItem:hover .lenta_body_s-item_title {
   color: #82c831;
 }
-.page .lenta_body_s-item:last-child {
+.page .lenta .sItem:last-child {
   margin-bottom: 0;
 }
-.page .lenta_body_s-item_wrapper {
+.page .lenta .sItem_wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -261,10 +261,10 @@
   max-width: 312px;
   margin-bottom: 16px;
 }
-.page .lenta_body_s-item_wrapper:last-child {
+.page .lenta .sItem_wrapper:last-child {
   margin-bottom: 0;
 }
-.page .lenta_body_s-item_img {
+.page .lenta .sItem_img {
   left: 0;
   top: 0;
   min-width: 52px;
@@ -283,14 +283,14 @@
   -ms-flex-pack: center;
   justify-content: center;
 }
-.page .lenta_body_s-item_img.type_box {
+.page .lenta .sItem_img.type_box {
   border-radius: 8px;
 }
-.page .lenta_body_s-item_img i {
+.page .lenta .sItem_img i {
   max-width: 100%;
   max-height: 100%;
 }
-.page .lenta_body_s-item_title {
+.page .lenta .sItem_title {
   color: #1d2f3c;
   -webkit-transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
@@ -298,19 +298,19 @@
   font-weight: 500;
   line-height: 24.26px;
 }
-.page .lenta_body_s-item_inf {
+.page .lenta .sItem_inf {
   margin-top: 8px;
 }
-.page .lenta_body_sr-item {
+.page .lenta .srItem {
   width: calc((100% - (4 * 32px))/5);
   margin-right: 32px;
   margin-bottom: 40px;
   cursor: pointer;
 }
-.page .lenta_body_sr-item:last-child {
+.page .lenta .srItem:last-child {
   margin-right: 0;
 }
-.page .lenta_body_sr-item_img {
+.page .lenta .srItem_img {
   width: 100%;
   max-width: 179px;
   overflow: hidden;
@@ -319,14 +319,14 @@
   -webkit-transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
-.page .lenta_body_sr-item_img:hover {
+.page .lenta .srItem_img:hover {
   opacity: 0.8;
 }
-.page .lenta_body_sr-item_img img {
+.page .lenta .srItem_img img {
   width: 100%;
   height: auto;
 }
-.page .lenta_body_sr-item_types {
+.page .lenta .srItem_types {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -339,7 +339,7 @@
   margin: 0;
   margin-top: 4px;
 }
-.page .lenta_body_sr-item_types_type {
+.page .lenta .srItem_type {
   list-style: none;
   margin-right: 16px;
   margin-bottom: 4px;
@@ -348,15 +348,15 @@
   -webkit-box-shadow: inset 0px 1px transparent, inset 0px -1px transparent;
   box-shadow: inset 0px 1px transparent, inset 0px -1px transparent;
 }
-.page .lenta_body_sr-item_types_type:hover {
+.page .lenta .srItem_type:hover {
   color: #82c831;
   -webkit-box-shadow: inset 0px 1px transparent, inset 0px -1px #82c831;
   box-shadow: inset 0px 1px transparent, inset 0px -1px #82c831;
 }
-.page .lenta_body_sr-item_types_type::before {
+.page .lenta .srItem_type::before {
   content: none;
 }
-.page .lenta_body_sr-item_types_type a {
+.page .lenta .srItem_type a {
   color: #82c831;
   font-size: 11px;
   font-weight: 500;
@@ -364,7 +364,7 @@
   line-height: 14.82px;
   text-transform: uppercase;
 }
-.page .lenta_body_sr-item_title {
+.page .lenta .srItem_title {
   color: #1d2f3c;
   -webkit-transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
@@ -373,10 +373,10 @@
   line-height: 20.21px;
   display: block;
 }
-.page .lenta_body_sr-item_title:hover {
+.page .lenta .srItem_title:hover {
   color: #82c831;
 }
-.page .lenta_body_spec-item {
+.page .lenta .specItem {
   max-width: 265px;
   margin-right: 32px;
   padding: 24px;
@@ -387,14 +387,14 @@
   overflow: hidden;
   cursor: pointer;
 }
-.page .lenta_body_spec-item_img {
+.page .lenta .specItem_img {
   width: 100%;
   position: relative;
   right: -3px;
   bottom: -3px;
   height: 350px;
 }
-.page .lenta_body_spec-item_img img {
+.page .lenta .specItem_img img {
   z-index: 0;
   height: 550px;
   position: absolute;
@@ -403,7 +403,7 @@
   -webkit-transform: translate(-50%, 0);
   transform: translate(-50%, 0);
 }
-.page .lenta_body_spec-item_title {
+.page .lenta .specItem_title {
   color: #1d2f3c;
   font-size: 21px;
   font-weight: 700;
@@ -413,7 +413,7 @@
   position: relative;
   z-index: 1;
 }
-.page .lenta_body_spec-item_text {
+.page .lenta .specItem_text {
   color: #1d2f3c;
   position: relative;
   z-index: 1;
@@ -422,7 +422,7 @@
   font-weight: 400;
   line-height: 21.09px;
 }
-.page .lenta_btw-item {
+.page .lenta .btwItem {
   margin-top: 50px;
   padding: 40px;
   border-radius: 4px;
@@ -432,7 +432,7 @@
   margin-bottom: 60px;
   cursor: pointer;
 }
-.page .lenta_btw-item.has_photo:before {
+.page .lenta .btwItem.has_photo:before {
   content: "";
   display: block;
   position: absolute;
@@ -443,12 +443,12 @@
   top: 0;
   z-index: 1;
 }
-.page .lenta_btw-item.has_photo img {
+.page .lenta .btwItem.has_photo img {
   max-width: 100%;
   margin-left: 0;
   min-height: 100%;
 }
-.page .lenta_btw-item_img {
+.page .lenta .btwItem_img {
   height: calc(100% + 60px);
   top: 50%;
   left: 0;
@@ -466,7 +466,7 @@
   -ms-flex-pack: start;
   justify-content: flex-start;
 }
-.page .lenta_btw-item_img img {
+.page .lenta .btwItem_img img {
   max-width: 95%;
   width: 100%;
   height: auto;
@@ -474,7 +474,7 @@
   margin-left: 5%;
   display: block;
 }
-.page .lenta_btw-item_types {
+.page .lenta .btwItem_types {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -485,14 +485,14 @@
   padding: 0;
   margin-bottom: 10px;
 }
-.page .lenta_btw-item_types_type {
+.page .lenta .btwItem_type {
   list-style: none;
   margin-right: 16px;
 }
-.page .lenta_btw-item_types_type::before {
+.page .lenta .btwItem_type::before {
   content: none;
 }
-.page .lenta_btw-item_types_type a {
+.page .lenta .btwItem_type a {
   color: #7a858d;
   font-size: 12px;
   font-weight: 500;
@@ -500,7 +500,7 @@
   line-height: 16.35px;
   text-transform: uppercase;
 }
-.page .lenta_btw-item_title {
+.page .lenta .btwItem_title {
   color: #1d2f3c;
   font-size: 36px;
   font-weight: 700;
@@ -511,24 +511,24 @@
   -webkit-box-shadow: inset 0px 1px transparent, inset 0px -1px transparent;
   box-shadow: inset 0px 1px transparent, inset 0px -1px transparent;
 }
-.page .lenta_btw-item_title:hover {
+.page .lenta .btwItem_title:hover {
   -webkit-box-shadow: inset 0px 1px transparent, inset 0px -1px #82c831;
   box-shadow: inset 0px 1px transparent, inset 0px -1px #7a858d;
 }
-.page .lenta_btw-item_text {
+.page .lenta .btwItem_text {
   color: #1d2f3c;
   margin: 21px 0;
   font-size: 15px;
   font-weight: 400;
   line-height: 21.09px;
 }
-.page .lenta_btw-item .lenta_btw-item_types_type {
+.page .lenta .btwItem .btwItem_type {
   -webkit-transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   -webkit-box-shadow: inset 0px 1px transparent, inset 0px -1px transparent;
   box-shadow: inset 0px 1px transparent, inset 0px -1px transparent;
 }
-.page .lenta_btw-item .lenta_btw-item_types_type:hover {
+.page .lenta .btwItem .btwItem_type:hover {
   color: #7a858d;
   -webkit-box-shadow: inset 0px 1px transparent, inset 0px -1px rgba(122, 133, 141, 0.4);
   box-shadow: inset 0px 1px transparent, inset 0px -1px rgba(122, 133, 141, 0.4);

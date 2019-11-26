@@ -76,15 +76,15 @@ var custom = function () {
         if (target == "burger") {
           $("[data-target=" + target + "]").toggleClass("active");
           animate_open_close($("#" + target), true, function () {
-            if (!$(".burger,.burger .tags,#sitebar,.popup_wrapper").hasClass("active")) {
+            if (!$(".burger,.burger .burTags,#sitebar,.popup").hasClass("active")) {
               $("body").removeClass("overflow");
             }
-            if (!$(".burger .tags").hasClass("active")) {
+            if (!$(".burger .burTags").hasClass("active")) {
               $(".header").removeClass("white_pole");
             }
           });
         }
-        if (!$(".burger,.burger .tags,#sitebar,.popup_wrapper").hasClass("active")) {
+        if (!$(".burger,.burger .burTags,#sitebar,.popup").hasClass("active")) {
           $("body").removeClass("overflow");
         }
         if (target == "burgerTags") {
@@ -105,10 +105,10 @@ var custom = function () {
       if ($("#" + close).hasClass("open")) {
         $("[data-target=" + close + "]").toggleClass("active");
         animate_open_close($("#" + close), true, function () {
-          if (!$(".burger,.burger .tags,#sitebar,.popup_wrapper").hasClass("active")) {
+          if (!$(".burger,.burger .burTags,#sitebar,.popup").hasClass("active")) {
             $("body").removeClass("overflow");
           }
-          if (!$(".burger .tags").hasClass("active")) {
+          if (!$(".burger .burTags").hasClass("active")) {
             $(".header").removeClass("white_pole");
           }
         });
@@ -134,16 +134,16 @@ var custom = function () {
   };
   var burger_search_open = function () {
     ///бургер меню открытие и заерытие
-    $(".burger .searchB_button").click(function (e) {
-      if (!$(".burger .searchB").hasClass("active")) {
+    $(".burger .burSearch_button").click(function (e) {
+      if (!$(".burger .burSearch").hasClass("active")) {
         e.preventDefault();
-        $(".burger .searchB_input").focus();
-        $(".burger .searchB").toggleClass("active");
+        $(".burger .burSearch_input").focus();
+        $(".burger .burSearch").toggleClass("active");
       }
     });
     $(document).on("click", function (e) {
-      if (!$(".burger .searchB:hover").length > 0) {
-        $(".burger .searchB").removeClass("active");
+      if (!$(".burger .burSearch:hover").length > 0) {
+        $(".burger .burSearch").removeClass("active");
       }
     });
   };
@@ -151,21 +151,21 @@ var custom = function () {
   //логика комментариев
   var comments = {
     form_answer: "<form class='comments_form answer'>" +
-      "<textarea type='text'class='inpt_basic comments_form_input'placeholder='Написать ответ'></textarea>" +
-      "<button class='btn_basic comments_form_button'>Ответить</button>" +
+      "<textarea type='text'class='inpt_basic comments_input'placeholder='Написать ответ'></textarea>" +
+      "<button class='btn_basic comments_button'>Ответить</button>" +
       "<input type='hidden' name='comment_id' value='value_replace'/>" +
       "</form>",
-    textArea: $(".comments_form_input"),
-    list_wrapper: $(".comments_list_wrapper"),
+    textArea: $(".comments_input"),
+    list_wrapper: $(".comments_list"),
     list: $(".comments_list"),
 
     //форма ответа
     _answer: function () {
       var item = this;
-      $(document).on('click', '.comments_item_top_right_answer', function (e) {
+      $(document).on('click', '.comments_answer', function (e) {
         e.preventDefault();
         item.list.find('.comments_form.answer').remove();
-        let comment_for_answer = $(this).closest('.comments_item_wrapper')
+        let comment_for_answer = $(this).closest('.comments_itemBlock')
         let form = item.form_answer.replace('value_replace', 0 /* comment_for_answer.getAttribute('id') */);
         comment_for_answer.append(form);
       })
@@ -177,7 +177,7 @@ var custom = function () {
         $(this)
           .parent()
           .parent()
-          .find(".inpt_wrapper + .comments_form_button")
+          .find(".inpt_wrapper + .comments_button")
           .addClass("active");
       });
     },
@@ -328,7 +328,7 @@ var custom = function () {
 
   ///обработка попапов
   popup = {
-    wrapper: $(".popup_wrapper"),
+    wrapper: $(".popup"),
     popups: $(".popup_item"),
     triggers: {
       open: $(".js-popup"),
@@ -381,22 +381,22 @@ var custom = function () {
 
   ///фикс. социальные иконки на странице статьи
   var social_links_move = function () {
-    var item = $(".article_social");
-    var top_offset = $(".article_body").offset().top;
+    var item = $(".article .social");
+    var top_offset = $(".article .body").offset().top;
     $(document).on("scroll", function () {
       if ($(window).width() >= 950) {
         if (top_offset < $(document).scrollTop() + 50 + ($(".header").hasClass("hide") ? 0 : $(".header").height())
-          && top_offset + $(".article_body").height() > $(document).scrollTop() + 50 + ($(".header").hasClass("hide") ? 0 : $(".header").height()) + item.height()) {
+          && top_offset + $(".article .body").height() > $(document).scrollTop() + 50 + ($(".header").hasClass("hide") ? 0 : $(".header").height()) + item.height()) {
 
           item.css("position", "fixed");
           item.css("top", "50px");
 
-          item.css("left", $(".article_body").offset().left - 90);
+          item.css("left", $(".article .body").offset().left - 90);
           item.css(
             "margin-top",
             $(".header").hasClass("hide") ? 0 : $(".header").height()
           );
-        } else if (top_offset + $(".article_body").height() <= $(document).scrollTop() + 50 + ($(".header").hasClass("hide") ? 0 : $(".header").height()) + item.height()) {
+        } else if (top_offset + $(".article .body").height() <= $(document).scrollTop() + 50 + ($(".header").hasClass("hide") ? 0 : $(".header").height()) + item.height()) {
 
           item.attr("style", "");
           item.css("top", "calc(100% - " + item.height() + "px)");
@@ -430,7 +430,7 @@ var custom = function () {
         return false;
       }
     };
-    $(".article_social_item.copy").click(function (e) {
+    $(".social_item.copy").click(function (e) {
       e.preventDefault();
       if (!copied) {
         $(this).append(
@@ -462,7 +462,7 @@ var custom = function () {
     
   }
   copy_link();
-  if ($(".article_social").length > 0) social_links_move();
+  if ($(".article .social").length > 0) social_links_move();
   open_menu();
   help_blocks();
   burger_search_open();
@@ -479,8 +479,15 @@ var forms = function () {
   var submits = function () {
     $(document).on("submit", 'form', function (e) {
       e.preventDefault();
-      let mail = $(this).find('[name="mail"]');
-      if (validate([mail], $(this))) {
+      let mail = $(this).find('[name="mail"]').val() ? $(this).find('[name="mail"]'): false;
+      let q = $(this).find('[name="q"]').val() ? $(this).find('[name="q"]') : false;
+      if (q && validate([q], $(this))) {
+        $(this)
+          .find("*")
+          .val("");
+          ///поиск
+      }
+      if (mail && validate([mail], $(this))) {
         $(this)
           .find("*")
           .val("");
@@ -503,6 +510,12 @@ var forms = function () {
 
           item[0].outerHTML +=
             "<span class='error_text'>" + text_error + "</span>";
+        }
+      }
+      if(item.attr('name') == "q"){
+        if (item.val() == "") {
+          error++;
+          item.addClass("error");
         }
       }
     })

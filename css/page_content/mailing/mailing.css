@@ -42,7 +42,7 @@
   -ms-flex-align: center;
   align-items: center;
 }
-.page .mailing_form_input {
+.page .mailing_input {
   width: calc(100% - 62px);
 }
 .page .mailing_succes {

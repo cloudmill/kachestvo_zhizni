@@ -1,8 +1,8 @@
 @media (max-width: 400px) {
-  .popup_wrapper {
+  .popup {
     max-width: 100vw;
   }
-  .popup_wrapper:before {
+  .popup:before {
     opacity: 1;
     background-color: #fff;
   }

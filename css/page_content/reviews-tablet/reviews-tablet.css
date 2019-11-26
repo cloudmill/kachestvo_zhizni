@@ -1,4 +1,4 @@
-.page .reviews-tablet {
+.page .reviewsTab {
   padding: 24px 0;
   background-color: #f6fbfe;
   margin: 32px 0;
@@ -6,7 +6,7 @@
   position: relative;
   display: none;
 }
-.page .reviews-tablet:before {
+.page .reviewsTab:before {
   content: "";
   display: block;
   background-color: #f6fbfe;
@@ -16,7 +16,7 @@
   right: 100%;
   top: 0;
 }
-.page .reviews-tablet:after {
+.page .reviewsTab:after {
   content: "";
   display: block;
   background-color: #f6fbfe;
@@ -26,32 +26,32 @@
   left: 100%;
   top: 0;
 }
-.page .reviews-tablet_col {
+.page .reviewsTab_col {
   width: calc((100% - 100px)/3);
   margin-right: 50px;
 }
-.page .reviews-tablet_col:nth-child(3n) {
+.page .reviewsTab_col:nth-child(3n) {
   margin-right: 0;
 }
-.page .reviews-tablet_title {
+.page .reviewsTab_title {
   color: #1d2f3c;
   font-size: 21px;
   font-weight: 700;
   line-height: 28.3px;
   margin-bottom: 32px;
 }
-.page .reviews-tablet_list {
+.page .reviewsTab_list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
-.page .reviews-tablet_item {
+.page .reviewsTab_item {
   margin-bottom: 32px;
   width: 100%;
 }
-.page .reviews-tablet_item_head {
+.page .reviewsTab_head {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -60,38 +60,38 @@
   align-items: center;
   margin-bottom: 10px;
 }
-.page .reviews-tablet_item_head_block-img {
+.page .reviewsTab_blockImg {
   width: 48px;
   height: 48px;
   margin-right: 10px;
   border-radius: 50%;
   overflow: hidden;
 }
-.page .reviews-tablet_item_head_block-img_img {
+.page .reviewsTab_img {
   max-width: 100%;
   max-height: 100%;
 }
-.page .reviews-tablet_item_name {
+.page .reviewsTab_name {
   color: #1d2f3c;
   font-size: 15px;
   font-weight: 500;
   line-height: 20.21px;
 }
-.page .reviews-tablet_item_time {
+.page .reviewsTab_time {
   color: #7a858d;
   font-size: 13px;
   font-weight: 400;
   letter-spacing: 0.26px;
   line-height: 16.76px;
 }
-.page .reviews-tablet_item_comment {
+.page .reviewsTab_comment {
   color: #1d2f3c;
   font-size: 15px;
   font-weight: 400;
   line-height: 21.09px;
   margin-bottom: 6px;
 }
-.page .reviews-tablet_item_link {
+.page .reviewsTab_link {
   text-decoration: none;
   color: #82c831;
   font-size: 13px;

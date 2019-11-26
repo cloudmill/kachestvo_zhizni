@@ -2,19 +2,19 @@
   .footer {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    &_logo {
+    .logo {
       width: 200px;
       img {
         max-width: 100%;
       }
     }
-    &_left {
+    .left {
       width: 45%;
       &_item {
         max-width: none;
       }
     }
-    &_menu {
+    .menu {
       -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
       order: 1;
@@ -30,14 +30,13 @@
 }
 @media (max-width: 768px) {
   .footer {
-    &_left {
+    .left {
       width: 100%;
       margin-bottom: 20px;
       padding-bottom: 16px;
       border-bottom: 1px solid #f0f0f0;
-      
     }
-    &_menu {
+    .menu {
       -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
       order: 1;
@@ -51,22 +50,22 @@
       &:nth-child(3) {
         display: none;
       }
-      &_list{
+      &_list {
         position: relative;
-        &:before{
+        &:before {
           content: '';
           display: block;
           position: absolute;
           width: 200vw;
           height: 1px;
-          background: #F0F0F0;
+          background: #f0f0f0;
           bottom: -18px;
           left: 50%;
-          transform: translate(-50%,0);
+          transform: translate(-50%, 0);
         }
       }
     }
-    &_form {
+    .form {
       &_inpt {
         width: 250px;
       }

@@ -12,11 +12,11 @@
           display: flex;
           width: 100%;
           margin-bottom: 0;
-          .lenta_body_item {
+          .item {
             margin-right: 32px;
           }
-          .lenta_body_item,
-          .lenta_body_s-item_wrapper {
+          .item,
+          .sItem_wrapper {
             width: ~"calc((100% - 32px)/2)";
           }
         }
@@ -36,60 +36,57 @@
             width: 100%;
           }
         }
-        &_b-item {
-          margin-bottom: 24px;
-          width: 100%;
-          max-width: none;
-          margin-right: 0;
-          &_title {
-            font-size: 21px;
-            line-height: 28.3px;
-          }
-        }
 
-        &_item {
-          max-width: none;
-
-          &_title {
-            font-size: 18px;
-            line-height: 24.26px;
-          }
-          &_types {
-            &_type {
-              margin-bottom: 0;
-            }
-          }
-          &.text_show_mobile {
-            .lenta_body_item_text {
-              display: block;
-            }
-          }
-          .data-bottom {
-            margin-top: 3px;
-          }
-          &_text {
-            display: none;
-          }
-          &_inf {
-            margin-top: 8px;
-          }
-        }
-        &_s-item {
-          &_wrapper {
-            max-width: none;
-          }
-          &_title {
-            font-size: 18px;
-            line-height: 24.26px;
-          }
-        }
-        &_sr-item {
-          max-width: 180px;
-        }
         &.row {
           -ms-flex-wrap: wrap;
           flex-wrap: wrap;
         }
+      }
+      .bItem {
+        margin-bottom: 24px;
+        width: 100%;
+        max-width: none;
+        margin-right: 0;
+        &_title {
+          font-size: 21px;
+          line-height: 28.3px;
+        }
+      }
+      .item {
+        max-width: none;
+        &_title {
+          font-size: 18px;
+          line-height: 24.26px;
+        }
+        &_type {
+          margin-bottom: 0;
+        }
+        &.text_show_mobile {
+          .item_text {
+            display: block;
+          }
+        }
+        .data-bottom {
+          margin-top: 3px;
+        }
+        &_text {
+          display: none;
+        }
+        &_inf {
+          margin-top: 8px;
+        }
+      }
+      .sItem {
+        &_wrapper {
+          max-width: none;
+        }
+        &_title {
+          font-size: 18px;
+          line-height: 24.26px;
+        }
+      }
+      .srItem {
+        max-width: 180px;
       }
     }
   }
@@ -102,11 +99,11 @@
         margin-right: 0 !important;
         &:last-child {
           display: block;
-          .lenta_body_item {
+          .item {
             margin-right: 0;
           }
-          .lenta_body_item,
-          .lenta_body_s-item_wrapper {
+          .item,
+          .sItem_wrapper {
             width: 100%;
           }
         }
@@ -120,74 +117,74 @@
         &.tablet_slider {
           max-width: 420px;
         }
-        &_b-item {
-          &_img {
-            height: auto;
-            img {
-              position: unset;
-              max-width: 85%;
-              margin: auto;
-              display: block;
-              margin-bottom: -20px;
-              -webkit-transform: translate(0, -20px);
-              transform: translate(0, -20px);
-            }
+      }
+      .bItem {
+        &_img {
+          height: auto;
+          img {
+            position: unset;
+            max-width: 85%;
+            margin: auto;
+            display: block;
+            margin-bottom: -20px;
+            -webkit-transform: translate(0, -20px);
+            transform: translate(0, -20px);
           }
         }
-        &_item {
-          width: 100%;
-          margin-right: 0;
-          &_img {
-            max-height: 324px;
-            max-width: 380px;
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            align-items: center;
-            -webkit-box-pack: start;
-            -ms-flex-pack: start;
-            justify-content: flex-start;
-            img {
-              width: 100%;
-            }
-          }
-          &_types {
-            margin: 8px 0;
-            padding-top: 8px;
-            &_type a {
-              font-size: 11px;
-              line-height: 15px;
-              display: flex;
-              align-items: center;
-              letter-spacing: 0.06em;
-            }
-          }
-          &:hover {
-            .lenta_body_item_title {
-              color: #1d2f3c;
-            }
-          }
-        }
-        &_s-item {
-          &_wrapper {
+      }
+      .item {
+        width: 100%;
+        margin-right: 0;
+        &_img {
+          max-height: 324px;
+          max-width: 380px;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          -webkit-box-pack: start;
+          -ms-flex-pack: start;
+          justify-content: flex-start;
+          img {
             width: 100%;
-            margin-right: 0;
           }
         }
-        &_sr-item {
-          width: 25%;
-          &:nth-child(5n) {
-            margin-right: 24px;
+        &_types {
+          margin: 8px 0;
+          padding-top: 8px;
+        }
+        &_type a {
+          font-size: 11px;
+          line-height: 15px;
+          display: flex;
+          align-items: center;
+          letter-spacing: 0.06em;
+        }
+        &:hover {
+          .item_title {
+            color: #1d2f3c;
           }
         }
-        &_spec-item {
+      }
+      .sItem {
+        &_wrapper {
           width: 100%;
           margin-right: 0;
         }
       }
-      &_btw-item {
+      .srItem {
+        width: 25%;
+        &:nth-child(5n) {
+          margin-right: 24px;
+        }
+      }
+      .specItem {
+        width: 100%;
+        margin-right: 0;
+      }
+      .btwItem {
         padding-left: 24px;
         padding-right: 24px;
         &_img {
@@ -236,12 +233,12 @@
         &.tablet_slider {
           max-width: 195px;
         }
-        &_sr-item {
-          width: ~"calc(50% - 16px)";
+      }
+      .srItem {
+        width: ~"calc(50% - 16px)";
+        margin-right: 16px;
+        &:nth-child(5n) {
           margin-right: 16px;
-          &:nth-child(5n) {
-            margin-right: 16px;
-          }
         }
       }
     }
@@ -251,12 +248,12 @@
   .page {
     .lenta {
       &_body {
-        &.tablet_slider{
-          .lenta_body_sr-item{
+        &.tablet_slider {
+          .srItem {
             margin-right: 15px;
           }
         }
-        &_sr-item {
+        &.srItem {
           width: 100%;
           margin-right: 0;
           &:nth-child(5n) {

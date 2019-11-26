@@ -1,29 +1,25 @@
 @media (max-width: 1439px) {
   .sitebar {
-    &_wrapper {
-      display: none;
-    }
+    display: none;
   }
 }
 @media (max-width: 950px) {
   .sitebar {
-    &_wrapper {
-      opacity: 0;
-      width: 270px;
-      padding-left: 16px;
-      max-width: 100%;
-      padding-right: 16px;
-      -webkit-transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
-      transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
-      right: -296px;
+    opacity: 0;
+    width: 270px;
+    padding-left: 16px;
+    max-width: 100%;
+    padding-right: 16px;
+    -webkit-transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+    right: -296px;
 
-      &.active {
-        display: block;
-      }
-      &.open {
-        opacity: 1;
-        right: 0;
-      }
+    &.active {
+      display: block;
+    }
+    &.open {
+      opacity: 1;
+      right: 0;
     }
     &_close {
       display: block;

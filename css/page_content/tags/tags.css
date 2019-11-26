@@ -41,15 +41,15 @@
 .page .tags_item::before {
   content: none !important;
 }
-.page .tags_item_link {
+.page .tags_link {
   color: #82c831;
   font-size: inherit;
 }
-.page .tags_item_big {
+.page .tags_big {
   font-size: 21px;
   line-height: 28.62px;
 }
-.page .tags_item_small {
+.page .tags_small {
   font-size: 15px;
   line-height: 21.09px;
 }

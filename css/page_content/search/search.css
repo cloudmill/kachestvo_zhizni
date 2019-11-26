@@ -8,7 +8,7 @@
   width: 100%;
   -webkit-appearance: none;
 }
-.page .search_form_input {
+.page .search_input {
   height: 48px;
   width: calc(100% - 56px);
   border: 0;
@@ -26,7 +26,7 @@
   letter-spacing: 0.28px;
   line-height: 18.87px;
 }
-.page .search_form_button {
+.page .search_button {
   position: absolute;
   right: 16px;
   top: 50%;

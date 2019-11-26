@@ -1,10 +1,10 @@
 @media (max-width: 1439px) {
-  .sitebar_wrapper {
+  .sitebar {
     display: none;
   }
 }
 @media (max-width: 950px) {
-  .sitebar_wrapper {
+  .sitebar {
     opacity: 0;
     width: 270px;
     padding-left: 16px;
@@ -14,10 +14,10 @@
     transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
     right: -296px;
   }
-  .sitebar_wrapper.active {
+  .sitebar.active {
     display: block;
   }
-  .sitebar_wrapper.open {
+  .sitebar.open {
     opacity: 1;
     right: 0;
   }

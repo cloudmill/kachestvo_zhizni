@@ -24,7 +24,7 @@
 .page .comments_form.answer .comments_form_button {
   display: flex;
 }
-.page .comments_form_input {
+.page .comments_input {
   height: auto;
   width: 100%;
   padding: 16px 12px;
@@ -38,23 +38,23 @@
   font-size: 15px;
   line-height: 21px;
 }
-.page .comments_form_input:focus {
+.page .comments_input:focus {
   height: 90px;
 }
-.page .comments_form_button {
+.page .comments_button {
   display: none;
 }
-.page .comments_form_button.active {
+.page .comments_button.active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
-.page .comments_list_wrapper {
+.page .comments_list {
   width: 100%;
   position: relative;
   overflow: hidden;
 }
-.page .comments_list_wrapper:before {
+.page .comments_list:before {
   position: absolute;
   z-index: 4;
   display: block;
@@ -66,10 +66,10 @@
   background-image: -webkit-gradient(linear, left bottom, left top, from(#ffffff), to(rgba(255, 255, 255, 0)));
   background-image: linear-gradient(0deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
 }
-.page .comments_list_wrapper.active {
+.page .comments_list.active {
   height: auto;
 }
-.page .comments_list_wrapper.active:before {
+.page .comments_list.active:before {
   display: none;
 }
 .page .comments_item {
@@ -77,16 +77,16 @@
   position: relative;
   margin-bottom: 32px;
 }
-.page .comments_item:hover .comments_item_top_right_dis-like {
+.page .comments_item:hover .comments_dis-like {
   opacity: 1;
 }
-.page .comments_item:hover .comments_item_top_right_like {
+.page .comments_item:hover .comments_like {
   opacity: 1;
 }
-.page .comments_item:hover .comments_item_top_right_answer {
+.page .comments_item:hover .comments_answer {
   opacity: 1;
 }
-.page .comments_item_block-img {
+.page .comments_blockImg {
   width: 56px;
   height: 56px;
   position: absolute;
@@ -95,11 +95,11 @@
   border-radius: 50%;
   overflow: hidden;
 }
-.page .comments_item_block-img_img {
+.page .comments_img {
   max-width: 100%;
   max-height: 100%;
 }
-.page .comments_item_top {
+.page .comments_top {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -108,7 +108,7 @@
   justify-content: space-between;
   margin-bottom: 5px;
 }
-.page .comments_item_top_left {
+.page .comments_left {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -116,7 +116,7 @@
   -ms-flex-align: baseline;
   align-items: baseline;
 }
-.page .comments_item_top_right {
+.page .comments_right {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -125,20 +125,20 @@
   align-items: center;
   cursor: pointer;
 }
-.page .comments_item_top_right_summ {
+.page .comments_summ {
   font-size: 15px;
   font-weight: 500;
   line-height: 20.21px;
   color: #7a858d;
   margin-right: 11px;
 }
-.page .comments_item_top_right_summ.minus {
+.page .comments_summ.minus {
   color: #d81615;
 }
-.page .comments_item_top_right_summ.plus {
+.page .comments_summ.plus {
   color: #82c831;
 }
-.page .comments_item_top_right_answer {
+.page .comments_answer {
   color: #82c831;
   font-size: 13px;
   font-weight: 500;
@@ -150,7 +150,7 @@
   transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   opacity: 0;
 }
-.page .comments_item_top_right_dis-like {
+.page .comments_dis-like {
   width: 15px;
   height: 13px;
   background-image: url(../images/dis_like.svg);
@@ -161,10 +161,10 @@
   transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   opacity: 0;
 }
-.page .comments_item_top_right_dis-like.active {
+.page .comments_dis-like.active {
   opacity: 1;
 }
-.page .comments_item_top_right_like {
+.page .comments_like {
   width: 16px;
   height: 13px;
   background-image: url(../images/like.svg);
@@ -175,24 +175,24 @@
   transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   opacity: 0;
 }
-.page .comments_item_top_right_like.active {
+.page .comments_like.active {
   opacity: 1;
 }
-.page .comments_item_name {
+.page .comments_name {
   color: #1d2f3c;
   font-size: 18px;
   font-weight: 500;
   line-height: 24.26px;
   margin-right: 10px;
 }
-.page .comments_item_time {
+.page .comments_time {
   color: #7a858d;
   font-size: 14px;
   font-weight: 400;
   letter-spacing: 0.28px;
   line-height: 18.87px;
 }
-.page .comments_item_text {
+.page .comments_text {
   color: #1d2f3c;
   font-size: 15px;
   font-weight: 400;

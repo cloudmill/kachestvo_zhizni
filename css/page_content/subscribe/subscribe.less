@@ -3,7 +3,6 @@
 @color_text: #1d2f3c;
 ///
 
-
 .page {
   .subscribe {
     padding: 32px 0;
@@ -54,18 +53,7 @@
       margin-right: 80px;
       max-width: 560px;
       position: relative;
-      &_button {
-        width: 52px;
-        height: 48px;
-        background-color: #feaa59;
-        border-radius: 0 24px 24px 0;
-        border: 0;
-        background-image: url(../images/str_white.svg);
-        background-repeat: no-repeat;
-        background-size: 24px 20px;
-        background-position: 11px;
-        cursor: pointer;
-      }
+      
       .error_text {
         position: absolute;
         left: 0;
@@ -74,10 +62,20 @@
         font-size: 12px;
       }
     }
-    &_form {
-      &_input {
-        width: ~"calc(100% - 52px)";
-      }
+    &_input {
+      width: ~"calc(100% - 52px)";
+    }
+    &_button {
+      width: 52px;
+      height: 48px;
+      background-color: #feaa59;
+      border-radius: 0 24px 24px 0;
+      border: 0;
+      background-image: url(../images/str_white.svg);
+      background-repeat: no-repeat;
+      background-size: 24px 20px;
+      background-position: 11px;
+      cursor: pointer;
     }
     &_succes {
       font-style: normal;

@@ -1,51 +1,48 @@
-
 @anim: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
 @color_link: #82c831;
 @color_text: #1d2f3c;
 ///
 
 .popup {
-  &_wrapper {
-    position: fixed;
-    z-index: 1000;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 100%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0 32px;
+  height: 100vh;
+  opacity: 0;
+  -webkit-transition: @anim;
+  transition: @anim;
+  display: none;
+  &.active {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  &.open {
+    opacity: 1;
+  }
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
     left: 0;
     top: 0;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    width: 100%;
-    max-width: 100%;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    padding: 0 32px;
+    z-index: -1;
+    width: 100vw;
     height: 100vh;
-    opacity: 0;
-    -webkit-transition: @anim;
-    transition: @anim;
-    display: none;
-    &.active {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-    }
-    &.open {
-      opacity: 1;
-    }
-    &:before {
-      content: "";
-      display: block;
-      position: absolute;
-      left: 0;
-      top: 0;
-      z-index: -1;
-      width: 100vw;
-      height: 100vh;
-      background-color: @color_text;
-      opacity: 0.75;
-    }
+    background-color: @color_text;
+    opacity: 0.75;
   }
   &_item {
     padding: 20px 48px;
@@ -69,7 +66,7 @@
       opacity: 1;
     }
   }
-  &_block-img {
+  &_img {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -132,15 +129,13 @@
       top: -6px;
     }
   }
-  &_form {
-    &_input {
-      width: ~"calc(100% - 24px)";
-      margin-bottom: 16px;
-    }
-    &_button {
-      width: 100%;
-      margin-bottom: 10px;
-    }
+  &_input {
+    width: ~"calc(100% - 24px)";
+    margin-bottom: 16px;
+  }
+  &_button {
+    width: 100%;
+    margin-bottom: 10px;
   }
   &_social {
     display: -webkit-box;
@@ -170,7 +165,7 @@
       margin-right: 0;
     }
   }
-  &_img {
+  &_soc-img {
     max-width: 100%;
     max-height: 100%;
     min-height: 27px;

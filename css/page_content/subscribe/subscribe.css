@@ -49,7 +49,17 @@
   max-width: 560px;
   position: relative;
 }
-.page .subscribe_form_button {
+.page .subscribe_form .error_text {
+  position: absolute;
+  left: 0;
+  bottom: -18px;
+  color: red;
+  font-size: 12px;
+}
+.page .subscribe_input {
+  width: calc(100% - 52px);
+}
+.page .subscribe_button {
   width: 52px;
   height: 48px;
   background-color: #feaa59;
@@ -60,16 +70,6 @@
   background-size: 24px 20px;
   background-position: 11px;
   cursor: pointer;
-}
-.page .subscribe_form .error_text {
-  position: absolute;
-  left: 0;
-  bottom: -18px;
-  color: red;
-  font-size: 12px;
-}
-.page .subscribe_form_input {
-  width: calc(100% - 52px);
 }
 .page .subscribe_succes {
   font-style: normal;

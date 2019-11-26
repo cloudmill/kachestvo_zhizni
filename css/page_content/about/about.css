@@ -1,10 +1,10 @@
-.about_title {
+.page .about_title {
   color: #1d2f3c;
   font-size: 48px;
   font-weight: 700;
   margin: 40px 0;
 }
-.about_block-img {
+.page .about_block-img {
   width: calc(100% - 100px);
   position: relative;
   margin-bottom: 48px;
@@ -18,18 +18,18 @@
   -ms-flex-pack: center;
   justify-content: center;
 }
-.about_img {
+.page .about_img {
   max-width: 100%;
   -webkit-transform: translate(0, -50px);
   transform: translate(0, -50px);
   height: auto;
 }
-.about_img_photo {
+.page .about_photo {
   width: 100%;
   -webkit-transform: none;
   transform: none;
 }
-.about_text {
+.page .about_text {
   position: relative;
   z-index: 1;
   max-width: 697px;
