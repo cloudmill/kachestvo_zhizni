@@ -506,7 +506,9 @@ var forms = function () {
           error++;
           item.addClass("error");
           let text_error = "Неверный Email";
+          let badWord = false;
           if (item.val() == "") text_error = "Введите Email";
+          if (badWord) text_error = "Мы тоже за простоту выражений, но без крайностей. Перефразируйте, пожалуйста.";
 
           item[0].outerHTML +=
             "<span class='error_text'>" + text_error + "</span>";
