@@ -39,6 +39,10 @@
       font-size: 48px;
       font-weight: 700;
       margin-bottom: 32px;
+      &.gray {
+        filter: grayscale(1);
+        opacity: 0.6;
+      }
     }
     &_title {
       color: @color_text;
@@ -64,6 +68,20 @@
       letter-spacing: 1.04px;
       line-height: 17.52px;
       text-transform: uppercase;
+    }
+  }
+}
+@media (max-width: 768px) {
+  .page {
+    .fullsect {
+      &_title {
+        font-size: 21px;
+        line-height: 29px;
+      }
+      &_text {
+        font-size: 15px;
+        line-height: 21px;
+      }
     }
   }
 }

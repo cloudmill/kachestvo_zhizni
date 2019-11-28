@@ -35,6 +35,10 @@
   font-weight: 700;
   margin-bottom: 32px;
 }
+.page .fullsect_img.gray {
+  filter: grayscale(1);
+  opacity: 0.6;
+}
 .page .fullsect_title {
   color: #1d2f3c;
   font-size: 40px;
@@ -59,4 +63,14 @@
   letter-spacing: 1.04px;
   line-height: 17.52px;
   text-transform: uppercase;
+}
+@media (max-width: 768px) {
+  .page .fullsect_title {
+    font-size: 21px;
+    line-height: 29px;
+  }
+  .page .fullsect_text {
+    font-size: 15px;
+    line-height: 21px;
+  }
 }

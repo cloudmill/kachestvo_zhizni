@@ -958,9 +958,7 @@
 .page .search_button {
   position: absolute;
   right: 16px;
-  top: 50%;
-  -webkit-transform: translate(0, -50%);
-  transform: translate(0, -50%);
+  top: 13px;
   border: none;
   background-color: transparent;
   cursor: pointer;
@@ -970,6 +968,41 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: auto;
+}
+.page .search .notFound {
+  margin-top: 80px;
+  margin-bottom: 140px;
+}
+.page .search .notFound_img {
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.page .search .notFound_img img {
+  width: 55px;
+  height: 55px;
+  margin: auto;
+}
+.page .search .notFound_title {
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 21px;
+  line-height: 29px;
+  color: #1d2f3c;
+  text-align: center;
+  margin-bottom: 13px;
+}
+.page .search .notFound_text {
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 27px;
+  text-align: center;
+  color: #7a858d;
 }
 .page .lenta {
   margin-bottom: 32px;
@@ -2283,6 +2316,10 @@
   font-weight: 700;
   margin-bottom: 32px;
 }
+.page .fullsect_img.gray {
+  filter: grayscale(1);
+  opacity: 0.6;
+}
 .page .fullsect_title {
   color: #1d2f3c;
   font-size: 40px;
@@ -2307,6 +2344,16 @@
   letter-spacing: 1.04px;
   line-height: 17.52px;
   text-transform: uppercase;
+}
+@media (max-width: 768px) {
+  .page .fullsect_title {
+    font-size: 21px;
+    line-height: 29px;
+  }
+  .page .fullsect_text {
+    font-size: 15px;
+    line-height: 21px;
+  }
 }
 .page .comments {
   margin-bottom: 32px;
