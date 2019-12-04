@@ -1057,6 +1057,7 @@
   -webkit-box-align: start;
   -ms-flex-align: start;
   align-items: flex-start;
+  margin-bottom: 50px;
 }
 .page .lenta .bItem {
   width: calc((100% - 60px)/3*2 + 23px);
@@ -1429,7 +1430,6 @@
   line-height: 21.09px;
 }
 .page .lenta .btwItem {
-  margin-top: 50px;
   padding: 40px;
   border-radius: 4px;
   position: relative;
