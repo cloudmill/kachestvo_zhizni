@@ -3,6 +3,18 @@
     display: block;
   }
 }
+@media (max-width: 1024px) {
+  .page .reviewsTab_item {
+    width: calc((100% - 10px)/2);
+    margin-right: 10px;
+  }
+  .page .reviewsTab_item:nth-child(3n) {
+    margin-right: 10px;
+  }
+  .page .reviewsTab_item:nth-child(2n) {
+    margin-right: 0;
+  }
+}
 @media (max-width: 768px) {
   .page .reviewsTab {
     display: none;

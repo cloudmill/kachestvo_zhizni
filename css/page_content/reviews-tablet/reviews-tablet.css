@@ -49,7 +49,11 @@
 }
 .page .reviewsTab_item {
   margin-bottom: 32px;
-  width: 100%;
+  width: calc((100% - 20px)/3);
+  margin-right: 10px;
+}
+.page .reviewsTab_item:nth-child(3n) {
+  margin-right: 0;
 }
 .page .reviewsTab_head {
   display: -webkit-box;
