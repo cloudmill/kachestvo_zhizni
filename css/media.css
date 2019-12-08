@@ -582,6 +582,21 @@
   .page .article .checkbox_label b {
     font-size: 18px;
   }
+  .page .article .minInf_title {
+    font-size: 21px;
+    line-height: 28.3px;
+  }
+}
+@media (max-width: 650px) {
+  .page .article .blockImg.row {
+    display: block;
+  }
+  .page .article .blockImg.row .blockImg_col {
+    margin-right: 0;
+  }
+  .page .article .blockImg.row .blockImg_col:first-child {
+    margin-bottom: 32px;
+  }
 }
 @media (max-width: 500px) {
   .page .article .blockImg_head {

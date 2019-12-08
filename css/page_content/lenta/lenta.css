@@ -52,6 +52,7 @@
   -ms-flex-align: start;
   align-items: flex-start;
   margin-bottom: 50px;
+  flex-wrap: wrap;
 }
 .page .lenta .bItem {
   width: calc((100% - 60px)/3*2 + 23px);
@@ -65,11 +66,11 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-.page .lenta .bItem.has_photo:before {
+.page .lenta .bItem.has_photo .bItem_img:before {
   content: "";
   display: block;
   position: absolute;
-  height: 220px;
+  height: 100%;
   width: 100%;
   left: 0;
   top: 0;
@@ -78,12 +79,14 @@
 .page .lenta .bItem.has_photo .bItem_img img {
   width: 100%;
   max-height: 100%;
+  bottom: 0;
 }
 .page .lenta .bItem_img {
   height: 220px;
   width: calc(100% + 50px);
   margin-left: -25px;
   position: relative;
+  display: block;
 }
 .page .lenta .bItem_img img {
   border-radius: 8px;
@@ -164,11 +167,13 @@
   overflow: hidden;
   width: 100%;
   position: relative;
+  display: block;
 }
 .page .lenta .item_img img {
   max-width: 100%;
   width: 100%;
   height: auto;
+  display: block;
 }
 .page .lenta .item_types {
   padding: 0;
@@ -244,7 +249,7 @@
   -ms-flex-direction: column;
   flex-direction: column;
 }
-.page .lenta .sItem:hover .lenta_body_s-item_title {
+.page .lenta .sItem:hover .sItem_title {
   color: #82c831;
 }
 .page .lenta .sItem:last-child {
@@ -308,7 +313,7 @@
   margin-bottom: 40px;
   cursor: pointer;
 }
-.page .lenta .srItem:last-child {
+.page .lenta .srItem:nth-child(5n) {
   margin-right: 0;
 }
 .page .lenta .srItem_img {
@@ -319,12 +324,14 @@
   position: relative;
   -webkit-transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  display: block;
 }
 .page .lenta .srItem_img:hover {
   opacity: 0.8;
 }
 .page .lenta .srItem_img img {
   width: 100%;
+  display: block;
   height: auto;
 }
 .page .lenta .srItem_types {
@@ -388,12 +395,16 @@
   overflow: hidden;
   cursor: pointer;
 }
+.page .lenta .specItem:nth-child(3n) {
+  margin-right: 0;
+}
 .page .lenta .specItem_img {
   width: 100%;
   position: relative;
   right: -3px;
   bottom: -3px;
   height: 350px;
+  display: block;
 }
 .page .lenta .specItem_img img {
   z-index: 0;
@@ -432,6 +443,9 @@
   margin-bottom: 60px;
   cursor: pointer;
 }
+.page .lenta .btwItem.has_photo {
+  overflow: hidden;
+}
 .page .lenta .btwItem.has_photo:before {
   content: "";
   display: block;
@@ -465,6 +479,7 @@
   -webkit-box-pack: start;
   -ms-flex-pack: start;
   justify-content: flex-start;
+  display: block;
 }
 .page .lenta .btwItem_img img {
   max-width: 95%;
