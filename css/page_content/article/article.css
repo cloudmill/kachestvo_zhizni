@@ -460,7 +460,7 @@
   overflow: hidden;
 }
 .page .article .minInf_title {
-  min-width: 165px;
+  width: 165px;
   font-family: Rubik;
   font-style: normal;
   font-weight: 500;
