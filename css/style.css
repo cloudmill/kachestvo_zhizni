@@ -3595,6 +3595,14 @@ body.overflow {
   padding-left: 32px;
   margin: 32px 0;
   position: relative;
+  display: block !important;
+}
+.wrapper main .doc_wrapper:hover {
+  box-shadow: none !important;
+}
+.wrapper main .doc_wrapper:hover .doc_name {
+  color: #82c831;
+  box-shadow: inset 0px 1px transparent, inset 0px -1px #82c831 !important;
 }
 .wrapper main .doc_wrapper:before {
   content: "";
@@ -3610,7 +3618,6 @@ body.overflow {
 .wrapper main .doc_wrapper.box {
   padding: 20px;
   padding-left: 56px;
-  -webkit-box-shadow: 0 4px 15px rgba(120, 160, 190, 0.3);
   box-shadow: 0 4px 15px rgba(120, 160, 190, 0.3);
   border-radius: 10px;
   background-color: #ffffff;
@@ -3619,10 +3626,8 @@ body.overflow {
   left: 20px;
   top: 20px;
 }
-.wrapper main .doc_wrapper.box:hover .doc_name {
-  color: #82c831;
-  -webkit-box-shadow: inset 0px 1px transparent, inset 0px -1px #82c831;
-  box-shadow: inset 0px 1px transparent, inset 0px -1px #82c831;
+.wrapper main .doc_wrapper.box:hover {
+  box-shadow: 0 4px 15px rgba(120, 160, 190, 0.3) !important;
 }
 .wrapper main .doc_name {
   color: #1d2f3c;
@@ -3635,12 +3640,10 @@ body.overflow {
   cursor: pointer;
   padding-bottom: 1px;
   margin-bottom: 8px;
-  -webkit-transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 .wrapper main .doc_name:hover {
   color: #82c831;
-  -webkit-box-shadow: inset 0px 1px transparent, inset 0px -1px #82c831;
   box-shadow: inset 0px 1px transparent, inset 0px -1px #82c831;
 }
 .wrapper main .doc_inf {
