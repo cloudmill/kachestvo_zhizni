@@ -1,20 +1,20 @@
-@import 'header/header.less';
-@import 'header/burger/burger.less';
-@import 'popup/popup.less';
+@import "header/header.less";
+@import "header/burger/burger.less";
+@import "popup/popup.less";
 
-@import 'page_content/tags/tags.less';
-@import 'page_content/search/search.less';
-@import 'page_content/lenta/lenta.less';
-@import 'page_content/article/article.less';
-@import 'page_content/fullsect/fullsect.less';
-@import 'page_content/comments/comments.less';
-@import 'page_content/reviews-tablet/reviews-tablet.less';
-@import 'page_content/mailing/mailing.less';
-@import 'page_content/subscribe/subscribe.less';
-@import 'page_content/about/about.less';
+@import "page_content/tags/tags.less";
+@import "page_content/search/search.less";
+@import "page_content/lenta/lenta.less";
+@import "page_content/article/article.less";
+@import "page_content/fullsect/fullsect.less";
+@import "page_content/comments/comments.less";
+@import "page_content/reviews-tablet/reviews-tablet.less";
+@import "page_content/mailing/mailing.less";
+@import "page_content/subscribe/subscribe.less";
+@import "page_content/about/about.less";
 
-@import 'sitebar/sitebar.less';
-@import 'footer/footer.less';
+@import "sitebar/sitebar.less";
+@import "footer/footer.less";
 
 @font-face {
   font-family: "Rubik";
@@ -48,14 +48,12 @@ body {
     overflow: hidden;
   }
 }
-* {
-  outline: none;
-}
 .wrapper {
   position: relative;
   overflow: hidden;
   * {
     font-family: Rubik;
+    outline: none;
   }
   &_main {
     width: ~"calc(100vw - 350px)";
@@ -95,7 +93,7 @@ body {
         }
         &.icon {
           &:before {
-            content: 'i';
+            content: "i";
             width: 14px;
             height: 14px;
             opacity: 1;
@@ -283,6 +281,7 @@ body {
       padding-left: 56px;
       border-radius: 10px;
       background-color: #f3faea;
+      margin-top: 20px;
       &:before {
         content: "";
         display: block;
@@ -442,6 +441,15 @@ body {
   a {
     text-decoration: none;
   }
+  input {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    &::-ms-clear {
+      display: none;
+      width: 0;
+      height: 0;
+    }
+  }
 }
 .container {
   max-width: 1004px;
@@ -457,15 +465,7 @@ body {
   position: relative;
   z-index: 1;
 }
-input {
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  &::-ms-clear {
-    display: none;
-    width: 0;
-    height: 0;
-  }
-}
+
 .btn {
   &_basic {
     height: 48px;
@@ -795,17 +795,21 @@ input {
       background-color: @color;
       -webkit-transition: @anim;
       transition: @anim;
-      &:before {
-        background-image: @bg_before;
-        -webkit-transition: @anim;
-        transition: @anim;
+      .bItem_img {
+        &:before {
+          background-image: @bg_before;
+          -webkit-transition: @anim;
+          transition: @anim;
+        }
       }
       &:hover {
         @opacity: 0.8;
         background-color: fade(@color, @opacity*100);
-        &:before {
-          @opacity: 1;
-          background-image: @bg_before;
+        .bItem_img {
+          &:before {
+            @opacity: 1;
+            background-image: @bg_before;
+          }
         }
       }
     }
@@ -841,7 +845,7 @@ input {
       .col_conf_corect_for_btw_elem(@color);
     }
     .col_conf_corect_for_btw_elem(@color) {
-      @bg_before: linear-gradient(90deg, rgba(241, 245, 248, 0) 0%, @opacity);
+      @bg_before: linear-gradient(90deg, rgba(241, 245, 248, 0) 0%, @color);
       background-color: @color;
       &:before {
         background-image: @bg_before;

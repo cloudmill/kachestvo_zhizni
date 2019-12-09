@@ -477,7 +477,7 @@ var custom = function () {
 ///////обработка форм начало
 var forms = function () {
   var submits = function () {
-    $(document).on("submit", 'form', function (e) {
+    $(document).on("submit", '[data-form]', function (e) {
       e.preventDefault();
       let mail = $(this).find('[name="mail"]').val() ? $(this).find('[name="mail"]'): false;
       let q = $(this).find('[name="q"]').val() ? $(this).find('[name="q"]') : false;
