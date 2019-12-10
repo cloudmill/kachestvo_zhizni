@@ -83,10 +83,14 @@ body {
       &.help {
         border-radius: 8px;
         padding: 0 4px;
+        margin: 0 2px;
         border: 1px solid rgba(120, 160, 190, 0.3);
         position: relative;
         z-index: 10;
         background-color: #f6f9fb;
+        font-size: inherit;
+        line-height: inherit;
+        white-space: nowrap;
         display: inline-block;
         &_bg_opacity {
           background-color: transparent;
@@ -122,6 +126,7 @@ body {
           transition: @anim;
         }
         .help_text {
+          white-space: normal;
           z-index: -1;
           display: none;
           position: absolute;
@@ -136,6 +141,7 @@ body {
           border: 1px solid #f0f0f0;
           background-color: #ffffff;
           color: @color_text;
+          text-transform: none;
           font-size: 13px;
           font-weight: 400;
           letter-spacing: 0.26px;
@@ -280,17 +286,17 @@ body {
       position: relative;
       padding-left: 56px;
       border-radius: 10px;
-      background-color: #f3faea;
       margin-top: 20px;
-      &:before {
+      img {
         content: "";
         display: block;
         background-image: url(../images/attention.png);
         background-repeat: no-repeat;
         background-size: contain;
         background-position: center;
-        width: 22px;
-        height: 25px;
+        max-width: 25px;
+        min-width: 25px;
+        height: auto;
         position: absolute;
         left: 21px;
         top: 27px;
