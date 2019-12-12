@@ -147,6 +147,9 @@
     -webkit-transform: translate(-50%, -50%) rotate(45deg);
     transform: translate(-50%, -50%) rotate(45deg);
   }
+  .page .article .card {
+    width: 100%;
+  }
 }
 @media (min-width: 769px) {
   .page .article .body_box {

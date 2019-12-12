@@ -59,6 +59,9 @@
       align-items: flex-start;
       margin-bottom: 50px;
       flex-wrap: wrap;
+      &.tablet_slider {
+        flex-wrap: wrap;
+      }
     }
     .bItem {
       width: ~"calc((100% - 60px)/3*2 + 23px)";
@@ -363,12 +366,14 @@
         padding: 0;
         margin: 0;
         margin-top: 4px;
+        margin-bottom: 4px;
       }
       &_type {
         list-style: none;
         margin-right: 16px;
-        margin-bottom: 4px;
         -webkit-transition: @anim;
+        margin-bottom: 0;
+        line-height: normal;
         transition: @anim;
         -webkit-box-shadow: inset 0px 1px transparent,
           inset 0px -1px transparent;

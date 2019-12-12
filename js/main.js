@@ -165,7 +165,7 @@ var custom = function() {
     form_answer:
       "<form class='comments_form answer'>" +
       "<textarea type='text'class='inpt_basic comments_input'placeholder='Написать ответ'></textarea>" +
-      "<button class='btn_basic comments_button'>Ответить</button>" +
+      "<button class='btn_basic comments_button active'>Ответить</button>" +
       "<input type='hidden' name='comment_id' value='value_replace'/>" +
       "</form>",
     textArea: $(".comments_input"),
@@ -195,6 +195,23 @@ var custom = function() {
           .parent()
           .find(".inpt_wrapper + .comments_button")
           .addClass("active");
+        if (!$(this).parent().hasClass("answer"))
+          $(this).closest(".comments").find(".comments_form.answer").remove();
+      });
+      this.textArea.on("keyup", function() {
+        $(this)
+          .parent()
+          .parent()
+          .find(".inpt_wrapper + .comments_button")
+          .attr("disabled", false);
+      });
+      this.textArea.blur(function() {
+        if ($(this).val() == "")
+          $(this)
+            .parent()
+            .parent()
+            .find(".inpt_wrapper + .comments_button")
+            .removeClass("active");
       });
     },
 
@@ -227,7 +244,27 @@ var custom = function() {
       if (
         $(".header .rubrics").height() < $(".header .rubrics_list").height()
       ) {
-        $(".header .rubrics_more").show();
+        var left =
+          $(".rubrics_item").eq(0).offset().left -
+          $(".rubrics_item").parent().offset().left;
+        var top =
+          $(".rubrics_item").eq(0).offset().top -
+          $(".rubrics_item").parent().offset().top;
+        var right = 0;
+        var parW = $(".rubrics_item").parent().width();
+        
+        setTimeout(function(){
+          $(".rubrics_item").each(function() {
+            tleft = $(this).offset().left - $(this).parent().offset().left;
+            ttop = $(this).offset().top - $(this).parent().offset().top;
+            if (tleft > left && ttop <= top) {
+              left = tleft;
+              right = parW - (left + $(this).width());
+            }
+            $(".header .rubrics_more").css("right", right - 34);
+            $(".header .rubrics_more").fadeIn();
+          });
+        },100)
       }
       $(document).on("click", ".header .rubrics_more", function(e) {
         e.preventDefault();
@@ -517,16 +554,14 @@ var custom = function() {
 ///////обработка форм начало
 var forms = function() {
   var submits = function() {
-    $(document).on("submit", "[data-form]", function(e) {
+    $(document).on("submit", "[data-form],.subscribe_form", function(e) {
       e.preventDefault();
-      let mail = $(this).find('[name="mail"]').val()
+      let mail = $(this).find('[name="mail"]')
         ? $(this).find('[name="mail"]')
         : false;
-      let q = $(this).find('[name="q"]').val()
-        ? $(this).find('[name="q"]')
-        : false;
+      let q = $(this).find('[name="q"]') ? $(this).find('[name="q"]') : false;
       if (q && validate([q], $(this))) {
-        $(this).find("*").val("");
+        //$(this).find("*").val("");
         ///поиск
       }
       if (mail && validate([mail], $(this))) {
@@ -548,9 +583,11 @@ var forms = function() {
           let text_error = "Неверный Email";
           let badWord = false;
           if (item.val() == "") text_error = "Введите Email";
-          if (badWord)
+          if (badWord) {
             text_error =
               "Мы тоже за простоту выражений, но без крайностей. Перефразируйте, пожалуйста.";
+            form.find("button").attr("disabled", true);
+          }
 
           item[0].outerHTML +=
             "<span class='error_text'>" + text_error + "</span>";
@@ -571,38 +608,56 @@ var forms = function() {
 
 //////Инициализация слайдера
 var sliders = function() {
-  if ($(".lenta_body.tablet_slider").length > 0) {
-    for (let l = 0; l < $(".lenta_body.tablet_slider").length; l++) {
-      $(".lenta_body.tablet_slider").eq(l).slick({
-        slidesToShow: 5,
-        slidesToScroll: 1,
-        speed: 600,
-        infinite: false,
-        dots: false,
-        arrows: false,
-        responsive: [
-          {
-            breakpoint: 950,
-            settings: {
-              slidesToShow: 3
+  var inited = false;
+  initSlide = function() {
+    if (
+      $(".lenta_body.tablet_slider").length > 0 &&
+      $(window).width() <= 950 &&
+      !inited
+    ) {
+      inited = true;
+      for (let l = 0; l < $(".lenta_body.tablet_slider").length; l++) {
+        $(".lenta_body.tablet_slider").eq(l).slick({
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          speed: 600,
+          infinite: false,
+          dots: false,
+          arrows: false,
+          responsive: [
+            {
+              breakpoint: 950,
+              settings: {
+                slidesToShow: 1
+              }
+            },
+            {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: 1
+              }
+            },
+            {
+              breakpoint: 500,
+              settings: {
+                slidesToShow: 1
+              }
             }
-          },
-          {
-            breakpoint: 768,
-            settings: {
-              slidesToShow: 2
-            }
-          },
-          {
-            breakpoint: 500,
-            settings: {
-              slidesToShow: 1
-            }
-          }
-        ]
-      });
+          ]
+        });
+      }
     }
-  }
+  };
+  $(window).resize(function() {
+    initSlide();
+    if ($(window).width() > 950) {
+      $(".lenta_body.tablet_slider").each(function() {
+        if ($(this).hasClass("slick-initialized")) $(this).slick("unslick");
+      });
+      inited = false;
+    }
+  });
+  initSlide();
 };
 
 //////Обьявление фунций для анимации и проверки почты начало

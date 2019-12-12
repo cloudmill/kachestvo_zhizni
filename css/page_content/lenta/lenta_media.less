@@ -9,7 +9,7 @@
           margin-right: 0;
         }
         &:last-child {
-          display: flex; 
+          display: flex;
           width: 100%;
           margin-bottom: 0;
           .item {
@@ -30,7 +30,8 @@
         height: auto;
         flex-wrap: wrap;
         &.tablet_slider {
-          max-width: 600px;
+          max-width: calc((100% - (4 * 32px))/5 + 32px);
+          min-width: 195px;
           .slick-list {
             overflow: visible;
             width: 100%;
@@ -114,9 +115,9 @@
         -ms-flex-direction: row;
         flex-direction: row;
         max-height: none;
-        &.tablet_slider {
+        /* &.tablet_slider {
           max-width: 420px;
-        }
+        } */
       }
       .bItem {
         &_img {
@@ -230,9 +231,9 @@
   .page {
     .lenta {
       &_body {
-        &.tablet_slider {
+        /* &.tablet_slider {
           max-width: 195px;
-        }
+        } */
       }
       .srItem {
         width: ~"calc(50% - 16px)";

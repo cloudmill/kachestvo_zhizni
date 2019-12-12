@@ -186,6 +186,7 @@
 .page .article .body {
   position: relative;
   margin-bottom: 56px;
+  min-height: 200px;
 }
 .page .article .body_box {
   margin-right: 250px;
@@ -221,6 +222,9 @@
 }
 .page .article .blockImg.big {
   width: calc(100% + 250px);
+}
+.page .article .blockImg.big img {
+  width: 100%;
 }
 .page .article .blockImg.row {
   display: flex;
@@ -502,9 +506,10 @@
   padding: 30px 32px 20px 32px;
   border-radius: 10px;
   margin-bottom: 24px;
-  margin-right: 100px;
+  width: calc(100% + 150px);
   position: relative;
   overflow: hidden;
+  box-sizing: border-box;
 }
 .page .article .card_title {
   color: #1d2f3c;

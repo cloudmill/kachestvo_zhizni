@@ -173,7 +173,8 @@
     flex-wrap: wrap;
   }
   .page .lenta_body.tablet_slider {
-    max-width: 600px;
+    max-width: calc((100% - (4 * 32px))/5 + 32px);
+    min-width: 195px;
   }
   .page .lenta_body.tablet_slider .slick-list {
     overflow: visible;
@@ -247,9 +248,9 @@
     -ms-flex-direction: row;
     flex-direction: row;
     max-height: none;
-  }
-  .page .lenta_body.tablet_slider {
-    max-width: 420px;
+    /* &.tablet_slider {
+          max-width: 420px;
+        } */
   }
   .page .lenta .bItem_img {
     height: auto;
@@ -352,8 +353,10 @@
   }
 }
 @media (max-width: 500px) {
-  .page .lenta_body.tablet_slider {
-    max-width: 195px;
+  .page .lenta_body {
+    /* &.tablet_slider {
+          max-width: 195px;
+        } */
   }
   .page .lenta .srItem {
     width: calc(50% - 16px);
@@ -524,6 +527,9 @@
     -webkit-transform: translate(-50%, -50%) rotate(45deg);
     transform: translate(-50%, -50%) rotate(45deg);
   }
+  .page .article .card {
+    width: 100%;
+  }
 }
 @media (min-width: 769px) {
   .page .article .body_box {
@@ -655,13 +661,19 @@
     margin-right: 0;
   }
   .page .comments_item {
+    position: relative;
+  }
+  .page .comments_itemBlock {
     padding-left: 0;
+  }
+  .page .comments_itemBlock .comments_itemBlock {
+    padding-left: 20px;
   }
   .page .comments_top {
     padding-left: 50px;
     min-height: 50px;
   }
-  .page .comments_img {
+  .page .comments_blockImg {
     width: 40px;
     height: 40px;
   }
@@ -761,7 +773,7 @@
 @media (max-width: 950px) {
   .sitebar {
     opacity: 0;
-    width: 270px;
+    width: 302px;
     padding-left: 16px;
     max-width: 100%;
     padding-right: 16px;

@@ -22,7 +22,7 @@
 }
 .header.fixed {
   position: fixed;
-  width: calc(100vw - 350px);
+  width: calc(100% - 350px);
   -webkit-box-shadow: 1px 2px 8px rgba(120, 160, 190, 0.08);
   box-shadow: 1px 2px 8px rgba(120, 160, 190, 0.08);
 }
@@ -161,6 +161,7 @@
 }
 .header .rubrics_icon {
   margin-right: 5px;
+  width: 20px;
 }
 .header .rubrics_more {
   list-style: none;

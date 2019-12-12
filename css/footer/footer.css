@@ -114,6 +114,7 @@
   color: #7a858d;
   display: flex;
   max-width: 340px;
+  margin-bottom: 10px;
 }
 .footer .form_succes:before {
   content: "";

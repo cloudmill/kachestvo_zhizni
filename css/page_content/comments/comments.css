@@ -19,7 +19,6 @@
 .page .comments_form.answer {
   margin-top: 23px;
   width: calc(100% - 70px);
-  margin-left: 70px;
 }
 .page .comments_form.answer .comments_form_button {
   display: flex;
@@ -73,9 +72,14 @@
   display: none;
 }
 .page .comments_item {
-  padding-left: 70px;
-  position: relative;
   margin-bottom: 32px;
+}
+.page .comments_itemBlock {
+  position: relative;
+  padding-left: 70px;
+}
+.page .comments_itemBlock .comments_itemBlock {
+  margin-top: 32px;
 }
 .page .comments_item:hover .comments_dis-like {
   opacity: 1;

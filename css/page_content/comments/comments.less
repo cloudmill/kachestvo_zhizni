@@ -23,7 +23,6 @@
       &.answer {
         margin-top: 23px;
         width: ~"calc(100% - 70px)";
-        margin-left: 70px;
         .comments_form_button {
           display: flex;
         }
@@ -88,9 +87,14 @@
       }
     }
     &_item {
-      padding-left: 70px;
-      position: relative;
       margin-bottom: 32px;
+      &Block{
+        position: relative;
+        padding-left: 70px;
+        .comments_itemBlock{
+          margin-top: 32px;
+        }
+      }
       &:hover {
         .comments {
           &_dis-like {

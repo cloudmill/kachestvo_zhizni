@@ -54,6 +54,9 @@
   margin-bottom: 50px;
   flex-wrap: wrap;
 }
+.page .lenta_body.tablet_slider {
+  flex-wrap: wrap;
+}
 .page .lenta .bItem {
   width: calc((100% - 60px)/3*2 + 23px);
   border-radius: 8px;
@@ -346,12 +349,14 @@
   padding: 0;
   margin: 0;
   margin-top: 4px;
+  margin-bottom: 4px;
 }
 .page .lenta .srItem_type {
   list-style: none;
   margin-right: 16px;
-  margin-bottom: 4px;
   -webkit-transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  margin-bottom: 0;
+  line-height: normal;
   transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   -webkit-box-shadow: inset 0px 1px transparent, inset 0px -1px transparent;
   box-shadow: inset 0px 1px transparent, inset 0px -1px transparent;

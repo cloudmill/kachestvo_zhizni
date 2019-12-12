@@ -206,6 +206,7 @@
     .body {
       position: relative;
       margin-bottom: 56px;
+      min-height: 200px;
       &_box {
         margin-right: 250px;
         position: relative;
@@ -243,6 +244,9 @@
       margin: 32px 0;
       &.big {
         width: ~"calc(100% + 250px)";
+        img{
+          width: 100%;
+        }
       }
       &.row {
         display: flex;
@@ -543,9 +547,10 @@
       padding: 30px 32px 20px 32px;
       border-radius: 10px;
       margin-bottom: 24px;
-      margin-right: 100px;
+      width: ~"calc(100% + 150px)";
       position: relative;
       overflow: hidden;
+      box-sizing: border-box;
       &_title {
         color: @color_text;
         font-size: 26px;
