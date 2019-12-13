@@ -798,12 +798,23 @@ body {
     }
     .col_conf(@color) {
       @bg_before: linear-gradient(180deg, rgba(241, 245, 248, 0) 0%, @color);
+      @bg_before_btw: linear-gradient(90deg, rgba(241, 245, 248, 0) 0%, @color);
       background-color: @color;
       -webkit-transition: @anim;
       transition: @anim;
       .bItem_img {
         &:before {
           background-image: @bg_before;
+          -webkit-transition: @anim;
+          transition: @anim;
+        }
+      }
+      .btwItem_img{
+        &:before {
+          background-image: @bg_before_btw;
+          @media(max-width: 768px){
+            background-image: @bg_before;
+          }
           -webkit-transition: @anim;
           transition: @anim;
         }
@@ -817,50 +828,14 @@ body {
             background-image: @bg_before;
           }
         }
-      }
-    }
-  }
-  &_fade-left {
-    @opacity: 1;
-    &_blue {
-      @color: rgba(241, 245, 248, @opacity);
-      .col_conf_corect_for_btw_elem(@color);
-    }
-    &_green {
-      @color: rgba(230, 250, 240, @opacity);
-      .col_conf_corect_for_btw_elem(@color);
-    }
-    &_green_light {
-      @color: rgba(243, 250, 234, @opacity);
-      .col_conf_corect_for_btw_elem(@color);
-    }
-    &_yellow {
-      @color: rgba(253, 250, 227, @opacity);
-      .col_conf_corect_for_btw_elem(@color);
-    }
-    &_orange {
-      @color: rgba(255, 243, 240, @opacity);
-      .col_conf_corect_for_btw_elem(@color);
-    }
-    &_pink {
-      @color: rgba(255, 242, 248, @opacity);
-      .col_conf_corect_for_btw_elem(@color);
-    }
-    &_purple {
-      @color: rgba(248, 242, 255, @opacity);
-      .col_conf_corect_for_btw_elem(@color);
-    }
-    .col_conf_corect_for_btw_elem(@color) {
-      @bg_before: linear-gradient(90deg, rgba(241, 245, 248, 0) 0%, @color);
-      background-color: @color;
-      &:before {
-        background-image: @bg_before;
-      }
-      &:hover {
-        @opacity: 0.8;
-        background-color: fade(@color, @opacity*100);
-        &:before {
-          background-image: @bg_before;
+        .btwItem_img{
+          &:before {
+            @opacity: 1;
+            background-image: @bg_before_btw;
+            @media(max-width: 768px){
+              background-image: @bg_before;
+            }
+          }
         }
       }
     }

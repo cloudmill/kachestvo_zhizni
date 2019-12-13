@@ -451,7 +451,15 @@
 .page .lenta .btwItem.has_photo {
   overflow: hidden;
 }
-.page .lenta .btwItem.has_photo:before {
+.page .lenta .btwItem.has_photo img {
+  max-width: 100%;
+  margin-left: 0;
+  min-height: 100%;
+}
+.page .lenta .btwItem.has_photo .btwItem_img {
+  height: 100%;
+}
+.page .lenta .btwItem.has_photo .btwItem_img:before {
   content: "";
   display: block;
   position: absolute;
@@ -462,10 +470,10 @@
   top: 0;
   z-index: 1;
 }
-.page .lenta .btwItem.has_photo img {
-  max-width: 100%;
-  margin-left: 0;
-  min-height: 100%;
+@media (max-width: 768px) {
+  .page .lenta .btwItem.has_photo .btwItem_img:before {
+    width: 100%;
+  }
 }
 .page .lenta .btwItem_img {
   height: calc(100% + 60px);
