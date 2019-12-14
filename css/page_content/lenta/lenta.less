@@ -486,7 +486,15 @@
             left: 0;
             top: 0;
             z-index: 1;
-            @media(max-width: 768px){
+            
+          }
+          @media(max-width: 768px){
+            max-width: none;
+            width: ~"calc(100% + 48px)";
+            overflow: hidden;
+            max-height: 400px;
+            transform: translate(-24px,-40px);
+            &:before{
               width: 100%;
             }
           }

@@ -1478,6 +1478,13 @@
   z-index: 1;
 }
 @media (max-width: 768px) {
+  .page .lenta .btwItem.has_photo .btwItem_img {
+    max-width: none;
+    width: calc(100% + 48px);
+    overflow: hidden;
+    max-height: 400px;
+    transform: translate(-24px, -40px);
+  }
   .page .lenta .btwItem.has_photo .btwItem_img:before {
     width: 100%;
   }
