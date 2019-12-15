@@ -3878,6 +3878,9 @@ body.overflow {
 .inpt_basic.error {
   border: 1px solid #d81615 !important;
 }
+.inpt_basic + .error_text {
+  color: #d81615;
+}
 .inpt_basic.disabled,
 .inpt_basic:disabled {
   color: #d7dbde !important;
