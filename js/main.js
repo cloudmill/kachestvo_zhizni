@@ -4,7 +4,7 @@ var animate_open_close,
   mail_right,
   base_time_animation = 300;
 
-$(document).ready(function() {
+$(document).ready(function () {
   ///инициализация всех функций
   custom();
   additional_functions(300);
@@ -12,18 +12,18 @@ $(document).ready(function() {
   sliders();
 });
 
-var custom = function() {
-  var help_blocks = function() {
+var custom = function () {
+  var help_blocks = function () {
     //инициализация появления блока при клике на help-ссылку
-    $(".help").click(function(e) {
+    $(".help").click(function (e) {
       e.preventDefault();
       $(this).find(".help_text").toggleClass("open");
       if ($(this).find(".help_text").offset().left < 30) {
         $(this).find(".help_text").addClass("right_mode"); //сместить окно вправо
         if (
           $(window).width() -
-            ($(this).find(".help_text").offset().left +
-              $(this).find(".help_text").width()) <
+          ($(this).find(".help_text").offset().left +
+            $(this).find(".help_text").width()) <
           30
         ) {
           $(this)
@@ -39,7 +39,7 @@ var custom = function() {
           .removeClass("right_mode");
       }
     });
-    $(document).on("click", function(e) {
+    $(document).on("click", function (e) {
       if (!$(".help_text:hover").length > 0 && !$(".help:hover").length > 0) {
         $(this)
           .find(".help_text")
@@ -49,9 +49,9 @@ var custom = function() {
       }
     });
   };
-  var open_menu = function() {
+  var open_menu = function () {
     ///Открытие и закрытие окон меню, сайтбара, тегов
-    $("[data-target]").click(function(e) {
+    $("[data-target]").click(function (e) {
       e.preventDefault();
       let target = $(this).data("target");
       if (!$("#" + target).hasClass("open")) {
@@ -77,7 +77,7 @@ var custom = function() {
         $(".burger .menu").show();
         if (target == "burger") {
           $("[data-target=" + target + "]").toggleClass("active");
-          animate_open_close($("#" + target), true, function() {
+          animate_open_close($("#" + target), true, function () {
             if (
               !$(".burger,.burger .burTags,#sitebar,.popup").hasClass("active")
             ) {
@@ -101,14 +101,14 @@ var custom = function() {
         }
       }
     });
-    $("[data-close]").click(function(e) {
+    $("[data-close]").click(function (e) {
       e.preventDefault();
       let close = $(this).data("close");
       if (close == "burger") return false;
       $(".burger .menu").show();
       if ($("#" + close).hasClass("open")) {
         $("[data-target=" + close + "]").toggleClass("active");
-        animate_open_close($("#" + close), true, function() {
+        animate_open_close($("#" + close), true, function () {
           if (
             !$(".burger,.burger .burTags,#sitebar,.popup").hasClass("active")
           ) {
@@ -123,7 +123,7 @@ var custom = function() {
         }
       }
     });
-    $(document).on("click", function(e) {
+    $(document).on("click", function (e) {
       if (
         !$("[data-target]:hover").length > 0 &&
         !$("[data-has_target]:hover").length > 0
@@ -144,16 +144,16 @@ var custom = function() {
       }
     });
   };
-  var burger_search_open = function() {
+  var burger_search_open = function () {
     ///бургер меню открытие и заерытие
-    $(".burger .burSearch_button").click(function(e) {
+    $(".burger .burSearch_button").click(function (e) {
       if (!$(".burger .burSearch").hasClass("active")) {
         e.preventDefault();
         $(".burger .burSearch_input").focus();
         $(".burger .burSearch").toggleClass("active");
       }
     });
-    $(document).on("click", function(e) {
+    $(document).on("click", function (e) {
       if (!$(".burger .burSearch:hover").length > 0) {
         $(".burger .burSearch").removeClass("active");
       }
@@ -162,70 +162,69 @@ var custom = function() {
 
   //логика комментариев
   var comments = {
-    form_answer:
-      "<form class='comments_form answer'>" +
-      "<textarea type='text'class='inpt_basic comments_input'placeholder='Написать ответ'></textarea>" +
+    form_answer: "<form class='comments_form answer' data-type='js-comment-answer'>" +
+      "<textarea type='text'class='inpt_basic comments_input' name='comment' placeholder='Написать ответ'></textarea>" +
       "<button class='btn_basic comments_button active'>Ответить</button>" +
-      "<input type='hidden' name='comment_id' value='value_replace'/>" +
+      "<input type='hidden' name='answer' value='value_replace'/>" +
       "</form>",
     textArea: $(".comments_input"),
     list_wrapper: $(".comments_list"),
     list: $(".comments_list"),
 
     //форма ответа
-    _answer: function() {
+    _answer: function () {
       var item = this;
-      $(document).on("click", ".comments_answer", function(e) {
+      $(document).on("click", ".comments_answer", function (e) {
         e.preventDefault();
-        item.list.find(".comments_form.answer").remove();
+        $(this).parents('.comments_list').find(".comments_form.answer").remove();
         let comment_for_answer = $(this).closest(".comments_itemBlock");
         let form = item.form_answer.replace(
           "value_replace",
-          0 /* comment_for_answer.getAttribute('id') */
+          $(this).attr('data-id')
         );
         comment_for_answer.append(form);
       });
     },
 
     ///показ кнопки при первом фокусе поля коментария
-    _firstFocusTextArea: function() {
-      this.textArea.focus(function() {
+    _firstFocusTextArea: function () {
+      $(document).on('focus', '.comments_input', function(){
         $(this)
-          .parent()
-          .parent()
-          .find(".inpt_wrapper + .comments_button")
-          .addClass("active");
+        .parent()
+        .parent()
+        .find(".inpt_wrapper + .comments_button")
+        .addClass("active");
         if (!$(this).parent().hasClass("answer"))
           $(this).closest(".comments").find(".comments_form.answer").remove();
       });
-      this.textArea.on("keyup", function() {
+      $(document).on('keyup', '.comments_input', function(){
         $(this)
           .parent()
           .parent()
           .find(".inpt_wrapper + .comments_button")
           .attr("disabled", false);
       });
-      this.textArea.blur(function() {
+      $(document).on('blur', '.comments_input', function(){
         if ($(this).val() == "")
           $(this)
-            .parent()
-            .parent()
-            .find(".inpt_wrapper + .comments_button")
-            .removeClass("active");
+          .parent()
+          .parent()
+          .find(".inpt_wrapper + .comments_button")
+          .removeClass("active");
       });
     },
 
     //раскрытие списка комментариев
-    _showMore: function() {
+    _showMore: function () {
       var item = this;
-      $(document).on("click", ".comments_show-all", function(e) {
+      $(document).on("click", ".comments_show-all", function (e) {
         e.preventDefault();
         item.list_wrapper.addClass("active");
         $(this).hide();
       });
       //// тут будет ajax подргузка комментариев
     },
-    init: function() {
+    init: function () {
       this._firstFocusTextArea();
       this._showMore();
       this._answer();
@@ -239,7 +238,7 @@ var custom = function() {
     deltaScroll: 8,
 
     //скрытие и логика раскрытия эллементов в header_bottom_menu
-    _hideElementsBottomMenuLogic: function() {
+    _hideElementsBottomMenuLogic: function () {
       $(".header .rubrics_more").hide();
       if (
         $(".header .rubrics").height() < $(".header .rubrics_list").height()
@@ -252,9 +251,9 @@ var custom = function() {
           $(".rubrics_item").parent().offset().top;
         var right = 0;
         var parW = $(".rubrics_item").parent().width();
-        
-        setTimeout(function(){
-          $(".rubrics_item").each(function() {
+
+        setTimeout(function () {
+          $(".rubrics_item").each(function () {
             tleft = $(this).offset().left - $(this).parent().offset().left;
             ttop = $(this).offset().top - $(this).parent().offset().top;
             if (tleft > left && ttop <= top) {
@@ -264,16 +263,16 @@ var custom = function() {
             $(".header .rubrics_more").css("right", right - 34);
             $(".header .rubrics_more").fadeIn();
           });
-        },100)
+        }, 100)
       }
-      $(document).on("click", ".header .rubrics_more", function(e) {
+      $(document).on("click", ".header .rubrics_more", function (e) {
         e.preventDefault();
         $(".header .rubrics").addClass("active");
         $(".header .rubrics").height($(".header .rubrics_list").height());
       });
 
       //скрыть эллементы при клике вне блока
-      $(document).on("click", function(e) {
+      $(document).on("click", function (e) {
         if (!$(".header .rubrics:hover").length > 0) {
           $(".header .rubrics").removeClass("active");
           $(".header .rubrics").height(48);
@@ -281,7 +280,7 @@ var custom = function() {
       });
 
       //скрыть эллементы при скролле
-      $(document).on("scroll", function(e) {
+      $(document).on("scroll", function (e) {
         if (!$(".header .rubrics:hover").length > 0) {
           $(".header .rubrics").removeClass("active");
           $(".header .rubrics").height(48);
@@ -293,11 +292,11 @@ var custom = function() {
       tolink: true, //переходить по ссылке
 
       //инициализация PressOnMove
-      _start_move: function() {
+      _start_move: function () {
         let _this = this;
         let startpos = undefined;
         let start_scroll = $(".header .rubrics").scrollLeft();
-        $(document).on("mousemove", function(e) {
+        $(document).on("mousemove", function (e) {
           if (_this.down) {
             if (startpos == undefined) {
               startpos = e.pageX;
@@ -307,28 +306,28 @@ var custom = function() {
           }
         });
       },
-      setup: function() {
+      setup: function () {
         let _this = this;
-        $(document).on("mousedown", ".header .rubrics_list", function() {
+        $(document).on("mousedown", ".header .rubrics_list", function () {
           _this.down = true;
           _this.tolink = true;
-          setTimeout(function() {
+          setTimeout(function () {
             _this.tolink = false;
           }, 300);
           _this._start_move();
         });
-        $(document).on("click", ".header .rubrics a", function(e) {
+        $(document).on("click", ".header .rubrics a", function (e) {
           if (!_this.tolink) {
             e.preventDefault();
           }
         });
-        $(document).on("mouseup", function() {
+        $(document).on("mouseup", function () {
           _this.down = false;
         });
       }
     },
     //реализация появления и скрывание хедера при скролле
-    _headerMove: function(scrollTop) {
+    _headerMove: function (scrollTop) {
       if (this.deltaScroll < Math.abs(scrollTop - this.oldScroll)) {
         if (this.oldScroll < scrollTop) {
           if (scrollTop > this.header.height()) {
@@ -354,8 +353,8 @@ var custom = function() {
     },
 
     //фокус при клике кнопки поиска
-    _search_but: function() {
-      $(".header .search_button").click(function(e) {
+    _search_but: function () {
+      $(".header .search_button").click(function (e) {
         if (
           !$(".header .search_input:focus").length > 0 &&
           !$(".header .search_input:hover").length > 0
@@ -365,14 +364,14 @@ var custom = function() {
         }
       });
     },
-    _headerMove_init: function() {
+    _headerMove_init: function () {
       this._headerMove($(document).scrollTop());
       var item = this;
-      $(document).on("scroll", function() {
+      $(document).on("scroll", function () {
         item._headerMove($(document).scrollTop());
       });
     },
-    init: function() {
+    init: function () {
       this._headerMove_init();
       this._search_but();
 
@@ -393,32 +392,49 @@ var custom = function() {
       close: $(".js-close")
     },
     successWindow: $("#success"),
+    loginWindow: $("#login"),
 
     //фунция создания сообщения success
-    success: function() {
+    success: function () {
       var way = 2;
       var item = this;
       if (!this.wrapper.hasClass("active")) way = 1;
-      setTimeout(function() {
+      setTimeout(function () {
         if (way == 1) {
           animate_open_close(item.wrapper);
           animate_open_close($("#success"));
         } else {
-          animate_open_close($(".popup_item.active"), true, function() {
+          animate_open_close($(".popup_item.active"), true, function () {
             animate_open_close(item.successWindow);
           });
         }
       }, 300);
     },
-    init: function() {
+    login: function () {
+      var way = 2;
       var item = this;
-      this.triggers.open.click(function(e) {
+      if (!this.wrapper.hasClass("active")) way = 1;
+      setTimeout(function () {
+        console.log(item);
+        if (way == 1) {
+          animate_open_close(item.wrapper);
+          animate_open_close($("#login"));
+        } else {
+          animate_open_close($(".popup_item.active"), true, function () {
+            animate_open_close(item.loginWindow);
+          });
+        }
+      }, 300);
+    },
+    init: function () {
+      var item = this;
+      this.triggers.open.click(function (e) {
         e.preventDefault();
         animate_open_close(item.wrapper);
         $("body").addClass("overflow");
         animate_open_close($("#" + $(this).attr("data-popup")));
       });
-      this.triggers.close.click(function(e) {
+      this.triggers.close.click(function (e) {
         e.preventDefault();
         $("body").removeClass("overflow");
         animate_open_close(item.wrapper, true);
@@ -426,7 +442,7 @@ var custom = function() {
       });
 
       ///////клик не по попапу закрывает его
-      $(document).on("click", function(e) {
+      $(document).on("click", function (e) {
         if (
           !$(".popup_item:hover").length > 0 &&
           !$(".js-popup:hover").length > 0
@@ -439,21 +455,21 @@ var custom = function() {
   };
 
   ///фикс. социальные иконки на странице статьи
-  var social_links_move = function() {
+  var social_links_move = function () {
     var item = $(".article .social");
     var top_offset = $(".article .body").offset().top;
-    $(document).on("scroll", function() {
+    $(document).on("scroll", function () {
       if ($(window).width() >= 950) {
         if (
           top_offset <
-            $(document).scrollTop() +
-              50 +
-              ($(".header").hasClass("hide") ? 0 : $(".header").height()) &&
+          $(document).scrollTop() +
+          50 +
+          ($(".header").hasClass("hide") ? 0 : $(".header").height()) &&
           top_offset + $(".article .body").height() >
-            $(document).scrollTop() +
-              50 +
-              ($(".header").hasClass("hide") ? 0 : $(".header").height()) +
-              item.height()
+          $(document).scrollTop() +
+          50 +
+          ($(".header").hasClass("hide") ? 0 : $(".header").height()) +
+          item.height()
         ) {
           item.css("position", "fixed");
           item.css("top", "50px");
@@ -466,9 +482,9 @@ var custom = function() {
         } else if (
           top_offset + $(".article .body").height() <=
           $(document).scrollTop() +
-            50 +
-            ($(".header").hasClass("hide") ? 0 : $(".header").height()) +
-            item.height()
+          50 +
+          ($(".header").hasClass("hide") ? 0 : $(".header").height()) +
+          item.height()
         ) {
           item.attr("style", "");
           item.css("top", "calc(100% - " + item.height() + "px)");
@@ -480,11 +496,11 @@ var custom = function() {
   };
 
   ///кнопка копировать на странице статьи
-  var copy_link = function() {
+  var copy_link = function () {
     var copied = false;
     var ta = document.getElementById("copy_target");
     var range = document.createRange();
-    var copy = function() {
+    var copy = function () {
       ta = document.getElementById("copy_target");
       if (document.selection && document.selection.empty) {
         document.selection.empty();
@@ -503,23 +519,23 @@ var custom = function() {
       }
     };
 
-    $(".social_item.copy").click(function(e) {
+    $(".social_item.copy").click(function (e) {
       e.preventDefault();
       if (!copied) {
         $(this).append(
           '<div  style="left: -1000%;position: fixed" id="copy_target">' +
-            document.location +
-            "</div>"
+          document.location +
+          "</div>"
         );
         if (copy()) {
           $(this).append(
             '<div class="info_copied"><img src="' +
-              SITE_TEMPLATE_PATH +
-              '/images/check_f.svg" /> <span>Ссылка скопирована</span></div>'
+            SITE_TEMPLATE_PATH +
+            '/images/check_f.svg" /> <span>Ссылка скопирована</span></div>'
           );
-          setTimeout(function() {
+          setTimeout(function () {
             $(document).find(".info_copied").fadeOut(300);
-            setTimeout(function() {
+            setTimeout(function () {
               $(document).find(".info_copied").remove();
               copied = false;
             });
@@ -530,9 +546,8 @@ var custom = function() {
     });
   };
 
-  var scrollIphoneBurger = function() {
-    var iOS =
-      !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
+  var scrollIphoneBurger = function () {
+    var iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
     if (iOS) {
       $(".burger .menu").css("padding-bottom", "130px");
       $(".burger .bottom").css("bottom", "85px");
@@ -552,13 +567,13 @@ var custom = function() {
   popup.init();
 };
 ///////обработка форм начало
-var forms = function() {
-  var submits = function() {
-    $(document).on("submit", "[data-form],.subscribe_form", function(e) {
+var forms = function () {
+  var submits = function () {
+    $(document).on("submit", "[data-form],.subscribe_form", function (e) {
       e.preventDefault();
-      let mail = $(this).find('[name="mail"]')
-        ? $(this).find('[name="mail"]')
-        : false;
+      let mail = $(this).find('[name="mail"]') ?
+        $(this).find('[name="mail"]') :
+        false;
       let q = $(this).find('[name="q"]') ? $(this).find('[name="q"]') : false;
       if (q && validate([q], $(this))) {
         //$(this).find("*").val("");
@@ -570,12 +585,12 @@ var forms = function() {
       }
     });
   };
-  var validate = function(fields, form) {
+  var validate = function (fields, form) {
     var error = 0;
     form.find("*").removeClass("error");
     form.find(".error_text").remove();
     /////////////
-    fields.forEach(function(item) {
+    fields.forEach(function (item) {
       if (item.attr("name") == "mail") {
         if (item.val() == "" || !mail_right(item.val())) {
           error++;
@@ -607,9 +622,9 @@ var forms = function() {
 ///////обработка форм конец
 
 //////Инициализация слайдера
-var sliders = function() {
+var sliders = function () {
   var inited = false;
-  initSlide = function() {
+  initSlide = function () {
     if (
       $(".lenta_body.tablet_slider").length > 0 &&
       $(window).width() <= 950 &&
@@ -624,8 +639,7 @@ var sliders = function() {
           infinite: false,
           dots: false,
           arrows: false,
-          responsive: [
-            {
+          responsive: [{
               breakpoint: 950,
               settings: {
                 slidesToShow: 1
@@ -648,10 +662,10 @@ var sliders = function() {
       }
     }
   };
-  $(window).resize(function() {
+  $(window).resize(function () {
     initSlide();
     if ($(window).width() > 950) {
-      $(".lenta_body.tablet_slider").each(function() {
+      $(".lenta_body.tablet_slider").each(function () {
         if ($(this).hasClass("slick-initialized")) $(this).slick("unslick");
       });
       inited = false;
@@ -661,31 +675,164 @@ var sliders = function() {
 };
 
 //////Обьявление фунций для анимации и проверки почты начало
-var additional_functions = function(time_a) {
-  animate_open_close = function(item, close, callback) {
+var additional_functions = function (time_a) {
+  animate_open_close = function (item, close, callback) {
     let time = time_a; //время анимации
     //----------------------
     if (close || item.hasClass("active")) {
       item.removeClass("open");
-      setTimeout(function() {
+      setTimeout(function () {
         item.removeClass("active");
       }, time);
     } else {
       item.addClass("active");
-      setTimeout(function() {
+      setTimeout(function () {
         item.addClass("open");
       }, 0);
     }
     //----------------------
     if (callback) {
-      setTimeout(function() {
+      setTimeout(function () {
         callback();
       }, time);
     }
   };
-  mail_right = function(email) {
+  mail_right = function (email) {
     let pattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return pattern.test(String(email).toLowerCase());
   };
 };
 //////Обьявление фунций для анимации и проверки почты конец
+
+$(function(){
+  $(document).on('submit', '[data-type=js-comment-add]', function (e) {
+    e.preventDefault();
+  
+    var form = $(this);
+    var sessid = form.find('input[name=sessid]');
+    var auth = form.find('input[name=auth]');
+    var article = form.find('input[name=article]');
+    var url = form.find('input[name=url]');
+    var comment = form.find('textarea[name=comment]');
+  
+    if (auth.val() == 1) {
+      $.ajax({
+        type: "POST",
+        url: SITE_TEMPLATE_PATH + '/include/ajax/comment_add.php',
+        data: ({
+          "sessid": sessid.val(),
+          "article": article.val(),
+          "comment": comment.val(),
+        }),
+        dataType: 'json',
+        success: function (a) {
+          if (a.error) {
+            console.log(a);
+          } else {
+            $.ajax({
+              type: "POST",
+              url: url.val(),
+              data: ({
+                "ajax_comments": "y",
+              }),
+              success: function (a) {
+                $('[data-type=js-comments').html(a);
+              }
+            });
+          }
+        }
+      });
+    } else {
+      popup.login();
+    }
+  });
+
+  $(document).on('submit', '[data-type=js-comment-answer]', function (e) {
+    e.preventDefault();
+  
+    var form = $(this);
+    var sessid = $('[data-type=js-comment-add]').find('input[name=sessid]');
+    var auth = $('[data-type=js-comment-add]').find('input[name=auth]');
+    var article = $('[data-type=js-comment-add]').find('input[name=article]');
+    var url = $('[data-type=js-comment-add]').find('input[name=url]');
+    var comment = form.find('textarea[name=comment]');
+    var answer = form.find('input[name=answer]');
+  
+    if (auth.val() == 1) {
+      $.ajax({
+        type: "POST",
+        url: SITE_TEMPLATE_PATH + '/include/ajax/comment_add.php',
+        data: ({
+          "sessid": sessid.val(),
+          "article": article.val(),
+          "answer": answer.val(),
+          "comment": comment.val(),
+        }),
+        dataType: 'json',
+        success: function (a) {
+          if (a.error) {
+            console.log(a);
+          } else {
+            $.ajax({
+              type: "POST",
+              url: url.val(),
+              data: ({
+                "ajax_comments": "y",
+              }),
+              success: function (a) {
+                $('[data-type=js-comments').html(a);
+              }
+            });
+          }
+        }
+      });
+    } else {
+      popup.login();
+    }
+  });
+
+  $(document).on('click', '[data-type=js-comment-rate]', function (e) {
+    e.preventDefault();
+  
+    var sessid = $('[data-type=js-comment-add]').find('input[name=sessid]');
+    var auth = $('[data-type=js-comment-add]').find('input[name=auth]');
+    var article = $('[data-type=js-comment-add]').find('input[name=article]');
+    var url = $('[data-type=js-comment-add]').find('input[name=url]');
+    var comment = $(this).attr('data-id');
+    var action = $(this).attr('data-action');
+
+    
+  
+    if (auth.val() == 1) {
+      $.ajax({
+        type: "POST",
+        url: SITE_TEMPLATE_PATH + '/include/ajax/comment_rate.php',
+        data: ({
+          "sessid": sessid.val(),
+          "article": article.val(),
+          "comment": comment,
+          "action": action,
+        }),
+        dataType: 'json',
+        success: function (a) {
+          if (a.error) {
+            console.log(a);
+          } else {
+            $.ajax({
+              type: "POST",
+              url: url.val(),
+              data: ({
+                "ajax_comments": "y",
+              }),
+              success: function (a) {
+                $('[data-type=js-comments').html(a);
+              }
+            });
+          }
+        }
+      });
+    } else {
+      popup.login();
+    }
+  });
+});
