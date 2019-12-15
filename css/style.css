@@ -1025,6 +1025,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  flex-wrap: wrap;
 }
 .page .lenta_title.big {
   font-size: 36px;
@@ -1121,9 +1122,11 @@
   margin: 0;
   padding: 0;
   margin-top: 16px;
+  margin-bottom: 12px;
 }
 .page .lenta .bItem_type {
   list-style: none;
+  margin-bottom: 0;
   margin-right: 16px;
 }
 .page .lenta .bItem_type::before {

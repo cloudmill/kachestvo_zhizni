@@ -32,6 +32,10 @@
   .header .rubrics_list {
     flex-wrap: nowrap;
     width: max-content;
+    height: 48px;
+  }
+  .header .rubrics_item {
+    margin-bottom: 5px;
   }
   .header .rubrics a {
     -webkit-user-drag: none;
