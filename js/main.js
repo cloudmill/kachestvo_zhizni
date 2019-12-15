@@ -1,4 +1,5 @@
 const SITE_TEMPLATE_PATH = "/local/templates/main";
+var debug = false;
 var animate_open_close,
   popup,
   mail_right,
@@ -239,9 +240,11 @@ var custom = function () {
 
     //скрытие и логика раскрытия эллементов в header_bottom_menu
     _hideElementsBottomMenuLogic: function () {
-      $(".header .rubrics_more").hide();
+      var _this = this;
+      
+      this.header.find(".rubrics_more").hide();
       if (
-        $(".header .rubrics").height() < $(".header .rubrics_list").height()
+        this.header.find(".rubrics").height() < this.header.find(".rubrics_list").height()
       ) {
         var left =
           $(".rubrics_item").eq(0).offset().left -
@@ -260,30 +263,30 @@ var custom = function () {
               left = tleft;
               right = parW - (left + $(this).width());
             }
-            $(".header .rubrics_more").css("right", right - 34);
-            $(".header .rubrics_more").fadeIn();
+            _this.header.find(".rubrics_more").css("right", right - 34);
+            _this.header.find(".rubrics_more").fadeIn();
           });
         }, 100)
       }
       $(document).on("click", ".header .rubrics_more", function (e) {
         e.preventDefault();
-        $(".header .rubrics").addClass("active");
-        $(".header .rubrics").height($(".header .rubrics_list").height());
+        _this.header.find(".rubrics").addClass("active");
+        _this.header.find(".rubrics").height(_this.header.find(".rubrics_list").height());
       });
 
       //скрыть эллементы при клике вне блока
       $(document).on("click", function (e) {
-        if (!$(".header .rubrics:hover").length > 0) {
-          $(".header .rubrics").removeClass("active");
-          $(".header .rubrics").height(48);
+        if (!_this.header.find(".rubrics:hover").length > 0) {
+          _this.header.find(".rubrics").removeClass("active");
+          _this.header.find(".rubrics").height(48);
         }
       });
 
       //скрыть эллементы при скролле
       $(document).on("scroll", function (e) {
-        if (!$(".header .rubrics:hover").length > 0) {
-          $(".header .rubrics").removeClass("active");
-          $(".header .rubrics").height(48);
+        if (!_this.header.find(".rubrics:hover").length > 0) {
+          _this.header.find(".rubrics").removeClass("active");
+          _this.header.find(".rubrics").height(48);
         }
       });
     },
@@ -295,14 +298,14 @@ var custom = function () {
       _start_move: function () {
         let _this = this;
         let startpos = undefined;
-        let start_scroll = $(".header .rubrics").scrollLeft();
+        let start_scroll = this.header.find(".rubrics").scrollLeft();
         $(document).on("mousemove", function (e) {
           if (_this.down) {
             if (startpos == undefined) {
               startpos = e.pageX;
             }
             step = startpos - e.pageX + start_scroll;
-            $(".header .rubrics").scrollLeft(step);
+            _this.header.find(".rubrics").scrollLeft(step);
           }
         });
       },
@@ -372,6 +375,7 @@ var custom = function () {
       });
     },
     init: function () {
+      this.header = $("header");
       this._headerMove_init();
       this._search_but();
 
@@ -402,7 +406,7 @@ var custom = function () {
       setTimeout(function () {
         if (way == 1) {
           animate_open_close(item.wrapper);
-          animate_open_close($("#success"));
+          animate_open_close(item.successWindow);
         } else {
           animate_open_close($(".popup_item.active"), true, function () {
             animate_open_close(item.successWindow);
@@ -414,11 +418,12 @@ var custom = function () {
       var way = 2;
       var item = this;
       if (!this.wrapper.hasClass("active")) way = 1;
+      
       setTimeout(function () {
-        console.log(item);
         if (way == 1) {
+          if(debug)debugger;
           animate_open_close(item.wrapper);
-          animate_open_close($("#login"));
+          animate_open_close(item.loginWindow);
         } else {
           animate_open_close($(".popup_item.active"), true, function () {
             animate_open_close(item.loginWindow);
@@ -427,6 +432,14 @@ var custom = function () {
       }, 300);
     },
     init: function () {
+      this.wrapper= $(".popup")
+      this.popups= $(".popup_item")
+      this.triggers= {
+        open: $(".js-popup"),
+        close: $(".js-close")
+      }
+      this.successWindow=$("#success")
+      this.loginWindow= $("#login")
       var item = this;
       this.triggers.open.click(function (e) {
         e.preventDefault();
@@ -444,8 +457,8 @@ var custom = function () {
       ///////клик не по попапу закрывает его
       $(document).on("click", function (e) {
         if (
-          !$(".popup_item:hover").length > 0 &&
-          !$(".js-popup:hover").length > 0
+          $(".popup_item:hover").length == 0 &&
+          $(".js-popup:hover").length == 0 && item.wrapper.hasClass('open')
         ) {
           animate_open_close(item.wrapper, true);
           animate_open_close(item.popups, true);
@@ -680,11 +693,13 @@ var additional_functions = function (time_a) {
     let time = time_a; //время анимации
     //----------------------
     if (close || item.hasClass("active")) {
+      if(debug)debugger;
       item.removeClass("open");
       setTimeout(function () {
         item.removeClass("active");
       }, time);
     } else {
+      if(debug)debugger;
       item.addClass("active");
       setTimeout(function () {
         item.addClass("open");
@@ -800,7 +815,6 @@ $(function(){
     var url = $('[data-type=js-comment-add]').find('input[name=url]');
     var comment = $(this).attr('data-id');
     var action = $(this).attr('data-action');
-
     
   
     if (auth.val() == 1) {
