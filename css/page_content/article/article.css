@@ -472,6 +472,7 @@
 }
 .page .article .inf_item {
   margin-right: 32px;
+  margin-bottom: 7px;
 }
 .page .article .inf_link {
   display: -webkit-box !important;
