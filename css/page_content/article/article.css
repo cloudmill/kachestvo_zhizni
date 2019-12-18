@@ -284,8 +284,10 @@
 }
 .page .article .img {
   max-width: 100%;
+  width: 100%;
   border-radius: 8px;
   overflow: hidden;
+  display: block;
 }
 .page .article .img_photo {
   width: 100%;
