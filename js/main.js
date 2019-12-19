@@ -18,16 +18,32 @@ var custom = function() {
     //инициализация появления блока при клике на help-ссылку
     $(".help").click(function(e) {
       e.preventDefault();
-      $(this).find(".help_text").toggleClass("open");
-      if ($(this).find(".help_text").offset().left < $('.body_box').offset().left) {
-        $(this).find(".help_text").addClass("right_mode"); //сместить окно вправо
+      $(this)
+        .find(".help_text")
+        .toggleClass("open");
+      if (
+        $(this)
+          .find(".help_text")
+          .offset().left < $(".body_box").offset().left
+      ) {
+        $(this)
+          .find(".help_text")
+          .addClass("right_mode"); //сместить окно вправо
         if (
           $(window).width() -
-            $(this).find(".help_text").offset().left -
-              $(this).find(".help_text").width() <
-              $(window).width() -
-              $(this).find(".body_box").offset().left -
-                $(this).find(".body_box").width()
+            $(this)
+              .find(".help_text")
+              .offset().left -
+            $(this)
+              .find(".help_text")
+              .width() <
+          $(window).width() -
+            $(this)
+              .find(".body_box")
+              .offset().left -
+            $(this)
+              .find(".body_box")
+              .width()
         ) {
           $(this)
             .find(".help_text")
@@ -35,7 +51,11 @@ var custom = function() {
             .addClass("center_mode"); //сместить окно в центр
         }
       }
-      if (!$(this).find(".help_text").hasClass("open")) {
+      if (
+        !$(this)
+          .find(".help_text")
+          .hasClass("open")
+      ) {
         $(this)
           .find(".help_text")
           .removeClass("center_mode")
@@ -190,7 +210,7 @@ var custom = function() {
           $(this).attr("data-id")
         );
         comment_for_answer.append(form);
-        comment_for_answer.find('.comments_form.answer .inpt_basic').focus();
+        comment_for_answer.find(".comments_form.answer .inpt_basic").focus();
       });
     },
 
@@ -202,8 +222,15 @@ var custom = function() {
           .parent()
           .find(".inpt_wrapper + .comments_button")
           .addClass("active");
-        if (!$(this).parent().hasClass("answer"))
-          $(this).closest(".comments").find(".comments_form.answer").remove();
+        if (
+          !$(this)
+            .parent()
+            .hasClass("answer")
+        )
+          $(this)
+            .closest(".comments")
+            .find(".comments_form.answer")
+            .remove();
       });
       $(document).on("keyup", ".comments_input", function() {
         $(this)
@@ -255,18 +282,36 @@ var custom = function() {
         this.header.find(".rubrics_list").height()
       ) {
         var left =
-          $(".rubrics_item").eq(0).offset().left -
-          $(".rubrics_item").parent().offset().left;
+          $(".rubrics_item")
+            .eq(0)
+            .offset().left -
+          $(".rubrics_item")
+            .parent()
+            .offset().left;
         var top =
-          $(".rubrics_item").eq(0).offset().top -
-          $(".rubrics_item").parent().offset().top;
+          $(".rubrics_item")
+            .eq(0)
+            .offset().top -
+          $(".rubrics_item")
+            .parent()
+            .offset().top;
         var right = 0;
-        var parW = $(".rubrics_item").parent().width();
+        var parW = $(".rubrics_item")
+          .parent()
+          .width();
 
         setTimeout(function() {
           $(".rubrics_item").each(function() {
-            tleft = $(this).offset().left - $(this).parent().offset().left;
-            ttop = $(this).offset().top - $(this).parent().offset().top;
+            tleft =
+              $(this).offset().left -
+              $(this)
+                .parent()
+                .offset().left;
+            ttop =
+              $(this).offset().top -
+              $(this)
+                .parent()
+                .offset().top;
             if (tleft > left && ttop <= top) {
               left = tleft;
               right = parW - (left + $(this).width());
@@ -479,7 +524,7 @@ var custom = function() {
       var cutTop = $(document).scrollTop();
       $(document).on("scroll", function(e) {
         if ($("body").hasClass("overflow")) {
-            e.preventDefault();
+          e.preventDefault();
           $(document).scrollTop(cutTop);
         } else {
           cutTop = $(document).scrollTop();
@@ -546,7 +591,9 @@ var custom = function() {
       window.getSelection().addRange(range);
       try {
         document.execCommand("copy");
-        $(document).find("#copy_target").remove();
+        $(document)
+          .find("#copy_target")
+          .remove();
         return true;
       } catch (err) {
         return false;
@@ -568,9 +615,13 @@ var custom = function() {
               '/images/check_f.svg" /> <span>Ссылка скопирована</span></div>'
           );
           setTimeout(function() {
-            $(document).find(".info_copied").fadeOut(300);
+            $(document)
+              .find(".info_copied")
+              .fadeOut(300);
             setTimeout(function() {
-              $(document).find(".info_copied").remove();
+              $(document)
+                .find(".info_copied")
+                .remove();
               copied = false;
             });
           }, 3000);
@@ -588,23 +639,77 @@ var custom = function() {
       $(".burger .bottom").css("bottom", "85px");
     }
   };
-  var clickOnScroll = function(){
-    var itemForCheck = $('[data-type="js-comments-load"],[data-type=js-blog-load]');
-      function checkAndClick(){
-        var tScroll = $(document).scrollTop() + $(window).height();
-        for(var g = 0;g<itemForCheck.length;g++){
-          itemForCheck.eq(g)
-          var tOffset = itemForCheck.eq(g).offset().top + itemForCheck.eq(g).height()
-          console.log(tOffset)
-          if(tOffset < tScroll){
-            itemForCheck.eq(g).click()
-          }
+  var clickOnScroll = function() {
+    var itemForCheck = $(
+      '[data-type="js-comments-load"],[data-type=js-blog-load]'
+    );
+    function checkAndClick() {
+      var tScroll = $(document).scrollTop() + $(window).height();
+      for (var g = 0; g < itemForCheck.length; g++) {
+        itemForCheck.eq(g);
+        var tOffset =
+          itemForCheck.eq(g).offset().top + itemForCheck.eq(g).height();
+        if (tOffset < tScroll) {
+          itemForCheck.eq(g).click();
         }
       }
-     $(document).on('scroll',function(){
+    }
+    $(document).on("scroll", function() {
       checkAndClick();
-     })
-  }
+    });
+  };
+  var rightSnippetsMoving = function() {
+    function movedDown(item, offset) {
+      var currentTop = parseInt(item.css("top"));
+      item.css("top", offset + currentTop + "px");
+    }
+    function checkCrash(it1, it2, step) {
+      if (
+        (it2.offset().top <= it1.offset().top + it1.height() &&
+          it2.offset().top >= it1.offset().top) ||
+        (it2.offset().top + it2.height() <= it1.offset().top + it1.height() &&
+          it2.offset().top + it2.height() >= it1.offset().top)
+      ) {
+        movedDown(it2, it1.offset().top + it1.height() - it2.offset().top + 30);
+      }
+    }
+
+    function listening() {
+      for (var i = 0; i < $(".article .right").length; i++) {
+        for (var j = i + 1; j < $(".article .right").length; j++) {
+          checkCrash(
+            $(".article .right")
+              .eq(i)
+              .find(">*"),
+            $(".article .right")
+              .eq(j)
+              .find(">*"),
+            j
+          );
+        }
+      }
+    }
+    function parentBoxSizeCorrect() {
+      for (var i = 0; i < $(".article .right").length; i++) {
+        var parentOffset =
+          $(".article .body_box").height() +
+          $(".article .body_box").offset().top;
+        var item = $(".article .right")
+          .eq(i)
+          .find(">*");
+        if (item.offset().top + item.height() > parentOffset) {
+          var padding = item.offset().top + item.height() - parentOffset;
+          var newHeight = $(".article .body_box").height() + padding;
+          $(".article .body_box").height(newHeight);
+        }
+      }
+    }
+    listening();
+    setTimeout(function(){
+      parentBoxSizeCorrect();
+    },500)
+    
+  };
   copy_link();
   if ($(".article .social").length > 0) social_links_move();
   open_menu();
@@ -612,7 +717,7 @@ var custom = function() {
   burger_search_open();
   clickOnScroll();
   scrollIphoneBurger();
-
+  rightSnippetsMoving();
   //////способ отображение категорий в меню
 
   comments.init();
@@ -713,34 +818,36 @@ var sliders = function() {
     ) {
       inited = true;
       for (let l = 0; l < $(".lenta_body.tablet_slider").length; l++) {
-        $(".lenta_body.tablet_slider").eq(l).slick({
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          speed: 600,
-          infinite: false,
-          dots: false,
-          arrows: false,
-          responsive: [
-            {
-              breakpoint: 950,
-              settings: {
-                slidesToShow: 1
+        $(".lenta_body.tablet_slider")
+          .eq(l)
+          .slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            speed: 600,
+            infinite: false,
+            dots: false,
+            arrows: false,
+            responsive: [
+              {
+                breakpoint: 950,
+                settings: {
+                  slidesToShow: 1
+                }
+              },
+              {
+                breakpoint: 768,
+                settings: {
+                  slidesToShow: 1
+                }
+              },
+              {
+                breakpoint: 500,
+                settings: {
+                  slidesToShow: 1
+                }
               }
-            },
-            {
-              breakpoint: 768,
-              settings: {
-                slidesToShow: 1
-              }
-            },
-            {
-              breakpoint: 500,
-              settings: {
-                slidesToShow: 1
-              }
-            }
-          ]
-        });
+            ]
+          });
       }
     }
   };
@@ -799,7 +906,7 @@ $(function() {
     var url = form.find("input[name=url]");
     var comment = form.find("textarea[name=comment]");
 
-    form.find('button').attr('disabled', 'disabled');
+    form.find("button").attr("disabled", "disabled");
 
     if (auth.val() == 1) {
       validate([comment], $(this), function() {
@@ -815,7 +922,7 @@ $(function() {
           success: function(a) {
             if (a.error) {
               console.log(a);
-              form.find('button').removeAttr('disabled');
+              form.find("button").removeAttr("disabled");
             } else {
               $.ajax({
                 type: "POST",
@@ -834,7 +941,7 @@ $(function() {
       return false;
     } else {
       popup.login();
-      form.find('button').removeAttr('disabled');
+      form.find("button").removeAttr("disabled");
     }
   });
 
@@ -848,7 +955,7 @@ $(function() {
     var comment = form.find("textarea[name=comment]");
     var answer = form.find("input[name=answer]");
 
-    form.find('button').attr('disabled', 'disabled');
+    form.find("button").attr("disabled", "disabled");
 
     if (auth.val() == 1) {
       validate([comment], $(this), function() {
@@ -865,7 +972,7 @@ $(function() {
           success: function(a) {
             if (a.error) {
               console.log(a);
-              form.find('button').removeAttr('disabled');
+              form.find("button").removeAttr("disabled");
             } else {
               $.ajax({
                 type: "POST",
@@ -884,7 +991,7 @@ $(function() {
       return false;
     } else {
       popup.login();
-      form.find('button').removeAttr('disabled');
+      form.find("button").removeAttr("disabled");
     }
   });
 
@@ -946,16 +1053,16 @@ $(function() {
       }
     });
   });
-  $(document).on('click', '[data-type=js-blog-load]', function(e){
+  $(document).on("click", "[data-type=js-blog-load]", function(e) {
     e.preventDefault();
-    var url = $(this).attr('href');
-    var lenta = $(this).parents('.lenta');
+    var url = $(this).attr("href");
+    var lenta = $(this).parents(".lenta");
     $(this).remove();
     $.ajax({
       type: "POST",
       url: url,
       data: {
-        ajax_list: 'y'
+        ajax_list: "y"
       },
       success: function(a) {
         lenta.append(a);
@@ -963,21 +1070,21 @@ $(function() {
     });
   });
 
-  $(document).on('click', '[data-type=js-comments-load]', function(e){
+  $(document).on("click", "[data-type=js-comments-load]", function(e) {
     e.preventDefault();
-    var url = $(this).attr('href');
-    var comments = $(this).parents('.comments');
-    var offset = $(this).attr('data-offset');
+    var url = $(this).attr("href");
+    var comments = $(this).parents(".comments");
+    var offset = $(this).attr("data-offset");
     $(this).remove();
     $.ajax({
       type: "POST",
       url: url,
       data: {
-        ajax_comments_load: 'y',
+        ajax_comments_load: "y",
         comments_offset: offset
       },
       success: function(a) {
-        comments.find('.comments_list ').append(a);
+        comments.find(".comments_list ").append(a);
       }
     });
   });
