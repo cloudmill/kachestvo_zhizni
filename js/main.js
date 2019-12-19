@@ -2,7 +2,6 @@ const SITE_TEMPLATE_PATH = "/local/templates/main";
 var debug = false;
 var animate_open_close,
   popup,
-  validate,
   mail_right,
   base_time_animation = 300;
 
@@ -19,26 +18,16 @@ var custom = function() {
     //инициализация появления блока при клике на help-ссылку
     $(".help").click(function(e) {
       e.preventDefault();
-      $(this)
-        .find(".help_text")
-        .toggleClass("open");
-      if (
-        $(this)
-          .find(".help_text")
-          .offset().left < 30
-      ) {
-        $(this)
-          .find(".help_text")
-          .addClass("right_mode"); //сместить окно вправо
+      $(this).find(".help_text").toggleClass("open");
+      if ($(this).find(".help_text").offset().left < $('.body_box').offset().left) {
+        $(this).find(".help_text").addClass("right_mode"); //сместить окно вправо
         if (
           $(window).width() -
-            ($(this)
-              .find(".help_text")
-              .offset().left +
-              $(this)
-                .find(".help_text")
-                .width()) <
-          30
+            $(this).find(".help_text").offset().left -
+              $(this).find(".help_text").width() <
+              $(window).width() -
+              $(this).find(".body_box").offset().left -
+                $(this).find(".body_box").width()
         ) {
           $(this)
             .find(".help_text")
@@ -46,11 +35,7 @@ var custom = function() {
             .addClass("center_mode"); //сместить окно в центр
         }
       }
-      if (
-        !$(this)
-          .find(".help_text")
-          .hasClass("open")
-      ) {
+      if (!$(this).find(".help_text").hasClass("open")) {
         $(this)
           .find(".help_text")
           .removeClass("center_mode")
@@ -217,15 +202,8 @@ var custom = function() {
           .parent()
           .find(".inpt_wrapper + .comments_button")
           .addClass("active");
-        if (
-          !$(this)
-            .parent()
-            .hasClass("answer")
-        )
-          $(this)
-            .closest(".comments")
-            .find(".comments_form.answer")
-            .remove();
+        if (!$(this).parent().hasClass("answer"))
+          $(this).closest(".comments").find(".comments_form.answer").remove();
       });
       $(document).on("keyup", ".comments_input", function() {
         $(this)
@@ -277,36 +255,18 @@ var custom = function() {
         this.header.find(".rubrics_list").height()
       ) {
         var left =
-          $(".rubrics_item")
-            .eq(0)
-            .offset().left -
-          $(".rubrics_item")
-            .parent()
-            .offset().left;
+          $(".rubrics_item").eq(0).offset().left -
+          $(".rubrics_item").parent().offset().left;
         var top =
-          $(".rubrics_item")
-            .eq(0)
-            .offset().top -
-          $(".rubrics_item")
-            .parent()
-            .offset().top;
+          $(".rubrics_item").eq(0).offset().top -
+          $(".rubrics_item").parent().offset().top;
         var right = 0;
-        var parW = $(".rubrics_item")
-          .parent()
-          .width();
+        var parW = $(".rubrics_item").parent().width();
 
         setTimeout(function() {
           $(".rubrics_item").each(function() {
-            tleft =
-              $(this).offset().left -
-              $(this)
-                .parent()
-                .offset().left;
-            ttop =
-              $(this).offset().top -
-              $(this)
-                .parent()
-                .offset().top;
+            tleft = $(this).offset().left - $(this).parent().offset().left;
+            ttop = $(this).offset().top - $(this).parent().offset().top;
             if (tleft > left && ttop <= top) {
               left = tleft;
               right = parW - (left + $(this).width());
@@ -421,7 +381,8 @@ var custom = function() {
       this._headerMove($(document).scrollTop());
       var item = this;
       $(document).on("scroll", function() {
-        item._headerMove($(document).scrollTop());
+        if (!$("body").hasClass("overflow"))
+          item._headerMove($(document).scrollTop());
       });
     },
     init: function() {
@@ -515,6 +476,15 @@ var custom = function() {
           animate_open_close(item.popups, true);
         }
       });
+      var cutTop = $(document).scrollTop();
+      $(document).on("scroll", function(e) {
+        if ($("body").hasClass("overflow")) {
+            e.preventDefault();
+          $(document).scrollTop(cutTop);
+        } else {
+          cutTop = $(document).scrollTop();
+        }
+      });
     }
   };
 
@@ -576,9 +546,7 @@ var custom = function() {
       window.getSelection().addRange(range);
       try {
         document.execCommand("copy");
-        $(document)
-          .find("#copy_target")
-          .remove();
+        $(document).find("#copy_target").remove();
         return true;
       } catch (err) {
         return false;
@@ -600,13 +568,9 @@ var custom = function() {
               '/images/check_f.svg" /> <span>Ссылка скопирована</span></div>'
           );
           setTimeout(function() {
-            $(document)
-              .find(".info_copied")
-              .fadeOut(300);
+            $(document).find(".info_copied").fadeOut(300);
             setTimeout(function() {
-              $(document)
-                .find(".info_copied")
-                .remove();
+              $(document).find(".info_copied").remove();
               copied = false;
             });
           }, 3000);
@@ -666,7 +630,7 @@ var forms = function() {
       }
     });
   };
-  validate = function(fields, form, callback) {
+  var validate = function(fields, form) {
     var error = 0;
     form.find("*").removeClass("error");
     form.find(".error_text").remove();
@@ -677,7 +641,13 @@ var forms = function() {
           error++;
           item.addClass("error");
           let text_error = "Неверный Email";
+          let badWord = false;
           if (item.val() == "") text_error = "Введите Email";
+          if (badWord) {
+            text_error =
+              "Мы тоже за простоту выражений, но без крайностей. Перефразируйте, пожалуйста.";
+            form.find("button").attr("disabled", true);
+          }
 
           item[0].outerHTML +=
             "<span class='error_text'>" + text_error + "</span>";
@@ -689,32 +659,8 @@ var forms = function() {
           item.addClass("error");
         }
       }
-      if (item.attr("name") == "comment") {
-        if (item.val() == "") text_error = "Введите Комментарий";
-        else {
-          $.ajax({
-            type: "POST",
-            url: SITE_TEMPLATE_PATH + "/include/ajax/bad_words.php",
-            data: {
-              comment: item.val()
-            },
-            dataType: "json",
-            success: function(a) {
-              if (a.type == "bad") {
-                text_error =
-                  "Мы тоже за простоту выражений, но без крайностей. Перефразируйте, пожалуйста.";
-                form.find("button").attr("disabled", true);
-                item[0].outerHTML +=
-                  "<span class='error_text'>" + text_error + "</span>";
-              } else {
-                callback();
-              }
-            }
-          });
-        }
-      }
     });
-    if (!callback) return error == 0;
+    return error == 0;
   };
   submits();
 };
@@ -731,36 +677,34 @@ var sliders = function() {
     ) {
       inited = true;
       for (let l = 0; l < $(".lenta_body.tablet_slider").length; l++) {
-        $(".lenta_body.tablet_slider")
-          .eq(l)
-          .slick({
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            speed: 600,
-            infinite: false,
-            dots: false,
-            arrows: false,
-            responsive: [
-              {
-                breakpoint: 950,
-                settings: {
-                  slidesToShow: 1
-                }
-              },
-              {
-                breakpoint: 768,
-                settings: {
-                  slidesToShow: 1
-                }
-              },
-              {
-                breakpoint: 500,
-                settings: {
-                  slidesToShow: 1
-                }
+        $(".lenta_body.tablet_slider").eq(l).slick({
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          speed: 600,
+          infinite: false,
+          dots: false,
+          arrows: false,
+          responsive: [
+            {
+              breakpoint: 950,
+              settings: {
+                slidesToShow: 1
               }
-            ]
-          });
+            },
+            {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: 1
+              }
+            },
+            {
+              breakpoint: 500,
+              settings: {
+                slidesToShow: 1
+              }
+            }
+          ]
+        });
       }
     }
   };
@@ -820,36 +764,32 @@ $(function() {
     var comment = form.find("textarea[name=comment]");
 
     if (auth.val() == 1) {
-      validate([comment], $(this), function() {
-        console.log(comment)
-        $.ajax({
-          type: "POST",
-          url: SITE_TEMPLATE_PATH + "/include/ajax/comment_add.php",
-          data: {
-            sessid: sessid.val(),
-            article: article.val(),
-            comment: comment.val()
-          },
-          dataType: "json",
-          success: function(a) {
-            if (a.error) {
-              console.log(a);
-            } else {
-              $.ajax({
-                type: "POST",
-                url: url.val(),
-                data: {
-                  ajax_comments: "y"
-                },
-                success: function(a) {
-                  $("[data-type=js-comments").html(a);
-                }
-              });
-            }
+      $.ajax({
+        type: "POST",
+        url: SITE_TEMPLATE_PATH + "/include/ajax/comment_add.php",
+        data: {
+          sessid: sessid.val(),
+          article: article.val(),
+          comment: comment.val()
+        },
+        dataType: "json",
+        success: function(a) {
+          if (a.error) {
+            console.log(a);
+          } else {
+            $.ajax({
+              type: "POST",
+              url: url.val(),
+              data: {
+                ajax_comments: "y"
+              },
+              success: function(a) {
+                $("[data-type=js-comments").html(a);
+              }
+            });
           }
-        });
+        }
       });
-      return false;
     } else {
       popup.login();
     }
@@ -866,36 +806,33 @@ $(function() {
     var answer = form.find("input[name=answer]");
 
     if (auth.val() == 1) {
-      validate([comment], $(this), function() {
-        $.ajax({
-          type: "POST",
-          url: SITE_TEMPLATE_PATH + "/include/ajax/comment_add.php",
-          data: {
-            sessid: sessid.val(),
-            article: article.val(),
-            answer: answer.val(),
-            comment: comment.val()
-          },
-          dataType: "json",
-          success: function(a) {
-            if (a.error) {
-              console.log(a);
-            } else {
-              $.ajax({
-                type: "POST",
-                url: url.val(),
-                data: {
-                  ajax_comments: "y"
-                },
-                success: function(a) {
-                  $("[data-type=js-comments").html(a);
-                }
-              });
-            }
+      $.ajax({
+        type: "POST",
+        url: SITE_TEMPLATE_PATH + "/include/ajax/comment_add.php",
+        data: {
+          sessid: sessid.val(),
+          article: article.val(),
+          answer: answer.val(),
+          comment: comment.val()
+        },
+        dataType: "json",
+        success: function(a) {
+          if (a.error) {
+            console.log(a);
+          } else {
+            $.ajax({
+              type: "POST",
+              url: url.val(),
+              data: {
+                ajax_comments: "y"
+              },
+              success: function(a) {
+                $("[data-type=js-comments").html(a);
+              }
+            });
           }
-        });
+        }
       });
-      return false;
     } else {
       popup.login();
     }

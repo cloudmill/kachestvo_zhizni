@@ -25,6 +25,7 @@
 }
 .footer .left {
   margin-top: -16px;
+  flex-basis: 25%;
 }
 .footer .left_list {
   list-style: none;
@@ -52,6 +53,10 @@
 .footer .left_colored {
   color: #82c831;
 }
+.footer .menu {
+  flex-basis: 25%;
+  padding-left: 15px;
+}
 .footer .menu_title {
   color: #1d2f3c;
   font-size: 12px;
@@ -76,6 +81,9 @@
   line-height: 21.09px;
   -webkit-transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.footer .menu_link img {
+  display: block !important;
 }
 .footer .menu_link:hover {
   color: #82c831;

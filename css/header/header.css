@@ -252,7 +252,7 @@
   width: 100%;
   position: absolute;
   box-sizing: border-box;
-  top: 100%;
+  top: 66px;
   z-index: 5;
   left: 0;
   opacity: 0;

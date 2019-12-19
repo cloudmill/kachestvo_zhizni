@@ -45,7 +45,7 @@ body {
   border: 0;
   padding: 0;
   &.overflow {
-    overflow: hidden;
+    //overflow: hidden;
   }
 }
 .wrapper {
@@ -91,7 +91,7 @@ body {
         font-size: inherit;
         line-height: inherit;
         white-space: nowrap;
-        display: inline-block;
+        display: inline-block !important;
         &_bg_opacity {
           background-color: transparent;
         }
@@ -131,7 +131,9 @@ body {
           display: none;
           position: absolute;
           right: 0;
-          min-width: 250px;
+          min-width: auto;
+          width: max-content;
+          max-width: 250px;
           top: 100%;
           margin-top: 8px;
           border-radius: 8px;
