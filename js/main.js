@@ -588,11 +588,29 @@ var custom = function() {
       $(".burger .bottom").css("bottom", "85px");
     }
   };
+  var clickOnScroll = function(){
+    var itemForCheck = $('[data-type="js-comments-load"],[data-type=js-blog-load]');
+      function checkAndClick(){
+        var tScroll = $(document).scrollTop() + $(window).height();
+        for(var g = 0;g<itemForCheck.length;g++){
+          itemForCheck.eq(g)
+          var tOffset = itemForCheck.eq(g).offset().top + itemForCheck.eq(g).height()
+          console.log(tOffset)
+          if(tOffset < tScroll){
+            itemForCheck.eq(g).click()
+          }
+        }
+      }
+     $(document).on('scroll',function(){
+      checkAndClick();
+     })
+  }
   copy_link();
   if ($(".article .social").length > 0) social_links_move();
   open_menu();
   help_blocks();
   burger_search_open();
+  clickOnScroll();
   scrollIphoneBurger();
 
   //////способ отображение категорий в меню
@@ -630,7 +648,7 @@ var forms = function() {
       }
     });
   };
-  var validate = function(fields, form) {
+  validate = function(fields, form, callback) {
     var error = 0;
     form.find("*").removeClass("error");
     form.find(".error_text").remove();
@@ -641,13 +659,7 @@ var forms = function() {
           error++;
           item.addClass("error");
           let text_error = "Неверный Email";
-          let badWord = false;
           if (item.val() == "") text_error = "Введите Email";
-          if (badWord) {
-            text_error =
-              "Мы тоже за простоту выражений, но без крайностей. Перефразируйте, пожалуйста.";
-            form.find("button").attr("disabled", true);
-          }
 
           item[0].outerHTML +=
             "<span class='error_text'>" + text_error + "</span>";
@@ -659,8 +671,32 @@ var forms = function() {
           item.addClass("error");
         }
       }
+      if (item.attr("name") == "comment") {
+        if (item.val() == "") text_error = "Введите Комментарий";
+        else {
+          $.ajax({
+            type: "POST",
+            url: SITE_TEMPLATE_PATH + "/include/ajax/bad_words.php",
+            data: {
+              comment: item.val()
+            },
+            dataType: "json",
+            success: function(a) {
+              if (a.type == "bad") {
+                text_error =
+                  "Мы тоже за простоту выражений, но без крайностей. Перефразируйте, пожалуйста.";
+                form.find("button").attr("disabled", true);
+                item[0].outerHTML +=
+                  "<span class='error_text'>" + text_error + "</span>";
+              } else {
+                callback();
+              }
+            }
+          });
+        }
+      }
     });
-    return error == 0;
+    if (!callback) return error == 0;
   };
   submits();
 };
@@ -763,35 +799,42 @@ $(function() {
     var url = form.find("input[name=url]");
     var comment = form.find("textarea[name=comment]");
 
+    form.find('button').attr('disabled', 'disabled');
+
     if (auth.val() == 1) {
-      $.ajax({
-        type: "POST",
-        url: SITE_TEMPLATE_PATH + "/include/ajax/comment_add.php",
-        data: {
-          sessid: sessid.val(),
-          article: article.val(),
-          comment: comment.val()
-        },
-        dataType: "json",
-        success: function(a) {
-          if (a.error) {
-            console.log(a);
-          } else {
-            $.ajax({
-              type: "POST",
-              url: url.val(),
-              data: {
-                ajax_comments: "y"
-              },
-              success: function(a) {
-                $("[data-type=js-comments").html(a);
-              }
-            });
+      validate([comment], $(this), function() {
+        $.ajax({
+          type: "POST",
+          url: SITE_TEMPLATE_PATH + "/include/ajax/comment_add.php",
+          data: {
+            sessid: sessid.val(),
+            article: article.val(),
+            comment: comment.val()
+          },
+          dataType: "json",
+          success: function(a) {
+            if (a.error) {
+              console.log(a);
+              form.find('button').removeAttr('disabled');
+            } else {
+              $.ajax({
+                type: "POST",
+                url: url.val(),
+                data: {
+                  ajax_comments: "y"
+                },
+                success: function(a) {
+                  $("[data-type=js-comments").html(a);
+                }
+              });
+            }
           }
-        }
+        });
       });
+      return false;
     } else {
       popup.login();
+      form.find('button').removeAttr('disabled');
     }
   });
 
@@ -805,36 +848,43 @@ $(function() {
     var comment = form.find("textarea[name=comment]");
     var answer = form.find("input[name=answer]");
 
+    form.find('button').attr('disabled', 'disabled');
+
     if (auth.val() == 1) {
-      $.ajax({
-        type: "POST",
-        url: SITE_TEMPLATE_PATH + "/include/ajax/comment_add.php",
-        data: {
-          sessid: sessid.val(),
-          article: article.val(),
-          answer: answer.val(),
-          comment: comment.val()
-        },
-        dataType: "json",
-        success: function(a) {
-          if (a.error) {
-            console.log(a);
-          } else {
-            $.ajax({
-              type: "POST",
-              url: url.val(),
-              data: {
-                ajax_comments: "y"
-              },
-              success: function(a) {
-                $("[data-type=js-comments").html(a);
-              }
-            });
+      validate([comment], $(this), function() {
+        $.ajax({
+          type: "POST",
+          url: SITE_TEMPLATE_PATH + "/include/ajax/comment_add.php",
+          data: {
+            sessid: sessid.val(),
+            article: article.val(),
+            answer: answer.val(),
+            comment: comment.val()
+          },
+          dataType: "json",
+          success: function(a) {
+            if (a.error) {
+              console.log(a);
+              form.find('button').removeAttr('disabled');
+            } else {
+              $.ajax({
+                type: "POST",
+                url: url.val(),
+                data: {
+                  ajax_comments: "y"
+                },
+                success: function(a) {
+                  $("[data-type=js-comments").html(a);
+                }
+              });
+            }
           }
-        }
+        });
       });
+      return false;
     } else {
       popup.login();
+      form.find('button').removeAttr('disabled');
     }
   });
 
@@ -893,6 +943,41 @@ $(function() {
         } else {
           item.find(".social_count").html(a.count);
         }
+      }
+    });
+  });
+  $(document).on('click', '[data-type=js-blog-load]', function(e){
+    e.preventDefault();
+    var url = $(this).attr('href');
+    var lenta = $(this).parents('.lenta');
+    $(this).remove();
+    $.ajax({
+      type: "POST",
+      url: url,
+      data: {
+        ajax_list: 'y'
+      },
+      success: function(a) {
+        lenta.append(a);
+      }
+    });
+  });
+
+  $(document).on('click', '[data-type=js-comments-load]', function(e){
+    e.preventDefault();
+    var url = $(this).attr('href');
+    var comments = $(this).parents('.comments');
+    var offset = $(this).attr('data-offset');
+    $(this).remove();
+    $.ajax({
+      type: "POST",
+      url: url,
+      data: {
+        ajax_comments_load: 'y',
+        comments_offset: offset
+      },
+      success: function(a) {
+        comments.find('.comments_list ').append(a);
       }
     });
   });
