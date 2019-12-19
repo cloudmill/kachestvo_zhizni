@@ -7,11 +7,11 @@
   .article {
     .head {
       display: flex;
-
+      flex-wrap: wrap;
       align-items: center;
       &_inf {
         margin-right: 37px;
-
+        margin-bottom: 5px;
         display: flex;
 
         align-items: center;
@@ -60,9 +60,11 @@
       }
       &_types {
         display: flex;
+        flex-wrap: wrap;
       }
       &_type {
         margin-right: 32px;
+        margin-bottom: 9px;
       }
       &_link {
         display: flex;
@@ -74,7 +76,7 @@
         letter-spacing: 1.2px;
         line-height: 16.35px;
         text-transform: uppercase;
-        margin-left: 30px;
+        margin-left: 23px;
         position: relative;
         -webkit-transition: @anim;
         transition: @anim;
@@ -595,7 +597,7 @@
         margin-top: 32px;
         width: 100%;
 
-        display: flex;
+        display: flex !important;
 
         align-items: center;
         -webkit-box-pack: center;

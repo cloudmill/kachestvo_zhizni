@@ -34,6 +34,7 @@ body {
     text-decoration: none;
   }
   .header {
+    top: 0 !important;
     .logo {
       display: block;
       margin: 50px 0;
@@ -115,68 +116,8 @@ body {
       .checkbox {
         display: block;
         &_button {
-          color: #82c831;
-          height: 48px;
-          border-radius: 24px;
-          margin-top: 32px;
-          width: 100%;
-          display: -webkit-box;
-          display: -ms-flexbox;
-          display: flex;
-          -webkit-box-align: center;
-          -ms-flex-align: center;
-          align-items: center;
-          -webkit-box-pack: center;
-          -ms-flex-pack: center;
-          justify-content: center;
-          font-size: 13px;
-          font-weight: 500;
-          letter-spacing: 1.04px;
-          line-height: 17.52px;
-          text-transform: uppercase;
-          border: none;
-          z-index: 2;
-          overflow: hidden;
-          cursor: pointer;
-          position: relative;
-          &:after {
-            content: "";
-            width: 100%;
-            height: 100%;
-            border-radius: inherit;
-            background-color: #f3faeb;
-            z-index: -1;
-            position: absolute;
-            transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-          }
-          &::before {
-            content: "";
-            width: 100%;
-            height: 100%;
-            border-radius: inherit;
-            background-color: #f3faeb;
-            position: absolute;
-            transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
-            left: 50%;
-            top: 50%;
-            z-index: -2;
-            transform: translate(-50%, -50%);
-          }
-          &:hover {
-            &:after {
-              background: rgba(130, 200, 49, 0.3);
-            }
-          }
-          &:active {
-            &:after {
-              width: 30%;
-              height: 96px;
-              border-radius: 50%;
-            }
-          }
+          display: none !important;
+          
         }
         &_list {
           margin-top: 32px;
