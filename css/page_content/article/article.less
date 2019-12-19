@@ -7,23 +7,22 @@
   .article {
     .head {
       display: flex;
-
+      flex-wrap: wrap;
       align-items: center;
       &_inf {
         margin-right: 37px;
-
+        margin-bottom: 10px;
         display: flex;
-
         align-items: center;
         color: #7a858d;
         font-size: 14px;
         font-weight: 400;
         letter-spacing: 0.28px;
         line-height: 18.87px;
+        min-width: 200px;
       }
       &_comments {
         display: flex;
-
         align-items: center;
         &:before {
           content: "";
@@ -40,7 +39,6 @@
       }
       &_views {
         display: flex;
-
         align-items: center;
         margin-left: 15px;
         &:before {
@@ -60,9 +58,12 @@
       }
       &_types {
         display: flex;
+        flex-wrap: wrap;
+        
       }
       &_type {
         margin-right: 32px;
+        margin-bottom: 5px;
       }
       &_link {
         display: flex;
@@ -107,6 +108,7 @@
       top: 0;
       border: 1px solid #f0f0f0;
       background: #fff;
+      z-index: 1;
       &_item {
         width: 62px;
         height: 71px;
@@ -393,6 +395,7 @@
         font-weight: 400;
         letter-spacing: 0.28px;
         line-height: 18.87px;
+        
       }
       &_comments {
         display: flex;
@@ -497,6 +500,7 @@
         font-weight: 500;
         line-height: 20.21px;
         margin-right: 32px;
+        margin-top: -4px;
       }
       &_list {
         display: flex;
@@ -505,6 +509,7 @@
       }
       &_item {
         margin-right: 32px;
+        margin-bottom: 5px;
       }
       &_link {
         display: -webkit-box !important;
@@ -592,7 +597,7 @@
         margin-top: 32px;
         width: 100%;
 
-        display: flex;
+        display: flex !important;
 
         align-items: center;
         -webkit-box-pack: center;
