@@ -18,32 +18,18 @@ var custom = function() {
     //инициализация появления блока при клике на help-ссылку
     $(".help").click(function(e) {
       e.preventDefault();
-      $(this)
-        .find(".help_text")
-        .toggleClass("open");
+      $(this).find(".help_text").toggleClass("open");
       if (
-        $(this)
-          .find(".help_text")
-          .offset().left < $(".body_box").offset().left
+        $(this).find(".help_text").offset().left < $(".body_box").offset().left
       ) {
-        $(this)
-          .find(".help_text")
-          .addClass("right_mode"); //сместить окно вправо
+        $(this).find(".help_text").addClass("right_mode"); //сместить окно вправо
         if (
           $(window).width() -
-            $(this)
-              .find(".help_text")
-              .offset().left -
-            $(this)
-              .find(".help_text")
-              .width() <
+            $(this).find(".help_text").offset().left -
+            $(this).find(".help_text").width() <
           $(window).width() -
-            $(this)
-              .find(".body_box")
-              .offset().left -
-            $(this)
-              .find(".body_box")
-              .width()
+            $(this).find(".body_box").offset().left -
+            $(this).find(".body_box").width()
         ) {
           $(this)
             .find(".help_text")
@@ -51,11 +37,7 @@ var custom = function() {
             .addClass("center_mode"); //сместить окно в центр
         }
       }
-      if (
-        !$(this)
-          .find(".help_text")
-          .hasClass("open")
-      ) {
+      if (!$(this).find(".help_text").hasClass("open")) {
         $(this)
           .find(".help_text")
           .removeClass("center_mode")
@@ -222,15 +204,8 @@ var custom = function() {
           .parent()
           .find(".inpt_wrapper + .comments_button")
           .addClass("active");
-        if (
-          !$(this)
-            .parent()
-            .hasClass("answer")
-        )
-          $(this)
-            .closest(".comments")
-            .find(".comments_form.answer")
-            .remove();
+        if (!$(this).parent().hasClass("answer"))
+          $(this).closest(".comments").find(".comments_form.answer").remove();
       });
       $(document).on("keyup", ".comments_input", function() {
         $(this)
@@ -282,36 +257,18 @@ var custom = function() {
         this.header.find(".rubrics_list").height()
       ) {
         var left =
-          $(".rubrics_item")
-            .eq(0)
-            .offset().left -
-          $(".rubrics_item")
-            .parent()
-            .offset().left;
+          $(".rubrics_item").eq(0).offset().left -
+          $(".rubrics_item").parent().offset().left;
         var top =
-          $(".rubrics_item")
-            .eq(0)
-            .offset().top -
-          $(".rubrics_item")
-            .parent()
-            .offset().top;
+          $(".rubrics_item").eq(0).offset().top -
+          $(".rubrics_item").parent().offset().top;
         var right = 0;
-        var parW = $(".rubrics_item")
-          .parent()
-          .width();
+        var parW = $(".rubrics_item").parent().width();
 
         setTimeout(function() {
           $(".rubrics_item").each(function() {
-            tleft =
-              $(this).offset().left -
-              $(this)
-                .parent()
-                .offset().left;
-            ttop =
-              $(this).offset().top -
-              $(this)
-                .parent()
-                .offset().top;
+            tleft = $(this).offset().left - $(this).parent().offset().left;
+            ttop = $(this).offset().top - $(this).parent().offset().top;
             if (tleft > left && ttop <= top) {
               left = tleft;
               right = parW - (left + $(this).width());
@@ -591,9 +548,7 @@ var custom = function() {
       window.getSelection().addRange(range);
       try {
         document.execCommand("copy");
-        $(document)
-          .find("#copy_target")
-          .remove();
+        $(document).find("#copy_target").remove();
         return true;
       } catch (err) {
         return false;
@@ -615,13 +570,9 @@ var custom = function() {
               '/images/check_f.svg" /> <span>Ссылка скопирована</span></div>'
           );
           setTimeout(function() {
-            $(document)
-              .find(".info_copied")
-              .fadeOut(300);
+            $(document).find(".info_copied").fadeOut(300);
             setTimeout(function() {
-              $(document)
-                .find(".info_copied")
-                .remove();
+              $(document).find(".info_copied").remove();
               copied = false;
             });
           }, 3000);
@@ -678,12 +629,8 @@ var custom = function() {
       for (var i = 0; i < $(".article .right").length; i++) {
         for (var j = i + 1; j < $(".article .right").length; j++) {
           checkCrash(
-            $(".article .right")
-              .eq(i)
-              .find(">*"),
-            $(".article .right")
-              .eq(j)
-              .find(">*"),
+            $(".article .right").eq(i).find(">*"),
+            $(".article .right").eq(j).find(">*"),
             j
           );
         }
@@ -694,9 +641,7 @@ var custom = function() {
         var parentOffset =
           $(".article .body_box").height() +
           $(".article .body_box").offset().top;
-        var item = $(".article .right")
-          .eq(i)
-          .find(">*");
+        var item = $(".article .right").eq(i).find(">*");
         if (item.offset().top + item.height() > parentOffset) {
           var padding = item.offset().top + item.height() - parentOffset;
           var newHeight = $(".article .body_box").height() + padding;
@@ -705,10 +650,54 @@ var custom = function() {
       }
     }
     listening();
-    setTimeout(function(){
+    setTimeout(function() {
       parentBoxSizeCorrect();
-    },500)
-    
+    }, 500);
+  };
+  var adminSitebarMove = function() {
+    function correctPosSitebar() {
+      offset = $("body > #panel").height() - $(document).scrollTop();
+      if (
+        offset >= 0 &&
+        ($(window).width() >= 1440 || $(window).width() <= 768)
+      ) {
+        $(".sitebar").css("padding-top", offset + "px");
+        $(".sitebar_close").css("margin-top", offset + "px");
+      } else {
+        $(".sitebar").css("padding-top", 0 + "px");
+        $(".sitebar_close").css("margin-top", 0 + "px");
+      }
+    }
+    if ($("body > #panel").length > 0) {
+      $(document).on("scroll", function() {
+        correctPosSitebar();
+      });
+      correctPosSitebar();
+    }
+  };
+  var setImgOrientationClass = function() {
+    $(".blockImg_col_img,.srItem_img").each(function() {
+      var img = $(this).find("img");
+      function setClass() {
+        var width = img[0].naturalWidth;
+        var height = img[0].naturalHeight;
+        img.removeClass("horz").removeClass("vert").removeClass("box");
+        if (width / height > 1) {
+          img.addClass("horz");
+        } else if (width / height < 1) {
+          img.addClass("vert");
+        } else {
+          img.addClass("box");
+        }
+      }
+      if (!img[0].naturalWidth) {
+        img[0].onload = function() {
+          setClass();
+        };
+      } else {
+        setClass();
+      }
+    });
   };
   copy_link();
   if ($(".article .social").length > 0) social_links_move();
@@ -718,6 +707,8 @@ var custom = function() {
   clickOnScroll();
   scrollIphoneBurger();
   rightSnippetsMoving();
+  adminSitebarMove();
+  setImgOrientationClass();
   //////способ отображение категорий в меню
 
   comments.init();
@@ -779,6 +770,7 @@ var forms = function() {
       if (item.attr("name") == "comment") {
         if (item.val() == "") text_error = "Введите Комментарий";
         else {
+          var tVal = item.val();
           $.ajax({
             type: "POST",
             url: SITE_TEMPLATE_PATH + "/include/ajax/bad_words.php",
@@ -790,9 +782,12 @@ var forms = function() {
               if (a.type == "bad") {
                 text_error =
                   "Мы тоже за простоту выражений, но без крайностей. Перефразируйте, пожалуйста.";
+
                 form.find("button").attr("disabled", true);
-                item[0].outerHTML +=
-                  "<span class='error_text'>" + text_error + "</span>";
+                item.html(tVal);
+                var tHtml = item[0].outerHTML;
+                item[0].outerHTML =
+                  tHtml + "<span class='error_text'>" + text_error + "</span>";
               } else {
                 callback();
               }
@@ -818,36 +813,34 @@ var sliders = function() {
     ) {
       inited = true;
       for (let l = 0; l < $(".lenta_body.tablet_slider").length; l++) {
-        $(".lenta_body.tablet_slider")
-          .eq(l)
-          .slick({
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            speed: 600,
-            infinite: false,
-            dots: false,
-            arrows: false,
-            responsive: [
-              {
-                breakpoint: 950,
-                settings: {
-                  slidesToShow: 1
-                }
-              },
-              {
-                breakpoint: 768,
-                settings: {
-                  slidesToShow: 1
-                }
-              },
-              {
-                breakpoint: 500,
-                settings: {
-                  slidesToShow: 1
-                }
+        $(".lenta_body.tablet_slider").eq(l).slick({
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          speed: 600,
+          infinite: false,
+          dots: false,
+          arrows: false,
+          responsive: [
+            {
+              breakpoint: 950,
+              settings: {
+                slidesToShow: 1
               }
-            ]
-          });
+            },
+            {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: 1
+              }
+            },
+            {
+              breakpoint: 500,
+              settings: {
+                slidesToShow: 1
+              }
+            }
+          ]
+        });
       }
     }
   };

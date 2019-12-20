@@ -126,7 +126,7 @@
 }
 .sitebar_item {
   margin-bottom: 32px;
-  cursor: pointer;
+  cursor: default;
 }
 .sitebar_item:hover .sitebar_item_link {
   text-decoration: underline;
@@ -176,6 +176,11 @@
   font-weight: 400;
   line-height: 21.09px;
   margin-bottom: 6px;
+}
+.sitebar_comment a {
+  color: inherit;
+  font-size: inherit;
+  line-height: inherit;
 }
 .sitebar_link {
   text-decoration: none;

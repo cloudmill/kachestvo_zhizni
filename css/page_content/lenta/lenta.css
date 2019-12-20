@@ -331,14 +331,31 @@
   -webkit-transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   display: block;
+  padding-top: 100%;
 }
 .page .lenta .srItem_img:hover {
   opacity: 0.8;
 }
 .page .lenta .srItem_img img {
-  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-height: 100%;
+  min-width: 100%;
+  width: auto;
   display: block;
   height: auto;
+}
+.page .lenta .srItem_img img.vert {
+  width: 100%;
+}
+.page .lenta .srItem_img img.horz {
+  height: 100%;
+}
+.page .lenta .srItem_img img.box {
+  width: 100%;
+  height: 100%;
 }
 .page .lenta .srItem_types {
   display: -webkit-box;
