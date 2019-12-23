@@ -95,6 +95,11 @@
   line-height: 21.09px;
   margin-bottom: 6px;
 }
+.page .reviewsTab_comment a {
+  font-size: inherit;
+  color: inherit;
+  font-weight: inherit;
+}
 .page .reviewsTab_link {
   text-decoration: none;
   color: #82c831;
