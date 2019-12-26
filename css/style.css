@@ -1888,6 +1888,10 @@
 .page .article .body_box {
   margin-right: 250px;
   position: relative;
+  color: #1d2f3c;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 26.37px;
 }
 .page .article .body_box a {
   display: inline;
@@ -3107,7 +3111,7 @@
 }
 .sitebar_item {
   margin-bottom: 32px;
-  cursor: default;
+  cursor: pointer;
 }
 .sitebar_item:hover .sitebar_item_link {
   text-decoration: underline;
@@ -3160,8 +3164,6 @@
 }
 .sitebar_comment a {
   color: inherit;
-  font-size: inherit;
-  line-height: inherit;
 }
 .sitebar_link {
   text-decoration: none;

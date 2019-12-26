@@ -197,6 +197,10 @@
 .page .article .body_box {
   margin-right: 250px;
   position: relative;
+  color: #1d2f3c;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 26.37px;
 }
 .page .article .body_box a {
   display: inline;
