@@ -1596,6 +1596,7 @@
   margin: auto;
   margin-left: 5%;
   display: block;
+  max-height: 100%;
 }
 .page .lenta .btwItem_types {
   display: -webkit-box;
