@@ -76,6 +76,9 @@
   .header .search {
     display: none;
   }
+  .header .logOut {
+    display: none;
+  }
   .header .logo {
     margin-right: 0;
     width: 200px;

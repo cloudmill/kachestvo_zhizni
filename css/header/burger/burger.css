@@ -288,3 +288,27 @@
   -webkit-transform: rotate(90deg);
   transform: rotate(90deg);
 }
+.burger_logOut {
+  position: fixed;
+  right: 0px;
+  padding: 0 17px;
+  background-color: #fff;
+  top: 36px;
+  transform: translate(0, -50%);
+  width: 30px;
+  height: 58px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.burger_logOut::before {
+  content: "";
+  display: block;
+  width: 18px;
+  min-width: 18px;
+  height: 18px;
+  background-image: url(../images/logOut.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}

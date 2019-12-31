@@ -933,8 +933,27 @@ $(function() {
       });
       return false;
     } else {
-      popup.login();
-      form.find("button").removeAttr("disabled");
+      validate([comment], $(this), function() {
+        $.ajax({
+          type: "POST",
+          url: SITE_TEMPLATE_PATH + "/include/ajax/comment_hash.php",
+          data: {
+            sessid: sessid.val(),
+            article: article.val(),
+            comment: comment.val()
+          },
+          dataType: "json",
+          success: function(a) {
+            if (a.error) {
+              console.log(a);
+              form.find("button").removeAttr("disabled");
+            } else {
+              popup.login();
+              form.find("button").removeAttr("disabled");
+            }
+          }
+        });
+      });
     }
   });
 
@@ -983,8 +1002,28 @@ $(function() {
       });
       return false;
     } else {
-      popup.login();
-      form.find("button").removeAttr("disabled");
+      validate([comment], $(this), function() {
+        $.ajax({
+          type: "POST",
+          url: SITE_TEMPLATE_PATH + "/include/ajax/comment_hash.php",
+          data: {
+            sessid: sessid.val(),
+            article: article.val(),
+            answer: answer.val(),
+            comment: comment.val()
+          },
+          dataType: "json",
+          success: function(a) {
+            if (a.error) {
+              console.log(a);
+              form.find("button").removeAttr("disabled");
+            } else {
+              popup.login();
+              form.find("button").removeAttr("disabled");
+            }
+          }
+        });
+      });
     }
   });
 
