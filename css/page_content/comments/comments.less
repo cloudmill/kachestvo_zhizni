@@ -10,7 +10,7 @@
     &_title {
       color: @color_text;
       font-size: 26px;
-      font-weight: 700;
+      font-weight: 700; 
       line-height: 35.43px;
       margin-bottom: 16px;
       margin-top: 40px;
@@ -183,6 +183,9 @@
       -webkit-transition: @anim;
       transition: @anim;
       opacity: 0;
+      &.disabled{
+        pointer-events: none;
+      }
       &.active {
         opacity: 1;
       }
@@ -197,6 +200,9 @@
       -webkit-transition: @anim;
       transition: @anim;
       opacity: 0;
+      &.disabled{
+        pointer-events: none;
+      }
       &.active {
         opacity: 1;
       }
