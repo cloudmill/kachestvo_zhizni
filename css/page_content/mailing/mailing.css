@@ -75,3 +75,19 @@
   background-repeat: no-repeat;
   background-position: center;
 }
+@media (max-width: 768px) {
+  .page .mailing {
+    width: calc(100% - 40px);
+    padding-left: 16px;
+    padding-right: 24px;
+    padding-top: 32px;
+  }
+  .page .mailing_title {
+    padding-left: 56px;
+    margin-bottom: 16px;
+  }
+  .page .mailing:before {
+    left: 15px;
+    top: 35px;
+  }
+}

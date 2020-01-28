@@ -24,6 +24,9 @@ body {
   font-family: Rubik;
   outline: none;
 }
+.wrapper .innerPage {
+  margin-left: 0;
+}
 .wrapper_main {
   width: 780px;
   max-width: calc(100% - 40px);

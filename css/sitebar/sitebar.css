@@ -190,3 +190,30 @@
   letter-spacing: 0.26px;
   line-height: 16.76px;
 }
+@media (max-width: 1439px) {
+  .sitebar {
+    display: none;
+  }
+}
+@media (max-width: 950px) {
+  .sitebar {
+    opacity: 0;
+    width: 302px;
+    padding-left: 16px;
+    max-width: 100%;
+    padding-right: 16px;
+    -webkit-transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+    right: -296px;
+  }
+  .sitebar.active {
+    display: block;
+  }
+  .sitebar.open {
+    opacity: 1;
+    right: 0;
+  }
+  .sitebar_close {
+    display: block;
+  }
+}

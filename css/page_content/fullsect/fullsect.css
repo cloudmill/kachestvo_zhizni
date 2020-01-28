@@ -74,3 +74,13 @@
     line-height: 21px;
   }
 }
+@media (max-width: 768px) {
+  .page .not-found_type {
+    font-size: 26px;
+    line-height: 35.43px;
+  }
+  .page .not-found_title {
+    font-size: 21px;
+    line-height: 28.3px;
+  }
+}

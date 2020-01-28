@@ -218,3 +218,68 @@
   margin-top: 32px;
   text-transform: uppercase;
 }
+@media (max-width: 1061px) {
+  .page .comments_answer {
+    opacity: 1;
+  }
+  .page .comments_dis-like {
+    opacity: 1;
+  }
+  .page .comments_like {
+    opacity: 1;
+  }
+}
+@media (max-width: 950px) {
+  .page .comments {
+    margin-right: 0;
+  }
+  .page .comments_item {
+    position: relative;
+  }
+  .page .comments_itemBlock {
+    padding-left: 0;
+  }
+  .page .comments_itemBlock .comments_itemBlock {
+    padding-left: 20px;
+  }
+  .page .comments_top {
+    padding-left: 50px;
+    min-height: 50px;
+  }
+  .page .comments_blockImg {
+    width: 40px;
+    height: 40px;
+  }
+}
+@media (max-width: 960px) {
+  .page .comments_form.answer {
+    width: 100%;
+    margin-left: 0;
+  }
+  .page .comments_item {
+    position: relative;
+    padding-bottom: 32px;
+    margin-bottom: 16px;
+  }
+  .page .comments_itemBlock {
+    margin-bottom: 32px;
+  }
+  .page .comments_right {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    bottom: 0;
+    justify-content: flex-end;
+  }
+  .page .comments_right * {
+    opacity: 1 !important;
+  }
+  .page .comments_left {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .page .comments_answer {
+    position: absolute;
+    left: 0;
+  }
+}

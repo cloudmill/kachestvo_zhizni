@@ -480,3 +480,121 @@
     }
   }
 }
+@media (max-width: 1439px) {
+  .header.fixed {
+    width: 100%;
+  }
+}
+@media (max-width: 1024px) {
+  .header {
+    .container {
+      width: 100% !important;
+    }
+    &.fixed {
+      .container {
+        width: ~"calc(100% - 50px)" !important;
+      }
+    }
+  }
+}
+@media (max-width: 950px) {
+  .header {
+    .rubrics {
+      position: relative;
+      opacity: 1;
+      -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+      width: auto;
+      overflow-y: visible;
+      overflow-x: scroll;
+      &::-ms-scrollbar {
+        display: none;
+      }
+      &::-webkit-scrollbar {
+        display: none;
+        width: 0;
+        height: 0;
+      }
+      &_list {
+        flex-wrap: nowrap;
+        width: max-content;
+        height: 48px;
+      }
+      &_item{
+        margin-bottom: 5px;
+      }
+      a {
+        -webkit-user-drag: none;
+        -o-user-drag: none;
+        -ms-user-drag: none;
+      }
+      &_more {
+        display: none;
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .header {
+    .top {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+    }
+    .menu,
+    .subsc {
+      display: none;
+    }
+    .rubrics {
+      overflow: scroll;
+      width: 100%;
+      padding: 0 24px;
+      margin-left: -24px;
+      &::-webkit-scrollbar {
+        display: none;
+        width: 0;
+        height: 0;
+      }
+      &::-ms-scrollbar {
+        display: none;
+      }
+    }
+    .search {
+      display: none;
+    }
+    .logOut{
+      display: none;
+    }
+    .logo {
+      margin-right: 0;
+      width: 200px;
+      &_img {
+        max-width: 100%;
+      }
+    }
+    .btn {
+      &_burger,
+      &_sitebar {
+        display: block;
+      }
+    }
+  }
+}
+@media (max-width: 400px) {
+  .header {
+    .rubrics {
+      width: 100%;
+      padding: 0 16px;
+      margin-left: -16px;
+    }
+    &.fixed {
+      .container {
+        width: ~"calc(100% - 32px)" !important;
+      }
+    }
+  }
+}
+
